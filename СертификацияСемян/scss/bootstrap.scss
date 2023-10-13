@@ -1,0 +1,61 @@
+// Bootstrap variables override
+$body-bg: #f7f7f7 !default;
+$body-color: #383e49 !default;
+$primary: #2ade56 !default;
+$secondary: #488958 !default;
+$danger: #e01d2a !default;
+$input-placeholder-color: #adb5bd !default;
+
+// Form
+$form-select-bg: #fff !default;
+$input-bg: #fff !default;
+$form-check-input-bg: #fff !default;
+
+// Table
+$table-bg: #fff !default;
+$table-color: #000 !default;
+$table-hover-bg: rgba(0, 0, 0, .1) !default;
+$table-cell-padding-y: .6rem !default;
+$table-cell-padding-x: .6rem !default;
+$table-cell-padding-y-sm: .25rem !default;
+$table-cell-padding-x-sm: .45rem !default;
+$table-bg-scale: 1 !default;
+$table-active-bg: rgba(255, 255, 0, .5) !default;
+
+// Typography
+$font-family-sans-serif: "Roboto", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-size-base: .9rem !default;
+
+// Pagination
+$pagination-active-bg: #a31851 !default;
+$pagination-border-color: transparent !default;
+$pagination-hover-border-color: transparent !default;
+$pagination-active-border-color: transparent !default;
+$pagination-disabled-border-color: transparent !default;
+$pagination-bg: #ebebeb !default;
+
+// NavBar
+$navbar-light-color: #023459 !default;
+$navbar-light-hover-color: #a31851 !default;
+$navbar-light-active-color: #a31851 !default;
+$navbar-brand-font-size: 1.425rem !default;
+
+// Dropdown
+$dropdown-item-padding-y: .35rem !default;
+$dropdown-item-padding-x: .35rem !default;
+$dropdown-header-padding: .35rem .35rem !default;
+$dropdown-link-hover-color: #fff !default;
+$dropdown-link-active-bg: #a31851 !default;
+$dropdown-link-hover-bg: #a31851 !default;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+// scss-docs-start spacer-variables-maps
+$spacer: .7rem !default;
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
