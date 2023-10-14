@@ -5,6 +5,7 @@
 
 ```
 dotnet build
+cd СертификацияСемян
 npm ci
 npm run css
 ```
