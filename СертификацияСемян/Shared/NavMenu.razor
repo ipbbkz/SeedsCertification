@@ -35,15 +35,15 @@
                     <Authorized>
                         <a class="nav-link" href="Identity/Account/Manage">Hello, @context.User.Identity?.Name!</a>
                         <form method="post" action="Identity/Account/Logout">
-                            <button type="submit" class="nav-link btn btn-link">Log out</button>
+                            <button type="submit" class="nav-link btn btn-link">@Лок["ВыйтиИзАккаунта"]</button>
                         </form>
                     </Authorized>
                     <NotAuthorized>
                         <li class="nav-item">
-                            <a class="nav-link" href="Identity/Account/Register">Register</a>
+                            <a class="nav-link" href="Identity/Account/Register">@Лок["Регистрация"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Identity/Account/Login">Log in</a>
+                            <a class="nav-link" href="Identity/Account/Login">@Лок["Логин"]</a>
                         </li>
                     </NotAuthorized>
                 </AuthorizeView>
