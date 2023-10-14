@@ -1,4 +1,4 @@
-namespace СертификацияСемян.Data
+namespace СертификацияСемян.Данные
 {
     public class WeatherForecastService
     {

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace СертификацияСемян.Data.Migrations
+namespace СертификацияСемян.Данные.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {
