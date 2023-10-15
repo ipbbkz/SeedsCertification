@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
+using СертификацияСемян;
 using СертификацияСемян.Areas.Identity;
 using СертификацияСемян.Данные;
 
@@ -15,12 +17,17 @@ builder.Services.AddDbContext<КонтекстБдПриложения>(options 
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<КонтекстБдПриложения>();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddLocalization();
+builder.Services.AddMvc()
+     .AddViewLocalization()
+     .AddDataAnnotationsLocalization();
+builder.Services.AddHostedService<ИнициализацияБазыДанных>();
 
 var app = builder.Build();
 

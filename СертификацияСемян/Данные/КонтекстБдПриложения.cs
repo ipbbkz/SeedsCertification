@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace СертификацияСемян.Данные;
@@ -25,6 +26,13 @@ public class КонтекстБдПриложения : IdentityDbContext
         builder.Entity<Инспекция>().HasKey(nameof(Инспекция.Ид));
         builder.Entity<ЗаписьИнспекции>().HasKey(nameof(ЗаписьИнспекции.Ид));
         builder.Entity<Анализ>().HasKey(nameof(Анализ.Ид));
+        builder.Entity<IdentityRole>()
+            .HasData(
+                new IdentityRole() { Id = Константы.РольАдминистратора, Name = Константы.РольАдминистратора, NormalizedName = Константы.РольАдминистратора.ToUpperInvariant() },
+                new IdentityRole() { Id = Константы.РольИнспектора, Name = Константы.РольИнспектора, NormalizedName = Константы.РольИнспектора.ToUpperInvariant() },
+                new IdentityRole() { Id = Константы.РольСтаршийИнспектор, Name = Константы.РольСтаршийИнспектор, NormalizedName = Константы.РольСтаршийИнспектор.ToUpperInvariant() },
+                new IdentityRole() { Id = Константы.РольЛаборатория, Name = Константы.РольЛаборатория, NormalizedName = Константы.РольЛаборатория.ToUpperInvariant() },
+                new IdentityRole() { Id = Константы.РольРуководительСертификационнойСлужбы, Name = Константы.РольРуководительСертификационнойСлужбы, NormalizedName = Константы.РольРуководительСертификационнойСлужбы.ToUpperInvariant() });
         base.OnModelCreating(builder);
     }
 }
