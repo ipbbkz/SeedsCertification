@@ -24,6 +24,10 @@ builder.Services.AddLocalization();
 
 var app = builder.Build();
 
+app.UseRequestLocalization(new RequestLocalizationOptions()
+    .AddSupportedCultures(new[] { "en-US", "ru", "kk" })
+    .AddSupportedUICultures(new[] { "en-US", "ru", "kk" }));
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
