@@ -32,7 +32,8 @@ public class КонтекстБдПриложения : IdentityDbContext
                 new IdentityRole() { Id = Константы.РольИнспектора, Name = Константы.РольИнспектора, NormalizedName = Константы.РольИнспектора.ToUpperInvariant() },
                 new IdentityRole() { Id = Константы.РольСтаршийИнспектор, Name = Константы.РольСтаршийИнспектор, NormalizedName = Константы.РольСтаршийИнспектор.ToUpperInvariant() },
                 new IdentityRole() { Id = Константы.РольЛаборатория, Name = Константы.РольЛаборатория, NormalizedName = Константы.РольЛаборатория.ToUpperInvariant() },
-                new IdentityRole() { Id = Константы.РольРуководительСертификационнойСлужбы, Name = Константы.РольРуководительСертификационнойСлужбы, NormalizedName = Константы.РольРуководительСертификационнойСлужбы.ToUpperInvariant() });
+                new IdentityRole() { Id = Константы.РольРуководительСертификационнойСлужбы, Name = Константы.РольРуководительСертификационнойСлужбы, NormalizedName = Константы.РольРуководительСертификационнойСлужбы.ToUpperInvariant() },
+                new IdentityRole() { Id = Константы.РольФермер, Name = Константы.РольФермер, NormalizedName = Константы.РольФермер.ToUpperInvariant() });
         base.OnModelCreating(builder);
     }
 }
@@ -126,7 +127,7 @@ public class Анализ
 public class ПроизводительСемян
 {
     public int Ид { get; set; }
-
+    public string ИдВладельца { get; set; }
     public int ФормаХозяйствования { get; set; }
     public string НаваниеКомпании { get; set; }
     public string БинИлиИин { get; set; }

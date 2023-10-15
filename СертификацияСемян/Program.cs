@@ -23,11 +23,19 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddScoped<УправляющийХозяйствами>();
 builder.Services.AddLocalization();
 builder.Services.AddMvc()
      .AddViewLocalization()
      .AddDataAnnotationsLocalization();
 builder.Services.AddHostedService<ИнициализацияБазыДанных>();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ТребуетсяБытьАдминистратором",
+         policy => policy.RequireRole(Константы.РольАдминистратора));
+    options.AddPolicy("Фермеры",
+         policy => policy.RequireRole(Константы.РольФермер));
+});
 
 var app = builder.Build();
 

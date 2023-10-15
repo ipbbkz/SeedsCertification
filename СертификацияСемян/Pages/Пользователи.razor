@@ -1,0 +1,46 @@
+﻿@page "/farmers"
+@attribute [Authorize(Policy = "ТребуетсяБытьАдминистратором")]
+@using Microsoft.AspNetCore.Identity
+@using СертификацияСемян.Данные;
+@inject UserManager<IdentityUser> МенеджерПользователей
+
+<PageTitle>Фермеры</PageTitle>
+<h3>
+    Фермеры
+</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Email</td>
+            <td>Email Confirmed</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ф in фермеры)
+        {
+            <tr>
+                <td>
+                    @ф.Id
+                </td>
+                <td>
+                    @ф.Email
+                </td>
+                <td>
+                    @ф.EmailConfirmed
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private IList<IdentityUser> фермеры = Array.Empty<IdentityUser>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        фермеры = await МенеджерПользователей.GetUsersInRoleAsync(Константы.РольФермер);
+        await base.OnParametersSetAsync();
+    }
+}

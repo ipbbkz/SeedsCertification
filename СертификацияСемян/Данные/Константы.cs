@@ -7,4 +7,5 @@ public static class Константы
     public const string РольСтаршийИнспектор = "СтаршийИнспектор";
     public const string РольЛаборатория = "Лаборатория";
     public const string РольРуководительСертификационнойСлужбы = "РуководительСертификационнойСлужбы";
+    public const string РольФермер = "Фермер";
 }

@@ -1,0 +1,37 @@
+﻿@page "/farms"
+@using System.Security.Claims;
+@using СертификацияСемян.Данные;
+@attribute [Authorize(Policy = "Фермеры")]
+@inject УправляющийХозяйствами управляющийХозяйствами
+<h3>Фермы</h3>
+@if (хозяйства.Count == 0)
+{
+    <p>Создайте новое хозяйство</p>
+}
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    private IList<ПроизводительСемян> хозяйства = Array.Empty<ПроизводительСемян>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (состояниеАвторизации is not null)
+        {
+            var authState = await состояниеАвторизации;
+            var user = authState?.User;
+
+            if (user?.Identity is ClaimsIdentity личность && личность.IsAuthenticated)
+            {
+                var идЛичности = личность.ПолучитьИдентификаторБезопасности();
+                if (идЛичности is not null)
+                {
+                    хозяйства = управляющийХозяйствами.ПолучитьХозяйстваПользователя(идЛичности);
+                }
+            }
+        }
+        
+        await base.OnParametersSetAsync();
+    }
+}
