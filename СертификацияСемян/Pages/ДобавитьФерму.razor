@@ -1,0 +1,145 @@
+﻿@page "/farms/add"
+@using System.ComponentModel.DataAnnotations;
+@inject ILogger<ДобавитьФерму> Logger
+@inject УправляющийХозяйствами управляющийХозяйствами
+@inject NavigationManager управляющийНавигацией
+@attribute [Authorize(Policy = "Фермеры")]
+
+<PageTitle>Добавить Ферму</PageTitle>
+
+<h3>Добавить Ферму</h3>
+
+<EditForm Model="@Модель" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="mb-3 row">
+        <div class="col-sm-12 col-md-2">
+            <label class="form-label">
+                БИН/ИИН <span class="text-danger">*</span>
+            </label>
+        </div>
+        <div class="col-sm-12 col-md-3 d-grid gap-2">
+        </div>
+        <div class="col-sm-12 col-md-7 d-grid gap-2">
+            <label class="form-label">
+                Навание Компании <span class="text-danger">*</span>
+            </label>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col-sm-12 col-md-2">
+            <InputText @bind-Value="Модель!.Бин" class="form-control" />
+        </div>
+        <div class="col-sm-12 col-md-3 d-grid gap-2">
+            <button type="button" @onclick=ПолучитьДанныеПоБин class="btn btn-outline-primary">Получить данные по БИН/ИИН</button>
+        </div>
+        <div class="col-sm-12 col-md-7">
+            <InputText @bind-Value="Модель!.НаваниеКомпании" class="form-control" />
+        </div>
+    </div>
+
+    <label class="form-label">
+        Юридический Адрес
+    </label>
+    <InputText @bind-Value="Модель!.ЮридическийАдрес" class="form-control" />
+
+    <h3>Контактное Лицо</h3>
+
+    <div class="mb-3 row">
+        <div class="col-sm-12 col-md-4">
+            <label class="form-label">
+                Контактное Лицо <span class="text-danger">*</span>
+            </label>
+            <InputText @bind-Value="Модель!.КонтактноеЛицо" class="form-control" />
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <label class="form-label">
+                Электронная Почта <span class="text-danger">*</span>
+            </label>
+            <InputText @bind-Value="Модель!.ЭлектроннаяПочтаКонтактногоЛица" type="email" class="form-control" />
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <label class="form-label">
+                Номер Телефона <span class="text-danger">*</span>
+            </label>
+            <InputText @bind-Value="Модель!.НомерТелефонаКонтактногоЛица" type="tel" class="form-control" />
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+</EditForm>
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    public Хозяйство? Модель { get; set; }
+
+    protected override void OnInitialized() => Модель ??= new();
+
+    private async Task Submit()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is null)
+        {
+            return;
+        }
+
+        управляющийХозяйствами.ДобавитьХозяйство(
+            идЛичности,
+            Модель.НаваниеКомпании,
+            Модель.Бин,
+            Модель.ЮридическийАдрес,
+            Модель.КонтактноеЛицо,
+            Модель.ЭлектроннаяПочтаКонтактногоЛица,
+            Модель.НомерТелефонаКонтактногоЛица);
+        управляющийНавигацией.NavigateTo("/farms");
+    }
+
+    private async Task ПолучитьДанныеПоБин()
+    {
+        var бин = Модель?.Бин;
+        if (бин is null)
+        {
+            return;
+        }
+
+        if (!long.TryParse(бин, out var бинЧисло))
+        {
+            return;
+        }
+
+        var клиент = new GovKzServices.QazStatClient(new HttpClient());
+        var результат = await клиент.GetJuridicalAsync(бинЧисло, "ru");
+        if (!результат.Success)
+        {
+            return;
+        }
+
+        Модель.НаваниеКомпании = результат.Obj.Name;
+        Модель.ЮридическийАдрес = результат.Obj.KatoAddress;
+        Модель.КонтактноеЛицо = результат.Obj.Fio;
+
+    }
+
+    public class Хозяйство
+    {
+        public int ФормаХозяйствования { get; set; }
+
+        [Required]
+        public string НаваниеКомпании { get; set; }
+
+        [Required]
+        [StringLength(12, MinimumLength = 12, ErrorMessage = "Длина БИН/ИИН должна быть 12 символов.")]
+        public string Бин { get; set; }
+
+        [Required]
+        public string ЮридическийАдрес { get; set; }
+        [Required]
+        public string КонтактноеЛицо { get; set; }
+        [Required]
+        public string ЭлектроннаяПочтаКонтактногоЛица { get; set; }
+        [Required]
+        public string НомерТелефонаКонтактногоЛица { get; set; }
+    }
+
+}
