@@ -6,7 +6,7 @@
 <h3>Фермы</h3>
 @if (хозяйства.Count == 0)
 {
-    <p>Создайте новое хозяйство</p>
+    <p><a href="/farms/add">Создайте</a> новое хозяйство</p>
 }
 else
 {
@@ -43,7 +43,14 @@ else
                         @ф.НомерТелефонаКонтактногоЛица
                     </td>
                     <td>
-                        @ф.Активно
+                        @if (ф.Активно)
+                        {
+                            <span class="oi oi-circle-check text-success"></span>
+                        }
+                        else
+                        {
+                            <span class="oi oi-circle-x text-danger"></span>
+                        }
                     </td>
                 </tr>
             }

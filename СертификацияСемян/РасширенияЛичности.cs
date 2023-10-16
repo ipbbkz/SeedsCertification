@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components.Authorization;
 using System.Security.Claims;
-using System.Security.Principal;
-using static СертификацияСемян.Pages.ДобавитьФерму;
 
 namespace СертификацияСемян;
 
