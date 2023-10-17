@@ -27,7 +27,7 @@ builder.Services.AddScoped<УправляющийХозяйствами>();
 builder.Services.AddScoped<УправляющийЗаявками>();
 builder.Services.AddLocalization();
 builder.Services.AddMvc()
-     .AddViewLocalization()
+     .AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder)
      .AddDataAnnotationsLocalization();
 builder.Services.AddHostedService<ИнициализацияБазыДанных>();
 builder.Services.AddAuthorization(options =>
