@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace СертификацияСемян.Данные;
 
@@ -75,6 +76,9 @@ public class Заявка
     public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
     public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
     public DateTime? ДатаУдаления { get; set; }
+
+    [ForeignKey("ИдПроизводителяСемян")]
+    public ПроизводительСемян ПроизводительСемян { get; set; }
 }
 
 public class УчастокПоля

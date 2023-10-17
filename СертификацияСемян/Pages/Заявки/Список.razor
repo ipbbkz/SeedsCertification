@@ -1,0 +1,79 @@
+﻿@page "/requests/"
+@using System.Security.Claims;
+@using СертификацияСемян.Данные;
+@attribute [Authorize(Policy = "Фермеры")]
+@inject УправляющийЗаявками управляющийЗаявками
+<PageTitle>Заявки</PageTitle>
+
+<h3>Заявки</h3>
+@if (заявки.Count == 0)
+{
+    <p><a href="/requests/fill">Создайте</a> новую заявку</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <td>ТипЗаявки</td>
+                <td>НаваниеСортаСемян</td>
+                <td>Навание Компании</td>
+                <td>КлассСемянИд</td>
+                <td>Юридический Адрес</td>
+                <td>ДатаСоздания</td>
+                <td>Активно</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ф in заявки)
+            {
+                <tr>
+                    <td>
+                        @ф.ТипЗаявки
+                    </td>
+                    <td>
+                        @ф.НаваниеСортаСемян
+                    </td>
+                    <td>
+                        @ф.ПроизводительСемян.НаваниеКомпании (@ф.ПроизводительСемян.БинИлиИин)
+                    </td>
+                    <td>
+                        @ф.КлассСемянИд
+                    </td>
+                    <td>
+                        @ф.ДатаСоздания
+                    </td>
+                    <td>
+                        @if (ф.Активно)
+                        {
+                            <span class="oi oi-circle-check text-success"></span>
+                        }
+                        else
+                        {
+                            <span class="oi oi-circle-x text-danger"></span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody> 
+    </table>
+}
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    private IList<Заявка> заявки = Array.Empty<Заявка>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is not null)
+        {
+            заявки = управляющийЗаявками.ПолучитьЗаявкиПользователя(идЛичности);
+        }
+
+        await base.OnParametersSetAsync();
+    }
+
+}
