@@ -5,6 +5,9 @@
 
 <PageTitle>Удалить Ферму</PageTitle>
 <h3>Удалить Ферму</h3>
+<div class="alert alert-danger" role="alert">
+    Удаляйте запись, только если вы больше не управляете данной огранизацией.
+</div>
 
 <EditForm Model="@Модель" OnValidSubmit="@Submit" disable>
     <DataAnnotationsValidator />

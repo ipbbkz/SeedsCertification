@@ -72,7 +72,9 @@ public class Заявка
     public DateTime ДатаСбора { get; set; }
     public bool Активно { get; set; }
     public int Статус { get; set; }
-    public DateTime ДатаСоздания { get; set; }
+    public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
+    public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
+    public DateTime? ДатаУдаления { get; set; }
 }
 
 public class УчастокПоля
@@ -82,6 +84,9 @@ public class УчастокПоля
     public string АдресУчастка { get; set; }
     public byte[] ПравоустанавливающиеДокументы { get; set; }
     public bool Активно { get; set; }
+    public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
+    public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
+    public DateTime? ДатаУдаления { get; set; }
 }
 
 public class Инспекция
@@ -98,7 +103,9 @@ public class Инспекция
     public string ДругиеИнспектора { get; set; }
     public int ЦелевойНачальныйПорог { get; set; }
     public string? ПричинаОтказа { get; set; }
-    public DateTime ДатаСоздания { get; set; }
+    public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
+    public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
+    public DateTime? ДатаУдаления { get; set; }
 }
 
 public class ЗаписьИнспекции
@@ -120,8 +127,9 @@ public class Анализ
     public int ИнспекцияИд { get; set; }
     public int ТипАнализа { get; set; }
     public int Статус { get; set; }
-    public DateTime ДатаСоздания { get; set; }
-    public DateTime ДатаОбновления { get; set; }
+    public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
+    public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
+    public DateTime? ДатаУдаления { get; set; }
 }
 
 public class ПроизводительСемян
@@ -136,4 +144,7 @@ public class ПроизводительСемян
     public string ЭлектроннаяПочтаКонтактногоЛица { get; set; }
     public string НомерТелефонаКонтактногоЛица { get; set; }
     public bool Активно { get; set; }
+    public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
+    public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
+    public DateTime? ДатаУдаления { get; set; }
 }
