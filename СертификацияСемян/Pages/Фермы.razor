@@ -1,4 +1,4 @@
-﻿@page "/farms"
+﻿@page "/farms/"
 @using System.Security.Claims;
 @using СертификацияСемян.Данные;
 @attribute [Authorize(Policy = "Фермеры")]
@@ -19,6 +19,7 @@ else
                 <td>Юридический Адрес</td>
                 <td>Контакты</td>
                 <td>Активно</td>
+                <td> </td>
             </tr>
         </thead>
         <tbody>
@@ -51,6 +52,12 @@ else
                         {
                             <span class="oi oi-circle-x text-danger"></span>
                         }
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <a href="/farms/edit/@ф.Ид" class="btn btn-primary">Изменить</a>
+                            <a href="/farms/delete/@ф.Ид" class="btn btn-danger"><span class="oi oi-trash"></span></a>
+                        </div>
                     </td>
                 </tr>
             }

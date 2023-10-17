@@ -1,0 +1,58 @@
+﻿@page "/farms/delete/{Ид:int}"
+@inject УправляющийХозяйствами управляющийХозяйствами
+@inject NavigationManager управляющийНавигацией
+@attribute [Authorize(Policy = "Фермеры")]
+
+<PageTitle>Удалить Ферму</PageTitle>
+<h3>Удалить Ферму</h3>
+
+<EditForm Model="@Модель" OnValidSubmit="@Submit" disable>
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <fieldset disabled>
+    <ДанныеФермы Модель=@Модель />
+    </fieldset>
+
+    <button type="submit" class="btn btn-danger">Удалить</button>
+</EditForm>
+@code {
+    [Parameter]
+    public int Ид { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    public Хозяйство? Модель { get; set; }
+
+    protected override void OnInitialized() => Модель ??= new();
+
+    protected override void OnParametersSet()
+    {
+        var хозяйство = управляющийХозяйствами.ПолучитьХозяйство(Ид);
+        if (хозяйство is not null)
+        {
+            Модель.Бин = хозяйство.БинИлиИин;
+            Модель.НаваниеКомпании = хозяйство.НаваниеКомпании;
+            Модель.ЮридическийАдрес = хозяйство.ЮридическийАдрес;
+            Модель.КонтактноеЛицо = хозяйство.КонтактноеЛицо;
+            Модель.ЭлектроннаяПочтаКонтактногоЛица = хозяйство.ЭлектроннаяПочтаКонтактногоЛица;
+            Модель.НомерТелефонаКонтактногоЛица = хозяйство.НомерТелефонаКонтактногоЛица;
+
+        }
+
+        base.OnParametersSet();
+    }
+
+    private async Task Submit()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is null)
+        {
+            return;
+        }
+
+        управляющийХозяйствами.УдалитьХозяйство(Ид);
+        управляющийНавигацией.NavigateTo("/farms");
+    }
+
+}

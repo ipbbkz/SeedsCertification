@@ -1,11 +1,10 @@
-﻿@page "/farms/add"
+﻿@page "/farms/edit/{Ид:int}"
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject NavigationManager управляющийНавигацией
 @attribute [Authorize(Policy = "Фермеры")]
 
-<PageTitle>Добавить Ферму</PageTitle>
-
-<h3>Добавить Ферму</h3>
+<PageTitle>Редактировать Ферму</PageTitle>
+<h3>Редактировать Ферму</h3>
 
 <EditForm Model="@Модель" OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
@@ -15,12 +14,32 @@
     <button type="submit" class="btn btn-primary">Сохранить</button>
 </EditForm>
 @code {
+    [Parameter]
+    public int Ид { get; set; }
+
     [CascadingParameter]
     private Task<AuthenticationState>? состояниеАвторизации { get; set; }
 
     public Хозяйство? Модель { get; set; }
 
     protected override void OnInitialized() => Модель ??= new();
+
+    protected override void OnParametersSet()
+    {
+        var хозяйство = управляющийХозяйствами.ПолучитьХозяйство(Ид);
+        if (хозяйство is not null)
+        {
+            Модель.Бин = хозяйство.БинИлиИин;
+            Модель.НаваниеКомпании = хозяйство.НаваниеКомпании;
+            Модель.ЮридическийАдрес = хозяйство.ЮридическийАдрес;
+            Модель.КонтактноеЛицо = хозяйство.КонтактноеЛицо;
+            Модель.ЭлектроннаяПочтаКонтактногоЛица = хозяйство.ЭлектроннаяПочтаКонтактногоЛица;
+            Модель.НомерТелефонаКонтактногоЛица = хозяйство.НомерТелефонаКонтактногоЛица;
+
+        }
+
+        base.OnParametersSet();
+    }
 
     private async Task Submit()
     {
@@ -30,7 +49,8 @@
             return;
         }
 
-        управляющийХозяйствами.ДобавитьХозяйство(
+        управляющийХозяйствами.ИзменитьХозяйство(
+            Ид,
             идЛичности,
             Модель.НаваниеКомпании,
             Модель.Бин,
