@@ -1,0 +1,46 @@
+﻿@page "/requests/file"
+@using System.Security.Claims;
+@attribute [Authorize(Policy = "Фермеры")]
+@inject УправляющийЗаявками управляющийЗаявками
+@inject NavigationManager управляющийНавигацией
+
+<PageTitle>Подать Заявку</PageTitle>
+
+<h3>Подать Заявку</h3>
+
+<EditForm Model="@Модель" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <ДанныеЗаявки Модель=@Модель />
+
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+</EditForm>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    public МодельЗаявки? Модель { get; set; }
+
+    protected override void OnInitialized() => Модель ??= new();
+
+    private async Task Submit()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is null)
+        {
+            return;
+        }
+
+        // управляющийЗаявками.ДобавитьЗаявку(
+        //     идЛичности,
+        //     Модель.НаваниеКомпании,
+        //     Модель.Бин,
+        //     Модель.ЮридическийАдрес,
+        //     Модель.КонтактноеЛицо,
+        //     Модель.ЭлектроннаяПочтаКонтактногоЛица,
+        //     Модель.НомерТелефонаКонтактногоЛица);
+        управляющийНавигацией.NavigateTo("/requests");
+    }
+
+}

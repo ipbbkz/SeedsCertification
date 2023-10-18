@@ -1,0 +1,254 @@
+﻿@using GoogleMapsComponents
+@using GoogleMapsComponents.Maps
+@inject IJSRuntime JSRuntime
+
+<label class="form-label">
+    Тип сертификации
+</label>
+<InputSelect @bind-Value="Модель!.ТипЗаявки" class="form-control">
+    <option value="">Выберите тип сертификации ...</option>
+    <option value="1">Картофель</option>
+</InputSelect>
+
+
+<label class="form-label">
+    Навание сорта семян
+</label>
+<InputText @bind-Value="Модель!.НаваниеСортаСемян" class="form-control" />
+
+<label class="form-label">
+    Класс семян
+</label>
+<InputSelect @bind-Value="Модель!.КлассСемянИд" class="form-control">
+    <option value="">Выберите класс семян ...</option>
+    <option value="1">Предбазисный PBTC</option>
+    <option value="2">Предбазисный PB</option>
+    <option value="3">Базисный S</option>
+    <option value="4">Базисный SE</option>
+    <option value="5">Базисный Е</option>
+    <option value="6">Сертифицированный А</option>
+    <option value="7">Сертифицированный В</option>
+</InputSelect>
+
+<label class="form-label">
+    Размер Клубня
+</label>
+<InputNumber @bind-Value="Модель!.РазмерКлубня" class="form-control" />
+
+<label class="form-label">
+    КоординатыУчастка
+</label>
+<InputText @bind-Value="Модель!.КоординатыУчастка" class="form-control" disabled />
+
+<div style="height: 400px" class="mt-3">
+    <GoogleMap @ref="@map1" Id="map1" Options="@mapOptions" Height="100%" OnAfterInit="OnAfterInitAsync"></GoogleMap>
+</div>
+@{
+    var прошлыйГод = DateTime.UtcNow.Year - 1;
+    var дваГодаНазад = DateTime.UtcNow.Year - 2;
+    var триГодаНазад = DateTime.UtcNow.Year - 3;
+}
+<label class="form-label">
+    Севооборот @прошлыйГод
+</label>
+<InputTextArea @bind-Value="Модель!.СевооборотПрошлогоГода" class="form-control" />
+
+<label class="form-label">
+    Севооборот @дваГодаНазад
+</label>
+<InputTextArea @bind-Value="Модель!.Севооборот2ГодаНазад" class="form-control" />
+
+<label class="form-label">
+    Севооборот @триГодаНазад
+</label>
+<InputTextArea @bind-Value="Модель!.Севооборот3ГодаНазад" class="form-control" />
+
+<label class="form-label">
+    ИзоляцияПолей
+</label>
+<InputTextArea @bind-Value="Модель!.ИзоляцияПолей" class="form-control" />
+
+<label class="form-label">
+    СвидетельствоПроисхожденияСемян
+</label>
+<InputFile @bind-Value="Модель!.СвидетельствоПроисхожденияСемян" class="form-control" />
+
+<label class="form-label">
+    ЗаключениеОНематодах
+</label>
+<InputFile @bind-Value="Модель!.ЗаключениеОНематодах" class="form-control" />
+
+<h3>Обработка участка</h3>
+
+<label class="form-label">
+    Протравители
+</label>
+<InputText @bind-Value="Модель!.Протравители" class="form-control" />
+
+<label class="form-label">
+    Инсектициды
+</label>
+<InputText @bind-Value="Модель!.Инсектициды" class="form-control" />
+
+<label class="form-label">
+    Фунгициды
+</label>
+<InputText @bind-Value="Модель!.Фунгициды" class="form-control" />
+
+<label class="form-label">
+    Удобрения
+</label>
+<InputText @bind-Value="Модель!.Удобрения" class="form-control" />
+
+<label class="form-label">
+    Гербициды
+</label>
+<InputText @bind-Value="Модель!.Гербициды" class="form-control" />
+
+<h3>Параметры участка и засева</h3>
+<div class="row">
+    <div class="col col-md-4">
+        <label class="form-label">
+            ФормаУчастка
+        </label>
+        <InputSelect @bind-Value="Модель!.ФормаУчастка" class="form-control">
+            <option value="">Выберите форму участка ...</option>
+            <option value="1">Квадратная</option>
+            <option value="2">Прямоугольная</option>
+            <option value="3">Круглая</option>
+            <option value="4">Нестандартная</option>
+        </InputSelect>
+    </div>
+    <div class="col col-md-4">
+        <div class="col col-md-4">
+            @if (Модель!.ФормаУчастка == 1 || Модель!.ФормаУчастка == 2 || Модель!.ФормаУчастка == 3)
+            {
+                var text = Модель!.ФормаУчастка switch
+                {
+                    1 => "Сторона",
+                    2 => "Длина",
+                    3 => "Радиус",
+                    _ => throw new InvalidOperationException()
+                };
+                <label class="form-label">
+                    Размер1
+                </label>
+                <InputText @bind-Value="Модель!.Размер1" class="form-control" />
+            }
+        </div>
+    </div>
+    <div class="col col-md-4">
+        <div class="col col-md-4">
+            @if (Модель!.ФормаУчастка == 2)
+            {
+                <label class="form-label">
+                    Ширина
+                </label>
+                <InputText @bind-Value="Модель!.Размер2" class="form-control" />
+            }
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-md-4">
+        <label class="form-label">
+            ПлощадьПосадки
+        </label>
+        <InputText @bind-Value="Модель!.ПлощадьПосадки" class="form-control" />
+    </div>
+    <div class="col col-md-4">
+        <label class="form-label">
+            РасстояниеМеждуРядами
+        </label>
+        <InputText @bind-Value="Модель!.РасстояниеМеждуРядами" class="form-control" />
+    </div>
+    <div class="col col-md-4">
+        <label class="form-label">
+            РасстояниеВРяду
+        </label>
+        <InputText @bind-Value="Модель!.РасстояниеВРяду" class="form-control" />
+    </div>
+</div>
+<div class="row">
+    <div class="col col-md-4">
+        <label class="form-label">
+            ДатаПосадки
+        </label>
+        <InputDate @bind-Value="Модель!.ДатаПосадки" class="form-control" />
+    </div>
+    <div class="col col-md-4">
+        <label class="form-label">
+            ДатаСбора
+        </label>
+        <InputDate @bind-Value="Модель!.ДатаСбора" class="form-control" />
+    </div>
+</div>
+
+<label class="form-label">
+    ПрогнозируемоеКоличествоУрожая
+</label>
+<InputText @bind-Value="Модель!.ПрогнозируемоеКоличествоУрожая" class="form-control" />
+
+
+
+@code {
+    private GoogleMap map1;
+    private MapOptions mapOptions;
+
+    [Parameter]
+    public МодельЗаявки Модель { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
+        var center = new LatLngLiteral()
+            {
+                Lng = location[0],
+                Lat = location[1],
+            };
+        Модель!.КоординатыУчастка = $"{location[0]},{location[1]}";
+
+        mapOptions = new MapOptions()
+        {
+            Zoom = 15,
+            Center = center,
+            MapTypeId = MapTypeId.Roadmap
+        };
+    }
+
+    private async Task OnAfterInitAsync()
+    {
+        var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
+        var center = new LatLngLiteral()
+            {
+                Lat = location[0],
+                Lng = location[1],
+            };
+
+        Модель!.КоординатыУчастка = $"{location[0]},{location[1]}";
+
+        var инфоОкно = await InfoWindow.CreateAsync(
+            this.JSRuntime,
+            new InfoWindowOptions()
+                {
+                    Content = "Выберите где расположен участок, на котором будут производиться семена",
+                    Position = center,
+                });
+
+        await инфоОкно.Open(map1.InteropObject);
+        await map1.InteropObject.AddListener<MouseEvent>("click", async (e) =>
+        {
+            await инфоОкно.Close();
+            инфоОкно = await InfoWindow.CreateAsync(this.JSRuntime,
+                new InfoWindowOptions()
+                    {
+                        Content = "Выберите где расположен участок, на котором будут производиться семена",
+                        Position = e.LatLng,
+                    });
+            await инфоОкно.Open(map1.InteropObject);
+
+            Модель!.КоординатыУчастка = $"{e.LatLng.Lat},{e.LatLng.Lng}";
+            //StateHasChanged();
+        });
+    }
+}
