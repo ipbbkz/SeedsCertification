@@ -84,6 +84,7 @@ public class Заявка
 public class УчастокПоля
 {
     public int Ид { get; set; }
+    public int ИдХозяйства { get; set; }
     public string Название { get; set; }
     public string АдресУчастка { get; set; }
     public byte[] ПравоустанавливающиеДокументы { get; set; }
@@ -91,6 +92,9 @@ public class УчастокПоля
     public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
     public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
     public DateTime? ДатаУдаления { get; set; }
+
+    [ForeignKey(nameof(ИдХозяйства))]
+    public ПроизводительСемян ПроизводительСемян { get; set; }
 }
 
 public class Инспекция

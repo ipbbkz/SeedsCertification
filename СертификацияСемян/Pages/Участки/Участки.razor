@@ -1,0 +1,65 @@
+﻿@page "/farms/{Ид:int}/patches"
+@using System.Security.Claims;
+@using СертификацияСемян.Данные;
+@attribute [Authorize(Policy = "Фермеры")]
+@inject УправляющийХозяйствами управляющийХозяйствами
+<h3>Фермы</h3>
+@if (участки.Count == 0)
+{
+    <p><a href="/farms/@Ид/patches/add">Создайте</a> участок</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Название</td>
+                <td>Адрес Участка</td>
+                <td> </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ф in участки)
+            {
+                <tr>
+                    <td>
+                        @ф.Название
+                    </td>
+                    <td>
+                        @ф.АдресУчастка
+                    </td>
+                    <td>
+                        @ф.Активно
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <a href="/farms/@Ид/patches/@ф.Ид/edit" class="btn btn-primary">Изменить</a>
+                            <a href="/farms/@Ид/patches/@ф.Ид/delete" class="btn btn-danger"><span class="oi oi-trash"></span></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public int Ид { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    private IList<УчастокПоля> участки = Array.Empty<УчастокПоля>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is not null)
+        {
+            участки = управляющийХозяйствами.ПолучитьУчасткиХозяйства(Ид);
+        }
+
+        await base.OnParametersSetAsync();
+    }
+}
