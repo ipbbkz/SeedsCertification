@@ -3,9 +3,9 @@
 @inject NavigationManager управляющийНавигацией
 @attribute [Authorize(Policy = "Фермеры")]
 
-<PageTitle>Добавить Поле</PageTitle>
+<PageTitle>Удалить поле @Модель.Название</PageTitle>
 
-<h3>Добавить Поле</h3>
+<h3>Удалить поле @Модель.Название</h3>
 
 <EditForm Model="@Модель" OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
@@ -14,7 +14,7 @@
         <ДанныеПоля Модель=@Модель />
     </fieldset>
 
-    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <button type="submit" class="btn btn-danger">Удалить</button>
 </EditForm>
 @code {
     [Parameter]

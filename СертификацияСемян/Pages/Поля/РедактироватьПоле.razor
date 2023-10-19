@@ -3,9 +3,9 @@
 @inject NavigationManager управляющийНавигацией
 @attribute [Authorize(Policy = "Фермеры")]
 
-<PageTitle>Добавить Поле</PageTitle>
+<PageTitle>Редактировать поле @Модель.Название</PageTitle>
 
-<h3>Добавить Поле</h3>
+    <h3>Редактировать поле @Модель.Название</h3>
 
 <EditForm Model="@Модель" OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
