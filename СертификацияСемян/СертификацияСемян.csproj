@@ -37,6 +37,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Компоненты\ДанныеУчастка.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Areas\Identity\Pages\Account\Login.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Login.Designer.cs</LastGenOutput>

@@ -1,0 +1,18 @@
+﻿@inject ILogger<ДанныеПоля> протоколировщик
+@inject IWebHostEnvironment окружение
+
+<label class="form-label">
+    Название <span class="text-danger">*</span>
+</label>
+<InputText @bind-Value="Модель!.Название" class="form-control" />
+
+<label class="form-label">
+    Координаты <span class="text-danger">*</span>
+</label>
+<InputText @bind-Value="Модель!.КоординатыУчастка" class="form-control" />
+
+
+@code {
+    [Parameter]
+    public УчастокПоля Модель { get; set; }
+}

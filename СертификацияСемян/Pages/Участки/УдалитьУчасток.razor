@@ -1,18 +1,20 @@
-﻿@page "/farms/{Ид:int}/fields/{ИдПоля:int}/patches/add"
+﻿@page "/farms/{Ид:int}/fields/{ИдПоля:int}/patches/{ИдУчастка:int}/delete"
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject NavigationManager управляющийНавигацией
 @attribute [Authorize(Policy = "Фермеры")]
 
-<PageTitle>Добавить участок</PageTitle>
+<PageTitle>Удалить участок</PageTitle>
 
-<h3>Добавить участок</h3>
+<h3>Удалить участок</h3>
 
 <EditForm Model="@Модель" OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
     <ValidationSummary />
-    <ДанныеУчастка Модель=@Модель />
+    <fieldset disabled>
+        <ДанныеУчастка Модель=@Модель />
+    </fieldset>
 
-    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <button type="submit" class="btn btn-danger">Удалить</button>
 </EditForm>
 @code {
     [Parameter]
@@ -21,12 +23,27 @@
     [Parameter]
     public int ИдПоля { get; set; }
 
+    [Parameter]
+    public int ИдУчастка { get; set; }
+
     [CascadingParameter]
     private Task<AuthenticationState>? состояниеАвторизации { get; set; }
 
     public УчастокПоля? Модель { get; set; }
 
     protected override void OnInitialized() => Модель ??= new();
+
+    protected override void OnParametersSet()
+    {
+        var поле = управляющийХозяйствами.ПолучитьУчасток(ИдУчастка);
+        if (поле is not null)
+        {
+            Модель.Название = поле.Название;
+            Модель.КоординатыУчастка = поле.КоординатыУчастка;
+        }
+
+        base.OnParametersSet();
+    }
 
     private async Task Submit()
     {
@@ -36,10 +53,7 @@
             return;
         }
 
-        управляющийХозяйствами.ДобавитьУчасток(
-            ИдПоля,
-            Модель.Название,
-            Модель.КоординатыУчастка);
+        управляющийХозяйствами.УдалитьУчасток(ИдУчастка);
         управляющийНавигацией.NavigateTo($"/farms/{Ид}/fields/{ИдПоля}/patches");
     }
 
