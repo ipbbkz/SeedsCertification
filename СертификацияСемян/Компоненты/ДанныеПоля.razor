@@ -1,0 +1,70 @@
+﻿@inject ILogger<ДанныеПоля> протоколировщик
+@inject IWebHostEnvironment окружение
+
+<label class="form-label">
+    Название <span class="text-danger">*</span>
+</label>
+<InputText @bind-Value="Модель!.Название" class="form-control" />
+
+<label class="form-label">
+    Адрес <span class="text-danger">*</span>
+</label>
+<InputText @bind-Value="Модель!.АдресПоля" class="form-control" />
+
+<label class="form-label">
+    Правоустанавливающие Документы <span class="text-danger">*</span>
+</label>
+<InputFile OnChange="@LoadFiles" class="form-control" />
+@if (загружается)
+{
+    <p>Загружаем...</p>
+}
+else
+{
+    if (загруженныеФайлы.Count > 0)
+    {
+        <p>Документ загружен</p>
+    }
+}
+
+@code {
+    [Parameter]
+    public МодельПоля Модель { get; set; }
+
+    private List<IBrowserFile> загруженныеФайлы = new();
+    private long максРазмерФайла = 1024 * 1024 * 15;
+    private int максКоличествоФайлов = 1;
+    private bool загружается;
+
+    private async Task LoadFiles(InputFileChangeEventArgs e)
+    {
+        Directory.CreateDirectory(Path.Combine(окружение.ContentRootPath, "uploads", "intermediate"));
+        загружается = true;
+        загруженныеФайлы.Clear();
+
+        foreach (var файл in e.GetMultipleFiles(максКоличествоФайлов))
+        {
+            try
+            {
+                загруженныеФайлы.Add(файл);
+
+                var trustedFileNameForFileStorage = Path.GetRandomFileName();
+                var path = Path.Combine(окружение.ContentRootPath, "uploads", "intermediate", trustedFileNameForFileStorage);
+
+                await using (FileStream fs = new(path, FileMode.Create))
+                {
+                    await файл.OpenReadStream(максРазмерФайла).CopyToAsync(fs);
+                }
+
+                Модель.ПравоустанавливающиеДокументы = File.ReadAllBytes(path);
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                протоколировщик.LogError("Файл: {Filename} Ошибка: {Error}", файл.Name, ex.Message);
+            }
+        }
+
+        загружается = false;
+    }
+}

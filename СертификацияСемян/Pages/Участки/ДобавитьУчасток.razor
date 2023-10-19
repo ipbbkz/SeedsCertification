@@ -1,0 +1,50 @@
+﻿@page "/farms/{Ид:int}/fields/{ИдПоля:int}/patches/add"
+@inject УправляющийХозяйствами управляющийХозяйствами
+@inject NavigationManager управляющийНавигацией
+@attribute [Authorize(Policy = "Фермеры")]
+
+<PageTitle>Добавить Ферму</PageTitle>
+
+<h3>Добавить Ферму</h3>
+
+<EditForm Model="@Модель" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <ДанныеУчастка Модель=@Модель />
+
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+</EditForm>
+@code {
+    [Parameter]
+    public int Ид { get; set; }
+
+    [Parameter]
+    public int ИдПоля { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    public Хозяйство? Модель { get; set; }
+
+    protected override void OnInitialized() => Модель ??= new();
+
+    private async Task Submit()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is null)
+        {
+            return;
+        }
+
+        управляющийХозяйствами.ДобавитьХозяйство(
+            идЛичности,
+            Модель.НаваниеКомпании,
+            Модель.Бин,
+            Модель.ЮридическийАдрес,
+            Модель.КонтактноеЛицо,
+            Модель.ЭлектроннаяПочтаКонтактногоЛица,
+            Модель.НомерТелефонаКонтактногоЛица);
+        управляющийНавигацией.NavigateTo("/farms");
+    }
+
+}

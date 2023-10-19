@@ -1,12 +1,14 @@
-﻿@page "/farms/{Ид:int}/fields/{ИдПоля:int}/patches"
+﻿@page "/farms/{Ид:int}/fields"
 @using System.Security.Claims;
 @using СертификацияСемян.Данные;
 @attribute [Authorize(Policy = "Фермеры")]
 @inject УправляющийХозяйствами управляющийХозяйствами
-<h3>Фермы</h3>
+
+<PageTitle>Поля</PageTitle>
+<h3>Поля</h3>
 @if (участки.Count == 0)
 {
-    <p><a href="/farms/@Ид/patches/add">Создайте</a> участок</p>
+    <p><a href="/farms/@Ид/fields/add">Создайте</a> поле</p>
 }
 else
 {
@@ -14,7 +16,8 @@ else
         <thead>
             <tr>
                 <td>Название</td>
-                <td>Координаты</td>
+                <td>Адрес</td>
+                <td>Документы</td>
                 <td> </td>
             </tr>
         </thead>
@@ -26,15 +29,15 @@ else
                         @ф.Название
                     </td>
                     <td>
-                        @ф.КоординатыУчастка
+                        @ф.АдресПоля
                     </td>
                     <td>
-                        @ф.Активно
+                        <a href="/farms/@Ид/fields/@ф.Ид/documents" target="_blank">Просмотр</a>
                     </td>
                     <td>
                         <div class="btn-group">
-                            <a href="/farms/@Ид/patches/@ф.Ид/edit" class="btn btn-primary">Изменить</a>
-                            <a href="/farms/@Ид/patches/@ф.Ид/delete" class="btn btn-danger"><span class="oi oi-trash"></span></a>
+                            <a href="/farms/@Ид/fields/@ф.Ид/edit" class="btn btn-primary">Изменить</a>
+                            <a href="/farms/@Ид/fields/@ф.Ид/delete" class="btn btn-danger"><span class="oi oi-trash"></span></a>
                         </div>
                     </td>
                 </tr>
@@ -47,20 +50,17 @@ else
     [Parameter]
     public int Ид { get; set; }
 
-    [Parameter]
-    public int ИдПоля { get; set; }
-
     [CascadingParameter]
     private Task<AuthenticationState>? состояниеАвторизации { get; set; }
 
-    private IList<УчастокПоля> участки = Array.Empty<УчастокПоля>();
+    private IList<Поле> участки = Array.Empty<Поле>();
 
     protected override async Task OnParametersSetAsync()
     {
         var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
         if (идЛичности is not null)
         {
-            участки = управляющийХозяйствами.ПолучитьУчасткиПоля(ИдПоля);
+            участки = управляющийХозяйствами.ПолучитьПоляХозяйства(Ид);
         }
 
         await base.OnParametersSetAsync();

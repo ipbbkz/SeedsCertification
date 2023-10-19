@@ -365,3 +365,4 @@ FodyWeavers.xsd
 # Project ignores
 wwwroot/css/bootstrap/
 /СертификацияСемян/wwwroot/css/bootstrap
+/СертификацияСемян/uploads/intermediate

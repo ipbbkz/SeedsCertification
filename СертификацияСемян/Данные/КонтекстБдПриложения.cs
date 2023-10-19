@@ -14,6 +14,7 @@ public class КонтекстБдПриложения : IdentityDbContext
 
     public DbSet<ПроизводительСемян> ПроизводителиСемян { get; set; }
     public DbSet<Заявка> Заявки { get; set; }
+    public DbSet<Поле> Поля { get; set; }
     public DbSet<УчастокПоля> УчасткиПолей { get; set; }
     public DbSet<Инспекция> Инспекции { get; set; }
     public DbSet<ЗаписьИнспекции> ЗаписиИнспекций { get; set; }
@@ -23,6 +24,7 @@ public class КонтекстБдПриложения : IdentityDbContext
     {
         builder.Entity<ПроизводительСемян>().HasKey(nameof(ПроизводительСемян.Ид));
         builder.Entity<Заявка>().HasKey(nameof(Заявка.Ид));
+        builder.Entity<Поле>().HasKey(nameof(Поле.Ид));
         builder.Entity<УчастокПоля>().HasKey(nameof(УчастокПоля.Ид));
         builder.Entity<Инспекция>().HasKey(nameof(Инспекция.Ид));
         builder.Entity<ЗаписьИнспекции>().HasKey(nameof(ЗаписьИнспекции.Ид));
@@ -81,12 +83,12 @@ public class Заявка
     public ПроизводительСемян ПроизводительСемян { get; set; }
 }
 
-public class УчастокПоля
+public class Поле
 {
     public int Ид { get; set; }
     public int ИдХозяйства { get; set; }
     public string Название { get; set; }
-    public string АдресУчастка { get; set; }
+    public string АдресПоля { get; set; }
     public byte[] ПравоустанавливающиеДокументы { get; set; }
     public bool Активно { get; set; }
     public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
@@ -95,6 +97,21 @@ public class УчастокПоля
 
     [ForeignKey(nameof(ИдХозяйства))]
     public ПроизводительСемян ПроизводительСемян { get; set; }
+}
+
+public class УчастокПоля
+{
+    public int Ид { get; set; }
+    public int ИдПоля { get; set; }
+    public string Название { get; set; }
+    public string КоординатыУчастка { get; set; }
+    public bool Активно { get; set; }
+    public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
+    public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
+    public DateTime? ДатаУдаления { get; set; }
+
+    [ForeignKey(nameof(ИдПоля))]
+    public Поле Поле { get; set; }
 }
 
 public class Инспекция
