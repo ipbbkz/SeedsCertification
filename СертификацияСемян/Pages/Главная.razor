@@ -1,29 +1,28 @@
 ﻿@page "/"
 @attribute [Authorize]
+@inject IStringLocalizer<Главная> Лок
+<PageTitle>@Лок["ГлавнаяСтраница"]</PageTitle>
 
-<PageTitle>Главная</PageTitle>
-
-<h1>Главная страница!</h1>
+<h1>@Лок["ГлавнаяСтраница"]!</h1>
 
 <div class="row">
     <div class="col col-md-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Зарегистрировать хозяйство</h5>
-                <p class="card-text">Чтобы подать заявку, надо зарегистрировать ферму или хозяйство, на котором будет проходить сертификация.</p>
-                <a href="/farms/add" class="btn btn-primary">Перейти</a>
+                <h5 class="card-title">@Лок["ЗарегистрироватьХозяйство"]</h5>
+                <p class="card-text">@Лок["КакПодатьЗаявку"].</p>
+                <a href="/farms/add" class="btn btn-primary">@Лок["Перейти"]</a>
             </div>
         </div>
     </div>
     <div class="col col-md-4 ">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Подать заявку</h5>
+                <h5 class="card-title">@Лок["ПодатьЗаявку"]</h5>
                 <p class="card-text">
-                    Для того чтобы сертифицировать семена, вам сперва необходимо подать заявку.
-                    После прохождения инспекций, вам будет выдан электронный сертификат.
+                    @Лок["КакСертифицировать"].
                 </p>
-                <a href="/requests/file" class="btn btn-primary">Подать</a>
+                <a href="/requests/file" class="btn btn-primary">@Лок["Подать"]</a>
             </div>
         </div>
     </div>

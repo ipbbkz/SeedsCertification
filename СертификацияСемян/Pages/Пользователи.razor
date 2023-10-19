@@ -3,10 +3,11 @@
 @using Microsoft.AspNetCore.Identity
 @using СертификацияСемян.Данные;
 @inject UserManager<IdentityUser> МенеджерПользователей
+@inject IStringLocalizer<Пользователи> Лок
 
-<PageTitle>Фермеры</PageTitle>
+<PageTitle>@Лок["Фермеры"]</PageTitle>
 <h3>
-    Фермеры
+    @Лок["Фермеры"]
 </h3>
 
 <table class="table">
