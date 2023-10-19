@@ -6,7 +6,7 @@
 
 <PageTitle>Поля</PageTitle>
 <h3>Поля</h3>
-@if (участки.Count == 0)
+@if (поля.Count == 0)
 {
     <p><a href="/farms/@Ид/fields/add">Создайте</a> поле</p>
 }
@@ -22,22 +22,22 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var ф in участки)
+            @foreach (var п in поля)
             {
                 <tr>
                     <td>
-                        @ф.Название
+                        @п.Название
                     </td>
                     <td>
-                        @ф.АдресПоля
+                        @п.АдресПоля
                     </td>
                     <td>
-                        <a href="/farms/@Ид/fields/@ф.Ид/documents" target="_blank">Просмотр</a>
+                        <a href="/farms/@Ид/fields/@п.Ид/documents" target="_blank">Просмотр</a>
                     </td>
                     <td>
                         <div class="btn-group">
-                            <a href="/farms/@Ид/fields/@ф.Ид/edit" class="btn btn-primary">Изменить</a>
-                            <a href="/farms/@Ид/fields/@ф.Ид/delete" class="btn btn-danger"><span class="oi oi-trash"></span></a>
+                            <a href="/farms/@Ид/fields/@п.Ид/edit" class="btn btn-primary">Изменить</a>
+                            <a href="/farms/@Ид/fields/@п.Ид/delete" class="btn btn-danger"><span class="oi oi-trash"></span></a>
                         </div>
                     </td>
                 </tr>
@@ -53,14 +53,14 @@ else
     [CascadingParameter]
     private Task<AuthenticationState>? состояниеАвторизации { get; set; }
 
-    private IList<Поле> участки = Array.Empty<Поле>();
+    private IList<Поле> поля = Array.Empty<Поле>();
 
     protected override async Task OnParametersSetAsync()
     {
         var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
         if (идЛичности is not null)
         {
-            участки = управляющийХозяйствами.ПолучитьПоляХозяйства(Ид);
+            поля = управляющийХозяйствами.ПолучитьПоляХозяйства(Ид);
         }
 
         await base.OnParametersSetAsync();
