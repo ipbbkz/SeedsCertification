@@ -11,7 +11,7 @@
 <EditForm Model="@Модель" OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
     <ValidationSummary />
-    <ДанныеЗаявки Модель=@Модель />
+    <ДанныеЗаявки Модель=@Модель Пользователь=@ИдЛичности />
 
     <button type="submit" class="btn btn-primary">Сохранить</button>
 </EditForm>
@@ -21,8 +21,15 @@
     private Task<AuthenticationState>? состояниеАвторизации { get; set; }
 
     public МодельЗаявки? Модель { get; set; }
+    public string ИдЛичности { get; set; } = "";
 
     protected override void OnInitialized() => Модель ??= new();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        ИдЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности() ?? "";
+        await base.OnParametersSetAsync();
+    }
 
     private async Task Submit()
     {

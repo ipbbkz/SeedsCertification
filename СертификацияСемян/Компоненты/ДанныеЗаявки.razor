@@ -1,5 +1,6 @@
 ﻿@using GoogleMapsComponents
 @using GoogleMapsComponents.Maps
+@inject УправляющийХозяйствами управляющийХозяйствами
 @inject IJSRuntime JSRuntime
 
 <label class="form-label">
@@ -10,11 +11,15 @@
     <option value="1">Картофель</option>
 </InputSelect>
 
-
 <label class="form-label">
     Навание сорта семян
 </label>
 <InputText @bind-Value="Модель!.НаваниеСортаСемян" class="form-control" />
+
+<label class="form-label">
+    Размер Клубня
+</label>
+<InputNumber @bind-Value="Модель!.РазмерКлубня" class="form-control" />
 
 <label class="form-label">
     Класс семян
@@ -30,10 +35,44 @@
     <option value="7">Сертифицированный В</option>
 </InputSelect>
 
-<label class="form-label">
-    Размер Клубня
-</label>
-<InputNumber @bind-Value="Модель!.РазмерКлубня" class="form-control" />
+<div class="row">
+    <div class="col">
+        <label class="form-label">
+            Хозяйство
+        </label>
+        <InputSelect Value=@Модель!.ИдХозяйства class="form-control" ValueExpression=@(() => Модель.ИдХозяйства) ValueChanged=@((int? p) => ПриИзменениеХозяйства(p))>
+            <option value="">Выберите хозяйство ...</option>
+            @foreach (var х in Хозяйства)
+            {
+                <option value=@х.Ид>@х.НаваниеКомпании</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="col">
+        <label class="form-label">
+            Поля
+        </label>
+        <InputSelect Value=@Модель!.ИдПоля class="form-control" ValueExpression=@(() => Модель.ИдПоля) ValueChanged=@((int? p) => ПриИзменениеПоля(p))>
+            <option value="">Выберите поле ...</option>
+            @foreach (var х in Поля)
+            {
+                <option value=@х.Ид>@х.Название</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="col">
+        <label class="form-label">
+            Участки
+        </label>
+        <InputSelect Value=@Модель!.ИдУчастка class="form-control" ValueExpression=@(() => Модель.ИдУчастка) ValueChanged=@((int? p) => ПриИзменениеУчастка(p))>
+            <option value="">Выберите участок на поле ...</option>
+            @foreach (var х in УчасткиПоля)
+            {
+                <option value=@х.Ид>@х.Название</option>
+            }
+        </InputSelect>
+    </div>
+</div>
 
 <label class="form-label">
     КоординатыУчастка
@@ -198,6 +237,15 @@
     [Parameter]
     public МодельЗаявки Модель { get; set; }
 
+    [Parameter]
+    public string Пользователь { get; set; }
+
+    public List<ПроизводительСемян> Хозяйства { get; set; } = new();
+
+    public List<Поле> Поля { get; set; } = new();
+
+    public List<УчастокПоля> УчасткиПоля { get; set; } = new();
+
     protected override async Task OnInitializedAsync()
     {
         var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
@@ -214,6 +262,39 @@
             Center = center,
             MapTypeId = MapTypeId.Roadmap
         };
+    }
+
+    protected override void OnParametersSet()
+    {
+        Хозяйства = управляющийХозяйствами.ПолучитьХозяйстваПользователя(Пользователь);
+        ПриИзменениеХозяйства(Модель.ИдХозяйства);
+        ПриИзменениеПоля(Модель.ИдПоля);
+        base.OnParametersSet();
+    }
+
+    private void ПриИзменениеХозяйства(int? новоеЗначение)
+    {
+        Модель.ИдХозяйства = новоеЗначение;
+        if (новоеЗначение.HasValue)
+        {
+            Поля.Clear();
+            Поля = управляющийХозяйствами.ПолучитьПоляХозяйства(новоеЗначение.Value);
+        }
+    }
+
+    private void ПриИзменениеПоля(int? новоеЗначение)
+    {
+        Модель.ИдПоля = новоеЗначение;
+        if (новоеЗначение.HasValue)
+        {
+            УчасткиПоля.Clear();
+            УчасткиПоля = управляющийХозяйствами.ПолучитьУчасткиПоля(новоеЗначение.Value);
+        }
+    }
+
+    private void ПриИзменениеУчастка(int? новоеЗначение)
+    {
+        Модель.ИдУчастка = новоеЗначение;
     }
 
     private async Task OnAfterInitAsync()

@@ -44,6 +44,7 @@ public class КонтекстБдПриложения : IdentityDbContext
 public class Заявка
 {
     public int Ид { get; set; }
+    public int ИдУчастка { get; set; }
 
     public int ТипЗаявки { get; set; }
     public string НаваниеСортаСемян { get; set; }

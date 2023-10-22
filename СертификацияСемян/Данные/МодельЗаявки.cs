@@ -12,7 +12,14 @@ public class МодельЗаявки
     [Required]
     public int? КлассСемянИд { get; set; }
 
-    public int УчастокИд { get; set; }
+    [Required]
+    public int? ИдХозяйства { get; set; }
+
+    [Required]
+    public int? ИдПоля { get; set; }
+
+    [Required]
+    public int? ИдУчастка { get; set; }
 
     public int РазмерКлубня { get; set; }
 
