@@ -1,14 +1,16 @@
-﻿<div class="mb-3 row">
+﻿@inject IStringLocalizer<ДанныеФермы> Лок
+
+<div class="mb-3 row">
     <div class="col-sm-12 col-md-2">
         <label class="form-label">
-            БИН/ИИН <span class="text-danger">*</span>
+            @Лок["БИНИИН"] <span class="text-danger">*</span>
         </label>
     </div>
     <div class="col-sm-12 col-md-3 d-grid gap-2">
     </div>
     <div class="col-sm-12 col-md-7 d-grid gap-2">
         <label class="form-label">
-            Навание Компании <span class="text-danger">*</span>
+            @Лок["НазваниеКомпании"] <span class="text-danger">*</span>
         </label>
     </div>
 </div>
@@ -17,7 +19,7 @@
         <InputText @bind-Value="Модель!.Бин" class="form-control" />
     </div>
     <div class="col-sm-12 col-md-3 d-grid gap-2">
-        <button type="button" @onclick=ПолучитьДанныеПоБин class="btn btn-outline-primary">Получить данные по БИН/ИИН</button>
+        <button type="button" @onclick=ПолучитьДанныеПоБин class="btn btn-outline-primary">@Лок["ПолучитьДанные"]</button>
     </div>
     <div class="col-sm-12 col-md-7">
         <InputText @bind-Value="Модель!.НаваниеКомпании" class="form-control" />
@@ -25,28 +27,28 @@
 </div>
 
 <label class="form-label">
-    Юридический Адрес
+    @Лок["ЮридическийАдрес"]
 </label>
 <InputText @bind-Value="Модель!.ЮридическийАдрес" class="form-control" />
 
-<h3>Контактное Лицо</h3>
+<h3>@Лок["КонтактноеЛицо"]</h3>
 
 <div class="mb-3 row">
     <div class="col-sm-12 col-md-4">
         <label class="form-label">
-            Контактное Лицо <span class="text-danger">*</span>
+            @Лок["КонтактноеЛицо"] <span class="text-danger">*</span>
         </label>
         <InputText @bind-Value="Модель!.КонтактноеЛицо" class="form-control" />
     </div>
     <div class="col-sm-12 col-md-4">
         <label class="form-label">
-            Электронная Почта <span class="text-danger">*</span>
+            @Лок["ЭлектроннаяПочта"] <span class="text-danger">*</span>
         </label>
         <InputText @bind-Value="Модель!.ЭлектроннаяПочтаКонтактногоЛица" type="email" class="form-control" />
     </div>
     <div class="col-sm-12 col-md-4">
         <label class="form-label">
-            Номер Телефона <span class="text-danger">*</span>
+            @Лок["НомерТелефона"] <span class="text-danger">*</span>
         </label>
         <InputText @bind-Value="Модель!.НомерТелефонаКонтактногоЛица" type="tel" class="form-control" />
     </div>

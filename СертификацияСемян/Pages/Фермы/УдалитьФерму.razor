@@ -1,12 +1,13 @@
 ﻿@page "/farms/delete/{Ид:int}"
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<УдалитьФерму> Лок
 @attribute [Authorize(Policy = "Фермеры")]
 
-<PageTitle>Удалить Ферму</PageTitle>
-<h3>Удалить Ферму</h3>
+<PageTitle>@Лок["УдалитьФерму"]</PageTitle>
+<h3>@Лок["УдалитьФерму"]</h3>
 <div class="alert alert-danger" role="alert">
-    Удаляйте запись, только если вы больше не управляете данной огранизацией.
+    @Лок["УдаляйтеЗапись"].
 </div>
 
 <EditForm Model="@Модель" OnValidSubmit="@Submit" disable>
@@ -16,7 +17,7 @@
     <ДанныеФермы Модель=@Модель />
     </fieldset>
 
-    <button type="submit" class="btn btn-danger">Удалить</button>
+    <button type="submit" class="btn btn-danger">@Лок["Удалить"]</button>
 </EditForm>
 @code {
     [Parameter]

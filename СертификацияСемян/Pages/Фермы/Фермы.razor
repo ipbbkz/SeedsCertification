@@ -3,22 +3,23 @@
 @using СертификацияСемян.Данные;
 @attribute [Authorize(Policy = "Фермеры")]
 @inject УправляющийХозяйствами управляющийХозяйствами
-<h3>Фермы</h3>
+@inject IStringLocalizer<Фермы> Лок
+<h3>@Лок["Фермы"]</h3>
 @if (хозяйства.Count == 0)
 {
-    <p><a href="/farms/add">Создайте</a> новое хозяйство</p>
+    <p><a href="/farms/add">@Лок["Создайте"]</a> @Лок["НовоеХозяйство"]</p>
 }
 else
 {
     <table class="table">
         <thead>
             <tr>
-                <td>Контактное Лицо</td>
-                <td>Навание Компании</td>
-                <td>БИН/ИИН</td>
-                <td>Юридический Адрес</td>
-                <td>Контакты</td>
-                <td>Активно</td>
+                <td>@Лок["КонтактноеЛицо"]</td>
+                <td>@Лок["НазваниеКомпании"]</td>
+                <td>@Лок["БИНИИН"]</td>
+                <td>@Лок["ЮридическийАдрес"]</td>
+                <td>@Лок["Контакты"]</td>
+                <td>@Лок["Активно"]</td>
                 <td> </td>
             </tr>
         </thead>
@@ -55,8 +56,8 @@ else
                     </td>
                     <td>
                         <div class="btn-group">
-                            <a href="/farms/@ф.Ид/fields" class="btn btn-secondary">Поля</a>
-                            <a href="/farms/edit/@ф.Ид" class="btn btn-primary">Изменить</a>
+                            <a href="/farms/@ф.Ид/fields" class="btn btn-secondary">@Лок["Поля"]</a>
+                            <a href="/farms/edit/@ф.Ид" class="btn btn-primary">@Лок["Изменить"]</a>
                             <a href="/farms/delete/@ф.Ид" class="btn btn-danger"><span class="oi oi-trash"></span></a>
                         </div>
                     </td>

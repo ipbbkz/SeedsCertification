@@ -1,18 +1,19 @@
 ﻿@page "/farms/add"
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<ДобавитьФерму> Лок
 @attribute [Authorize(Policy = "Фермеры")]
 
-<PageTitle>Добавить Ферму</PageTitle>
+<PageTitle>@Лок["ДобавитьФерму"]</PageTitle>
 
-<h3>Добавить Ферму</h3>
+<h3>@Лок["ДобавитьФерму"]</h3>
 
 <EditForm Model="@Модель" OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
     <ValidationSummary />
     <ДанныеФермы Модель=@Модель />
 
-    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <button type="submit" class="btn btn-primary">@Лок["Сохранить"]</button>
 </EditForm>
 @code {
     [CascadingParameter]
