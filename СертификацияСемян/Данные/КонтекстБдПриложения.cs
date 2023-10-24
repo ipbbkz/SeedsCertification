@@ -51,8 +51,6 @@ public class Заявка
 
     public int КлассСемянИд { get; set; }
 
-    public int УчастокИд { get; set; }
-
     public int РазмерКлубня { get; set; }
 
     public string КоординатыУчастка { get; set; }
@@ -67,7 +65,9 @@ public class Заявка
     public string Фунгициды { get; set; }
     public string Удобрения { get; set; }
     public string Гербициды { get; set; }
-    public string ФормаУчастка { get; set; }
+    public int ФормаУчастка { get; set; }
+    public string? Размер1 { get; set; }
+    public string? Размер2 { get; set; }
     public string ПлощадьПосадки { get; set; }
     public string РасстояниеМеждуРядами { get; set; }
     public string РасстояниеВРяду { get; set; }
@@ -80,8 +80,8 @@ public class Заявка
     public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
     public DateTime? ДатаУдаления { get; set; }
 
-    [ForeignKey("ИдПроизводителяСемян")]
-    public ПроизводительСемян ПроизводительСемян { get; set; }
+    [ForeignKey("ИдУчастка")]
+    public УчастокПоля УчастокПоля { get; set; }
 }
 
 public class Поле

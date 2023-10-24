@@ -2,6 +2,8 @@
 @using GoogleMapsComponents.Maps
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject IJSRuntime JSRuntime
+@inject ILogger<ДанныеЗаявки> протоколировщик
+@inject IWebHostEnvironment окружение
 
 <label class="form-label">
     Тип сертификации
@@ -110,12 +112,34 @@
 <label class="form-label">
     СвидетельствоПроисхожденияСемян
 </label>
-<InputFile @bind-Value="Модель!.СвидетельствоПроисхожденияСемян" class="form-control" />
+<InputFile OnChange="@ЗагрузитьСвидетельствоПроисхожденияСемян" class="form-control" />
+@if (загружаетсяСвидетельствоПроисхожденияСемян)
+{
+    <p>Загружаем...</p>
+}
+else
+{
+    if (загруженныеФайлыСвидетельствоПроисхожденияСемян.Count > 0)
+    {
+        <p>Документ загружен</p>
+    }
+}
 
 <label class="form-label">
     ЗаключениеОНематодах
 </label>
-<InputFile @bind-Value="Модель!.ЗаключениеОНематодах" class="form-control" />
+<InputFile OnChange="@ЗагрузитьЗаключениеОНематодах" class="form-control" />
+@if (загружаетсяЗаключениеОНематодах)
+{
+    <p>Загружаем...</p>
+}
+else
+{
+    if (загруженныеФайлыЗаключениеОНематодах.Count > 0)
+    {
+        <p>Документ загружен</p>
+    }
+}
 
 <h3>Обработка участка</h3>
 
@@ -245,6 +269,77 @@
     public List<Поле> Поля { get; set; } = new();
 
     public List<УчастокПоля> УчасткиПоля { get; set; } = new();
+
+    private long максРазмерФайла = 1024 * 1024 * 15;
+    private int максКоличествоФайлов = 1;
+    private List<IBrowserFile> загруженныеФайлыСвидетельствоПроисхожденияСемян = new();
+    private bool загружаетсяСвидетельствоПроисхожденияСемян;
+    private List<IBrowserFile> загруженныеФайлыЗаключениеОНематодах = new();
+    private bool загружаетсяЗаключениеОНематодах;
+
+    private async Task ЗагрузитьСвидетельствоПроисхожденияСемян(InputFileChangeEventArgs e)
+    {
+        Directory.CreateDirectory(Path.Combine(окружение.ContentRootPath, "uploads", "intermediate"));
+        загружаетсяСвидетельствоПроисхожденияСемян = true;
+        загруженныеФайлыСвидетельствоПроисхожденияСемян.Clear();
+
+        foreach (var файл in e.GetMultipleFiles(максКоличествоФайлов))
+        {
+            try
+            {
+                загруженныеФайлыСвидетельствоПроисхожденияСемян.Add(файл);
+
+                var trustedFileNameForFileStorage = Path.GetRandomFileName();
+                var path = Path.Combine(окружение.ContentRootPath, "uploads", "intermediate", trustedFileNameForFileStorage);
+
+                await using (FileStream fs = new(path, FileMode.Create))
+                {
+                    await файл.OpenReadStream(максРазмерФайла).CopyToAsync(fs);
+                }
+
+                Модель.СвидетельствоПроисхожденияСемян = File.ReadAllBytes(path);
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                протоколировщик.LogError("Файл: {Filename} Ошибка: {Error}", файл.Name, ex.Message);
+            }
+        }
+
+        загружаетсяСвидетельствоПроисхожденияСемян = false;
+    }
+
+    private async Task ЗагрузитьЗаключениеОНематодах(InputFileChangeEventArgs e)
+    {
+        Directory.CreateDirectory(Path.Combine(окружение.ContentRootPath, "uploads", "intermediate"));
+        загружаетсяЗаключениеОНематодах = true;
+        загруженныеФайлыЗаключениеОНематодах.Clear();
+
+        foreach (var файл in e.GetMultipleFiles(максКоличествоФайлов))
+        {
+            try
+            {
+                загруженныеФайлыЗаключениеОНематодах.Add(файл);
+
+                var trustedFileNameForFileStorage = Path.GetRandomFileName();
+                var path = Path.Combine(окружение.ContentRootPath, "uploads", "intermediate", trustedFileNameForFileStorage);
+
+                await using (FileStream fs = new(path, FileMode.Create))
+                {
+                    await файл.OpenReadStream(максРазмерФайла).CopyToAsync(fs);
+                }
+
+                Модель.ЗаключениеОНематодах = File.ReadAllBytes(path);
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                протоколировщик.LogError("Файл: {Filename} Ошибка: {Error}", файл.Name, ex.Message);
+            }
+        }
+
+        загружаетсяЗаключениеОНематодах = false;
+    }
 
     protected override async Task OnInitializedAsync()
     {

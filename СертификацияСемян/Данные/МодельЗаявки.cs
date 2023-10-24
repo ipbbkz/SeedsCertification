@@ -37,8 +37,8 @@ public class МодельЗаявки
     public string Гербициды { get; set; }
     [Required]
     public int? ФормаУчастка { get; set; }
-    public string Размер1 { get; set; }
-    public string Размер2 { get; set; }
+    public string? Размер1 { get; set; }
+    public string? Размер2 { get; set; }
     public string ПлощадьПосадки { get; set; }
     public string РасстояниеМеждуРядами { get; set; }
     public string РасстояниеВРяду { get; set; }
