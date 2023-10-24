@@ -5,7 +5,14 @@
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject IStringLocalizer<Фермы> Лок
 
-<h3>@Лок["Фермы"]</h3>
+<div class="align-items-center d-flex justify-content-between mb-2">
+    <div>
+        <h4 class="text-start text-primary">@Лок["Фермы"]</h4>
+    </div>
+    <div class="text-end">
+        <a href="/farms/add" class="btn btn-primary">+</a>
+    </div>
+</div>
 @if (хозяйства.Count == 0)
 {
     <p><a href="/farms/add">@Лок["Создайте"]</a> @Лок["НовоеХозяйство"]</p>

@@ -5,7 +5,14 @@
 @inject УправляющийЗаявками управляющийЗаявками
 <PageTitle>Заявки</PageTitle>
 
-<h3>Заявки</h3>
+<div class="align-items-center d-flex justify-content-between mb-2">
+    <div>
+        <h4 class="text-start text-primary">Заявки</h4>
+    </div>
+    <div class="text-end">
+        <a href="/requests/file" class="btn btn-primary">+</a>
+    </div>
+</div>
 @if (заявки.Count == 0)
 {
     <p><a href="/requests/file">Создайте</a> новую заявку</p>

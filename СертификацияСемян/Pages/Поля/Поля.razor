@@ -6,7 +6,14 @@
 @inject IStringLocalizer<Поля> Лок
 
 <PageTitle>@Лок["Поля"]</PageTitle>
-<h3>@Лок["Поля"]</h3>
+<div class="align-items-center d-flex justify-content-between mb-2">
+    <div>
+        <h4 class="text-start text-primary">@Лок["Поля"]</h4>
+    </div>
+    <div class="text-end">
+        <a href="/farms/@Ид/fields/add" class="btn btn-primary">+</a>
+    </div>
+</div>
 @if (поля.Count == 0)
 {
     <p><a href="/farms/@Ид/fields/add">@Лок["Создайте"]</a> @Лок["Поле"]</p>

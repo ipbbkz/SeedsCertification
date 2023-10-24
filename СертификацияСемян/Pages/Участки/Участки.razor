@@ -5,9 +5,14 @@
 @inject УправляющийХозяйствами управляющийХозяйствами
 
 <PageTitle>Участки поля @(Поле?.Название)</PageTitle>
-<h3>
-    Участки поля @(Поле?.Название)
-</h3>
+<div class="align-items-center d-flex justify-content-between mb-2">
+    <div>
+        <h4 class="text-start text-primary">Участки поля @(Поле?.Название)</h4>
+    </div>
+    <div class="text-end">
+        <a href="/farms/@Ид/fields/@ИдПоля/patches/add" class="btn btn-primary">+</a>
+    </div>
+</div>
 
 @if (участки.Count == 0)
 {
