@@ -1,29 +1,30 @@
 ﻿@inject ILogger<ДанныеПоля> протоколировщик
 @inject IWebHostEnvironment окружение
+@inject IStringLocalizer<ДанныеПоля> Лок
 
 <label class="form-label">
-    Название <span class="text-danger">*</span>
+    @Лок["Название"] <span class="text-danger">*</span>
 </label>
 <InputText @bind-Value="Модель!.Название" class="form-control" />
 
 <label class="form-label">
-    Адрес <span class="text-danger">*</span>
+    @Лок["Адрес"] <span class="text-danger">*</span>
 </label>
 <InputText @bind-Value="Модель!.АдресПоля" class="form-control" />
 
 <label class="form-label">
-    Правоустанавливающие Документы <span class="text-danger">*</span>
+    @Лок["Документы"] <span class="text-danger">*</span>
 </label>
 <InputFile OnChange="@LoadFiles" class="form-control" />
 @if (загружается)
 {
-    <p>Загружаем...</p>
+    <p>@Лок["Загружаем"]</p>
 }
 else
 {
     if (загруженныеФайлы.Count > 0)
     {
-        <p>Документ загружен</p>
+        <p>@Лок["ДокументЗагружен"]</p>
     }
 }
 

@@ -1,18 +1,19 @@
 ﻿@page "/farms/{Ид:int}/fields/{ИдПоля:int}/edit"
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<РедактироватьПоле> Лок
 @attribute [Authorize(Policy = "Фермеры")]
 
-<PageTitle>Редактировать поле @Модель.Название</PageTitle>
+<PageTitle>@Лок["РедактироватьПоле"] @Модель.Название</PageTitle>
 
-    <h3>Редактировать поле @Модель.Название</h3>
+<h3>@Лок["РедактироватьПоле"] @Модель.Название</h3>
 
 <EditForm Model="@Модель" OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
     <ValidationSummary />
     <ДанныеПоля Модель=@Модель />
 
-    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <button type="submit" class="btn btn-primary">@Лок["Сохранить"]</button>
 </EditForm>
 @code {
     [Parameter]

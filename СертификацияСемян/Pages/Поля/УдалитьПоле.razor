@@ -1,11 +1,12 @@
 ﻿@page "/farms/{Ид:int}/fields/{ИдПоля:int}/delete"
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<УдалитьПоле> Лок
 @attribute [Authorize(Policy = "Фермеры")]
 
-<PageTitle>Удалить поле @Модель.Название</PageTitle>
+<PageTitle>@Лок["УдалитьПоле"] @Модель.Название</PageTitle>
 
-<h3>Удалить поле @Модель.Название</h3>
+<h3>@Лок["УдалитьПоле"] @Модель.Название</h3>
 
 <EditForm Model="@Модель" OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
@@ -14,7 +15,7 @@
         <ДанныеПоля Модель=@Модель />
     </fieldset>
 
-    <button type="submit" class="btn btn-danger">Удалить</button>
+    <button type="submit" class="btn btn-danger">@Лок["Удалить"]</button>
 </EditForm>
 @code {
     [Parameter]
