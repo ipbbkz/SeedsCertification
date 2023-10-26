@@ -120,7 +120,4 @@
   <data name="РедактироватьФерму" xml:space="preserve">
     <value>Редактировать Ферму</value>
   </data>
-  <data name="Сохранить" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
 </root>

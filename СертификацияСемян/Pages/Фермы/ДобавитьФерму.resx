@@ -120,7 +120,4 @@
   <data name="ДобавитьФерму" xml:space="preserve">
     <value>Add a Farm</value>
   </data>
-  <data name="Сохранить" xml:space="preserve">
-    <value>Save</value>
-  </data>
 </root>

@@ -2,6 +2,7 @@
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject NavigationManager управляющийНавигацией
 @inject IStringLocalizer<УдалитьПоле> Лок
+@inject IStringLocalizer<Глобальные> ГлобЛок
 @attribute [Authorize(Policy = "Фермеры")]
 
 <PageTitle>@Лок["УдалитьПоле"] @Модель.Название</PageTitle>
@@ -15,8 +16,8 @@
         <ДанныеПоля Модель=@Модель />
     </fieldset>
 
-    <button type="submit" class="btn btn-danger">@Лок["Удалить"]</button>
-    <a href="/farms/@Ид/fields/" class="btn btn-secondary">Назад</a>
+    <button type="submit" class="btn btn-danger">@ГлобЛок["Удалить"]</button>
+    <a href="/farms/@Ид/fields/" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
 </EditForm>
 @code {
     [Parameter]

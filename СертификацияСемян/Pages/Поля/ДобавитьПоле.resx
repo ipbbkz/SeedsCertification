@@ -120,7 +120,4 @@
   <data name="ДобавитьПоле" xml:space="preserve">
     <value>Add a field</value>
   </data>
-  <data name="Сохранить" xml:space="preserve">
-    <value>Save</value>
-  </data>
 </root>

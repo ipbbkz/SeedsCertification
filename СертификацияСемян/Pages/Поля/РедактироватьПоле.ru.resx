@@ -120,7 +120,4 @@
   <data name="РедактироватьПоле" xml:space="preserve">
     <value>Редактировать поле</value>
   </data>
-  <data name="Сохранить" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
 </root>

@@ -2,6 +2,7 @@
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject NavigationManager управляющийНавигацией
 @inject IStringLocalizer<ДобавитьПоле> Лок 
+@inject IStringLocalizer<Глобальные> ГлобЛок
 @attribute [Authorize(Policy = "Фермеры")]
 
 <PageTitle>@Лок["ДобавитьПоле"]</PageTitle>
@@ -13,8 +14,8 @@
     <ValidationSummary />
     <ДанныеПоля Модель=@Модель />
 
-    <button type="submit" class="btn btn-primary">@Лок["Сохранить"]</button>
-    <a href="/farms/@Ид/fields/" class="btn btn-secondary">Назад</a>
+    <button type="submit" class="btn btn-primary">@ГлобЛок["Сохранить"]</button>
+    <a href="/farms/@Ид/fields/" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
 </EditForm>
 @code {
     [Parameter]

@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="РедактироватьФерму" xml:space="preserve">
-    <value>Ферманы өңдеу</value>
+  <data name="Назад" xml:space="preserve">
+    <value>Артқа</value>
+  </data>
+  <data name="Сохранить" xml:space="preserve">
+    <value>Сақтау</value>
+  </data>
+  <data name="Удалить" xml:space="preserve">
+    <value>Жою</value>
   </data>
 </root>

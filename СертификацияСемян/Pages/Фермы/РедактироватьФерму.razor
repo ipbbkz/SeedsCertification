@@ -2,6 +2,7 @@
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject NavigationManager управляющийНавигацией
 @inject IStringLocalizer<РедактироватьФерму> Лок
+@inject IStringLocalizer<Глобальные> ГлобЛок
 @attribute [Authorize(Policy = "Фермеры")]
 
 <PageTitle>@Лок["РедактироватьФерму"]</PageTitle>
@@ -12,8 +13,8 @@
     <ValidationSummary />
     <ДанныеФермы Модель=@Модель />
 
-    <button type="submit" class="btn btn-primary">@Лок["Сохранить"]</button>
-    <a href="/farms" class="btn btn-secondary">Назад</a>
+    <button type="submit" class="btn btn-primary">@ГлобЛок["Сохранить"]</button>
+    <a href="/farms" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
 </EditForm>
 @code {
     [Parameter]
