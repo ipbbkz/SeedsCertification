@@ -1,4 +1,4 @@
-﻿@page "/requests/file"
+﻿@page "/my/requests/file"
 @using System.Security.Claims;
 @attribute [Authorize(Policy = "Фермеры")]
 @inject УправляющийЗаявками управляющийЗаявками
@@ -14,7 +14,7 @@
     <ДанныеЗаявки Модель=@Модель Пользователь=@ИдЛичности />
 
     <button type="submit" class="btn btn-primary">Сохранить</button>
-    <a href="/requests/" class="btn btn-secondary">Назад</a>
+    <a href="/my/requests/" class="btn btn-secondary">Назад</a>
 </EditForm>
 
 @code {
@@ -65,7 +65,7 @@
             Модель.РасстояниеМеждуРядами,
             Модель.РасстояниеВРяду,
             Модель.ПрогнозируемоеКоличествоУрожая);
-        управляющийНавигацией.NavigateTo("/requests");
+        управляющийНавигацией.NavigateTo("/my/requests");
     }
 
 }

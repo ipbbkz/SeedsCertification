@@ -1,4 +1,4 @@
-﻿@page "/requests/"
+﻿@page "/my/requests/"
 @using System.Security.Claims;
 @using СертификацияСемян.Данные;
 @attribute [Authorize(Policy = "Фермеры")]
@@ -10,12 +10,12 @@
         <h4 class="text-start text-primary">Заявки</h4>
     </div>
     <div class="text-end">
-        <a href="/requests/file" class="btn btn-primary">+</a>
+        <a href="/my/requests/file" class="btn btn-primary">+</a>
     </div>
 </div>
 @if (заявки.Count == 0)
 {
-    <p><a href="/requests/file">Создайте</a> новую заявку</p>
+    <p><a href="/my/requests/file">Создайте</a> новую заявку</p>
 }
 else
 {
