@@ -117,28 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ВыйтиИзАккаунта" xml:space="preserve">
-    <value>Log out</value>
-  </data>
-  <data name="ИмяПриложения" xml:space="preserve">
-    <value>Seeds Certification</value>
-  </data>
-  <data name="Логин" xml:space="preserve">
-    <value>Log in</value>
-  </data>
-  <data name="МоиЗаявки" xml:space="preserve">
-    <value>My requests</value>
-  </data>
-  <data name="Приветствие" xml:space="preserve">
-    <value>Hello,</value>
-  </data>
-  <data name="Регистрация" xml:space="preserve">
-    <value>Registration</value>
-  </data>
-  <data name="Фермеры" xml:space="preserve">
-    <value>Farmers</value>
-  </data>
-  <data name="Фермы" xml:space="preserve">
-    <value>Farms</value>
+  <data name="ПодатьЗаявку" xml:space="preserve">
+    <value>Apply the request</value>
   </data>
 </root>

@@ -3,18 +3,20 @@
 @attribute [Authorize(Policy = "Фермеры")]
 @inject УправляющийЗаявками управляющийЗаявками
 @inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<Глобальные> ГлобЛок
+@inject IStringLocalizer<ПодатьЗаявку> Лок
 
-<PageTitle>Подать Заявку</PageTitle>
+<PageTitle>@Лок["ПодатьЗаявку"]</PageTitle>
 
-<h3>Подать Заявку</h3>
+<h3>@Лок["ПодатьЗаявку"]</h3>
 
 <EditForm Model="@Модель" OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
     <ValidationSummary />
     <ДанныеЗаявки Модель=@Модель Пользователь=@ИдЛичности />
 
-    <button type="submit" class="btn btn-primary">Сохранить</button>
-    <a href="/my/requests/" class="btn btn-secondary">Назад</a>
+    <button type="submit" class="btn btn-primary">@ГлобЛок["Сохранить"]</button>
+    <a href="/my/requests/" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
 </EditForm>
 
 @code {

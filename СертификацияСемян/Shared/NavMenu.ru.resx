@@ -126,7 +126,19 @@
   <data name="Логин" xml:space="preserve">
     <value>Войти</value>
   </data>
+  <data name="МоиЗаявки" xml:space="preserve">
+    <value>Мои заявки</value>
+  </data>
+  <data name="Приветствие" xml:space="preserve">
+    <value>Привет,</value>
+  </data>
   <data name="Регистрация" xml:space="preserve">
     <value>Регистрация</value>
+  </data>
+  <data name="Фермеры" xml:space="preserve">
+    <value>Фермеры</value>
+  </data>
+  <data name="Фермы" xml:space="preserve">
+    <value>Фермы</value>
   </data>
 </root>

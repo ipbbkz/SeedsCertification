@@ -3,11 +3,12 @@
 @using СертификацияСемян.Данные;
 @attribute [Authorize(Policy = "Фермеры")]
 @inject УправляющийЗаявками управляющийЗаявками
-<PageTitle>Заявки</PageTitle>
+@inject IStringLocalizer<МоиЗаявки> Лок
+<PageTitle>@Лок["Заявки"]</PageTitle>
 
 <div class="align-items-center d-flex justify-content-between mb-2">
     <div>
-        <h4 class="text-start text-primary">Заявки</h4>
+        <h4 class="text-start text-primary">@Лок["Заявки"]</h4>
     </div>
     <div class="text-end">
         <a href="/my/requests/file" class="btn btn-primary">+</a>
@@ -15,19 +16,19 @@
 </div>
 @if (заявки.Count == 0)
 {
-    <p><a href="/my/requests/file">Создайте</a> новую заявку</p>
+    <p><a href="/my/requests/file">@Лок["Создайте"]</a> @Лок["НоваяЗаявка"]</p>
 }
 else
 {
     <table class="table">
         <thead>
             <tr>
-                <td>Тип заявки</td>
-                <td>Навание сорта</td>
-                <td>Навание компании</td>
-                <td>Класс семян</td>
-                <td>Дата подачи</td>
-                <td>Активно</td>
+                <td>@Лок["ТипЗаявки"]</td>
+                <td>@Лок["НазваниеСорта"]</td>
+                <td>@Лок["НазваниеКомпании"]</td>
+                <td>@Лок["КлассСемян"]</td>
+                <td>@Лок["ДатаПодачи"]</td>
+                <td>@Лок["Активно"]</td>
             </tr>
         </thead>
         <tbody>

@@ -13,19 +13,19 @@
                         @if (context.User.IsInRole(Данные.Константы.РольФермер))
                         {
                             <li class="nav-item">
-                                <NavLink class="nav-link" href="/farms">Фермы</NavLink>
+                                <NavLink class="nav-link" href="/farms">@Лок["Фермы"]</NavLink>
                             </li>
                             <li class="nav-item">
-                                <NavLink class="nav-link" href="/my/requests">Мои заявки</NavLink>
+                                <NavLink class="nav-link" href="/my/requests">@Лок["МоиЗаявки"]</NavLink>
                             </li>
                         }
                         @if (context.User.IsInRole(Данные.Константы.РольАдминистратора))
                         {
                             <li class="nav-item">
-                                <NavLink class="nav-link" href="/farmers">Фермеры</NavLink>
+                                <NavLink class="nav-link" href="/farmers">@Лок["Фермеры"]</NavLink>
                             </li>
                         }
-                        <a class="nav-link" href="Identity/Account/Manage">Hello, @context.User.Identity?.Name!</a>
+                        <a class="nav-link" href="Identity/Account/Manage">@Лок["Приветствие"] @context.User.Identity?.Name!</a>
                         <form method="post" action="Identity/Account/Logout">
                             <button type="submit" class="nav-link btn btn-link">@Лок["ВыйтиИзАккаунта"]</button>
                         </form>
@@ -40,11 +40,6 @@
                     </NotAuthorized>
                 </AuthorizeView>
             </ul>
-            @* <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-
-            </form> *@
         </div>
     </div>
 </nav>

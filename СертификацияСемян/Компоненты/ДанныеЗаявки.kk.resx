@@ -117,28 +117,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ВыйтиИзАккаунта" xml:space="preserve">
-    <value>Log out</value>
+  <data name="ВыберитеКлассСемян" xml:space="preserve">
+    <value>Тұқым класын таңдаңыз</value>
   </data>
-  <data name="ИмяПриложения" xml:space="preserve">
-    <value>Seeds Certification</value>
+  <data name="ВыберитеПоле" xml:space="preserve">
+    <value>Өрісті таңдаңыз</value>
   </data>
-  <data name="Логин" xml:space="preserve">
-    <value>Log in</value>
+  <data name="ВыберитеТип" xml:space="preserve">
+    <value>Сертификаттау түрін таңдаңыз</value>
   </data>
-  <data name="МоиЗаявки" xml:space="preserve">
-    <value>My requests</value>
+  <data name="ВыберитеУчасток" xml:space="preserve">
+    <value>Өрістегі аумақты таңдаңыз</value>
   </data>
-  <data name="Приветствие" xml:space="preserve">
-    <value>Hello,</value>
+  <data name="ВыберитеФорму" xml:space="preserve">
+    <value>Сюжеттің пішінін таңдаңыз</value>
   </data>
-  <data name="Регистрация" xml:space="preserve">
-    <value>Registration</value>
+  <data name="ВыберитеХозяйство" xml:space="preserve">
+    <value>Ферманы таңдаңыз</value>
   </data>
-  <data name="Фермеры" xml:space="preserve">
-    <value>Farmers</value>
+  <data name="Гербициды" xml:space="preserve">
+    <value>Гербицидтер</value>
   </data>
-  <data name="Фермы" xml:space="preserve">
-    <value>Farms</value>
+  <data name="ДатаПосадки" xml:space="preserve">
+    <value>Отырғызу күні</value>
+  </data>
+  <data name="ДатаСбора" xml:space="preserve">
+    <value>Жинақ күні</value>
+  </data>
+  <data name="Длинна" xml:space="preserve">
+    <value>Ұзындығы</value>
+  </data>
+  <data name="ДокументЗагружен" xml:space="preserve">
+    <value>Құжат жүктелді</value>
+  </data>
+  <data name="Загружаем" xml:space="preserve">
+    <value>Жүктелуде</value>
+  </data>
+  <data name="ЗаключениеОНематодах" xml:space="preserve">
+    <value>Нематодтар туралы қорытынды</value>
+  </data>
+  <data name="ИзоляцияПолей" xml:space="preserve">
+    <value>Өрісті оқшаулау</value>
+  </data>
+  <data name="Инсектициды" xml:space="preserve">
+    <value>Инсектицидтер</value>
+  </data>
+  <data name="Картофель" xml:space="preserve">
+    <value>Ақтүйнек</value>
+  </data>
+  <data name="Квадратная" xml:space="preserve">
+    <value>Шаршы</value>
+  </data>
+  <data name="КлассСемян" xml:space="preserve">
+    <value>Тұқым класы</value>
+  </data>
+  <data name="КоординатыУчастка" xml:space="preserve">
+    <value>Сайт координаттары</value>
+  </data>
+  <data name="Круглая" xml:space="preserve">
+    <value>Дөңгелек</value>
+  </data>
+  <data name="НазваниеСорта" xml:space="preserve">
+    <value>Тұқым сортының атауы</value>
+  </data>
+  <data name="Нестандартная" xml:space="preserve">
+    <value>Стандартты емес</value>
+  </data>
+  <data name="ОбработкаУчастка" xml:space="preserve">
+    <value>Аймақты емдеу</value>
+  </data>
+  <data name="ПараметрыУчасткаИЗасева" xml:space="preserve">
+    <value>Зона және себу параметрлері</value>
+  </data>
+  <data name="ПлощадьПосадки" xml:space="preserve">
+    <value>Егістік алаңы</value>
+  </data>
+  <data name="Поля" xml:space="preserve">
+    <value>Өрістер</value>
+  </data>
+  <data name="ПрогнозируемоеКоличествоУрожая" xml:space="preserve">
+    <value>Болжалды егін көлемі</value>
+  </data>
+  <data name="Протравители" xml:space="preserve">
+    <value>Емдеушілер</value>
+  </data>
+  <data name="Прямоугольная" xml:space="preserve">
+    <value>Тікбұрышты</value>
+  </data>
+  <data name="РазмерКлубня" xml:space="preserve">
+    <value>Түйнек мөлшері</value>
+  </data>
+  <data name="РасстояниеВРяду" xml:space="preserve">
+    <value>Арақашықтық қатарында</value>
+  </data>
+  <data name="РасстояниеМеждуРядами" xml:space="preserve">
+    <value>Қатарлар арасындағы қашықтық</value>
+  </data>
+  <data name="СвидетельствоПроисхождения" xml:space="preserve">
+    <value>Тауардың шығу тегі туралы сертификат</value>
+  </data>
+  <data name="Севооборот" xml:space="preserve">
+    <value>Егістік айналымы</value>
+  </data>
+  <data name="ТипСертификации" xml:space="preserve">
+    <value>Сертификаттау түрі</value>
+  </data>
+  <data name="Удобрения" xml:space="preserve">
+    <value>Тыңайтқыштар</value>
+  </data>
+  <data name="Участки" xml:space="preserve">
+    <value>Сайттар</value>
+  </data>
+  <data name="ФормаУчастка" xml:space="preserve">
+    <value>Аймақ пішіні</value>
+  </data>
+  <data name="Фунгициды" xml:space="preserve">
+    <value>Фунгицидтер</value>
+  </data>
+  <data name="Хозяйство" xml:space="preserve">
+    <value>Ферма</value>
+  </data>
+  <data name="Ширина" xml:space="preserve">
+    <value>Ені</value>
   </data>
 </root>

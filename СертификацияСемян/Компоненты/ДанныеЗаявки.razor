@@ -4,30 +4,31 @@
 @inject IJSRuntime JSRuntime
 @inject ILogger<ДанныеЗаявки> протоколировщик
 @inject IWebHostEnvironment окружение
+@inject IStringLocalizer<ДанныеЗаявки> Лок
 
 <label class="form-label">
-    Тип сертификации
+    @Лок["ТипСертификации"]
 </label>
 <InputSelect @bind-Value="Модель!.ТипЗаявки" class="form-control">
-    <option value="">Выберите тип сертификации ...</option>
-    <option value="1">Картофель</option>
+    <option value="">@Лок["ВыберитеТип"] ...</option>
+    <option value="1">@Лок["Картофель"]</option>
 </InputSelect>
 
 <label class="form-label">
-    Навание сорта семян
+    @Лок["НазваниеСорта"]
 </label>
 <InputText @bind-Value="Модель!.НаваниеСортаСемян" class="form-control" />
 
 <label class="form-label">
-    Размер Клубня
+    @Лок["РазмерКлубня"]
 </label>
 <InputNumber @bind-Value="Модель!.РазмерКлубня" class="form-control" />
 
 <label class="form-label">
-    Класс семян
+    @Лок["КлассСемян"]
 </label>
 <InputSelect @bind-Value="Модель!.КлассСемянИд" class="form-control">
-    <option value="">Выберите класс семян ...</option>
+    <option value="">@Лок["ВыберитеКлассСемян"] ...</option>
     <option value="1">Предбазисный PBTC</option>
     <option value="2">Предбазисный PB</option>
     <option value="3">Базисный S</option>
@@ -40,10 +41,10 @@
 <div class="row">
     <div class="col">
         <label class="form-label">
-            Хозяйство
+            @Лок["Хозяйство"]
         </label>
         <InputSelect Value=@Модель!.ИдХозяйства class="form-control" ValueExpression=@(() => Модель.ИдХозяйства) ValueChanged=@((int? p) => ПриИзменениеХозяйства(p))>
-            <option value="">Выберите хозяйство ...</option>
+            <option value="">@Лок["ВыберитеХозяйство"] ...</option>
             @foreach (var х in Хозяйства)
             {
                 <option value=@х.Ид>@х.НаваниеКомпании</option>
@@ -52,10 +53,10 @@
     </div>
     <div class="col">
         <label class="form-label">
-            Поля
+            @Лок["Поля"]
         </label>
         <InputSelect Value=@Модель!.ИдПоля class="form-control" ValueExpression=@(() => Модель.ИдПоля) ValueChanged=@((int? p) => ПриИзменениеПоля(p))>
-            <option value="">Выберите поле ...</option>
+            <option value="">@Лок["ВыберитеПоле"] ...</option>
             @foreach (var х in Поля)
             {
                 <option value=@х.Ид>@х.Название</option>
@@ -64,10 +65,10 @@
     </div>
     <div class="col">
         <label class="form-label">
-            Участки
+            @Лок["Участки"]
         </label>
         <InputSelect Value=@Модель!.ИдУчастка class="form-control" ValueExpression=@(() => Модель.ИдУчастка) ValueChanged=@((int? p) => ПриИзменениеУчастка(p))>
-            <option value="">Выберите участок на поле ...</option>
+            <option value="">@Лок["ВыберитеУчасток"] ...</option>
             @foreach (var х in УчасткиПоля)
             {
                 <option value=@х.Ид>@х.Название</option>
@@ -77,7 +78,7 @@
 </div>
 
 <label class="form-label">
-    КоординатыУчастка
+    @Лок["КоординатыУчастка"]
 </label>
 <InputText @bind-Value="Модель!.КоординатыУчастка" class="form-control" disabled />
 
@@ -90,96 +91,96 @@
     var триГодаНазад = DateTime.UtcNow.Year - 3;
 }
 <label class="form-label">
-    Севооборот @прошлыйГод
+    @Лок["Севооборот"] @прошлыйГод
 </label>
 <InputTextArea @bind-Value="Модель!.СевооборотПрошлогоГода" class="form-control" />
 
 <label class="form-label">
-    Севооборот @дваГодаНазад
+    @Лок["Севооборот"] @дваГодаНазад
 </label>
 <InputTextArea @bind-Value="Модель!.Севооборот2ГодаНазад" class="form-control" />
 
 <label class="form-label">
-    Севооборот @триГодаНазад
+    @Лок["Севооборот"] @триГодаНазад
 </label>
 <InputTextArea @bind-Value="Модель!.Севооборот3ГодаНазад" class="form-control" />
 
 <label class="form-label">
-    ИзоляцияПолей
+    @Лок["ИзоляцияПолей"]
 </label>
 <InputTextArea @bind-Value="Модель!.ИзоляцияПолей" class="form-control" />
 
 <label class="form-label">
-    СвидетельствоПроисхожденияСемян
+    @Лок["СвидетельствоПроисхождения"]
 </label>
 <InputFile OnChange="@ЗагрузитьСвидетельствоПроисхожденияСемян" class="form-control" />
 @if (загружаетсяСвидетельствоПроисхожденияСемян)
 {
-    <p>Загружаем...</p>
+    <p>@Лок["Загружаем"]...</p>
 }
 else
 {
     if (загруженныеФайлыСвидетельствоПроисхожденияСемян.Count > 0)
     {
-        <p>Документ загружен</p>
+        <p>@Лок["ДокументЗагружен"]</p>
     }
 }
 
 <label class="form-label">
-    ЗаключениеОНематодах
+    @Лок["ЗаключениеОНематодах"]
 </label>
 <InputFile OnChange="@ЗагрузитьЗаключениеОНематодах" class="form-control" />
 @if (загружаетсяЗаключениеОНематодах)
 {
-    <p>Загружаем...</p>
+    <p>@Лок["Загружаем"]...</p>
 }
 else
 {
     if (загруженныеФайлыЗаключениеОНематодах.Count > 0)
     {
-        <p>Документ загружен</p>
+        <p>@Лок["ДокументЗагружен"]</p>
     }
 }
 
-<h3>Обработка участка</h3>
+<h3>@Лок["ОбработкаУчастка"]</h3>
 
 <label class="form-label">
-    Протравители
+    @Лок["Протравители"]
 </label>
 <InputText @bind-Value="Модель!.Протравители" class="form-control" />
 
 <label class="form-label">
-    Инсектициды
+    @Лок["Инсектициды"]
 </label>
 <InputText @bind-Value="Модель!.Инсектициды" class="form-control" />
 
 <label class="form-label">
-    Фунгициды
+    @Лок["Фунгициды"]
 </label>
 <InputText @bind-Value="Модель!.Фунгициды" class="form-control" />
 
 <label class="form-label">
-    Удобрения
+    @Лок["Удобрения"]
 </label>
 <InputText @bind-Value="Модель!.Удобрения" class="form-control" />
 
 <label class="form-label">
-    Гербициды
+    @Лок["Гербициды"]
 </label>
 <InputText @bind-Value="Модель!.Гербициды" class="form-control" />
 
-<h3>Параметры участка и засева</h3>
+<h3>@Лок["ПараметрыУчасткаИЗасева"]</h3>
 <div class="row">
     <div class="col col-md-4">
         <label class="form-label">
-            ФормаУчастка
+            @Лок["ФормаУчастка"]
         </label>
         <InputSelect @bind-Value="Модель!.ФормаУчастка" class="form-control">
-            <option value="">Выберите форму участка ...</option>
-            <option value="1">Квадратная</option>
-            <option value="2">Прямоугольная</option>
-            <option value="3">Круглая</option>
-            <option value="4">Нестандартная</option>
+            <option value="">@Лок["ВыберитеФорму"] ...</option>
+            <option value="1">@Лок["Квадратная"]</option>
+            <option value="2">@Лок["Прямоугольная"]</option>
+            <option value="3">@Лок["Круглая"]</option>
+            <option value="4">@Лок["Нестандартная"]</option>
         </InputSelect>
     </div>
     <div class="col col-md-4">
@@ -194,7 +195,7 @@ else
                     _ => throw new InvalidOperationException()
                 };
                 <label class="form-label">
-                    Размер1
+                    @Лок["Длинна"]
                 </label>
                 <InputText @bind-Value="Модель!.Размер1" class="form-control" />
             }
@@ -205,7 +206,7 @@ else
             @if (Модель!.ФормаУчастка == 2)
             {
                 <label class="form-label">
-                    Ширина
+                    @Лок["Ширина"]
                 </label>
                 <InputText @bind-Value="Модель!.Размер2" class="form-control" />
             }
@@ -215,19 +216,19 @@ else
 <div class="row">
     <div class="col col-md-4">
         <label class="form-label">
-            ПлощадьПосадки
+            @Лок["ПлощадьПосадки"]
         </label>
         <InputText @bind-Value="Модель!.ПлощадьПосадки" class="form-control" />
     </div>
     <div class="col col-md-4">
         <label class="form-label">
-            РасстояниеМеждуРядами
+            @Лок["РасстояниеМеждуРядами"]
         </label>
         <InputText @bind-Value="Модель!.РасстояниеМеждуРядами" class="form-control" />
     </div>
     <div class="col col-md-4">
         <label class="form-label">
-            РасстояниеВРяду
+            @Лок["РасстояниеВРяду"]
         </label>
         <InputText @bind-Value="Модель!.РасстояниеВРяду" class="form-control" />
     </div>
@@ -235,20 +236,20 @@ else
 <div class="row">
     <div class="col col-md-4">
         <label class="form-label">
-            ДатаПосадки
+            @Лок["ДатаПосадки"]
         </label>
         <InputDate @bind-Value="Модель!.ДатаПосадки" class="form-control" />
     </div>
     <div class="col col-md-4">
         <label class="form-label">
-            ДатаСбора
+            @Лок["ДатаСбора"]
         </label>
         <InputDate @bind-Value="Модель!.ДатаСбора" class="form-control" />
     </div>
 </div>
 
 <label class="form-label">
-    ПрогнозируемоеКоличествоУрожая
+    @Лок["ПрогнозируемоеКоличествоУрожая"]
 </label>
 <InputText @bind-Value="Модель!.ПрогнозируемоеКоличествоУрожая" class="form-control" />
 

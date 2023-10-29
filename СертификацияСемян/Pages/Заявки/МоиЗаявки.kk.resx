@@ -117,28 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ВыйтиИзАккаунта" xml:space="preserve">
-    <value>Log out</value>
+  <data name="Активно" xml:space="preserve">
+    <value>Белсенді</value>
   </data>
-  <data name="ИмяПриложения" xml:space="preserve">
-    <value>Seeds Certification</value>
+  <data name="ДатаПодачи" xml:space="preserve">
+    <value>өтініш берілген күні</value>
   </data>
-  <data name="Логин" xml:space="preserve">
-    <value>Log in</value>
+  <data name="Заявки" xml:space="preserve">
+    <value>Қолданбалар</value>
   </data>
-  <data name="МоиЗаявки" xml:space="preserve">
-    <value>My requests</value>
+  <data name="КлассСемян" xml:space="preserve">
+    <value>Тұқым класы</value>
   </data>
-  <data name="Приветствие" xml:space="preserve">
-    <value>Hello,</value>
+  <data name="НазваниеКомпании" xml:space="preserve">
+    <value>Компанияның Аты</value>
   </data>
-  <data name="Регистрация" xml:space="preserve">
-    <value>Registration</value>
+  <data name="НазваниеСорта" xml:space="preserve">
+    <value>Сорт атауы</value>
   </data>
-  <data name="Фермеры" xml:space="preserve">
-    <value>Farmers</value>
+  <data name="НоваяЗаявка" xml:space="preserve">
+    <value>сұрау жасаңыз</value>
   </data>
-  <data name="Фермы" xml:space="preserve">
-    <value>Farms</value>
+  <data name="Создайте" xml:space="preserve">
+    <value>Жаңа</value>
+  </data>
+  <data name="ТипЗаявки" xml:space="preserve">
+    <value>Қолданба түрі</value>
   </data>
 </root>

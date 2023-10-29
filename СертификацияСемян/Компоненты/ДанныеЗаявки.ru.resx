@@ -117,28 +117,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ВыйтиИзАккаунта" xml:space="preserve">
-    <value>Log out</value>
+  <data name="ВыберитеКлассСемян" xml:space="preserve">
+    <value>Выберете класс семян</value>
   </data>
-  <data name="ИмяПриложения" xml:space="preserve">
-    <value>Seeds Certification</value>
+  <data name="ВыберитеПоле" xml:space="preserve">
+    <value>Выберете поле</value>
   </data>
-  <data name="Логин" xml:space="preserve">
-    <value>Log in</value>
+  <data name="ВыберитеТип" xml:space="preserve">
+    <value>Выберите тип сертификации</value>
   </data>
-  <data name="МоиЗаявки" xml:space="preserve">
-    <value>My requests</value>
+  <data name="ВыберитеУчасток" xml:space="preserve">
+    <value>Выберите участок на поле</value>
   </data>
-  <data name="Приветствие" xml:space="preserve">
-    <value>Hello,</value>
+  <data name="ВыберитеФорму" xml:space="preserve">
+    <value>Выберите форму участка</value>
   </data>
-  <data name="Регистрация" xml:space="preserve">
-    <value>Registration</value>
+  <data name="ВыберитеХозяйство" xml:space="preserve">
+    <value>Выберите ферму</value>
   </data>
-  <data name="Фермеры" xml:space="preserve">
-    <value>Farmers</value>
+  <data name="Гербициды" xml:space="preserve">
+    <value>Гербициды</value>
   </data>
-  <data name="Фермы" xml:space="preserve">
-    <value>Farms</value>
+  <data name="ДатаПосадки" xml:space="preserve">
+    <value>Дата посадки</value>
+  </data>
+  <data name="ДатаСбора" xml:space="preserve">
+    <value>Дата сбора</value>
+  </data>
+  <data name="Длинна" xml:space="preserve">
+    <value>Длинна</value>
+  </data>
+  <data name="ДокументЗагружен" xml:space="preserve">
+    <value>Документ загружен</value>
+  </data>
+  <data name="Загружаем" xml:space="preserve">
+    <value>Загружаем</value>
+  </data>
+  <data name="ЗаключениеОНематодах" xml:space="preserve">
+    <value>Заключение о нематодах</value>
+  </data>
+  <data name="ИзоляцияПолей" xml:space="preserve">
+    <value>Изоляция полей</value>
+  </data>
+  <data name="Инсектициды" xml:space="preserve">
+    <value>Инсектициды</value>
+  </data>
+  <data name="Картофель" xml:space="preserve">
+    <value>Картофель</value>
+  </data>
+  <data name="Квадратная" xml:space="preserve">
+    <value>Квадратная</value>
+  </data>
+  <data name="КлассСемян" xml:space="preserve">
+    <value>Класс семян</value>
+  </data>
+  <data name="КоординатыУчастка" xml:space="preserve">
+    <value>Координаты участка</value>
+  </data>
+  <data name="Круглая" xml:space="preserve">
+    <value>Круг</value>
+  </data>
+  <data name="НазваниеСорта" xml:space="preserve">
+    <value>Название сорта семян</value>
+  </data>
+  <data name="Нестандартная" xml:space="preserve">
+    <value>Нестандартная</value>
+  </data>
+  <data name="ОбработкаУчастка" xml:space="preserve">
+    <value>Обработка участка</value>
+  </data>
+  <data name="ПараметрыУчасткаИЗасева" xml:space="preserve">
+    <value>Параметры участка и засева</value>
+  </data>
+  <data name="ПлощадьПосадки" xml:space="preserve">
+    <value>Площадь посадки</value>
+  </data>
+  <data name="Поля" xml:space="preserve">
+    <value>Поля</value>
+  </data>
+  <data name="ПрогнозируемоеКоличествоУрожая" xml:space="preserve">
+    <value>Прогнозируемое количество урожая</value>
+  </data>
+  <data name="Протравители" xml:space="preserve">
+    <value>Протравители</value>
+  </data>
+  <data name="Прямоугольная" xml:space="preserve">
+    <value>Прямоугольная</value>
+  </data>
+  <data name="РазмерКлубня" xml:space="preserve">
+    <value>Размер клубня</value>
+  </data>
+  <data name="РасстояниеВРяду" xml:space="preserve">
+    <value>Расстояние в ряду</value>
+  </data>
+  <data name="РасстояниеМеждуРядами" xml:space="preserve">
+    <value>Расстояние между рядами</value>
+  </data>
+  <data name="СвидетельствоПроисхождения" xml:space="preserve">
+    <value>Свидетельство происхождения</value>
+  </data>
+  <data name="Севооборот" xml:space="preserve">
+    <value>Севооборот</value>
+  </data>
+  <data name="ТипСертификации" xml:space="preserve">
+    <value>Тип сертификации</value>
+  </data>
+  <data name="Удобрения" xml:space="preserve">
+    <value>Удобрения</value>
+  </data>
+  <data name="Участки" xml:space="preserve">
+    <value>Участки</value>
+  </data>
+  <data name="ФормаУчастка" xml:space="preserve">
+    <value>Форма участка</value>
+  </data>
+  <data name="Фунгициды" xml:space="preserve">
+    <value>Фунгициды</value>
+  </data>
+  <data name="Хозяйство" xml:space="preserve">
+    <value>Хозяйство</value>
+  </data>
+  <data name="Ширина" xml:space="preserve">
+    <value>Ширина</value>
   </data>
 </root>
