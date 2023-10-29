@@ -1,13 +1,14 @@
 ﻿@inject ILogger<ДанныеПоля> протоколировщик
 @inject IWebHostEnvironment окружение
+@inject IStringLocalizer<ДанныеУчастка> Лок 
 
 <label class="form-label">
-    Название <span class="text-danger">*</span>
+    @Лок["Название"] <span class="text-danger">*</span>
 </label>
 <InputText @bind-Value="Модель!.Название" class="form-control" />
 
 <label class="form-label">
-    Координаты <span class="text-danger">*</span>
+    @Лок["Координаты"] <span class="text-danger">*</span>
 </label>
 <InputText @bind-Value="Модель!.КоординатыУчастка" class="form-control" />
 

@@ -1,19 +1,21 @@
 ﻿@page "/farms/{Ид:int}/fields/{ИдПоля:int}/patches/{ИдУчастка:int}/edit"
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<Глобальные> ГлобЛок
+@inject IStringLocalizer<РедактироватьУчасток> Лок
 @attribute [Authorize(Policy = "Фермеры")]
 
-<PageTitle>Редактировать участок</PageTitle>
+<PageTitle>@Лок["РедактироватьУчасток"]</PageTitle>
 
-<h3>Редактировать участок</h3>
+<h3>@Лок["РедактироватьУчасток"]</h3>
 
 <EditForm Model="@Модель" OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
     <ValidationSummary />
     <ДанныеУчастка Модель=@Модель />
 
-    <button type="submit" class="btn btn-primary">Сохранить</button>
-    <a href="/farms/@Ид/fields/@ИдПоля/patches" class="btn btn-secondary">Назад</a>
+    <button type="submit" class="btn btn-primary">@ГлобЛок["Сохранить"]</button>
+    <a href="/farms/@Ид/fields/@ИдПоля/patches" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
 </EditForm>
 @code {
     [Parameter]

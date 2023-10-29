@@ -1,6 +1,8 @@
 ﻿@page "/farms/{Ид:int}/fields/{ИдПоля:int}/patches/{ИдУчастка:int}/delete"
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<Глобальные> ГлобЛок
+@inject IStringLocalizer<УдалитьУчасток> Лок
 @attribute [Authorize(Policy = "Фермеры")]
 
 <PageTitle>Удалить участок</PageTitle>
@@ -14,8 +16,8 @@
         <ДанныеУчастка Модель=@Модель />
     </fieldset>
 
-    <button type="submit" class="btn btn-danger">Удалить</button>
-    <a href="/farms/@Ид/fields/@ИдПоля/patches" class="btn btn-secondary">Назад</a>
+    <button type="submit" class="btn btn-danger">@ГлобЛок["Удалить"]</button>
+    <a href="/farms/@Ид/fields/@ИдПоля/patches" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
 </EditForm>
 @code {
     [Parameter]
