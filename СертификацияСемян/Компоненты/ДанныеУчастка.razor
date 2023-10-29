@@ -1,4 +1,7 @@
-﻿@inject ILogger<ДанныеПоля> протоколировщик
+﻿@using GoogleMapsComponents;
+@using GoogleMapsComponents.Maps;
+@inject IJSRuntime JSRuntime
+@inject ILogger<ДанныеПоля> протоколировщик
 @inject IWebHostEnvironment окружение
 @inject IStringLocalizer<ДанныеУчастка> Лок 
 
@@ -12,8 +15,70 @@
 </label>
 <InputText @bind-Value="Модель!.КоординатыУчастка" class="form-control" />
 
+<div style="height: 400px" class="mt-3">
+    <GoogleMap @ref="@map1" Id="map1" Options="@mapOptions" Height="100%" OnAfterInit="OnAfterInitAsync"></GoogleMap>
+</div>
+
 
 @code {
     [Parameter]
     public УчастокПоля Модель { get; set; }
-}
+    private GoogleMap map1;
+    private MapOptions mapOptions;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
+            var center = new LatLngLiteral()
+                {
+                    Lng = location[0],
+                    Lat = location[1],
+                };
+            Модель!.КоординатыУчастка = $"{location[0]},{location[1]}";
+
+            mapOptions = new MapOptions()
+                {
+                    Zoom = 15,
+                    Center = center,
+                    MapTypeId = MapTypeId.Roadmap
+                };
+        }
+    }
+        private async Task OnAfterInitAsync()
+        {
+            var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
+            var center = new LatLngLiteral()
+                {
+                    Lat = location[0],
+                    Lng = location[1],
+                };
+
+            Модель!.КоординатыУчастка = $"{location[0]},{location[1]}";
+
+            var инфоОкно = await InfoWindow.CreateAsync(
+                this.JSRuntime,
+                new InfoWindowOptions()
+                    {
+                        Content = "Выберите где расположен участок, на котором будут производиться семена",
+                        Position = center,
+                    });
+
+            await инфоОкно.Open(map1.InteropObject);
+            await map1.InteropObject.AddListener<MouseEvent>("click", async (e) =>
+            {
+                await инфоОкно.Close();
+                инфоОкно = await InfoWindow.CreateAsync(this.JSRuntime,
+                    new InfoWindowOptions()
+                        {
+                            Content = "Выберите где расположен участок, на котором будут производиться семена",
+                            Position = e.LatLng,
+                        });
+                await инфоОкно.Open(map1.InteropObject);
+
+                Модель!.КоординатыУчастка = $"{e.LatLng.Lat},{e.LatLng.Lng}";
+                //StateHasChanged();
+            });
+        }
+    }
