@@ -60,11 +60,11 @@ public class Заявка
     public string ИзоляцияПолей { get; set; }
     public byte[] СвидетельствоПроисхожденияСемян { get; set; }
     public byte[] ЗаключениеОНематодах { get; set; }
-    public string Протравители { get; set; }
-    public string Инсектициды    { get; set; }
-    public string Фунгициды { get; set; }
-    public string Удобрения { get; set; }
-    public string Гербициды { get; set; }
+    public string? Протравители { get; set; }
+    public string? Инсектициды    { get; set; }
+    public string? Фунгициды { get; set; }
+    public string? Удобрения { get; set; }
+    public string? Гербициды { get; set; }
     public int ФормаУчастка { get; set; }
     public string? Размер1 { get; set; }
     public string? Размер2 { get; set; }
