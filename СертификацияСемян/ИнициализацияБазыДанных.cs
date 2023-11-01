@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using СертификацияСемян.Данные;
 
 namespace СертификацияСемян;
@@ -13,6 +14,8 @@ public class ИнициализацияБазыДанных : BackgroundService
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         using var область = фабрикаОбластиСервисов.CreateScope();
+        var бд = область.ServiceProvider.GetRequiredService<КонтекстБдПриложения>();
+        бд.Database.Migrate();
         var менеджерПользователей = область.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
         var администраторы = await менеджерПользователей.GetUsersInRoleAsync(Константы.РольАдминистратора);
         if (администраторы.Count == 0)
