@@ -1,20 +1,21 @@
-﻿<CascadingAuthenticationState>
-    <Router AppAssembly="@typeof(App).Assembly">
+﻿@inject IStringLocalizer<Приложение> Лок
+<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(Приложение).Assembly">
         <Found Context="routeData">
             <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
                 <NotAuthorized>
-                    Вы не авторизованы для просмотра страницы.
+                    @Лок["UserNotAuthorized"]
                 </NotAuthorized>
                 <Authorizing>
-                    Подождите пока идет процесс авторизации
+                    @Лок["AuthorizationInProgress"]
                 </Authorizing>
             </AuthorizeRouteView>
             <FocusOnNavigate RouteData="@routeData" Selector="h1" />
         </Found>
         <NotFound>
-            <PageTitle>Not found</PageTitle>
+            <PageTitle>@Лок["PageNotFoundTitle"]</PageTitle>
             <LayoutView Layout="@typeof(MainLayout)">
-                <p role="alert">Sorry, there's nothing at this address.</p>
+                <p role="alert">@Лок["PageNotFoundInformation"]</p>
             </LayoutView>
         </NotFound>
     </Router>
