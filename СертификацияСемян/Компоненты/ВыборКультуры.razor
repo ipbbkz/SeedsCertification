@@ -1,13 +1,13 @@
 ﻿@using System.Globalization
 @inject NavigationManager Navigation
 
-<a class="nav-link dropdown-toggle @OpenedCssClass" href="#" role="button" @onclick=@Переключить aria-expanded="false">
+<a class="nav-link dropdown-toggle @OpenedCssClass" role="button" @onclick=@Переключить aria-expanded="false">
     <span class="oi oi-globe"></span> @Культура.NativeName
 </a>
 <ul class="dropdown-menu @OpenedCssClass">
     @foreach (var culture in поддерживаемыеКультуры)
     {
-        <li><a class="dropdown-item" href="@ПолучитьСтраницуУстановкиКультуры(culture)">@culture.NativeName (@culture.TwoLetterISOLanguageName)</a></li>
+        <li><a class="dropdown-item" @onclick=@(() => УстановкаКультуры(culture))>@culture.NativeName (@culture.TwoLetterISOLanguageName)</a></li>
     }
 </ul>
 
@@ -38,5 +38,10 @@
         var cultureEscaped = Uri.EscapeDataString(культура.Name);
         var uriEscaped = Uri.EscapeDataString(uri);
         return $"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}";
+    }
+
+    public void УстановкаКультуры(CultureInfo культура)
+    {
+        Navigation.NavigateTo(ПолучитьСтраницуУстановкиКультуры(культура), forceLoad: true);
     }
 }
