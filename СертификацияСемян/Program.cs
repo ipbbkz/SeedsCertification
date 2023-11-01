@@ -20,6 +20,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<КонтекстБдПриложения>();
 builder.Services.AddRazorPages();
+builder.Services.AddControllers();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
@@ -40,9 +41,11 @@ builder.Services.AddAuthorization(options =>
 
 var app = builder.Build();
 
+var supportedCultures = new[] { "kk", "ru", "en-US" };
 app.UseRequestLocalization(new RequestLocalizationOptions()
-    .AddSupportedCultures(new[] { "en-US", "ru", "kk" })
-    .AddSupportedUICultures(new[] { "en-US", "ru", "kk" }));
+    .SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures));
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
