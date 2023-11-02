@@ -1,14 +1,20 @@
-﻿@page "/farmers"
+﻿@page "/inspectors"
 @attribute [Authorize(Policy = "ТребуетсяБытьАдминистратором")]
 @using Microsoft.AspNetCore.Identity
 @using СертификацияСемян.Данные;
 @inject UserManager<IdentityUser> МенеджерПользователей
 @inject IStringLocalizer<Пользователи> Лок
 
-<PageTitle>@Лок["Фермеры"]</PageTitle>
-<h3>
-    @Лок["Фермеры"]
-</h3>
+<PageTitle>@Лок["Инспекторы"]</PageTitle>
+<div class="align-items-center d-flex justify-content-between mb-2">
+    <div>
+        <h4 class="text-start text-primary">@Лок["Инспекторы"]</h4>
+    </div>
+    <div class="text-end">
+        <a href="/inspectors/add" class="btn btn-primary">+</a>
+    </div>
+</div>
+
 
 <table class="table">
     <thead>
@@ -19,17 +25,17 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var ф in фермеры)
+        @foreach (var и in инспекторы)
         {
             <tr>
                 <td>
-                    @ф.Id
+                    @и.Id
                 </td>
                 <td>
-                    @ф.Email
+                    @и.Email
                 </td>
                 <td>
-                    @ф.EmailConfirmed
+                    @и.EmailConfirmed
                 </td>
             </tr>
         }
@@ -37,11 +43,11 @@
 </table>
 
 @code {
-    private IList<IdentityUser> фермеры = Array.Empty<IdentityUser>();
+    private IList<IdentityUser> инспекторы = Array.Empty<IdentityUser>();
 
     protected override async Task OnParametersSetAsync()
     {
-        фермеры = await МенеджерПользователей.GetUsersInRoleAsync(Константы.РольФермер);
+        инспекторы = await МенеджерПользователей.GetUsersInRoleAsync(Константы.РольИнспектора);
         await base.OnParametersSetAsync();
     }
 }

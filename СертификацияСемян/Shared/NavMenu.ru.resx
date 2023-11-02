@@ -123,6 +123,9 @@
   <data name="ИмяПриложения" xml:space="preserve">
     <value>Сертификация Семян</value>
   </data>
+  <data name="Инспекторы" xml:space="preserve">
+    <value>Инспекторы</value>
+  </data>
   <data name="Логин" xml:space="preserve">
     <value>Войти</value>
   </data>
