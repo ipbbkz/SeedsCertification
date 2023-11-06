@@ -45,10 +45,16 @@
     <script src="_content/BlazorGoogleMaps/js/objectManager.js"></script>
     <script>
         window.getLocation = async () => {
-            const pos = await new Promise((resolve, reject) => {
-                navigator.geolocation.getCurrentPosition(resolve, reject);
-            });
-            return [pos.coords.latitude, pos.coords.longitude];
+            try {
+                const pos = await new Promise((resolve, reject) => {
+                    navigator.geolocation.getCurrentPosition(resolve, reject);
+                });
+                console.log("Current coordinates. ", pos.coords);
+                return [pos.coords.latitude, pos.coords.longitude];
+            } catch (e) {
+                console.log("Failed to retrieve current coordinates. ", e);
+                return [43.2433, 76.8646];
+            }
         };
     </script>
 </body>

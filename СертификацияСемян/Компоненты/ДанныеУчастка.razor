@@ -1,5 +1,6 @@
-﻿@using GoogleMapsComponents;
-@using GoogleMapsComponents.Maps;
+﻿@using GoogleMapsComponents
+@using GoogleMapsComponents.Maps
+@using System.Globalization
 @inject IJSRuntime JSRuntime
 @inject ILogger<ДанныеПоля> протоколировщик
 @inject IWebHostEnvironment окружение
@@ -26,6 +27,22 @@
     private GoogleMap map1;
     private MapOptions mapOptions;
 
+    protected override void OnInitialized()
+    {
+        var center = new LatLngLiteral()
+            {
+                Lng = 43.2433,
+                Lat = 76.8646,
+            };
+
+        mapOptions = new MapOptions()
+            {
+                Zoom = 15,
+                Center = center,
+                MapTypeId = MapTypeId.Roadmap
+            };
+    }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -36,7 +53,7 @@
                     Lng = location[0],
                     Lat = location[1],
                 };
-            Модель!.КоординатыУчастка = $"{location[0]},{location[1]}";
+            Модель!.КоординатыУчастка = $"{location[0].ToString(CultureInfo.InvariantCulture)},{location[1].ToString(CultureInfo.InvariantCulture)}";
 
             mapOptions = new MapOptions()
                 {
@@ -55,7 +72,7 @@
                     Lng = location[1],
                 };
 
-            Модель!.КоординатыУчастка = $"{location[0]},{location[1]}";
+            Модель!.КоординатыУчастка = $"{location[0].ToString(CultureInfo.InvariantCulture)},{location[1].ToString(CultureInfo.InvariantCulture)}";
 
             var инфоОкно = await InfoWindow.CreateAsync(
                 this.JSRuntime,
@@ -77,7 +94,7 @@
                         });
                 await инфоОкно.Open(map1.InteropObject);
 
-                Модель!.КоординатыУчастка = $"{e.LatLng.Lat},{e.LatLng.Lng}";
+            Модель!.КоординатыУчастка = $"{e.LatLng.Lat.ToString(CultureInfo.InvariantCulture)},{e.LatLng.Lng.ToString(CultureInfo.InvariantCulture)}";
                 //StateHasChanged();
             });
         }
