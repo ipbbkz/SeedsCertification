@@ -21,7 +21,8 @@ public class МодельЗаявки
     [Required]
     public int? ИдУчастка { get; set; }
 
-    public int РазмерКлубня { get; set; }
+    [Range(15, 65)]
+    public int РазмерКлубня { get; set; } = 15;
 
     public string КоординатыУчастка { get; set; }
     public string СевооборотПрошлогоГода { get; set; }
