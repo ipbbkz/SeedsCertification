@@ -1,27 +1,62 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using System.Globalization
+@using Microsoft.Extensions.Localization
+@using СертификацияСемян.Shared
+@inject IStringLocalizer<NavMenu> Лок
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var Культура = CultureInfo.CurrentCulture;
+    var поддерживаемыеКультуры = new[]
+    {
+        new CultureInfo("kk"),
+        new CultureInfo("ru"),
+        new CultureInfo("en-US"),
+    };
+}
 
 <ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" role="button" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="oi oi-globe"></span> @Культура.NativeName
+        </a>
+        <ul class="dropdown-menu">
+            @foreach (var culture in поддерживаемыеКультуры)
+            {
+                <li><a class="dropdown-item" href=@ПолучитьСтраницуУстановкиКультуры(culture)>@culture.NativeName (@culture.TwoLetterISOLanguageName)</a></li>
+            }
+        </ul>
+    </li>
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
-        <a  class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+        <a  class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@Лок["Приветствие"] @User.Identity?.Name!</a>
     </li>
     <li class="nav-item">
         <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/" method="post">
-            <button  type="submit" class="nav-link btn btn-link">Logout</button>
+                <button type="submit" class="nav-link btn btn-link">@Лок["ВыйтиИзАккаунта"]</button>
         </form>
     </li>
 }
 else
-{
-    <li class="nav-item">
-        <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
-    </li>
+    {
+        <li class="nav-item">
+            <a class="nav-link" id="register" asp-area="Identity" asp-page="/Account/Register">@Лок["Регистрация"]</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="login" asp-area="Identity" asp-page="/Account/Login">@Лок["Логин"]</a>
+        </li>
 }
 </ul>
+
+@functions {
+
+    public string ПолучитьСтраницуУстановкиКультуры(CultureInfo культура)
+    {
+        var returnUrl = Url.Content(string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}");
+        var cultureEscaped = Uri.EscapeDataString(культура.Name);
+        var uriEscaped = Uri.EscapeDataString(returnUrl);
+        return Url.Content($"~/Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}");
+    }
+}
