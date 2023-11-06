@@ -342,22 +342,25 @@ else
         загружаетсяЗаключениеОНематодах = false;
     }
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
-        var center = new LatLngLiteral()
-            {
-                Lng = location[0],
-                Lat = location[1],
-            };
-        Модель!.КоординатыУчастка = $"{location[0]},{location[1]}";
-
-        mapOptions = new MapOptions()
+        if (firstRender)
         {
-            Zoom = 15,
-            Center = center,
-            MapTypeId = MapTypeId.Roadmap
-        };
+            var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
+            var center = new LatLngLiteral()
+                {
+                    Lng = location[0],
+                    Lat = location[1],
+                };
+            Модель!.КоординатыУчастка = $"{location[0]},{location[1]}";
+
+            mapOptions = new MapOptions()
+                {
+                    Zoom = 15,
+                    Center = center,
+                    MapTypeId = MapTypeId.Roadmap
+                };
+        }
     }
 
     protected override void OnParametersSet()
