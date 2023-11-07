@@ -3,6 +3,7 @@
 @using Microsoft.AspNetCore.Identity
 @using СертификацияСемян.Данные;
 @inject UserManager<IdentityUser> МенеджерПользователей
+@inject УправляющийХозяйствами управляющийХозяйствами
 @inject IStringLocalizer<Пользователи> Лок
 
 <PageTitle>@Лок["Фермеры"]</PageTitle>
@@ -13,7 +14,8 @@
 <table class="table">
     <thead>
         <tr>
-            <td>Id</td>
+            @*<td>Id</td>*@
+            <td>Farms</td>
             <td>Email</td>
             <td>Email Confirmed</td>
         </tr>
@@ -22,14 +24,17 @@
         @foreach (var ф in фермеры)
         {
             <tr>
+                @*<td>
+                    @ф.Пользователь.Id
+            </td>*@
                 <td>
-                    @ф.Id
+                    @string.Join(", ", ф.Фермы.Select(ф => ф.НаваниеКомпании))
                 </td>
                 <td>
-                    @ф.Email
+                    @ф.Пользователь.Email
                 </td>
                 <td>
-                    @ф.EmailConfirmed
+                    @ф.Пользователь.EmailConfirmed
                 </td>
             </tr>
         }
@@ -37,11 +42,36 @@
 </table>
 
 @code {
-    private IList<IdentityUser> фермеры = Array.Empty<IdentityUser>();
+    private IList<МодельФермера> фермеры = Array.Empty<МодельФермера>();
 
     protected override async Task OnParametersSetAsync()
     {
-        фермеры = await МенеджерПользователей.GetUsersInRoleAsync(Константы.РольФермер);
+        фермеры = await ПолучитьФермеров();
         await base.OnParametersSetAsync();
+    }
+
+    internal async Task<List<МодельФермера>> ПолучитьФермеров()
+    {
+        var пользователи = await МенеджерПользователей.GetUsersInRoleAsync(Константы.РольФермер);
+        List<МодельФермера> результат = new();
+        foreach (var п in пользователи)
+        {
+            var фермы = управляющийХозяйствами.ПолучитьХозяйстваПользователя(п.Id);
+            результат.Add(new МодельФермера(п, фермы));
+        }
+
+        return результат;
+    }
+
+    internal class МодельФермера
+    {
+        public МодельФермера(IdentityUser пользователь, IList<ПроизводительСемян> фермы)
+        {
+            Пользователь = пользователь;
+            Фермы = фермы;
+        }
+
+        public IdentityUser Пользователь { get; }
+        public IList<ПроизводительСемян> Фермы { get; }
     }
 }
