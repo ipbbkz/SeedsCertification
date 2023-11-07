@@ -1,5 +1,6 @@
 ﻿@using GoogleMapsComponents
 @using GoogleMapsComponents.Maps
+@using System.Globalization
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject IJSRuntime JSRuntime
 @inject ILogger<ДанныеЗаявки> протоколировщик
@@ -342,6 +343,21 @@ else
         загружаетсяЗаключениеОНематодах = false;
     }
 
+    protected override void OnInitialized()
+    {
+        var center = new LatLngLiteral()
+            {
+                Lng = 43.2433,
+                Lat = 76.8646,
+            };
+        mapOptions = new MapOptions()
+            {
+                Zoom = 15,
+                Center = center,
+                MapTypeId = MapTypeId.Roadmap
+            };
+    }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -352,7 +368,7 @@ else
                     Lng = location[0],
                     Lat = location[1],
                 };
-            Модель!.КоординатыУчастка = $"{location[0]},{location[1]}";
+            Модель!.КоординатыУчастка = $"{location[0].ToString(CultureInfo.InvariantCulture)},{location[1].ToString(CultureInfo.InvariantCulture)}";
 
             mapOptions = new MapOptions()
                 {
@@ -405,7 +421,7 @@ else
                 Lng = location[1],
             };
 
-        Модель!.КоординатыУчастка = $"{location[0]},{location[1]}";
+        Модель!.КоординатыУчастка = $"{location[0].ToString(CultureInfo.InvariantCulture)},{location[1].ToString(CultureInfo.InvariantCulture)}";
 
         var инфоОкно = await InfoWindow.CreateAsync(
             this.JSRuntime,
