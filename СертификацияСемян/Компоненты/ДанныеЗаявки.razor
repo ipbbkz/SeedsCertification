@@ -91,20 +91,26 @@
     var дваГодаНазад = DateTime.UtcNow.Year - 2;
     var триГодаНазад = DateTime.UtcNow.Year - 3;
 }
-<label class="form-label">
-    @Лок["Севооборот"] @прошлыйГод
-</label>
-<InputTextArea @bind-Value="Модель!.СевооборотПрошлогоГода" class="form-control" />
-
-<label class="form-label">
-    @Лок["Севооборот"] @дваГодаНазад
-</label>
-<InputTextArea @bind-Value="Модель!.Севооборот2ГодаНазад" class="form-control" />
-
-<label class="form-label">
-    @Лок["Севооборот"] @триГодаНазад
-</label>
-<InputTextArea @bind-Value="Модель!.Севооборот3ГодаНазад" class="form-control" />
+<div class="row">
+    <div class="col">
+        <label class="form-label">
+            @Лок["Севооборот"] @прошлыйГод
+        </label>
+        <Севооборот @bind-Значение="Модель!.СевооборотПрошлогоГода" />
+    </div>
+    <div class="col">
+        <label class="form-label">
+            @Лок["Севооборот"] @дваГодаНазад
+        </label>
+        <Севооборот @bind-Значение="Модель!.Севооборот2ГодаНазад" />
+    </div>
+    <div class="col">
+        <label class="form-label">
+            @Лок["Севооборот"] @триГодаНазад
+        </label>
+        <Севооборот @bind-Значение="Модель!.Севооборот3ГодаНазад" />
+    </div>
+</div>
 
 <label class="form-label">
     @Лок["ИзоляцияПолей"]

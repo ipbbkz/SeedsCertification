@@ -1,0 +1,19 @@
+﻿@inject IStringLocalizer<Севооборот> Лок
+<InputSelect Value="Значение" ValueChanged="ЗначениеChanged" ValueExpression="@(() => Значение)" class="form-control">
+    <option value="">@Лок["ВыберитеСевооборот"] ...</option>        
+    <option value="1">@Лок["Зерновые"]</option>
+    <option value="2">@Лок["Бобовые"]</option>
+    <option value="3">@Лок["Масличные"]</option>
+    <option value="4">@Лок["Фуражные травы"]</option>
+    <option value="5">@Лок["Овощные"]</option>
+    <option value="6">@Лок["Бахчевые"]</option>
+    <option value="7">@Лок["Пар"]</option>
+</InputSelect>
+@code {
+    [Parameter]
+    public string? Значение { get; set; }
+
+    [Parameter]
+    public EventCallback<string> ЗначениеChanged { get; set; }
+
+}
