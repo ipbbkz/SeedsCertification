@@ -94,8 +94,8 @@
                         });
                 await инфоОкно.Open(map1.InteropObject);
 
-            Модель!.КоординатыУчастка = $"{e.LatLng.Lat.ToString(CultureInfo.InvariantCulture)},{e.LatLng.Lng.ToString(CultureInfo.InvariantCulture)}";
-                //StateHasChanged();
+                Модель!.КоординатыУчастка = $"{e.LatLng.Lat.ToString(CultureInfo.InvariantCulture)},{e.LatLng.Lng.ToString(CultureInfo.InvariantCulture)}";
+                StateHasChanged();
             });
         }
     }

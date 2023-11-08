@@ -450,7 +450,7 @@ else
             await инфоОкно.Open(map1.InteropObject);
 
             Модель!.КоординатыУчастка = $"{e.LatLng.Lat},{e.LatLng.Lng}";
-            //StateHasChanged();
+            StateHasChanged();
         });
     }
 }
