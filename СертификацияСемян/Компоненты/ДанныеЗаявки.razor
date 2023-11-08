@@ -255,13 +255,6 @@ else
     </div>
 </div>
 
-<label class="form-label">
-    @Лок["ПрогнозируемоеКоличествоУрожая"]
-</label>
-<InputText @bind-Value="Модель!.ПрогнозируемоеКоличествоУрожая" class="form-control" />
-
-
-
 @code {
     private GoogleMap map1;
     private MapOptions mapOptions;
@@ -418,6 +411,25 @@ else
         Модель.ИдУчастка = новоеЗначение;
     }
 
+    private async Task УстановитьКоординатыПоля(double широта, double долгота)
+    {
+        if (инфоОкно is not null)
+        {
+            await инфоОкно.Close();
+        }
+
+        инфоОкно = await InfoWindow.CreateAsync(this.JSRuntime,
+            new InfoWindowOptions()
+                {
+                    Content = "Выберите где расположен участок, на котором будут производиться семена",
+                    Position = new LatLngLiteral(широта, долгота),
+                });
+        await инфоОкно.Open(map1.InteropObject);
+
+        Модель!.КоординатыУчастка = $"{широта},{долгота}";
+    }
+
+    private InfoWindow? инфоОкно;
     private async Task OnAfterInitAsync()
     {
         var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
@@ -429,7 +441,7 @@ else
 
         Модель!.КоординатыУчастка = $"{location[0].ToString(CultureInfo.InvariantCulture)},{location[1].ToString(CultureInfo.InvariantCulture)}";
 
-        var инфоОкно = await InfoWindow.CreateAsync(
+        инфоОкно = await InfoWindow.CreateAsync(
             this.JSRuntime,
             new InfoWindowOptions()
                 {
@@ -440,16 +452,7 @@ else
         await инфоОкно.Open(map1.InteropObject);
         await map1.InteropObject.AddListener<MouseEvent>("click", async (e) =>
         {
-            await инфоОкно.Close();
-            инфоОкно = await InfoWindow.CreateAsync(this.JSRuntime,
-                new InfoWindowOptions()
-                    {
-                        Content = "Выберите где расположен участок, на котором будут производиться семена",
-                        Position = e.LatLng,
-                    });
-            await инфоОкно.Open(map1.InteropObject);
-
-            Модель!.КоординатыУчастка = $"{e.LatLng.Lat},{e.LatLng.Lng}";
+            await УстановитьКоординатыПоля(e.LatLng.Lat, e.LatLng.Lng);
             StateHasChanged();
         });
     }

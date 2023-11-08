@@ -43,7 +43,7 @@ public class МодельЗаявки
     public string ПлощадьПосадки { get; set; }
     public string РасстояниеМеждуРядами { get; set; }
     public string РасстояниеВРяду { get; set; }
-    public string ПрогнозируемоеКоличествоУрожая { get; set; }
+    public string ПрогнозируемоеКоличествоУрожая { get; set; } = "";
     public DateTime ДатаПосадки { get; set; } = DateTime.UtcNow;
     public DateTime ДатаСбора { get; set; } = DateTime.UtcNow;
 }

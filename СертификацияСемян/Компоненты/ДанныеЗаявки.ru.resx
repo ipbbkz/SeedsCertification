@@ -190,7 +190,7 @@
     <value>Параметры участка и засева</value>
   </data>
   <data name="ПлощадьПосадки" xml:space="preserve">
-    <value>Площадь посадки</value>
+    <value>Площадь посадки (га)</value>
   </data>
   <data name="Поля" xml:space="preserve">
     <value>Поля</value>
@@ -205,13 +205,13 @@
     <value>Прямоугольная</value>
   </data>
   <data name="РазмерКлубня" xml:space="preserve">
-    <value>Размер клубня</value>
+    <value>Размер клубня (мм)</value>
   </data>
   <data name="РасстояниеВРяду" xml:space="preserve">
-    <value>Расстояние в ряду</value>
+    <value>Расстояние в ряду (см)</value>
   </data>
   <data name="РасстояниеМеждуРядами" xml:space="preserve">
-    <value>Расстояние между рядами</value>
+    <value>Расстояние между рядами (см)</value>
   </data>
   <data name="СвидетельствоПроисхождения" xml:space="preserve">
     <value>Свидетельство происхождения</value>
