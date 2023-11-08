@@ -23,7 +23,6 @@ builder.Services.AddRazorPages();
 builder.Services.AddControllers();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
-builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<УправляющийХозяйствами>();
 builder.Services.AddScoped<УправляющийЗаявками>();
 builder.Services.AddLocalization();
