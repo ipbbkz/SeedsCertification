@@ -141,11 +141,8 @@
   <data name="ДатаПосадки" xml:space="preserve">
     <value>Дата посадки</value>
   </data>
-  <data name="ДатаСбора" xml:space="preserve">
-    <value>Дата сбора</value>
-  </data>
-  <data name="Длинна" xml:space="preserve">
-    <value>Длинна</value>
+  <data name="Длина" xml:space="preserve">
+    <value>Длина</value>
   </data>
   <data name="ДокументЗагружен" xml:space="preserve">
     <value>Документ загружен</value>
@@ -188,6 +185,9 @@
   </data>
   <data name="ПараметрыУчасткаИЗасева" xml:space="preserve">
     <value>Параметры участка и засева</value>
+  </data>
+  <data name="ПланируемаяДатаУборки" xml:space="preserve">
+    <value>Планируемая дата уборки</value>
   </data>
   <data name="ПлощадьПосадки" xml:space="preserve">
     <value>Площадь посадки (га)</value>

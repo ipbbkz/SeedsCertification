@@ -141,10 +141,7 @@
   <data name="ДатаПосадки" xml:space="preserve">
     <value>Отырғызу күні</value>
   </data>
-  <data name="ДатаСбора" xml:space="preserve">
-    <value>Жинақ күні</value>
-  </data>
-  <data name="Длинна" xml:space="preserve">
+  <data name="Длина" xml:space="preserve">
     <value>Ұзындығы</value>
   </data>
   <data name="ДокументЗагружен" xml:space="preserve">
@@ -188,6 +185,9 @@
   </data>
   <data name="ПараметрыУчасткаИЗасева" xml:space="preserve">
     <value>Зона және себу параметрлері</value>
+  </data>
+  <data name="ПланируемаяДатаУборки" xml:space="preserve">
+    <value>Жоспарланған тазалау күні</value>
   </data>
   <data name="ПлощадьПосадки" xml:space="preserve">
     <value>Егістік алаңы (га)</value>
