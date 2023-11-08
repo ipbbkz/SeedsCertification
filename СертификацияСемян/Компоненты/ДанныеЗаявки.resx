@@ -141,9 +141,6 @@
   <data name="ДатаПосадки" xml:space="preserve">
     <value>Planting date</value>
   </data>
-  <data name="ДатаСбора" xml:space="preserve">
-    <value>Collection date</value>
-  </data>
   <data name="Длина" xml:space="preserve">
     <value>Length</value>
   </data>
@@ -188,6 +185,9 @@
   </data>
   <data name="ПараметрыУчасткаИЗасева" xml:space="preserve">
     <value>Site and seeding parameters</value>
+  </data>
+  <data name="ПланируемаяДатаУборки" xml:space="preserve">
+    <value>Planned harvest date date</value>
   </data>
   <data name="ПлощадьПосадки" xml:space="preserve">
     <value>Planting area (ha)</value>
