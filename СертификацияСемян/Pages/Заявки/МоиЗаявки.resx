@@ -126,6 +126,9 @@
   <data name="Заявки" xml:space="preserve">
     <value>Requests</value>
   </data>
+  <data name="Информация" xml:space="preserve">
+    <value>Details</value>
+  </data>
   <data name="КлассСемян" xml:space="preserve">
     <value>Class of the seeds</value>
   </data>
