@@ -70,6 +70,15 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remember me?.
+        /// </summary>
+        public static string ЗапомнитьМеня {
+            get {
+                return ResourceManager.GetString("ЗапомнитьМеня", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in.
         /// </summary>
         public static string Логин {

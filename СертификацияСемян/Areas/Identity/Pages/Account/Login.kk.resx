@@ -120,6 +120,9 @@
   <data name="ЗабылПароль" xml:space="preserve">
     <value>Құпия сөзіңізді ұмыттыңыз ба?</value>
   </data>
+  <data name="ЗапомнитьМеня" xml:space="preserve">
+    <value>Мені есте сақтау?</value>
+  </data>
   <data name="Логин" xml:space="preserve">
     <value>Кіру</value>
   </data>

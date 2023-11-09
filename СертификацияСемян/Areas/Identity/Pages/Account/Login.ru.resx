@@ -120,6 +120,9 @@
   <data name="ЗабылПароль" xml:space="preserve">
     <value>Забыли пароль?</value>
   </data>
+  <data name="ЗапомнитьМеня" xml:space="preserve">
+    <value>Запомнить меня?</value>
+  </data>
   <data name="Логин" xml:space="preserve">
     <value>Войти</value>
   </data>
