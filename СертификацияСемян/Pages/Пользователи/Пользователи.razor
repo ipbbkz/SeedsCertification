@@ -2,7 +2,7 @@
 @attribute [Authorize(Policy = "ТребуетсяБытьАдминистратором")]
 @using Microsoft.AspNetCore.Identity
 @using СертификацияСемян.Данные;
-@inject UserManager<IdentityUser> МенеджерПользователей
+@inject UserManager<ПользовательПриложения> МенеджерПользователей
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject IStringLocalizer<Пользователи> Лок
 
@@ -65,13 +65,13 @@
 
     internal class МодельФермера
     {
-        public МодельФермера(IdentityUser пользователь, IList<ПроизводительСемян> фермы)
+        public МодельФермера(ПользовательПриложения пользователь, IList<ПроизводительСемян> фермы)
         {
             Пользователь = пользователь;
             Фермы = фермы;
         }
 
-        public IdentityUser Пользователь { get; }
+        public ПользовательПриложения Пользователь { get; }
         public IList<ПроизводительСемян> Фермы { get; }
     }
 }

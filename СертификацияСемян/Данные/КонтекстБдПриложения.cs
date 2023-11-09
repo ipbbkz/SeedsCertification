@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace СертификацияСемян.Данные;
 
-public class КонтекстБдПриложения : IdentityDbContext
+public class КонтекстБдПриложения : IdentityDbContext<ПользовательПриложения>
 {
     public КонтекстБдПриложения(DbContextOptions<КонтекстБдПриложения> options)
         : base(options)

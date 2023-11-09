@@ -2,7 +2,7 @@
 @attribute [Authorize(Policy = "ТребуетсяБытьАдминистратором")]
 @using Microsoft.AspNetCore.Identity
 @using СертификацияСемян.Данные;
-@inject UserManager<IdentityUser> МенеджерПользователей
+@inject UserManager<ПользовательПриложения> МенеджерПользователей
 @inject IStringLocalizer<Пользователи> Лок
 
 <PageTitle>@Лок["Инспекторы"]</PageTitle>
@@ -43,7 +43,7 @@
 </table>
 
 @code {
-    private IList<IdentityUser> инспекторы = Array.Empty<IdentityUser>();
+    private IList<ПользовательПриложения> инспекторы = Array.Empty<ПользовательПриложения>();
 
     protected override async Task OnParametersSetAsync()
     {

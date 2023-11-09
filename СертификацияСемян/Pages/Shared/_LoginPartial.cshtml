@@ -2,10 +2,11 @@
 @using System.Globalization
 @using Microsoft.Extensions.Localization
 @using СертификацияСемян.Shared
+@using СертификацияСемян.Данные
 @inject IStringLocalizer<NavMenu> Лок
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<ПользовательПриложения> SignInManager
+@inject UserManager<ПользовательПриложения> UserManager
 @{
     var Культура = CultureInfo.CurrentCulture;
     var поддерживаемыеКультуры = new[]

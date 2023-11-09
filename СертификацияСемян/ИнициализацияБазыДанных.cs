@@ -16,13 +16,13 @@ public class ИнициализацияБазыДанных : BackgroundService
         using var область = фабрикаОбластиСервисов.CreateScope();
         var бд = область.ServiceProvider.GetRequiredService<КонтекстБдПриложения>();
         бд.Database.Migrate();
-        var менеджерПользователей = область.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+        var менеджерПользователей = область.ServiceProvider.GetRequiredService<UserManager<ПользовательПриложения>>();
         var администраторы = await менеджерПользователей.GetUsersInRoleAsync(Константы.РольАдминистратора);
         if (администраторы.Count == 0)
         {
             const string ПользовательАдминистратора = "admin@admin";
             const string НачальныйПарольАдминистратора = "Admin#3";
-            var администратор = new IdentityUser()
+            var администратор = new ПользовательПриложения()
             {
                 Email = ПользовательАдминистратора,
                 UserName = ПользовательАдминистратора,
