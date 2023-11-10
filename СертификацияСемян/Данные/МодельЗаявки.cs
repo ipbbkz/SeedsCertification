@@ -8,6 +8,8 @@ public class МодельЗаявки
     [Required]
     public int? ТипЗаявки { get; set; }
 
+    public string Код { get; set; }
+
     public string НазваниеСортаСемян { get; set; }
 
     [Required]

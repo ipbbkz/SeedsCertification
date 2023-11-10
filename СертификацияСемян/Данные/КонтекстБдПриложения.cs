@@ -82,6 +82,9 @@ public class Заявка
 
     [ForeignKey("ИдУчастка")]
     public УчастокПоля УчастокПоля { get; set; }
+
+    [NotMapped]
+    public string Код => $"У{Ид:0000}/{(ДатаСоздания.Year % 100)}";
 }
 
 public class Поле
@@ -173,4 +176,7 @@ public class ПроизводительСемян
     public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
     public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
     public DateTime? ДатаУдаления { get; set; }
+
+    [NotMapped]
+    public string Код => $"Ш{Ид:0000}";
 }
