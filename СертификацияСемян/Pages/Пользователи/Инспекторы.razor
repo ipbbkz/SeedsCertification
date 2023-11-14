@@ -19,8 +19,10 @@
 <table class="table">
     <thead>
         <tr>
-            <td>Id</td>
             <td>Email</td>
+            <td>Фамилия</td>
+            <td>Имя</td>
+            <td>Отчество</td>
             <td>Email Confirmed</td>
         </tr>
     </thead>
@@ -29,10 +31,16 @@
         {
             <tr>
                 <td>
-                    @и.Id
+                    @и.Email
                 </td>
                 <td>
-                    @и.Email
+                    @и.Фамилия
+                </td>
+                <td>
+                    @и.Имя
+                </td>
+                <td>
+                    @и.Отчество
                 </td>
                 <td>
                     @и.EmailConfirmed

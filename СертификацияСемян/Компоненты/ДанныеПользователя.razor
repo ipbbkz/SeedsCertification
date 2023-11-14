@@ -1,0 +1,29 @@
+﻿@using System.Globalization
+@inject УправляющийХозяйствами управляющийХозяйствами
+@inject IJSRuntime JSRuntime
+@inject ILogger<ДанныеЗаявки> протоколировщик
+@inject IWebHostEnvironment окружение
+@inject IStringLocalizer<ДанныеПользователя> Лок
+
+<label class="form-label">
+    @Лок["Почта"] <span class="text-danger">*</span>
+</label>
+<InputText @bind-Value="Модель!.Почта" class="form-control" />
+<label class="form-label">
+    @Лок["Фамилия"] <span class="text-danger">*</span>
+</label>
+<InputText @bind-Value="Модель!.Фамилия" class="form-control" />
+<label class="form-label">
+    @Лок["Имя"] <span class="text-danger">*</span>
+</label>
+<InputText @bind-Value="Модель!.Имя" class="form-control" />
+<label class="form-label">
+    @Лок["Отчество"]
+</label>
+<InputText @bind-Value="Модель!.Отчество" class="form-control" />
+@code {
+
+    [Parameter]
+    public МодельПользователя Модель { get; set; }
+
+}

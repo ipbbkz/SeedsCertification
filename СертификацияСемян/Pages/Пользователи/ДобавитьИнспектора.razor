@@ -1,0 +1,97 @@
+﻿@page "/inspectors/add"
+@attribute [Authorize(Policy = "ТребуетсяБытьАдминистратором")]
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity.UI.Services
+@using Microsoft.AspNetCore.WebUtilities
+@using System.Text
+@using System.Text.Encodings.Web
+@using СертификацияСемян.Данные;
+@inject UserManager<ПользовательПриложения> МенеджерПользователей
+@inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<Инспекторы> Лок
+@inject IStringLocalizer<Глобальные> ГлобЛок
+@inject IUserStore<ПользовательПриложения> хранилищеПользователей
+@inject SignInManager<ПользовательПриложения> signInManager
+@inject IEmailSender emailSender
+
+<PageTitle>@Лок["ДобавитьФерму"]</PageTitle>
+
+    <h3>@Лок["ДобавитьФерму"]</h3>
+
+<EditForm EditContext=@контекстРедатирования OnValidSubmit="@Submit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <ДанныеПользователя Модель=@Модель />
+
+    <button type="submit" class="btn btn-primary">@ГлобЛок["Сохранить"]</button>
+    <a href="/farms" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
+</EditForm>
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+    private EditContext? контекстРедатирования;
+
+    public МодельПользователя Модель { get; set; } = new МодельПользователя();
+
+    protected override void OnInitialized()
+    {
+        контекстРедатирования = new(Модель);
+    }
+
+    private async Task Submit()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is null)
+        {
+            return;
+        }
+
+        var пользователь = new ПользовательПриложения();
+        пользователь.Фамилия = Модель.Фамилия;
+        пользователь.Имя = Модель.Имя;
+        пользователь.Отчество = Модель.Отчество;
+
+        var почта = Модель.Почта;
+        await хранилищеПользователей.SetUserNameAsync(пользователь, почта, CancellationToken.None);
+        await ((IUserEmailStore<ПользовательПриложения>)хранилищеПользователей).SetEmailAsync(пользователь, почта, CancellationToken.None);
+        var результат = await МенеджерПользователей.CreateAsync(пользователь, "Password1!");
+        if (!результат.Succeeded)
+        {
+            var сообщения = new ValidationMessageStore(контекстРедатирования);
+            foreach (var ошибка in результат.Errors)
+            {
+                сообщения.Add(() => Модель.Почта, ошибка.Description);
+            }
+
+            return;
+        }
+
+        результат = await МенеджерПользователей.AddToRoleAsync(пользователь, Константы.РольИнспектора);
+        if (!результат.Succeeded)
+        {
+            var сообщения = new ValidationMessageStore(контекстРедатирования);
+            foreach (var ошибка in результат.Errors)
+            {
+                сообщения.Add(() => Модель.Почта, ошибка.Description);
+            }
+
+            return;
+        }
+
+        var идПользователя = await МенеджерПользователей.GetUserIdAsync(пользователь);
+        var код = await МенеджерПользователей.GenerateEmailConfirmationTokenAsync(пользователь);
+        результат = await МенеджерПользователей.ConfirmEmailAsync(пользователь, код);
+        if (!результат.Succeeded)
+        {
+            var сообщения = new ValidationMessageStore(контекстРедатирования);
+            foreach (var ошибка in результат.Errors)
+            {
+                сообщения.Add(() => Модель.Почта, ошибка.Description);
+            }
+
+            return;
+        }
+
+        управляющийНавигацией.NavigateTo("/inspectors");
+    }
+}
