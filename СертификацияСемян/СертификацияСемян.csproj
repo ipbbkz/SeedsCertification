@@ -29,6 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\images\InstituteLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Areas\Identity\Pages\Account\Login.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
