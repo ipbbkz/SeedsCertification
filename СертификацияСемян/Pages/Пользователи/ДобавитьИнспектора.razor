@@ -8,34 +8,34 @@
 @using СертификацияСемян.Данные;
 @inject UserManager<ПользовательПриложения> МенеджерПользователей
 @inject NavigationManager управляющийНавигацией
-@inject IStringLocalizer<Инспекторы> Лок
+@inject IStringLocalizer<ДобавитьИнспектора> Лок
 @inject IStringLocalizer<Глобальные> ГлобЛок
 @inject IUserStore<ПользовательПриложения> хранилищеПользователей
 @inject SignInManager<ПользовательПриложения> signInManager
 @inject IEmailSender emailSender
 
-<PageTitle>@Лок["ДобавитьФерму"]</PageTitle>
+<PageTitle>@Лок["ДобавитьИнспектора"]</PageTitle>
 
-    <h3>@Лок["ДобавитьФерму"]</h3>
+    <h3>@Лок["ДобавитьИнспектора"]</h3>
 
-<EditForm EditContext=@контекстРедатирования OnValidSubmit="@Submit">
+<EditForm EditContext=@контекстРедактирования OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
     <ValidationSummary />
     <ДанныеПользователя Модель=@Модель />
 
     <button type="submit" class="btn btn-primary">@ГлобЛок["Сохранить"]</button>
-    <a href="/farms" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
+    <a href="/inspectors" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
 </EditForm>
 @code {
     [CascadingParameter]
     private Task<AuthenticationState>? состояниеАвторизации { get; set; }
-    private EditContext? контекстРедатирования;
+    private EditContext? контекстРедактирования;
 
     public МодельПользователя Модель { get; set; } = new МодельПользователя();
 
     protected override void OnInitialized()
     {
-        контекстРедатирования = new(Модель);
+        контекстРедактирования = new(Модель);
     }
 
     private async Task Submit()
@@ -57,7 +57,7 @@
         var результат = await МенеджерПользователей.CreateAsync(пользователь, "Password1!");
         if (!результат.Succeeded)
         {
-            var сообщения = new ValidationMessageStore(контекстРедатирования);
+            var сообщения = new ValidationMessageStore(контекстРедактирования);
             foreach (var ошибка in результат.Errors)
             {
                 сообщения.Add(() => Модель.Почта, ошибка.Description);
@@ -69,7 +69,7 @@
         результат = await МенеджерПользователей.AddToRoleAsync(пользователь, Константы.РольИнспектора);
         if (!результат.Succeeded)
         {
-            var сообщения = new ValidationMessageStore(контекстРедатирования);
+            var сообщения = new ValidationMessageStore(контекстРедактирования);
             foreach (var ошибка in результат.Errors)
             {
                 сообщения.Add(() => Модель.Почта, ошибка.Description);
@@ -83,7 +83,7 @@
         результат = await МенеджерПользователей.ConfirmEmailAsync(пользователь, код);
         if (!результат.Succeeded)
         {
-            var сообщения = new ValidationMessageStore(контекстРедатирования);
+            var сообщения = new ValidationMessageStore(контекстРедактирования);
             foreach (var ошибка in результат.Errors)
             {
                 сообщения.Add(() => Модель.Почта, ошибка.Description);
