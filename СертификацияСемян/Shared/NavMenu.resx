@@ -120,6 +120,9 @@
   <data name="ВыйтиИзАккаунта" xml:space="preserve">
     <value>Log out</value>
   </data>
+  <data name="Заявки" xml:space="preserve">
+    <value>Requests</value>
+  </data>
   <data name="ИмяПриложения" xml:space="preserve">
     <value>Seeds Certification</value>
   </data>

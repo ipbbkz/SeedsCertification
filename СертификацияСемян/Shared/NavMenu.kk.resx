@@ -120,6 +120,9 @@
   <data name="ВыйтиИзАккаунта" xml:space="preserve">
     <value>Шығу</value>
   </data>
+  <data name="Заявки" xml:space="preserve">
+    <value>Қолданбалар</value>
+  </data>
   <data name="ИмяПриложения" xml:space="preserve">
     <value>Тұқымдарды сертификаттау</value>
   </data>

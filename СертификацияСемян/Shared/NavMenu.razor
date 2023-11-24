@@ -28,6 +28,12 @@
                                 <NavLink class="nav-link" href="/inspectors">@Лок["Инспекторы"]</NavLink>
                             </li>
                         }
+                        @if (context.User.IsInRole(Данные.Константы.РольИнспектора))
+                        {
+                            <li class="nav-item">
+                                <NavLink class="nav-link" href="/requests/1">@Лок["Заявки"]</NavLink>
+                            </li>
+                        }
                         <li class="nav-item dropdown">
                             <ВыборКультуры />
                         </li>

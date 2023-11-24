@@ -12,6 +12,11 @@ public class УправляющийЗаявками
         this.контекст = контекст;
     }
 
+    public IList<Заявка> ПолучитьСтраницуЗаявок(int counter)
+    {
+        return контекст.Заявки.OrderByDescending(з => з.ДатаСоздания).Skip(20 * counter).Take(20).ToList();
+    }
+
     public IList<Заявка> ПолучитьЗаявкиПользователя(string идПользователя)
     {
         return контекст.Заявки

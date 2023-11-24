@@ -36,6 +36,8 @@ builder.Services.AddAuthorization(options =>
          policy => policy.RequireRole(Константы.РольАдминистратора));
     options.AddPolicy("Фермеры",
          policy => policy.RequireRole(Константы.РольФермер));
+    options.AddPolicy("Инспекторы",
+         policy => policy.RequireRole(Константы.РольИнспектора));
 });
 
 var app = builder.Build();
