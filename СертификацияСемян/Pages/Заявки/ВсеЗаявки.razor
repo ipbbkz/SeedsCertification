@@ -4,62 +4,121 @@
 @attribute [Authorize(Policy = "Инспекторы")]
 @inject УправляющийЗаявками управляющийЗаявками
 
-<h3>ВсеЗаявки</h3>
+<h3>Все заявки</h3>
+
+<div class="row g-1 mb-3">
+    <div class="col-sm-2">
+        <InputText @bind-Value="Код" class="form-control" placeholder="Код заявки" aria-label="Код заявки" />
+    </div>
+    <div class="col-sm">
+        <InputText @bind-Value="Сорт" class="form-control" placeholder="Сорт семян" aria-label="Сорт семян" />
+    </div>
+    <div class="col-sm">
+        <button type="button" class="btn btn-primary" @onclick=Поиск>@Глобальные.Поиск</button>
+    </div>
+</div>
+
 <table class="table">
-        <thead>
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Тип Заявки</td>
+            <td>Сорт</td>
+            <td>Посадка</td>
+            <td>Сбор</td>
+            <td>Дата создания</td>
+            <td>Действия</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var з in заявки)
+        {
             <tr>
-                <td>#</td>
-                <td>Тип Заявки</td>
-                <td>Дата создания</td>
-                <td>Действия</td>
+                <td>
+                    @з.Код
+                </td>
+                <td>
+                    <ТипЗаявки Значение=@з.ТипЗаявки />
+                </td>
+                <td>
+                    @з.НаваниеСортаСемян
+                </td>
+                <td>
+                    @(з.ДатаПосадки == DateTime.MinValue ? "" : з.ДатаПосадки.ToShortDateString())
+                </td>
+                <td>
+                    @(з.ДатаСбора == DateTime.MinValue ? "" : з.ДатаСбора.ToShortDateString())
+                </td>
+                <td>
+                    @з.ДатаСоздания
+                </td>
+                <td>
+                    <a href="/requests/@з.Ид/info">Детали</a>
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var з in заявки)
-            {
-                <tr>
-                    <td>
-                        @з.Код
-                    </td>
-                    <td>
-                        @if (з.ТипЗаявки == 1)
-                        {
-                            <text>@Глобальные.ТипСертификата_Картофель</text>
-                        }
-                        else
-                        {
-                            <text>@з.ТипЗаявки</text>
-                        }
-                    </td>
-                    <td>
-                        @з.ДатаСоздания
-                    </td>
-                    <td>
-                        <a href="/requests/@з.Ид/info">Детали</a>
-                    </td>
-                </tr>
-              }
-              </tbody>
-         </table>
-          <div class="btn-group" role="group" aria-label="Basic example">
-			 @if (НомерСтраницы > 1)
-			 {
-				 <a class="btn btn-secondary" href="/requests/@(НомерСтраницы - 1)">Назад</a>
-			 }
-			 @if (заявки.Count == 20)
-			 {
-				 <a class="btn btn-secondary" href="/requests/@(НомерСтраницы + 1)">Вперед</a>
-			 }
-          </div>             
-@code{
+        }
+    </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        @if (НомерСтраницы > 1)
+        {
+            <li class="page-item"><a class="page-link" href="#" @onclick=ПредыдущаяСтраница>Previous</a></li>
+        }
+        @* <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li> *@
+        @if (заявки.Count == 20)
+        {
+            <li class="page-item"><a class="page-link" href="#" @onclick=СледующаяСтраница>Next</a></li>
+        }
+    </ul>
+</nav>
+
+@code {
 
     private IList<Заявка> заявки = Array.Empty<Заявка>();
 
     [Parameter]
     public int НомерСтраницы { get; set; }
 
+    public string? Код { get; set; }
+    public string? Сорт { get; set; }
+
     protected override async Task OnParametersSetAsync()
     {
-        заявки = управляющийЗаявками.ПолучитьСтраницуЗаявок(НомерСтраницы - 1);
+        ПоказатьДанные(Код, Сорт, НомерСтраницы - 1);
+    }
+
+    private void Поиск()
+    {
+        ПоказатьДанные(Код, Сорт, 0);
+    }
+
+    private void ПредыдущаяСтраница()
+    {
+        НомерСтраницы--;
+        ПоказатьДанные(Код, Сорт, НомерСтраницы - 1);
+    }
+
+    private void СледующаяСтраница()
+    {
+        НомерСтраницы++;
+        ПоказатьДанные(Код, Сорт, НомерСтраницы - 1);
+    }
+
+    private void ПоказатьДанные(string? код, string? сорт, int страница)
+    {
+        заявки = управляющийЗаявками.ПолучитьСтраницуЗаявок(страница);
+        if (!string.IsNullOrWhiteSpace(код))
+        {
+            заявки = заявки.Where(з => з.Код.Contains(код.Trim())).ToList();
+        }
+
+        if (!string.IsNullOrWhiteSpace(сорт))
+        {
+            заявки = заявки.Where(з => з.НаваниеСортаСемян.Contains(сорт.Trim())).ToList();
+        }
     }
 }

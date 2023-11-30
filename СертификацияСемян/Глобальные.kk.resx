@@ -120,6 +120,9 @@
   <data name="Назад" xml:space="preserve">
     <value>Артқа</value>
   </data>
+  <data name="Поиск" xml:space="preserve">
+    <value>Іздеу</value>
+  </data>
   <data name="Сохранить" xml:space="preserve">
     <value>Сақтау</value>
   </data>

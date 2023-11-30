@@ -70,6 +70,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string Поиск {
+            get {
+                return ResourceManager.GetString("Поиск", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Сохранить {
