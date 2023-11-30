@@ -123,6 +123,9 @@
   <data name="Сохранить" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="ТипСертификата_Картофель" xml:space="preserve">
+    <value>Potato</value>
+  </data>
   <data name="Удалить" xml:space="preserve">
     <value>Delete</value>
   </data>

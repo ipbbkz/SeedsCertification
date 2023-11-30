@@ -79,6 +79,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Potato.
+        /// </summary>
+        public static string ТипСертификата_Картофель {
+            get {
+                return ResourceManager.GetString("ТипСертификата_Картофель", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Удалить {
