@@ -88,6 +88,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contacts.
+        /// </summary>
+        public static string Страница_Контакты {
+            get {
+                return ResourceManager.GetString("Страница_Контакты", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Potato.
         /// </summary>
         public static string ТипСертификата_Картофель {

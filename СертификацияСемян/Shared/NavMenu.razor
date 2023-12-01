@@ -8,6 +8,9 @@
         </button>
         <div class="@NavMenuCssClass navbar-collapse flex-sm-row-reverse" id="navbarScroll">
             <ul class="navbar-nav navbar-nav-scroll">
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/info/contacts">@Глобальные.Страница_Контакты</NavLink>
+                </li>
                 <AuthorizeView>
                     <Authorized>
                         @if (context.User.IsInRole(Данные.Константы.РольФермер))

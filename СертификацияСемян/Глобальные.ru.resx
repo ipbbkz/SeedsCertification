@@ -126,6 +126,9 @@
   <data name="Сохранить" xml:space="preserve">
     <value>Сохранить</value>
   </data>
+  <data name="Страница_Контакты" xml:space="preserve">
+    <value>Контакты</value>
+  </data>
   <data name="ТипСертификата_Картофель" xml:space="preserve">
     <value>Картофель</value>
   </data>

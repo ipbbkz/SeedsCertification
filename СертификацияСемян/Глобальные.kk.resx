@@ -126,6 +126,9 @@
   <data name="Сохранить" xml:space="preserve">
     <value>Сақтау</value>
   </data>
+  <data name="Страница_Контакты" xml:space="preserve">
+    <value>Контактілер</value>
+  </data>
   <data name="ТипСертификата_Картофель" xml:space="preserve">
     <value>Ақтүйнек</value>
   </data>

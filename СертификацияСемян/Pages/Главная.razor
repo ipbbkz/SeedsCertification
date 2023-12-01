@@ -1,11 +1,10 @@
 ﻿@page "/"
-@attribute [Authorize]
 @inject IStringLocalizer<Главная> Лок
 <PageTitle>@Лок["ГлавнаяСтраница"]</PageTitle>
 
-<h1>@Лок["ГлавнаяСтраница"]</h1>
 <AuthorizeView>
     <Authorized>
+        <h1>@Лок["ГлавнаяСтраница"]</h1>
         @if (context.User.IsInRole(Данные.Константы.РольФермер))
         {                            
             <div class="row">
@@ -32,4 +31,11 @@
             </div>
         }
     </Authorized>
+    <NotAuthorized>
+        <a href="/information/1">Об институте</a><br />
+        <a href="/information/2">Деятельность</a><br />
+        <a href="/information/3">Инспекция</a><br />
+        <a href="/information/4">Нормативно-правовая база</a><br />
+        <a href="/information/5">5 раздел</a><br />
+    </NotAuthorized>
 </AuthorizeView>
