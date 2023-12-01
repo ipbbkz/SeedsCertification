@@ -1,0 +1,102 @@
+﻿@page "/info/about"
+
+<h3>Инспекция и сертификация качества семян</h3>
+
+<h4>Руководство</h4>
+
+<p>Совет: функции совета, список членов совета</p>
+
+<p>Правление: функции правления, список членов правления</p>
+
+<div class="card mb-3 border border-0">
+	<div class="row g-0">
+		<div class="col-md-3">
+			@* <img src="..." class="img-fluid rounded-start" alt="Председатель"> *@
+			<svg class="bd-placeholder-img img-fluid rounded-start mx-auto d-block" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 200x200" preserveAspectRatio="xMidYMid slice" focusable="false">
+				<title>Placeholder</title>
+				<rect width="100%" height="100%" fill="#868e96"></rect>
+				<text x="50%" y="50%" fill="#dee2e6" dy=".3em" dx="-1.6em">200x200</text>
+			</svg>
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<h5 class="card-title">Председатель</h5>
+				<p class="card-text">Дайте пожалуйста резюме председателя.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="card mb-3 border border-0">
+	<div class="row g-0">
+		<div class="col-md-3">
+			@* <img src="..." class="img-fluid rounded-start" alt="Заместитель 1"> *@
+			<svg class="bd-placeholder-img img-fluid rounded-start mx-auto d-block" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 200x200" preserveAspectRatio="xMidYMid slice" focusable="false">
+				<title>Placeholder</title>
+				<rect width="100%" height="100%" fill="#868e96"></rect>
+				<text x="50%" y="50%" fill="#dee2e6" dy=".3em" dx="-1.6em">200x200</text>
+			</svg>
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<h5 class="card-title">Заместитель 1</h5>
+				<p class="card-text">Дайте пожалуйста резюме заместителя.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="card mb-3 border border-0">
+	<div class="row g-0">
+		<div class="col-md-3">
+			@* <img src="..." class="img-fluid rounded-start" alt="Заместитель 2"> *@
+			<svg class="bd-placeholder-img img-fluid rounded-start mx-auto d-block" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 200x200" preserveAspectRatio="xMidYMid slice" focusable="false">
+				<title>Placeholder</title>
+				<rect width="100%" height="100%" fill="#868e96"></rect>
+				<text x="50%" y="50%" fill="#dee2e6" dy=".3em" dx="-1.6em">200x200</text>
+			</svg>
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<h5 class="card-title">Заместитель 2</h5>
+				<p class="card-text">Дайте пожалуйста резюме заместителя.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<p class="pre-wrap">@info</p>
+<h4 class="text-center">Организационная структура</h4>
+<p class="pre-wrap">@info1</p>
+<h4 class="text-center">Схема взаимодействия структур</h4>
+<p class="pre-wrap">@info2</p>
+
+@code{
+	string info1 = @"
+												Директор
+				↓									↓								↓
+Служба инспекции семян картофеля	Служба инспекции плодовых культур	Исследовательская лаборатория
+1 Главный инспектор							1 Главный инспектор			1 Заведующий лабораторией
+2 Инспектора									2 Инспектора					2  лаборант
+";
+	string info2 = @"
+														МСХ РК	
+						↙								    ↕											↘
+РГУ «Государственная комиссия по					Профессиональная организация					Комитет государственной инспекции
+сортоиспытанию сельскохозяйственных культур»	←	инспекции и сертификации качества семян	↔	в агропромышленном комплексе МСХ РК
+МСХ РК											картофеля и посадочного материала				(Управление по карантину растений, 
+												плодовых культур								Управление защиты растений)
+";
+	string info = @"
+1   О профессиональной организации инспекции и сертификации качества семян картофеля и посадочного материала плодовых культур
+
+1.2	Структура профессиональной организации инспекции и сертификации качества семян картофеля и посадочного материала плодовых культур:
+	- общее собрание,
+	- правление,
+	- председатель,
+	- директор,
+	- инспекционная служба,
+	- исследовательская лаборатория,
+	- иные органы созданные профессиональной организацией.
+";
+}
