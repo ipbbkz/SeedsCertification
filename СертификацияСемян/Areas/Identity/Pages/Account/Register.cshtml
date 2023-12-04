@@ -1,9 +1,9 @@
 ﻿@page
 @using СертификацияСемян.Areas.Identity.Pages.Account
 @using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<Register> Лок
 @model RegisterModel
 @{
-    @inject IStringLocalizer<Register> Лок
     ViewData["Title"] = @Лок["Регистрация"];
 }
 
@@ -11,7 +11,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" asp-route-Inspector="@Model.Inspector" method="post">
             <h2>@Лок["НовыйАккаунт"]</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>

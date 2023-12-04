@@ -37,13 +37,19 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
-        }
+		}
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
-        [BindProperty]
+		/// <summary>
+		/// Gets or sets a value indicating whether this registration for inspector.
+		/// </summary>
+		[BindProperty(SupportsGet = true)]
+		public bool Inspector { get; set; }
+
+		/// <summary>
+		///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+		///     directly from your code. This API may change or be removed in future releases.
+		/// </summary>
+		[BindProperty]
         public InputModel Input { get; set; }
 
         /// <summary>
@@ -117,7 +123,15 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
-                    result = await _userManager.AddToRoleAsync(user, Константы.РольФермер);
+                    if (Inspector)
+                    {
+                        result = await _userManager.AddToRoleAsync(user, Константы.РольФермер);
+                    }
+                    else
+                    {
+                        result = await _userManager.AddToRoleAsync(user, Константы.РольИнспектора);
+                    }
+
                     if (result.Succeeded)
                     {
                         var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);

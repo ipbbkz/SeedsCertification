@@ -1,0 +1,27 @@
+﻿@page
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Register> Лок
+<h3>Выберите тип регистрации</h3>
+
+<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card">
+            <img src="/images/farmer_registration.jpg" class="object-fit-cover card-img-top" alt="Регистрация инспектора" style="height: 270px;">
+            <div class="card-body">
+                <h5 class="card-title">Фермер</h5>
+                <p class="card-text">Если вы владелец сельского хозяйтва, который хочет сертифицировать свою продукцию, регистрируйтесь тут.</p>
+                <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary">@Лок["РегистрацияФермера"]</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <img src="/images/inspector_registration.jpg" class="card-img-top" alt="Регистрация инспектора">
+            <div class="card-body">
+                <h5 class="card-title">Инспектор</h5>
+                <p class="card-text">Инспекторы которые будут проводить инспекцию на полях должны пройти регистрацию тут. Учетная запись будет активна после одобрения администрацией.</p>
+                <a asp-area="Identity" asp-page="/Account/Register" asp-route-Inspector="true" class="btn btn-primary">@Лок["РегистрацияИнспектора"]</a>
+            </div>
+        </div>
+    </div>
+</div>
