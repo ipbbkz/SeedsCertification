@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using СертификацияСемян;
@@ -30,6 +31,7 @@ builder.Services.AddMvc()
      .AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder)
      .AddDataAnnotationsLocalization();
 builder.Services.AddHostedService<ИнициализацияБазыДанных>();
+builder.Services.AddTransient<IEmailSender, Почтальон>();
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("ТребуетсяБытьАдминистратором",

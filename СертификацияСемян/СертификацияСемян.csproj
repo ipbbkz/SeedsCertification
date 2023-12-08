@@ -33,6 +33,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Areas\Identity\Pages\Account\ForgotPassword.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ForgotPassword.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Areas\Identity\Pages\Account\ForgotPasswordConfirmation.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ForgotPasswordConfirmation.resx</DependentUpon>
+    </Compile>
     <Compile Update="Areas\Identity\Pages\Account\Login.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -52,6 +62,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Areas\Identity\Pages\Account\ForgotPassword.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ForgotPassword.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Areas\Identity\Pages\Account\ForgotPasswordConfirmation.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ForgotPasswordConfirmation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Areas\Identity\Pages\Account\Login.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Login.Designer.cs</LastGenOutput>
