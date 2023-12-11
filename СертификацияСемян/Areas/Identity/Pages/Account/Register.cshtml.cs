@@ -125,11 +125,11 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account
                     var userId = await _userManager.GetUserIdAsync(user);
                     if (Inspector)
                     {
-                        result = await _userManager.AddToRoleAsync(user, Константы.РольФермер);
+                        result = await _userManager.AddToRoleAsync(user, Константы.РольИнспектора);
                     }
                     else
                     {
-                        result = await _userManager.AddToRoleAsync(user, Константы.РольИнспектора);
+                        result = await _userManager.AddToRoleAsync(user, Константы.РольФермер);
                     }
 
                     if (result.Succeeded)
