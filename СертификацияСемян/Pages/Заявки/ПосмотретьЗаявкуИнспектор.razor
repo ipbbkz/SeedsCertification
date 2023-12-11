@@ -10,7 +10,7 @@
 
 <EditForm Model="@Модель">
     <fieldset disabled>
-        <ДанныеЗаявки Модель=@Модель Пользователь=@ИдЛичности/>
+        <ДанныеЗаявки Модель=@Модель Пользователь=@ИдВладельца />
     </fieldset>
     <a href="/requests" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
 </EditForm>
@@ -24,14 +24,14 @@
     public int Ид { get; set; }
 
     public МодельЗаявки? Модель { get; set; }
-    public string ИдЛичности { get; set; } = "";
+    public string ИдВладельца { get; set; } = "";
 
     protected override void OnInitialized() => Модель ??= new();
 
     protected override async Task OnParametersSetAsync()
     {
-        ИдЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности() ?? "";
         var з = управляющийЗаявками.ПолучитьЗаявку(Ид);
+        ИдВладельца = з.УчастокПоля.Поле.ПроизводительСемян.ИдВладельца;
 
         Модель.Код = з.Код;
         Модель.ТипЗаявки = з.ТипЗаявки;
