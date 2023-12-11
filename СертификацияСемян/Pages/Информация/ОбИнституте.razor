@@ -67,26 +67,137 @@
 
 <p class="pre-wrap">@info</p>
 <h4 class="text-center">Организационная структура</h4>
-<p class="pre-wrap">@info1</p>
+<div class="card mb-3 border mx-auto" style="width: 8rem">
+	<div class="row g-0">
+		<div class="col-md-12 text-center p-1">
+			<h4>Директор</h4>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-3">
+		<a style="font-size: 700%; margin-left: 90%">↙</a>
+	</div>
+	<div class="col-1"></div>
+	<div class="col-3">
+		<a style="font-size: 700%; margin-left: 60%">↓</a>
+	</div>
+	<div class="col-1"></div>
+	<div class="col-3 rotate">
+		<a style="font-size: 700%; margin-left: 50%">↙</a>
+	</div>
+	<div class="col-1"></div>
+</div>
+<div class="row mb-5 graph_vertex">
+	<div class="col-3">
+		<div class="card mx-auto border mb-2">
+			<div class="p-3">
+				Служба инспекции семян картофеля
+			</div>
+		</div>
+		<div class="card mx-auto border mb-2">
+			<div class="p-3">
+				Главный инспектор
+			</div>
+		</div>
+		<div class="card mx-auto border mb-2">
+			<div class="p-3">
+				Инспектора
+			</div>
+		</div>
+	</div>
+	<div class="col-1"></div>
+	<div class="col-3">
+		<div class="card mx-auto border mb-2">
+			<div class="p-3">
+				Служба инспекции плодовых культур
+			</div>
+		</div>
+		<div class="card mx-auto border mb-2">
+			<div class="p-3">
+				Главный инспектор
+			</div>
+		</div>
+		<div class="card mx-auto border mb-2">
+			<div class="p-3">
+				Инспектора
+			</div>
+		</div>
+	</div>
+	<div class="col-1"></div>
+	<div class="col-3">
+		<div class="card mx-auto border mb-2">
+			<div class="p-3">
+				Исследовательская лаборатория
+			</div>
+		</div>
+		<div class="card mx-auto border mb-2">
+			<div class="p-3">
+				Заведующий лабораторией
+			</div>
+		</div>
+		<div class="card mx-auto border mb-2">
+			<div class="p-3">
+				Лаборант
+			</div>
+		</div>
+	</div>
+	<div class="col-1"></div>
+</div>
 <h4 class="text-center">Схема взаимодействия структур</h4>
-<p class="pre-wrap">@info2</p>
+<div class="card mb-3 border mx-auto" style="width: 8rem">
+	<div class="row g-0">
+		<div class="col-md-12 text-center p-1">
+			<h4>МСХ РК</h4>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-3">
+		<a style="font-size: 700%; margin-left: 90%">↙</a>
+	</div>
+	<div class="col-1"></div>
+	<div class="col-3">
+		<a style="font-size: 600%; margin-left: 60%">↕</a>
+	</div>
+	<div class="col-1"></div>
+	<div class="col-3 rotate">
+		<a style="font-size: 700%; margin-left: 50%">↙</a>
+	</div>
+	<div class="col-1"></div>
+</div>
+<div class="row mb-5 graph_vertex">
+	<div class="col-3">
+		<div class="card mx-auto border">
+			<div class="з-3">
+				РГУ «Государственная комиссия по сортоиспытанию сельскохозяйственных культур» МСХ РК
+			</div>
+		</div>
+	</div>
+	<div class="col-1">
+		<a style="font-size: 700%; line-height: 50%">←</a>
+	</div>
+	<div class="col-3">
+		<div class="card border mx-auto">
+			<div class="p-3">
+				Профессиональная организация инспекции и сертификации качества семян картофеля и посадочного материала плодовых культур
+			</div>
+		</div>
+	</div>
+	<div class="col-1">
+		<a style="font-size: 700%; line-height: 50%">↔</a>
+	</div>
+	<div class="col-3">
+		<div class="card mx-auto border">
+			<div class="p-3">
+				Комитет государственной инспекции в агропромышленном комплексе МСХ РК (Управление по карантину растений, Управление защиты растений)
+			</div>
+		</div>
+	</div>
+	<div class="col-1"></div>
+</div>
 
 @code{
-	string info1 = @"
-												Директор
-				↓									↓								↓
-Служба инспекции семян картофеля	Служба инспекции плодовых культур	Исследовательская лаборатория
-1 Главный инспектор							1 Главный инспектор			1 Заведующий лабораторией
-2 Инспектора									2 Инспектора					2  лаборант
-";
-	string info2 = @"
-														МСХ РК	
-						↙								    ↕											↘
-РГУ «Государственная комиссия по					Профессиональная организация					Комитет государственной инспекции
-сортоиспытанию сельскохозяйственных культур»	←	инспекции и сертификации качества семян	↔	в агропромышленном комплексе МСХ РК
-МСХ РК											картофеля и посадочного материала				(Управление по карантину растений, 
-												плодовых культур								Управление защиты растений)
-";
 	string info = @"
 1   О профессиональной организации инспекции и сертификации качества семян картофеля и посадочного материала плодовых культур
 

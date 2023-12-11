@@ -61,6 +61,14 @@ a, .btn-link {
         content: "An error has occurred."
     }
 
-.pre-wrap{
-    white-space: pre-wrap;
+div.graph_vertex div.col div.card {
+    width: 75%;
+}
+
+.rotate {
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
 }
