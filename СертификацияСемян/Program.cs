@@ -36,6 +36,8 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("ТребуетсяБытьАдминистратором",
          policy => policy.RequireRole(Константы.РольАдминистратора));
+    options.AddPolicy("ТребуетсяБытьСуперАдминистратором",
+         policy => policy.RequireRole(Константы.РольАдминистратора)/*.RequireClaim("NonExistingClaim")*/);
     options.AddPolicy("Фермеры",
          policy => policy.RequireRole(Константы.РольФермер));
     options.AddPolicy("Инспекторы",

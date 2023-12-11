@@ -48,8 +48,9 @@
                 </td>
                 <td>
                     <a href="/inspectors/edit/@и.Id" class="btn btn-primary">@Глобальные.Редактировать</a>
-
-                    <a href="/inspectors/delete/@и.Id" class="btn btn-danger">@Глобальные.Удалить</a>
+                    <AuthorizeView Policy="ТребуетсяБытьСуперАдминистратором">
+                        <a href="/inspectors/delete/@и.Id" class="btn btn-danger">@Глобальные.Удалить</a>
+                    </AuthorizeView>
                 </td>
             </tr>
         }

@@ -18,6 +18,7 @@
             <td>Farms</td>
             <td>Email</td>
             <td>Email Confirmed</td>
+            <td></td>
         </tr>
     </thead>
     <tbody>
@@ -35,6 +36,11 @@
                 </td>
                 <td>
                     @ф.Пользователь.EmailConfirmed
+                </td>
+                <td>
+                    <AuthorizeView Policy="ТребуетсяБытьСуперАдминистратором">
+                        <a href="/farmers/delete/@ф.Пользователь.Id" class="btn btn-danger">@Глобальные.Удалить</a>
+                    </AuthorizeView>
                 </td>
             </tr>
         }

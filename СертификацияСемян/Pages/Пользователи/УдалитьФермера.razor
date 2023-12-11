@@ -1,4 +1,4 @@
-﻿@page "/inspectors/delete/{ИдИнспектора}"
+﻿@page "/farmers/delete/{ИдИнспектора}"
 @attribute [Authorize(Policy = "ТребуетсяБытьСуперАдминистратором")]
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.AspNetCore.Identity.UI.Services
@@ -62,6 +62,6 @@
     {
         var result = await МенеджерПользователей.FindByIdAsync(ИдИнспектора);
         await МенеджерПользователей.DeleteAsync(result);
-        управляющийНавигацией.NavigateTo("/inspectors");
+        управляющийНавигацией.NavigateTo("/farmers");
     }
 }
