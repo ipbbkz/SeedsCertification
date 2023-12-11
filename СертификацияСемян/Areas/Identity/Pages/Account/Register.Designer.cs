@@ -22,7 +22,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Register {
+    internal class Register {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("СертификацияСемян.Areas.Identity.Pages.Account.Register", typeof(Register).Assembly);
@@ -51,7 +51,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,27 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm your email.
+        /// </summary>
+        internal static string ЗаголовокПисьмаПодтверждения {
+            get {
+                return ResourceManager.GetString("ЗаголовокПисьмаПодтверждения", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please check your email to confirm your account..
+        /// </summary>
+        internal static string ИнструкцииПоПодтвержденииРегистрации {
+            get {
+                return ResourceManager.GetString("ИнструкцииПоПодтвержденииРегистрации", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New account..
         /// </summary>
-        public static string НовыйАккаунт {
+        internal static string НовыйАккаунт {
             get {
                 return ResourceManager.GetString("НовыйАккаунт", resourceCulture);
             }
@@ -72,34 +90,61 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
-        public static string Пароль {
+        internal static string Пароль {
             get {
                 return ResourceManager.GetString("Пароль", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Register confirmation.
+        /// </summary>
+        internal static string ПодтвердждениеРегистрации {
+            get {
+                return ResourceManager.GetString("ПодтвердждениеРегистрации", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm Password.
         /// </summary>
-        public static string ПодтвердитьПароль {
+        internal static string ПодтвердитьПароль {
             get {
                 return ResourceManager.GetString("ПодтвердитьПароль", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Log up.
+        ///   Looks up a localized string similar to Register.
         /// </summary>
-        public static string Регистрация {
+        internal static string Регистрация {
             get {
                 return ResourceManager.GetString("Регистрация", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please wait while your account would be confirmed by administrator. You will receive confirmation over email..
+        /// </summary>
+        internal static string ТелоПисьмаПодтвержденияИнспектору {
+            get {
+                return ResourceManager.GetString("ТелоПисьмаПодтвержденияИнспектору", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please confirm your account by &lt;a href=&apos;{0}&apos;&gt;clicking here&lt;/a&gt;..
+        /// </summary>
+        internal static string ТелоПисьмаПодтвержденияФермеру {
+            get {
+                return ResourceManager.GetString("ТелоПисьмаПодтвержденияФермеру", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
-        public static string ЭлектроннаяПочта {
+        internal static string ЭлектроннаяПочта {
             get {
                 return ResourceManager.GetString("ЭлектроннаяПочта", resourceCulture);
             }
