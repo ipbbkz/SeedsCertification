@@ -79,6 +79,24 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure that you want to completely delete the record?.
+        /// </summary>
+        public static string ПредупреждениеПроУдаление {
+            get {
+                return ResourceManager.GetString("ПредупреждениеПроУдаление", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string Редактировать {
+            get {
+                return ResourceManager.GetString("Редактировать", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Сохранить {

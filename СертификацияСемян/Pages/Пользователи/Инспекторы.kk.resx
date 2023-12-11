@@ -120,4 +120,10 @@
   <data name="Инспекторы" xml:space="preserve">
     <value>Инспекторлар</value>
   </data>
+  <data name="ПредупреждениеПроУдаление" xml:space="preserve">
+    <value />
+  </data>
+  <data name="УдалитьИнспектора" xml:space="preserve">
+    <value>Инспекторды алып тастаңыз</value>
+  </data>
 </root>

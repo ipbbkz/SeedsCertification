@@ -123,6 +123,9 @@
   <data name="Поиск" xml:space="preserve">
     <value>Іздеу</value>
   </data>
+  <data name="ПредупреждениеПроУдаление" xml:space="preserve">
+    <value>Жазбаны толығымен жойғыңыз келетініне сенімдісіз бе?</value>
+  </data>
   <data name="Сохранить" xml:space="preserve">
     <value>Сақтау</value>
   </data>

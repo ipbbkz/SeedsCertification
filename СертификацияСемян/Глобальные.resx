@@ -123,6 +123,12 @@
   <data name="Поиск" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="ПредупреждениеПроУдаление" xml:space="preserve">
+    <value>Are you sure that you want to completely delete the record?</value>
+  </data>
+  <data name="Редактировать" xml:space="preserve">
+    <value>Edit</value>
+  </data>
   <data name="Сохранить" xml:space="preserve">
     <value>Save</value>
   </data>

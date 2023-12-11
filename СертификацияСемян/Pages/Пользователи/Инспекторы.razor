@@ -3,7 +3,7 @@
 @using Microsoft.AspNetCore.Identity
 @using СертификацияСемян.Данные;
 @inject UserManager<ПользовательПриложения> МенеджерПользователей
-@inject IStringLocalizer<Пользователи> Лок
+@inject IStringLocalizer<Инспекторы> Лок
 
 <PageTitle>@Лок["Инспекторы"]</PageTitle>
 <div class="align-items-center d-flex justify-content-between mb-2">
@@ -47,7 +47,9 @@
                     @и.EmailConfirmed
                 </td>
                 <td>
-                    <a href="/inspectors/edit/@и.Id" class="btn btn-primary">@Лок["Изменить"]</a>
+                    <a href="/inspectors/edit/@и.Id" class="btn btn-primary">@Глобальные.Редактировать</a>
+
+                    <a href="/inspectors/delete/@и.Id" class="btn btn-danger">@Глобальные.Удалить</a>
                 </td>
             </tr>
         }

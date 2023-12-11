@@ -120,4 +120,7 @@
   <data name="Инспекторы" xml:space="preserve">
     <value>Инспекторы</value>
   </data>
+  <data name="УдалитьИнспектора" xml:space="preserve">
+    <value>Удалить инспектора</value>
+  </data>
 </root>
