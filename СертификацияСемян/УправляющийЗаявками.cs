@@ -14,7 +14,11 @@ public class УправляющийЗаявками
 
     public IList<Заявка> ПолучитьСтраницуЗаявок(int counter)
     {
-        return контекст.Заявки.OrderByDescending(з => з.ДатаСоздания).Skip(20 * counter).Take(20).ToList();
+        return контекст.Заявки
+            .Include(_ => _.УчастокПоля)
+            .ThenInclude(_ => _.Поле)
+            .ThenInclude(_ => _.ПроизводительСемян)
+            .OrderByDescending(з => з.ДатаСоздания).Skip(20 * counter).Take(20).ToList();
     }
 
     public IList<Заявка> ПолучитьЗаявкиПользователя(string идПользователя)
