@@ -26,6 +26,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<ПользовательПриложения>>();
 builder.Services.AddScoped<УправляющийХозяйствами>();
 builder.Services.AddScoped<УправляющийЗаявками>();
+builder.Services.AddScoped<УправляющийИнспекциями>();
 builder.Services.AddLocalization();
 builder.Services.AddMvc()
      .AddViewLocalization(LanguageViewLocationExpanderFormat.SubFolder)

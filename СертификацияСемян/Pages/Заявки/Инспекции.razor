@@ -1,29 +1,60 @@
-﻿@page "/requests/{Ид:int}/info"
+﻿@page "/requests/{Ид:int}/inspections"
 @attribute [Authorize(Policy = "Инспекторы")]
 @inject УправляющийЗаявками управляющийЗаявками
-@inject IStringLocalizer<ПосмотретьЗаявку> Лок
+@inject УправляющийИнспекциями управляющийИнспекциями
+@inject IStringLocalizer<Инспекции> Лок
 @inject IStringLocalizer<Глобальные> ГлобЛок
 
-<PageTitle>@Лок["ИнформацияОЗаявке"] #@Модель.Код</PageTitle>
+<PageTitle>@string.Format(Лок["ИнспекцииЗаявки"], Модель.Код)</PageTitle>
 
-<h3>@Лок["ИнформацияОЗаявке"] #@Модель.Код</h3>
+<h3>@string.Format(Лок["ИнспекцииЗаявки"], Модель.Код)</h3>
+<h4>
+    @Лок["ДанныеЗаявки"]
+</h4>
+<fieldset disabled>
+    <БазовыеДанныеЗаявки Модель=@Модель Пользователь=@ИдВладельца />
+</fieldset>
 
-<EditForm Model="@Модель">
-    <fieldset disabled>
-        <ДанныеЗаявки Модель=@Модель Пользователь=@ИдВладельца />
-    </fieldset>
-    <a href="/requests" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
-</EditForm>
+<h4>
+    @Лок["Инспекции"]
+</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Лок["ТипИнспекции"]</th>
+            <th>@Лок["ПланируемаяДата"]</th>
+            <th>@Лок["ФактическаяДата"]</th>
+            <th>@Лок["СредняяФизиологическаяСтадия"]</th>
+            <th>@Лок["ИмяВедущегоИнспектора"]</th>
+            <th>@Лок["Статус"]</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var инспекция in ИнспекцииЗаявки)
+        {
+            <tr>
+                <td>@инспекция.ТипИнспекции</td>
+                <td>@инспекция.ПланируемаяДата</td>
+                <td>@инспекция.ФактическаяДата</td>
+                <td>@инспекция.ФизиологическаяСтадия</td>
+                <td>@инспекция.ИмяВедущегоИнспектора</td>
+                <td>
+                    @инспекция.Статус
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
+<a href="/requests/1" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
 
 @code {
     [Parameter]
     public int Ид { get; set; }
 
-    public МодельЗаявки? Модель { get; set; }
+    public МодельЗаявки Модель { get; set; } = new();
     public string ИдВладельца { get; set; } = "";
-
-    protected override void OnInitialized() => Модель ??= new();
+    public IList<Инспекция> ИнспекцииЗаявки { get; set; } = Array.Empty<Инспекция>();
 
     protected override async Task OnParametersSetAsync()
     {
@@ -64,6 +95,8 @@
         Модель.ПрогнозируемоеКоличествоУрожая = з.ПрогнозируемоеКоличествоУрожая;
         Модель.ДатаПосадки = з.ДатаПосадки;
         Модель.ДатаСбора = з.ДатаСбора;
+
+        ИнспекцииЗаявки = управляющийИнспекциями.ПолучитьИнспекцииЗаявки(Ид);
         await base.OnParametersSetAsync();
     }
 }
