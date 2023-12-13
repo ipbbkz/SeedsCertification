@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ВладелецРегистрация" xml:space="preserve">
+    <value>Если вы владелец сельского хозяйтва, который хочет сертифицировать свою продукцию, регистрируйтесь тут</value>
+  </data>
   <data name="ЗаголовокПисьмаПодтверждения" xml:space="preserve">
     <value>Подтвердите вашу почту</value>
+  </data>
+  <data name="Инспектор" xml:space="preserve">
+    <value>Инспектор</value>
+  </data>
+  <data name="ИнспекторРегистрация" xml:space="preserve">
+    <value>Инспекторы которые будут проводить инспекцию на полях должны пройти регистрацию тут. Учетная запись будет активна после одобрения администрацией</value>
   </data>
   <data name="ИнструкцииПоПодтвержденииРегистрации" xml:space="preserve">
     <value>Пожалуйста проверьте свой email для завершения процесса регистрации.</value>
@@ -138,11 +147,23 @@
   <data name="Регистрация" xml:space="preserve">
     <value>Регистрация</value>
   </data>
+  <data name="РегистрацияИнспектора" xml:space="preserve">
+    <value>Зарегистрируйтесь как инспектор</value>
+  </data>
+  <data name="РегистрацияФермера" xml:space="preserve">
+    <value>Зарегистрируйтесь как фермер</value>
+  </data>
   <data name="ТелоПисьмаПодтвержденияИнспектору" xml:space="preserve">
     <value>Пожалуста подождите пока ваша учетная запись будет проверена администратором. Вы получите подтверждение на электронную почту.</value>
   </data>
   <data name="ТелоПисьмаПодтвержденияФермеру" xml:space="preserve">
     <value>Пожалуйста подтвердите вашу учетную запись &lt;a href='{0}'&gt;нажав сюда&lt;/a&gt;.</value>
+  </data>
+  <data name="ТипРегистрации" xml:space="preserve">
+    <value>Выберите тип регистрации</value>
+  </data>
+  <data name="Фермер" xml:space="preserve">
+    <value>Фермер</value>
   </data>
   <data name="ЭлектроннаяПочта" xml:space="preserve">
     <value>Электронная почта</value>

@@ -61,11 +61,38 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If you are an agricultural owner who wants to certify your products, register here.
+        /// </summary>
+        internal static string ВладелецРегистрация {
+            get {
+                return ResourceManager.GetString("ВладелецРегистрация", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm your email.
         /// </summary>
         internal static string ЗаголовокПисьмаПодтверждения {
             get {
                 return ResourceManager.GetString("ЗаголовокПисьмаПодтверждения", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inspector.
+        /// </summary>
+        internal static string Инспектор {
+            get {
+                return ResourceManager.GetString("Инспектор", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inspectors who will conduct field inspections must register here. The account will be active after approval by the administration.
+        /// </summary>
+        internal static string ИнспекторРегистрация {
+            get {
+                return ResourceManager.GetString("ИнспекторРегистрация", resourceCulture);
             }
         }
         
@@ -124,6 +151,24 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Register as an inspector.
+        /// </summary>
+        internal static string РегистрацияИнспектора {
+            get {
+                return ResourceManager.GetString("РегистрацияИнспектора", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register as a farmer.
+        /// </summary>
+        internal static string РегистрацияФермера {
+            get {
+                return ResourceManager.GetString("РегистрацияФермера", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please wait while your account would be confirmed by administrator. You will receive confirmation over email..
         /// </summary>
         internal static string ТелоПисьмаПодтвержденияИнспектору {
@@ -138,6 +183,24 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         internal static string ТелоПисьмаПодтвержденияФермеру {
             get {
                 return ResourceManager.GetString("ТелоПисьмаПодтвержденияФермеру", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose type of registration.
+        /// </summary>
+        internal static string ТипРегистрации {
+            get {
+                return ResourceManager.GetString("ТипРегистрации", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Farmer.
+        /// </summary>
+        internal static string Фермер {
+            get {
+                return ResourceManager.GetString("Фермер", resourceCulture);
             }
         }
         

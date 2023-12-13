@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ВладелецРегистрация" xml:space="preserve">
+    <value>If you are an agricultural owner who wants to certify your products, register here</value>
+  </data>
   <data name="ЗаголовокПисьмаПодтверждения" xml:space="preserve">
     <value>Confirm your email</value>
+  </data>
+  <data name="Инспектор" xml:space="preserve">
+    <value>Inspector</value>
+  </data>
+  <data name="ИнспекторРегистрация" xml:space="preserve">
+    <value>Inspectors who will conduct field inspections must register here. The account will be active after approval by the administration</value>
   </data>
   <data name="ИнструкцииПоПодтвержденииРегистрации" xml:space="preserve">
     <value>Please check your email to confirm your account.</value>
@@ -138,11 +147,23 @@
   <data name="Регистрация" xml:space="preserve">
     <value>Register</value>
   </data>
+  <data name="РегистрацияИнспектора" xml:space="preserve">
+    <value>Register as an inspector</value>
+  </data>
+  <data name="РегистрацияФермера" xml:space="preserve">
+    <value>Register as a farmer</value>
+  </data>
   <data name="ТелоПисьмаПодтвержденияИнспектору" xml:space="preserve">
     <value>Please wait while your account would be confirmed by administrator. You will receive confirmation over email.</value>
   </data>
   <data name="ТелоПисьмаПодтвержденияФермеру" xml:space="preserve">
     <value>Please confirm your account by &lt;a href='{0}'&gt;clicking here&lt;/a&gt;.</value>
+  </data>
+  <data name="ТипРегистрации" xml:space="preserve">
+    <value>Choose type of registration</value>
+  </data>
+  <data name="Фермер" xml:space="preserve">
+    <value>Farmer</value>
   </data>
   <data name="ЭлектроннаяПочта" xml:space="preserve">
     <value>Email</value>

@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ВладелецРегистрация" xml:space="preserve">
+    <value>Егер сіз өз өніміңізді сертификаттағыңыз келетін ауылшаруашылық иесі болсаңыз, осында тіркеліңіз</value>
+  </data>
   <data name="ЗаголовокПисьмаПодтверждения" xml:space="preserve">
     <value>Электрондық поштаңызды растаңыз</value>
+  </data>
+  <data name="Инспектор" xml:space="preserve">
+    <value>Инспектор</value>
+  </data>
+  <data name="ИнспекторРегистрация" xml:space="preserve">
+    <value>Көшпелі тексеру жүргізетін инспекторлар осында тіркелуі керек. Әкімшілік бекіткеннен кейін есептік жазба белсенді болады</value>
   </data>
   <data name="ИнструкцииПоПодтвержденииРегистрации" xml:space="preserve">
     <value>Тіркеу процесін аяқтау үшін электрондық поштаңызды тексеріңіз.</value>
@@ -138,11 +147,23 @@
   <data name="Регистрация" xml:space="preserve">
     <value>Тіркеу</value>
   </data>
+  <data name="РегистрацияИнспектора" xml:space="preserve">
+    <value>Инспектор ретінде тіркелу</value>
+  </data>
+  <data name="РегистрацияФермера" xml:space="preserve">
+    <value>Фермер ретінде тіркелу</value>
+  </data>
   <data name="ТелоПисьмаПодтвержденияИнспектору" xml:space="preserve">
     <value>Есептік жазбаңызды әкімші растағанша күте тұрыңыз. Электрондық пошта арқылы растау аласыз.</value>
   </data>
   <data name="ТелоПисьмаПодтвержденияФермеру" xml:space="preserve">
     <value>&lt;a href='{0}'&gt;Осы жерді басу&lt;/a&gt; арқылы есептік жазбаңызды растаңыз.</value>
+  </data>
+  <data name="ТипРегистрации" xml:space="preserve">
+    <value>Тіркеу түрін таңдаңыз</value>
+  </data>
+  <data name="Фермер" xml:space="preserve">
+    <value>Фермер</value>
   </data>
   <data name="ЭлектроннаяПочта" xml:space="preserve">
     <value>Электрондық пошта</value>
