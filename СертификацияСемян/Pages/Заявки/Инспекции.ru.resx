@@ -138,6 +138,9 @@
   <data name="ПланируемаяДата" xml:space="preserve">
     <value>Планируемая дата</value>
   </data>
+  <data name="Протокол" xml:space="preserve">
+    <value>Протокол</value>
+  </data>
   <data name="СредняяФизиологическаяСтадия" xml:space="preserve">
     <value>Среднее физиологическое состояние</value>
   </data>

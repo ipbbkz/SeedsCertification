@@ -138,6 +138,9 @@
   <data name="ПланируемаяДата" xml:space="preserve">
     <value>Жоспарланған күн</value>
   </data>
+  <data name="Протокол" xml:space="preserve">
+    <value>Хаттама</value>
+  </data>
   <data name="СредняяФизиологическаяСтадия" xml:space="preserve">
     <value>Орташа физиологиялық кезең</value>
   </data>

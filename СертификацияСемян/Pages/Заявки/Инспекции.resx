@@ -138,6 +138,9 @@
   <data name="ПланируемаяДата" xml:space="preserve">
     <value>Planned date</value>
   </data>
+  <data name="Протокол" xml:space="preserve">
+    <value>Protocol</value>
+  </data>
   <data name="СредняяФизиологическаяСтадия" xml:space="preserve">
     <value>Average physiological stage</value>
   </data>
