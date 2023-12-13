@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ВыберитеТипИнспекции" xml:space="preserve">
+    <value>Select inspection type</value>
+  </data>
   <data name="ДанныеЗаявки" xml:space="preserve">
     <value>Application data</value>
+  </data>
+  <data name="Запланировать" xml:space="preserve">
+    <value>Plan</value>
   </data>
   <data name="ИмяВедущегоИнспектора" xml:space="preserve">
     <value>Lead inspector name</value>

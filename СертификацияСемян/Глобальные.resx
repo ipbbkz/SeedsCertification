@@ -132,11 +132,20 @@
   <data name="Сохранить" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="СтатусИнспекции_Запланирована" xml:space="preserve">
+    <value>Planned</value>
+  </data>
   <data name="Страница_Контакты" xml:space="preserve">
     <value>Contacts</value>
   </data>
   <data name="Страница_ОбИнституте" xml:space="preserve">
     <value>About</value>
+  </data>
+  <data name="ТипИнспекции_Поcлеуборочная" xml:space="preserve">
+    <value>Final</value>
+  </data>
+  <data name="ТипИнспекции_Полевая" xml:space="preserve">
+    <value>Field</value>
   </data>
   <data name="ТипСертификата_Картофель" xml:space="preserve">
     <value>Potato</value>

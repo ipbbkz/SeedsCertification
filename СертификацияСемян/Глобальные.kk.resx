@@ -129,11 +129,20 @@
   <data name="Сохранить" xml:space="preserve">
     <value>Сақтау</value>
   </data>
+  <data name="СтатусИнспекции_Запланирована" xml:space="preserve">
+    <value>Запланирована</value>
+  </data>
   <data name="Страница_Контакты" xml:space="preserve">
     <value>Контактілер</value>
   </data>
   <data name="Страница_ОбИнституте" xml:space="preserve">
     <value>Институт туралы</value>
+  </data>
+  <data name="ТипИнспекции_Поcлеуборочная" xml:space="preserve">
+    <value>Егін жинаудан кейінгі</value>
+  </data>
+  <data name="ТипИнспекции_Полевая" xml:space="preserve">
+    <value>Өріс</value>
   </data>
   <data name="ТипСертификата_Картофель" xml:space="preserve">
     <value>Ақтүйнек</value>

@@ -1,0 +1,86 @@
+﻿@page "/requests/{Ид:int}/inspections/new"
+@attribute [Authorize(Policy = "Инспекторы")]
+@inject УправляющийЗаявками управляющийЗаявками
+@inject УправляющийИнспекциями управляющийИнспекциями
+@inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<Инспекции> Лок
+
+<h3>Запланировать Инспекцию</h3>
+
+<EditForm Model="@Модель" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="row">
+        <div class="col-3">
+
+            <label class="form-label">
+                @Лок["ТипИнспекции"]
+            </label>
+            <InputSelect @bind-Value="Модель!.ТипИнспекции" class="form-control">
+                <option value="">@Лок["ВыберитеТипИнспекции"] ...</option>
+                <option value="1">@Глобальные.ТипИнспекции_Полевая</option>
+                <option value="1">@Глобальные.ТипИнспекции_Поcлеуборочная</option>
+            </InputSelect>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label class="form-label">
+                @Лок["ПланируемаяДата"]
+            </label>
+            <InputDate @bind-Value="Модель!.ПланируемаяДата" class="form-control" Type="InputDateType.Date" />
+        </div>
+        <div class="col">
+            <label class="form-label">
+                @Лок["ФактическаяДата"]
+            </label>
+            <InputDate @bind-Value="Модель!.ФактическаяДата" class="form-control" Type="InputDateType.Date" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label class="form-label">
+                @Лок["ФизиологическаяСтадия"]
+            </label>
+            <InputText @bind-Value="Модель!.ФизиологическаяСтадия" class="form-control" />
+        </div>
+        <div class="col">
+            <label class="form-label">
+                @Лок["ИмяВедущегоИнспектора"]
+            </label>
+            <InputText @bind-Value="Модель!.ИмяВедущегоИнспектора" class="form-control" />
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">@Глобальные.Сохранить</button>
+    <a href="/requests/@Ид/inspections/" class="btn btn-secondary">@Глобальные.Назад</a>
+</EditForm>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    [Parameter]
+    public int Ид { get; set; }
+
+    public МодельИнспекции? Модель { get; set; } = new();
+
+    private async Task Submit()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is null)
+        {
+            return;
+        }
+
+        управляющийИнспекциями.ЗапланироватьИнспекцию(
+            Ид,
+            Модель!.ТипИнспекции!.Value,
+            Модель!.ПланируемаяДата!.Value,
+            Модель.ФактическаяДата,
+            Модель.ФизиологическаяСтадия,
+            Модель.ИмяВедущегоИнспектора);
+        управляющийНавигацией.NavigateTo($"/requests/{Ид}/inspections/");
+    }
+}

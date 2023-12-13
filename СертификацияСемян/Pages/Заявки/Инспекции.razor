@@ -3,7 +3,6 @@
 @inject УправляющийЗаявками управляющийЗаявками
 @inject УправляющийИнспекциями управляющийИнспекциями
 @inject IStringLocalizer<Инспекции> Лок
-@inject IStringLocalizer<Глобальные> ГлобЛок
 
 <PageTitle>@string.Format(Лок["ИнспекцииЗаявки"], Модель.Код)</PageTitle>
 
@@ -18,7 +17,7 @@
 <h4>
     @Лок["Инспекции"]
 </h4>
-<a href="/requests/@Ид/inspections/new" class="btn btn-primary">Запланировать</a>
+<a href="/requests/@Ид/inspections/new" class="btn btn-primary">@Лок["Запланировать"]</a>
 <table class="table">
     <thead>
         <tr>
@@ -34,20 +33,20 @@
         @foreach (var инспекция in ИнспекцииЗаявки)
         {
             <tr>
-                <td>@инспекция.ТипИнспекции</td>
-                <td>@инспекция.ПланируемаяДата</td>
-                <td>@инспекция.ФактическаяДата</td>
+                <td><ТипИнспекции Значение="инспекция.ТипИнспекции" /></td>
+                <td>@инспекция.ПланируемаяДата.ToShortDateString()</td>
+                <td>@инспекция.ФактическаяДата?.ToShortDateString()</td>
                 <td>@инспекция.ФизиологическаяСтадия</td>
                 <td>@инспекция.ИмяВедущегоИнспектора</td>
                 <td>
-                    @инспекция.Статус
+                    <СтатусИнспекции Значение="инспекция.Статус" />
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<a href="/requests/1" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
+<a href="/requests/1" class="btn btn-secondary">@Глобальные.Назад</a>
 
 @code {
     [Parameter]
