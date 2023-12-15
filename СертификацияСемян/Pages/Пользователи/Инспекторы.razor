@@ -48,6 +48,10 @@
                 </td>
                 <td>
                     <a href="/inspectors/edit/@и.Id" class="btn btn-primary">@Глобальные.Редактировать</a>
+                    @if (!и.EmailConfirmed)
+                    {
+                        <a class="btn btn-secondary" @onclick=@(() => this.ОдобритьПользователя(и.Id))>@Глобальные.Одобрить</a>
+                    }
                     <AuthorizeView Policy="ТребуетсяБытьСуперАдминистратором">
                         <a href="/inspectors/delete/@и.Id" class="btn btn-danger">@Глобальные.Удалить</a>
                     </AuthorizeView>
@@ -64,5 +68,17 @@
     {
         инспекторы = await МенеджерПользователей.GetUsersInRoleAsync(Константы.РольИнспектора);
         await base.OnParametersSetAsync();
+    }
+
+    public async Task ОдобритьПользователя(string userId)
+    {
+        var пользователь = await МенеджерПользователей.FindByIdAsync(userId);
+        if (пользователь == null)
+        {
+            return;
+        }
+
+        var жетон = await МенеджерПользователей.GenerateEmailConfirmationTokenAsync(пользователь);
+        await МенеджерПользователей.ConfirmEmailAsync(пользователь, жетон);
     }
 }
