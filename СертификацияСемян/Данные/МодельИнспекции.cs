@@ -11,7 +11,9 @@ public class МодельИнспекции
     public DateTime? ПланируемаяДата { get; set; }
 
     public DateTime? ФактическаяДата { get; set; }
+    [Обязательное]
     public string ФизиологическаяСтадия { get; set; }
+    [Обязательное]
     public string ИмяВедущегоИнспектора { get; set; }
     public int Статус { get; set; }
 }

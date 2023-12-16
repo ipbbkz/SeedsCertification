@@ -15,7 +15,7 @@
         <div class="col-3">
 
             <label class="form-label">
-                @Лок["ТипИнспекции"]
+                @Лок["ТипИнспекции"] <span class="text-danger">*</span>
             </label>
             <InputSelect @bind-Value="Модель!.ТипИнспекции" class="form-control">
                 <option value="">@Лок["ВыберитеТипИнспекции"] ...</option>
@@ -27,7 +27,7 @@
     <div class="row">
         <div class="col">
             <label class="form-label">
-                @Лок["ПланируемаяДата"]
+                @Лок["ПланируемаяДата"] <span class="text-danger">*</span>
             </label>
             <InputDate @bind-Value="Модель!.ПланируемаяДата" class="form-control" Type="InputDateType.Date" />
         </div>
@@ -41,13 +41,13 @@
     <div class="row">
         <div class="col">
             <label class="form-label">
-                @Лок["ФизиологическаяСтадия"]
+                @Лок["ФизиологическаяСтадия"] <span class="text-danger">*</span>
             </label>
             <InputText @bind-Value="Модель!.ФизиологическаяСтадия" class="form-control" />
         </div>
         <div class="col">
             <label class="form-label">
-                @Лок["ИмяВедущегоИнспектора"]
+                @Лок["ИмяВедущегоИнспектора"] <span class="text-danger">*</span>
             </label>
             <InputText @bind-Value="Модель!.ИмяВедущегоИнспектора" class="form-control" />
         </div>

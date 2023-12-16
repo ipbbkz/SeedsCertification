@@ -29,9 +29,13 @@ public class МодельЗаявки
     public int РазмерКлубня { get; set; } = 15;
 
     public string КоординатыУчастка { get; set; }
+    [Обязательное]
     public string СевооборотПрошлогоГода { get; set; }
+    [Обязательное]
     public string Севооборот2ГодаНазад { get; set; }
+    [Обязательное]
     public string Севооборот3ГодаНазад { get; set; }
+    [Обязательное]
     public string ИзоляцияПолей { get; set; }
     //[Display(Name = "СвидетельствоПроисхождения", ResourceType = typeof(ДанныеЗаявки))]
     [Обязательное]
@@ -47,8 +51,11 @@ public class МодельЗаявки
     public int? ФормаУчастка { get; set; }
     public string? Размер1 { get; set; }
     public string? Размер2 { get; set; }
+    [Обязательное]
     public string ПлощадьПосадки { get; set; }
+    [Обязательное]
     public string РасстояниеМеждуРядами { get; set; }
+    [Обязательное]
     public string РасстояниеВРяду { get; set; }
     public string ПрогнозируемоеКоличествоУрожая { get; set; } = "";
     public DateTime ДатаПосадки { get; set; } = DateTime.UtcNow;
