@@ -20,9 +20,65 @@
 <fieldset disabled>
     <ДанныеИнспекции Модель="@Модель" />
 </fieldset>
+<h4>
+    @Лок["ЗаписиПротокола"]
+</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Лок["НомерСерии"]</th>
+            <th>@Лок["КоличествоРастенийВСерии"]</th>
+            <th>@Лок["Карантин"]</th>
+            <th>@Лок["ВиральныеБолезни"]</th>
+            <th>@Лок["Черноножка"]</th>
+            <th>@Лок["Безтиповые"]</th>
+            <th>@Лок["Ризоктония"]</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var записьИнспекция in Записи)
+        {
+            <tr>
+                <td>@записьИнспекция.НомерСерии</td>
+                <td>
+                    <InputNumber @bind-Value="записьИнспекция.КоличествоРастенийВСерии" class="form-control" />
+                </td>
+                <td>
+                    <InputNumber @bind-Value="записьИнспекция.Карантин" class="form-control" />
+                </td>
+                <td>
+                    <InputNumber @bind-Value="записьИнспекция.ВиральныеБолезни" class="form-control" />
+                </td>
+                <td>
+                    <InputNumber @bind-Value="записьИнспекция.Черноножка" class="form-control" />
+                </td>
+                <td>
+                    <InputNumber @bind-Value="записьИнспекция.Безтиповые" class="form-control" />
+                </td>
+                <td>
+                    <InputNumber @bind-Value="записьИнспекция.Ризоктония" class="form-control" />
+                </td>
+                <th>
+                    
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
 
-<a href="/requests/@ИдЗаявки/inspections" class="btn btn-secondary">@Глобальные.Назад</a>
+<div class="row">
+    <div class="col">
+        <a class="btn btn-primary" @onclick="ДобавитьЗапись">Добавить</a>
+    </div>
+</div>
 
+<div class="row my-3">
+    <div class="col">
+        <a class="btn btn-primary" @onclick="СохранитьПротокол">@Глобальные.Сохранить</a>
+        <a href="/requests/@ИдЗаявки/inspections" class="btn btn-secondary">@Глобальные.Назад</a>
+    </div>
+</div>
 
 @code {
     [CascadingParameter]
@@ -39,6 +95,8 @@
     public МодельЗаявки МодельЗаявки { get; set; } = new();
 
     public МодельИнспекции Модель { get; set; } = new();
+
+    public List<ЗаписьИнспекции> Записи { get; set; } = new();
 
     protected override void OnParametersSet()
     {
@@ -59,7 +117,22 @@
         }
 
         Проектор.ОтобразитьИнспекцию(инспекция, Модель);
-
+        Записи = управляющийИнспекциями.ПолучитьПротокол(ИдИнспекции);
         base.OnParametersSet();
+    }
+
+    public void ДобавитьЗапись()
+    {
+        var записьИнструкции = new ЗаписьИнспекции()
+        { 
+            НомерСерии = Записи.Count + 1,
+        };
+        Записи.Add(записьИнструкции);
+    }
+
+    public void СохранитьПротокол()
+    {
+        управляющийИнспекциями.СохранитьПротокол(ИдИнспекции, Записи);
+        управляющийНавигацией.NavigateTo($"/requests/{ИдЗаявки}/inspections");
     }
 }
