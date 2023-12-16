@@ -88,6 +88,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reject.
+        /// </summary>
+        public static string Отклонить {
+            get {
+                return ResourceManager.GetString("Отклонить", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search.
         /// </summary>
         public static string Поиск {
@@ -129,6 +138,33 @@ namespace СертификацияСемян {
         public static string СтатусИнспекции_Запланирована {
             get {
                 return ResourceManager.GetString("СтатусИнспекции_Запланирована", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accepted.
+        /// </summary>
+        public static string СтатусИнспекции_Одобрена {
+            get {
+                return ResourceManager.GetString("СтатусИнспекции_Одобрена", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rejected.
+        /// </summary>
+        public static string СтатусИнспекции_Отклонена {
+            get {
+                return ResourceManager.GetString("СтатусИнспекции_Отклонена", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Done.
+        /// </summary>
+        public static string СтатусИнспекции_Проведена {
+            get {
+                return ResourceManager.GetString("СтатусИнспекции_Проведена", resourceCulture);
             }
         }
         

@@ -1,5 +1,6 @@
-﻿@page "/requests/{ИдЗаявки:int}/inspections/{ИдИнспекции:int}/protocols"
-@attribute [Authorize(Policy = "Инспекторы")]
+﻿@page "/my/requests/{ИдЗаявки:int}/inspections/{ИдИнспекции:int}/protocols"
+@attribute [Authorize(Policy = "Фермеры")]
+@using Pages.Заявки
 @inject УправляющийЗаявками управляющийЗаявками
 @inject УправляющийИнспекциями управляющийИнспекциями
 @inject NavigationManager управляющийНавигацией
@@ -42,22 +43,22 @@
             <tr>
                 <td>@записьИнспекция.НомерСерии</td>
                 <td>
-                    <InputNumber @bind-Value="записьИнспекция.КоличествоРастенийВСерии" class="form-control" disabled="@(Модель.Статус != 1)" />
+                    @записьИнспекция.КоличествоРастенийВСерии
                 </td>
                 <td>
-                    <InputNumber @bind-Value="записьИнспекция.Карантин" class="form-control" disabled="@(Модель.Статус != 1)" />
+                    @записьИнспекция.Карантин
                 </td>
                 <td>
-                    <InputNumber @bind-Value="записьИнспекция.ВиральныеБолезни" class="form-control" disabled="@(Модель.Статус != 1)" />
+                    @записьИнспекция.ВиральныеБолезни
                 </td>
                 <td>
-                    <InputNumber @bind-Value="записьИнспекция.Черноножка" class="form-control" disabled="@(Модель.Статус != 1)" />
+                    @записьИнспекция.Черноножка
                 </td>
                 <td>
-                    <InputNumber @bind-Value="записьИнспекция.Безтиповые" class="form-control" disabled="@(Модель.Статус != 1)" />
+                    @записьИнспекция.Безтиповые
                 </td>
                 <td>
-                    <InputNumber @bind-Value="записьИнспекция.Ризоктония" class="form-control" disabled="@(Модель.Статус != 1)" />
+                    @записьИнспекция.Ризоктония
                 </td>
                 <th>
                     
@@ -66,23 +67,15 @@
         }
     </tbody>
 </table>
-@if (Модель.Статус == 1)
-{
-    <div class="row">
-        <div class="col">
-            <a class="btn btn-primary" @onclick="ДобавитьЗапись">Добавить</a>
-        </div>
-    </div>
-    
-}
 
 <div class="row my-3">
     <div class="col">
-        @if (Модель.Статус == 1)
+        @if (Модель.Статус == 2)
         {
-            <a class="btn btn-primary" @onclick="СохранитьПротокол">@Глобальные.Сохранить</a>
+            <a class="btn btn-primary" @onclick="Одобрить">@Глобальные.Одобрить</a>
+            <a class="btn btn-danger" @onclick="Отклонить">@Глобальные.Отклонить</a>
         }
-        <a href="/requests/@ИдЗаявки/inspections" class="btn btn-secondary">@Глобальные.Назад</a>
+        <a href="/my/requests/@ИдЗаявки/inspections" class="btn btn-secondary">@Глобальные.Назад</a>
     </div>
 </div>
 
@@ -127,19 +120,13 @@
         base.OnParametersSet();
     }
 
-    public void ДобавитьЗапись()
+    public void Одобрить()
     {
-        var записьИнструкции = new ЗаписьИнспекции()
-        { 
-            НомерСерии = Записи.Count + 1,
-        };
-        Записи.Add(записьИнструкции);
+        управляющийИнспекциями.ОдобритьИнспекцию(ИдИнспекции);
     }
 
-    public void СохранитьПротокол()
+    public void Отклонить()
     {
-        управляющийИнспекциями.СохранитьПротокол(ИдИнспекции, Записи);
-        управляющийИнспекциями.ПровестиИнспекцию(ИдИнспекции);
-        управляющийНавигацией.NavigateTo($"/requests/{ИдЗаявки}/inspections");
+        управляющийИнспекциями.ОтклонитьИнспекцию(ИдИнспекции);
     }
 }

@@ -126,6 +126,9 @@
   <data name="Одобрить" xml:space="preserve">
     <value>Мақұлдау</value>
   </data>
+  <data name="Отклонить" xml:space="preserve">
+    <value>Қабылдамау</value>
+  </data>
   <data name="Поиск" xml:space="preserve">
     <value>Іздеу</value>
   </data>
@@ -137,6 +140,15 @@
   </data>
   <data name="СтатусИнспекции_Запланирована" xml:space="preserve">
     <value>Запланирована</value>
+  </data>
+  <data name="СтатусИнспекции_Одобрена" xml:space="preserve">
+    <value>Бекітілген</value>
+  </data>
+  <data name="СтатусИнспекции_Отклонена" xml:space="preserve">
+    <value>Қабылданбады</value>
+  </data>
+  <data name="СтатусИнспекции_Проведена" xml:space="preserve">
+    <value>Өткізілген</value>
   </data>
   <data name="Страница_Контакты" xml:space="preserve">
     <value>Контактілер</value>

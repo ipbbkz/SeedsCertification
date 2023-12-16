@@ -1,5 +1,6 @@
 ﻿namespace СертификацияСемян;
 
+using Microsoft.EntityFrameworkCore;
 using СертификацияСемян.Данные;
 
 public class УправляющийИнспекциями
@@ -76,5 +77,26 @@ public class УправляющийИнспекциями
         }
 
         контекст.SaveChanges();
+    }
+
+    public void ПровестиИнспекцию(int идИнспекции)
+    {
+        контекст.Инспекции
+            .Where(и => и.Ид == идИнспекции)
+            .ExecuteUpdate(_ => _.SetProperty(и => и.Статус, 2));
+    }
+
+    public void ОдобритьИнспекцию(int идИнспекции)
+    {
+        контекст.Инспекции
+            .Where(и => и.Ид == идИнспекции)
+            .ExecuteUpdate(_ => _.SetProperty(и => и.Статус, 3));
+    }
+
+    public void ОтклонитьИнспекцию(int идИнспекции)
+    {
+        контекст.Инспекции
+            .Where(и => и.Ид == идИнспекции)
+            .ExecuteUpdate(_ => _.SetProperty(и => и.Статус, 4));
     }
 }

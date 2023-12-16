@@ -126,6 +126,9 @@
   <data name="Одобрить" xml:space="preserve">
     <value>Одобрить</value>
   </data>
+  <data name="Отклонить" xml:space="preserve">
+    <value>Отклонить</value>
+  </data>
   <data name="Поиск" xml:space="preserve">
     <value>Поиск</value>
   </data>
@@ -140,6 +143,15 @@
   </data>
   <data name="СтатусИнспекции_Запланирована" xml:space="preserve">
     <value>Запланирована</value>
+  </data>
+  <data name="СтатусИнспекции_Одобрена" xml:space="preserve">
+    <value>Одобрена</value>
+  </data>
+  <data name="СтатусИнспекции_Отклонена" xml:space="preserve">
+    <value>Отклонена</value>
+  </data>
+  <data name="СтатусИнспекции_Проведена" xml:space="preserve">
+    <value>Проведена</value>
   </data>
   <data name="Страница_Контакты" xml:space="preserve">
     <value>Контакты</value>
