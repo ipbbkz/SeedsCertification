@@ -141,6 +141,9 @@
   <data name="Протокол" xml:space="preserve">
     <value>Хаттама</value>
   </data>
+  <data name="ПротоколИнспекции" xml:space="preserve">
+    <value>Тексеру хаттамасы №{0}</value>
+  </data>
   <data name="СредняяФизиологическаяСтадия" xml:space="preserve">
     <value>Орташа физиологиялық кезең</value>
   </data>

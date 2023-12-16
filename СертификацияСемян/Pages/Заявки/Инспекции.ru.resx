@@ -141,6 +141,9 @@
   <data name="Протокол" xml:space="preserve">
     <value>Протокол</value>
   </data>
+  <data name="ПротоколИнспекции" xml:space="preserve">
+    <value>Протокол инспекции №{0}</value>
+  </data>
   <data name="СредняяФизиологическаяСтадия" xml:space="preserve">
     <value>Среднее физиологическое состояние</value>
   </data>

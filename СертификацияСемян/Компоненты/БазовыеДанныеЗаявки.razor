@@ -3,37 +3,45 @@
 @inject ILogger<ДанныеЗаявки> протоколировщик
 @inject IStringLocalizer<ДанныеЗаявки> Лок
 
-<label class="form-label">
-    @Лок["ТипСертификации"]
-</label>
-<InputSelect @bind-Value="Модель!.ТипЗаявки" class="form-control">
-    <option value="">@Лок["ВыберитеТип"] ...</option>
-    <option value="1">@Глобальные.ТипСертификата_Картофель</option>
-</InputSelect>
 
-<label class="form-label">
-    @Лок["НазваниеСорта"]
-</label>
-<InputText @bind-Value="Модель!.НазваниеСортаСемян" class="form-control" />
-
-<label class="form-label">
-    @Лок["РазмерКлубня"]
-</label>
-<InputNumber @bind-Value="Модель!.РазмерКлубня" class="form-control" min="15" max="65" step="5" />
-
-<label class="form-label">
-    @Лок["КлассСемян"]
-</label>
-<InputSelect @bind-Value="Модель!.КлассСемянИд" class="form-control">
-    <option value="">@Лок["ВыберитеКлассСемян"] ...</option>
-    <option value="1">Предбазисный PBTC</option>
-    <option value="2">Предбазисный PB</option>
-    <option value="3">Базисный S</option>
-    <option value="4">Базисный SE</option>
-    <option value="5">Базисный Е</option>
-    <option value="6">Сертифицированный А</option>
-    <option value="7">Сертифицированный В</option>
-</InputSelect>
+<div class="row">
+    <div class="col">
+        <label class="form-label">
+            @Лок["ТипСертификации"]
+        </label>
+        <InputSelect @bind-Value="Модель!.ТипЗаявки" class="form-control">
+            <option value="">@Лок["ВыберитеТип"] ...</option>
+            <option value="1">@Глобальные.ТипСертификата_Картофель</option>
+        </InputSelect>
+    </div>
+    <div class="col">
+        <label class="form-label">
+            @Лок["НазваниеСорта"]
+        </label>
+        <InputText @bind-Value="Модель!.НазваниеСортаСемян" class="form-control" />
+    </div>
+    <div class="col">
+        <label class="form-label">
+            @Лок["РазмерКлубня"]
+        </label>
+        <InputNumber @bind-Value="Модель!.РазмерКлубня" class="form-control" min="15" max="65" step="5" />
+    </div>
+    <div class="col">
+        <label class="form-label">
+            @Лок["КлассСемян"]
+        </label>
+        <InputSelect @bind-Value="Модель!.КлассСемянИд" class="form-control">
+            <option value="">@Лок["ВыберитеКлассСемян"] ...</option>
+            <option value="1">Предбазисный PBTC</option>
+            <option value="2">Предбазисный PB</option>
+            <option value="3">Базисный S</option>
+            <option value="4">Базисный SE</option>
+            <option value="5">Базисный Е</option>
+            <option value="6">Сертифицированный А</option>
+            <option value="7">Сертифицированный В</option>
+        </InputSelect>
+    </div>
+</div>
 
 <div class="row">
     <div class="col">
@@ -105,7 +113,7 @@
         Модель.ИдХозяйства = новоеЗначение;
         if (новоеЗначение.HasValue)
         {
-            Поля.Clear();
+            //Поля.Clear();
             Поля = управляющийХозяйствами.ПолучитьПоляХозяйства(новоеЗначение.Value);
         }
     }
@@ -115,7 +123,7 @@
         Модель.ИдПоля = новоеЗначение;
         if (новоеЗначение.HasValue)
         {
-            УчасткиПоля.Clear();
+            //УчасткиПоля.Clear();
             УчасткиПоля = управляющийХозяйствами.ПолучитьУчасткиПоля(новоеЗначение.Value);
         }
     }

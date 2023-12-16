@@ -141,6 +141,9 @@
   <data name="Протокол" xml:space="preserve">
     <value>Protocol</value>
   </data>
+  <data name="ПротоколИнспекции" xml:space="preserve">
+    <value>Inspection protocol #{0}</value>
+  </data>
   <data name="СредняяФизиологическаяСтадия" xml:space="preserve">
     <value>Average physiological stage</value>
   </data>
