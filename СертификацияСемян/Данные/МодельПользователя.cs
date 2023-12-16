@@ -4,14 +4,14 @@ namespace СертификацияСемян.Данные;
 
 public class МодельПользователя
 {
-    [Required]
+    [Обязательное]
     [EmailAddress]
     public string Почта { get; set; } = "";
 
-    [Required]
+    [Обязательное]
     public string Фамилия { get; set; } = "";
 
-    [Required]
+    [Обязательное]
     public string Имя { get; set; } = "";
 
     public string? Отчество { get; set; }

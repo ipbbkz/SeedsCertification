@@ -1,27 +1,28 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using СертификацияСемян.Компоненты;
 
 namespace СертификацияСемян.Данные;
 
 public class МодельЗаявки
 {
-    [Required]
+    [Обязательное]
     public int? ТипЗаявки { get; set; }
 
     public string Код { get; set; }
 
     public string НазваниеСортаСемян { get; set; }
 
-    [Required]
+    [Обязательное]
     public int? КлассСемянИд { get; set; }
 
-    [Required]
+    [Обязательное]
     public int? ИдХозяйства { get; set; }
 
-    [Required]
+    [Обязательное]
     public int? ИдПоля { get; set; }
 
-    [Required]
+    [Обязательное]
     public int? ИдУчастка { get; set; }
 
     [Range(15, 65)]
@@ -32,14 +33,17 @@ public class МодельЗаявки
     public string Севооборот2ГодаНазад { get; set; }
     public string Севооборот3ГодаНазад { get; set; }
     public string ИзоляцияПолей { get; set; }
+    //[Display(Name = "СвидетельствоПроисхождения", ResourceType = typeof(ДанныеЗаявки))]
+    [Обязательное]
     public byte[] СвидетельствоПроисхожденияСемян { get; set; }
+    [Обязательное]
     public byte[] ЗаключениеОНематодах { get; set; }
     public string? Протравители { get; set; }
     public string? Инсектициды { get; set; }
     public string? Фунгициды { get; set; }
     public string? Удобрения { get; set; }
     public string? Гербициды { get; set; }
-    [Required]
+    [Обязательное]
     public int? ФормаУчастка { get; set; }
     public string? Размер1 { get; set; }
     public string? Размер2 { get; set; }

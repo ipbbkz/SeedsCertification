@@ -120,6 +120,9 @@
   <data name="Назад" xml:space="preserve">
     <value>Артқа</value>
   </data>
+  <data name="ОбязательноеПоле" xml:space="preserve">
+    <value>{0} өрісі қажет</value>
+  </data>
   <data name="Одобрить" xml:space="preserve">
     <value>Мақұлдау</value>
   </data>

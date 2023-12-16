@@ -70,6 +70,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Field {0} is required.
+        /// </summary>
+        public static string ОбязательноеПоле {
+            get {
+                return ResourceManager.GetString("ОбязательноеПоле", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Approve.
         /// </summary>
         public static string Одобрить {

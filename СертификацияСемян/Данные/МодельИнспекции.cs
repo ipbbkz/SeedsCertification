@@ -4,10 +4,10 @@ using System.ComponentModel.DataAnnotations;
 
 public class МодельИнспекции
 {
-    [Required]
+    [Обязательное]
     public int? ТипИнспекции { get; set; }
 
-    [Required]
+    [Обязательное]
     public DateTime? ПланируемаяДата { get; set; }
 
     public DateTime? ФактическаяДата { get; set; }

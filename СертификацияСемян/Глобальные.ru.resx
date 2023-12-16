@@ -120,6 +120,9 @@
   <data name="Назад" xml:space="preserve">
     <value>Назад</value>
   </data>
+  <data name="ОбязательноеПоле" xml:space="preserve">
+    <value>Поле {0} является обязательным</value>
+  </data>
   <data name="Одобрить" xml:space="preserve">
     <value>Одобрить</value>
   </data>
