@@ -102,7 +102,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("пользователь перешел на страницу входа", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Допустим ");
 #line hidden
 #line 5
- testRunner.Then("заголовок страницы равен \"Log in\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Тогда ");
+ testRunner.Then("заголовок страницы равен \"Log in - Seeds Certification\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Тогда ");
 #line hidden
             }
             this.ScenarioCleanup();
