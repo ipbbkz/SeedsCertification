@@ -70,6 +70,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Seeds Certification.
+        /// </summary>
+        public static string НазваниеПриложения {
+            get {
+                return ResourceManager.GetString("НазваниеПриложения", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Field {0} is required.
         /// </summary>
         public static string ОбязательноеПоле {
