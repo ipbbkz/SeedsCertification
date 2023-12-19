@@ -11,7 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СертификацияСемян.ИнтеграционныеТесты", "СертификацияСемян.ИнтеграционныеТесты\СертификацияСемян.ИнтеграционныеТесты.csproj", "{16A87E86-2EC5-4105-A87D-B5620CE53AF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "СертификацияСемян.ИнтеграционныеТесты", "СертификацияСемян.ИнтеграционныеТесты\СертификацияСемян.ИнтеграционныеТесты.csproj", "{16A87E86-2EC5-4105-A87D-B5620CE53AF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".azure", ".azure", "{F014AA8B-FB13-46FF-8817-E02CD1D28415}"
+	ProjectSection(SolutionItems) = preProject
+		.azure\web.yml = .azure\web.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{8AD5C2F8-87FB-4239-B830-E7261907A2A1}"
+	ProjectSection(SolutionItems) = preProject
+		.azure\templates\deploy-template.yml = .azure\templates\deploy-template.yml
+		.azure\templates\deploy-variables-template.yml = .azure\templates\deploy-variables-template.yml
+		.azure\templates\web-template.yml = .azure\templates\web-template.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +42,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8AD5C2F8-87FB-4239-B830-E7261907A2A1} = {F014AA8B-FB13-46FF-8817-E02CD1D28415}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6EB3377-5247-4A62-8570-4AB3B4BDB114}
