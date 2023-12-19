@@ -117,11 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Безтиповые" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="ВиральныеБолезни" xml:space="preserve">
+    <value>Visuses</value>
+  </data>
   <data name="ВыберитеТипИнспекции" xml:space="preserve">
     <value>Select inspection type</value>
   </data>
   <data name="ДанныеЗаявки" xml:space="preserve">
     <value>Application data</value>
+  </data>
+  <data name="ДанныеИнспекции" xml:space="preserve">
+    <value>Inspection info</value>
+  </data>
+  <data name="ДефектыКонтроля" xml:space="preserve">
+    <value>Controlled defects</value>
+  </data>
+  <data name="ДругиеНаблюдения" xml:space="preserve">
+    <value>Other observations</value>
+  </data>
+  <data name="ЗаписиПротокола" xml:space="preserve">
+    <value>Protocol records</value>
   </data>
   <data name="Запланировать" xml:space="preserve">
     <value>Plan</value>
@@ -138,6 +156,15 @@
   <data name="ИнспекцииЗаявки" xml:space="preserve">
     <value>Inspections for application #{0}</value>
   </data>
+  <data name="Карантин" xml:space="preserve">
+    <value>Quaranteen diseases</value>
+  </data>
+  <data name="КоличествоРастенийВСерии" xml:space="preserve">
+    <value>Batch size</value>
+  </data>
+  <data name="НомерСерии" xml:space="preserve">
+    <value># batch</value>
+  </data>
   <data name="ОбщееСостояниеПоля" xml:space="preserve">
     <value>Field state</value>
   </data>
@@ -150,6 +177,9 @@
   <data name="ПротоколИнспекции" xml:space="preserve">
     <value>Inspection protocol #{0}</value>
   </data>
+  <data name="Ризоктония" xml:space="preserve">
+    <value>Rysoctonia</value>
+  </data>
   <data name="СредняяФизиологическаяСтадия" xml:space="preserve">
     <value>Average physiological stage</value>
   </data>
@@ -161,5 +191,8 @@
   </data>
   <data name="ФактическаяДата" xml:space="preserve">
     <value>Actual date</value>
+  </data>
+  <data name="Черноножка" xml:space="preserve">
+    <value>Black leg</value>
   </data>
 </root>

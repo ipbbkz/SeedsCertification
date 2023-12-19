@@ -117,11 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Безтиповые" xml:space="preserve">
+    <value>Разносорт</value>
+  </data>
+  <data name="ВиральныеБолезни" xml:space="preserve">
+    <value>Вирусы</value>
+  </data>
   <data name="ВыберитеТипИнспекции" xml:space="preserve">
     <value>Выберите тип инспекции</value>
   </data>
   <data name="ДанныеЗаявки" xml:space="preserve">
     <value>Данные заявки</value>
+  </data>
+  <data name="ДанныеИнспекции" xml:space="preserve">
+    <value>Данные инспекции</value>
+  </data>
+  <data name="ДефектыКонтроля" xml:space="preserve">
+    <value>Дефекты контроля</value>
+  </data>
+  <data name="ДругиеНаблюдения" xml:space="preserve">
+    <value>Другие наблюдения</value>
+  </data>
+  <data name="ЗаписиПротокола" xml:space="preserve">
+    <value>Записи протокола</value>
   </data>
   <data name="Запланировать" xml:space="preserve">
     <value>Запланировать</value>
@@ -138,6 +156,15 @@
   <data name="ИнспекцииЗаявки" xml:space="preserve">
     <value>Инспекции заявки #{0}</value>
   </data>
+  <data name="Карантин" xml:space="preserve">
+    <value>Карантинные заболевания</value>
+  </data>
+  <data name="КоличествоРастенийВСерии" xml:space="preserve">
+    <value>Кол-во в партии</value>
+  </data>
+  <data name="НомерСерии" xml:space="preserve">
+    <value>№ партии</value>
+  </data>
   <data name="ОбщееСостояниеПоля" xml:space="preserve">
     <value>Общее состояние поля</value>
   </data>
@@ -150,6 +177,9 @@
   <data name="ПротоколИнспекции" xml:space="preserve">
     <value>Протокол инспекции №{0}</value>
   </data>
+  <data name="Ризоктония" xml:space="preserve">
+    <value>Ризоктония</value>
+  </data>
   <data name="СредняяФизиологическаяСтадия" xml:space="preserve">
     <value>Среднее физиологическое состояние</value>
   </data>
@@ -161,5 +191,8 @@
   </data>
   <data name="ФактическаяДата" xml:space="preserve">
     <value>Фактическая дата</value>
+  </data>
+  <data name="Черноножка" xml:space="preserve">
+    <value>Черноножка</value>
   </data>
 </root>

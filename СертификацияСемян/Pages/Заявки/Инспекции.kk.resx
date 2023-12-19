@@ -117,11 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Безтиповые" xml:space="preserve">
+    <value>Әртүрлілік</value>
+  </data>
+  <data name="ВиральныеБолезни" xml:space="preserve">
+    <value>Вирустар</value>
+  </data>
   <data name="ВыберитеТипИнспекции" xml:space="preserve">
     <value>Тексеру түрін таңдаңыз</value>
   </data>
   <data name="ДанныеЗаявки" xml:space="preserve">
     <value>Қолданба мәліметтері</value>
+  </data>
+  <data name="ДанныеИнспекции" xml:space="preserve">
+    <value>Тексеру деректері</value>
+  </data>
+  <data name="ДефектыКонтроля" xml:space="preserve">
+    <value>Бақылау ақаулары</value>
+  </data>
+  <data name="ДругиеНаблюдения" xml:space="preserve">
+    <value>Басқа бақылаулар</value>
+  </data>
+  <data name="ЗаписиПротокола" xml:space="preserve">
+    <value>Протокол жазбалары</value>
   </data>
   <data name="Запланировать" xml:space="preserve">
     <value>Кесте</value>
@@ -138,6 +156,15 @@
   <data name="ИнспекцииЗаявки" xml:space="preserve">
     <value>№{0} өтінім бойынша тексерулер</value>
   </data>
+  <data name="Карантин" xml:space="preserve">
+    <value>Карантиндік аурулар</value>
+  </data>
+  <data name="КоличествоРастенийВСерии" xml:space="preserve">
+    <value>Топтама саны</value>
+  </data>
+  <data name="НомерСерии" xml:space="preserve">
+    <value>№ топтама</value>
+  </data>
   <data name="ОбщееСостояниеПоля" xml:space="preserve">
     <value>Алаңның жалпы жағдайы</value>
   </data>
@@ -150,6 +177,9 @@
   <data name="ПротоколИнспекции" xml:space="preserve">
     <value>Тексеру хаттамасы №{0}</value>
   </data>
+  <data name="Ризоктония" xml:space="preserve">
+    <value>Ризоктония</value>
+  </data>
   <data name="СредняяФизиологическаяСтадия" xml:space="preserve">
     <value>Орташа физиологиялық кезең</value>
   </data>
@@ -161,5 +191,8 @@
   </data>
   <data name="ФактическаяДата" xml:space="preserve">
     <value>Нақты күн</value>
+  </data>
+  <data name="Черноножка" xml:space="preserve">
+    <value>Қара аяқ</value>
   </data>
 </root>
