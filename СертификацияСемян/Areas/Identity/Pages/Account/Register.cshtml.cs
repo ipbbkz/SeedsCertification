@@ -45,11 +45,17 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account
 		[BindProperty(SupportsGet = true)]
 		public bool Inspector { get; set; }
 
-		/// <summary>
-		///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-		///     directly from your code. This API may change or be removed in future releases.
-		/// </summary>
-		[BindProperty]
+        /// <summary>
+        /// Gets or sets a value indicating whether this registration for laboratory.
+        /// </summary>
+        [BindProperty(SupportsGet = true)]
+        public bool Laboratory { get; set; }
+
+        /// <summary>
+        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+        ///     directly from your code. This API may change or be removed in future releases.
+        /// </summary>
+        [BindProperty]
         public InputModel Input { get; set; }
 
         /// <summary>
@@ -127,6 +133,10 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account
                     {
                         result = await _userManager.AddToRoleAsync(user, Константы.РольИнспектора);
                     }
+                    else if(Laboratory)
+                    {
+                        result = await _userManager.AddToRoleAsync(user, Константы.РольЛаборатория);
+                    }
                     else
                     {
                         result = await _userManager.AddToRoleAsync(user, Константы.РольФермер);
@@ -142,7 +152,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account
                             values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                             protocol: Request.Scheme);
 
-                        if (Inspector)
+                        if (Inspector || Laboratory)
                         {
                             await _emailSender.SendEmailAsync(Input.Email, Register.ЗаголовокПисьмаПодтверждения, Register.ТелоПисьмаПодтвержденияИнспектору);
                         }
