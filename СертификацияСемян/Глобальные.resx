@@ -162,6 +162,9 @@
   <data name="Страница_ОбИнституте" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="ТипИнспекции_Партии" xml:space="preserve">
+    <value>Lot</value>
+  </data>
   <data name="ТипИнспекции_Поcлеуборочная" xml:space="preserve">
     <value>Final</value>
   </data>

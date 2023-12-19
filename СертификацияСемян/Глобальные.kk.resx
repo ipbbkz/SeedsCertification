@@ -159,6 +159,9 @@
   <data name="Страница_ОбИнституте" xml:space="preserve">
     <value>Институт туралы</value>
   </data>
+  <data name="ТипИнспекции_Партии" xml:space="preserve">
+    <value>Лот</value>
+  </data>
   <data name="ТипИнспекции_Поcлеуборочная" xml:space="preserve">
     <value>Егін жинаудан кейінгі</value>
   </data>

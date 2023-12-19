@@ -196,6 +196,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lot.
+        /// </summary>
+        public static string ТипИнспекции_Партии {
+            get {
+                return ResourceManager.GetString("ТипИнспекции_Партии", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Final.
         /// </summary>
         public static string ТипИнспекции_Поcлеуборочная {

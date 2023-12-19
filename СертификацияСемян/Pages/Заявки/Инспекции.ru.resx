@@ -129,11 +129,17 @@
   <data name="ИмяВедущегоИнспектора" xml:space="preserve">
     <value>Имя ведущего инспектора</value>
   </data>
+  <data name="ИмяВторогоИнспектора" xml:space="preserve">
+    <value>Имя второго инспектора</value>
+  </data>
   <data name="Инспекции" xml:space="preserve">
     <value>Инспекции</value>
   </data>
   <data name="ИнспекцииЗаявки" xml:space="preserve">
     <value>Инспекции заявки #{0}</value>
+  </data>
+  <data name="ОбщееСостояниеПоля" xml:space="preserve">
+    <value>Общее состояние поля</value>
   </data>
   <data name="ПланируемаяДата" xml:space="preserve">
     <value>Планируемая дата</value>

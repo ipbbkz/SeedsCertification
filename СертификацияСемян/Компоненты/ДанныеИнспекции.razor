@@ -1,7 +1,6 @@
 ﻿@using System.Globalization
-@inject УправляющийХозяйствами управляющийХозяйствами
-@inject ILogger<ДанныеЗаявки> протоколировщик
-@inject IStringLocalizer<ДанныеЗаявки> Лок
+@using СертификацияСемян.Pages.Заявки
+@inject IStringLocalizer<Инспекции> Лок
 
 <div class="row">
     <div class="col-3">
@@ -12,7 +11,8 @@
         <InputSelect @bind-Value="Модель!.ТипИнспекции" class="form-control">
             <option value="">@Лок["ВыберитеТипИнспекции"] ...</option>
             <option value="1">@Глобальные.ТипИнспекции_Полевая</option>
-            <option value="1">@Глобальные.ТипИнспекции_Поcлеуборочная</option>
+            <option value="2">@Глобальные.ТипИнспекции_Партии</option>
+            <option value="3">@Глобальные.ТипИнспекции_Поcлеуборочная</option>
         </InputSelect>
     </div>
 </div>
@@ -39,9 +39,23 @@
     </div>
     <div class="col">
         <label class="form-label">
+            @Лок["ОбщееСостояниеПоля"] <span class="text-danger">*</span>
+        </label>
+        <InputText @bind-Value="Модель!.ОбщееСостояниеПоля" class="form-control" />
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <label class="form-label">
             @Лок["ИмяВедущегоИнспектора"] <span class="text-danger">*</span>
         </label>
         <InputText @bind-Value="Модель!.ИмяВедущегоИнспектора" class="form-control" />
+    </div>
+    <div class="col">
+        <label class="form-label">
+            @Лок["ИмяВторогоИнспектора"] <span class="text-danger">*</span>
+        </label>
+        <InputText @bind-Value="Модель!.ИмяВторогоИнспектора" class="form-control" />
     </div>
 </div>
 

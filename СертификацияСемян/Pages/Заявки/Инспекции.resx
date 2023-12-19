@@ -129,11 +129,17 @@
   <data name="ИмяВедущегоИнспектора" xml:space="preserve">
     <value>Lead inspector name</value>
   </data>
+  <data name="ИмяВторогоИнспектора" xml:space="preserve">
+    <value>Second inspector name</value>
+  </data>
   <data name="Инспекции" xml:space="preserve">
     <value>Inspections</value>
   </data>
   <data name="ИнспекцииЗаявки" xml:space="preserve">
     <value>Inspections for application #{0}</value>
+  </data>
+  <data name="ОбщееСостояниеПоля" xml:space="preserve">
+    <value>Field state</value>
   </data>
   <data name="ПланируемаяДата" xml:space="preserve">
     <value>Planned date</value>

@@ -129,11 +129,17 @@
   <data name="ИмяВедущегоИнспектора" xml:space="preserve">
     <value>Жетекші инспектордың аты-жөн</value>
   </data>
+  <data name="ИмяВторогоИнспектора" xml:space="preserve">
+    <value>Екінші инспектордың аты-жөні</value>
+  </data>
   <data name="Инспекции" xml:space="preserve">
     <value>Тексерулер</value>
   </data>
   <data name="ИнспекцииЗаявки" xml:space="preserve">
     <value>№{0} өтінім бойынша тексерулер</value>
+  </data>
+  <data name="ОбщееСостояниеПоля" xml:space="preserve">
+    <value>Алаңның жалпы жағдайы</value>
   </data>
   <data name="ПланируемаяДата" xml:space="preserve">
     <value>Жоспарланған күн</value>
