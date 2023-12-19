@@ -132,6 +132,12 @@
   <data name="ИнструкцииПоПодтвержденииРегистрации" xml:space="preserve">
     <value>Пожалуйста проверьте свой email для завершения процесса регистрации.</value>
   </data>
+  <data name="Лаборатория" xml:space="preserve">
+    <value>Лаборатория</value>
+  </data>
+  <data name="ЛабораторияРегистрация" xml:space="preserve">
+    <value>Лаборатория которая проводит лабораторную проверку семян должна пройти регистрацию тут. Учетная запись будет активна после одобрения администрацией</value>
+  </data>
   <data name="НовыйАккаунт" xml:space="preserve">
     <value>Новый аккаунт.</value>
   </data>
@@ -149,6 +155,9 @@
   </data>
   <data name="РегистрацияИнспектора" xml:space="preserve">
     <value>Зарегистрируйтесь как инспектор</value>
+  </data>
+  <data name="РегистрацияЛаборатории" xml:space="preserve">
+    <value>Зарегистироваться как лаборатория</value>
   </data>
   <data name="РегистрацияФермера" xml:space="preserve">
     <value>Зарегистрируйтесь как фермер</value>

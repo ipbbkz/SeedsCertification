@@ -132,6 +132,12 @@
   <data name="ИнструкцииПоПодтвержденииРегистрации" xml:space="preserve">
     <value>Тіркеу процесін аяқтау үшін электрондық поштаңызды тексеріңіз.</value>
   </data>
+  <data name="Лаборатория" xml:space="preserve">
+    <value>Зертхана</value>
+  </data>
+  <data name="ЛабораторияРегистрация" xml:space="preserve">
+    <value>Тұқымға зертханалық зерттеу жүргізетін зертхана осында тіркелуі керек. Әкімшілік бекіткеннен кейін есептік жазба белсенді болады</value>
+  </data>
   <data name="НовыйАккаунт" xml:space="preserve">
     <value>Жаңа тіркелгі</value>
   </data>
@@ -149,6 +155,9 @@
   </data>
   <data name="РегистрацияИнспектора" xml:space="preserve">
     <value>Инспектор ретінде тіркелу</value>
+  </data>
+  <data name="РегистрацияЛаборатории" xml:space="preserve">
+    <value>Зертхана ретінде тіркелу</value>
   </data>
   <data name="РегистрацияФермера" xml:space="preserve">
     <value>Фермер ретінде тіркелу</value>

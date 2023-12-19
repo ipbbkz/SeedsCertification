@@ -106,6 +106,24 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Laboratory.
+        /// </summary>
+        internal static string Лаборатория {
+            get {
+                return ResourceManager.GetString("Лаборатория", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Laboratory who perform laboratory validation of the seeds must register here. The account will be active after approval by the administration.
+        /// </summary>
+        internal static string ЛабораторияРегистрация {
+            get {
+                return ResourceManager.GetString("ЛабораторияРегистрация", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New account..
         /// </summary>
         internal static string НовыйАккаунт {
@@ -156,6 +174,15 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         internal static string РегистрацияИнспектора {
             get {
                 return ResourceManager.GetString("РегистрацияИнспектора", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register as a lab.
+        /// </summary>
+        internal static string РегистрацияЛаборатории {
+            get {
+                return ResourceManager.GetString("РегистрацияЛаборатории", resourceCulture);
             }
         }
         

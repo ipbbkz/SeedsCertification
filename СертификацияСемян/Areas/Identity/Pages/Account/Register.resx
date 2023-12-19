@@ -132,6 +132,12 @@
   <data name="ИнструкцииПоПодтвержденииРегистрации" xml:space="preserve">
     <value>Please check your email to confirm your account.</value>
   </data>
+  <data name="Лаборатория" xml:space="preserve">
+    <value>Laboratory</value>
+  </data>
+  <data name="ЛабораторияРегистрация" xml:space="preserve">
+    <value>Laboratory who perform laboratory validation of the seeds must register here. The account will be active after approval by the administration</value>
+  </data>
   <data name="НовыйАккаунт" xml:space="preserve">
     <value>New account.</value>
   </data>
@@ -149,6 +155,9 @@
   </data>
   <data name="РегистрацияИнспектора" xml:space="preserve">
     <value>Register as an inspector</value>
+  </data>
+  <data name="РегистрацияЛаборатории" xml:space="preserve">
+    <value>Register as a lab</value>
   </data>
   <data name="РегистрацияФермера" xml:space="preserve">
     <value>Register as a farmer</value>
