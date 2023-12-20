@@ -156,10 +156,13 @@
   <data name="СтатусИнспекции_Проведена" xml:space="preserve">
     <value>Done</value>
   </data>
+  <data name="Страница_Документы" xml:space="preserve">
+    <value>Documents</value>
+  </data>
   <data name="Страница_Контакты" xml:space="preserve">
     <value>Contacts</value>
   </data>
-  <data name="Страница_ОбИнституте" xml:space="preserve">
+  <data name="Страница_ОНас" xml:space="preserve">
     <value>About</value>
   </data>
   <data name="ТипИнспекции_Партии" xml:space="preserve">

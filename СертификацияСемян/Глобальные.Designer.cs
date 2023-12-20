@@ -178,6 +178,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Documents.
+        /// </summary>
+        public static string Страница_Документы {
+            get {
+                return ResourceManager.GetString("Страница_Документы", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contacts.
         /// </summary>
         public static string Страница_Контакты {
@@ -189,9 +198,9 @@ namespace СертификацияСемян {
         /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
-        public static string Страница_ОбИнституте {
+        public static string Страница_ОНас {
             get {
-                return ResourceManager.GetString("Страница_ОбИнституте", resourceCulture);
+                return ResourceManager.GetString("Страница_ОНас", resourceCulture);
             }
         }
         

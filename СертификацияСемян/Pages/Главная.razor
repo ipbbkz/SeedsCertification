@@ -2,6 +2,11 @@
 @inject IStringLocalizer<Главная> Лок
 <PageTitle>@Лок["ГлавнаяСтраница"]</PageTitle>
 
+
+<div class="row">
+    <img src="/images/main_page.jpg" class="object-fit-cover" alt="Инспекторы на поле,помогают улучшать качество семян" height="500">
+</div>
+
 <AuthorizeView>
     <Authorized>
         <h1>@Лок["ГлавнаяСтраница"]</h1>
@@ -32,10 +37,10 @@
         }
     </Authorized>
     <NotAuthorized>
-        <a href="/info/about">@Глобальные.Страница_ОбИнституте</a><br />
-        <a href="/information/2">Деятельность</a><br />
+        <a href="/info/about">@Глобальные.Страница_ОНас</a><br />
+        <a href="/info/documents">Документы</a><br />
         <a href="/info/inspection">Инспекция</a><br />
-        <a href="/information/4">Нормативно-правовая база</a><br />
-        <a href="/information/5">5 раздел</a><br />
+        <a href="/info/activity">Деятельность</a><br />
+        <a href="/info/law">Нормативно-правовая база</a><br />
     </NotAuthorized>
 </AuthorizeView>
