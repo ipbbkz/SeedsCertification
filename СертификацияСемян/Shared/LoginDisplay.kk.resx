@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ЗаголовокПоУмолчанию" xml:space="preserve">
-    <value>Тұқымдарды сертификаттау</value>
+  <data name="Вход" xml:space="preserve">
+    <value>Кіру</value>
   </data>
-  <data name="Информация" xml:space="preserve">
-    <value>ақпарат</value>
+  <data name="Приветствие" xml:space="preserve">
+    <value>Привет</value>
   </data>
-  <data name="НазваниеИнститута" xml:space="preserve">
-    <value>Өсімдіктер биологиясы және биотехнологиясы институты</value>
+  <data name="Регистрация" xml:space="preserve">
+    <value>Тіркелу</value>
   </data>
 </root>

@@ -120,6 +120,9 @@
   <data name="ЗаголовокПоУмолчанию" xml:space="preserve">
     <value>Seeds Certification</value>
   </data>
+  <data name="Информация" xml:space="preserve">
+    <value>Information</value>
+  </data>
   <data name="НазваниеИнститута" xml:space="preserve">
     <value>Institute of Biology and Plant Biotechnology</value>
   </data>
