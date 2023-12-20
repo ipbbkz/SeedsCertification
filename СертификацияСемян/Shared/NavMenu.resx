@@ -129,6 +129,9 @@
   <data name="Инспекторы" xml:space="preserve">
     <value>Inspectors</value>
   </data>
+  <data name="Лаборатории" xml:space="preserve">
+    <value>Laboratories</value>
+  </data>
   <data name="Логин" xml:space="preserve">
     <value>Log in</value>
   </data>

@@ -1,0 +1,84 @@
+﻿@page "/laboratories"
+@attribute [Authorize(Policy = "ТребуетсяБытьАдминистратором")]
+@using Microsoft.AspNetCore.Identity
+@using СертификацияСемян.Данные;
+@inject UserManager<ПользовательПриложения> МенеджерПользователей
+@inject IStringLocalizer<Лаборатории> Лок
+
+<PageTitle>@Лок["Лаборатории"]</PageTitle>
+<div class="align-items-center d-flex justify-content-between mb-2">
+    <div>
+        <h4 class="text-start text-primary">@Лок["Лаборатории"]</h4>
+    </div>
+    <div class="text-end">
+        <a href="/laboratories/add" class="btn btn-primary">+</a>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>@Лок["Почта"]</td>
+            <td>@Лок["Фамилия"]</td>
+            <td>@Лок["Имя"]</td>
+            <td>@Лок["Отчество"]</td>
+            <td>@Лок["ПочтаПодтверждена"]</td>
+            <td>@Лок["Действия"]</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var л in лаборатории)
+        {
+            <tr>
+                <td>
+                    @л.Email
+                </td>
+                <td>
+                    @л.Фамилия
+                </td>
+                <td>
+                    @л.Имя
+                </td>
+                <td>
+                    @л.Отчество
+                </td>
+                <td>
+                    @л.EmailConfirmed
+                </td>
+                <td>
+                    <a href="/laboratories/edit/@л.Id" class="btn btn-primary">@Глобальные.Редактировать</a>
+                    @if (!л.EmailConfirmed)
+                    {
+                        <a class="btn btn-secondary" @onclick=@(() => this.ОдобритьПользователя(л.Id))>@Глобальные.Одобрить</a>
+                    }
+                    <AuthorizeView Policy="ТребуетсяБытьСуперАдминистратором">
+                        <a href="/laboratories/delete/@л.Id" class="btn btn-danger">@Глобальные.Удалить</a>
+                    </AuthorizeView>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private IList<ПользовательПриложения> лаборатории = Array.Empty<ПользовательПриложения>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        лаборатории = await МенеджерПользователей.GetUsersInRoleAsync(Константы.РольЛаборатория);
+        await base.OnParametersSetAsync();
+    }
+
+    public async Task ОдобритьПользователя(string userId)
+    {
+        var пользователь = await МенеджерПользователей.FindByIdAsync(userId);
+        if (пользователь == null)
+        {
+            return;
+        }
+
+        var жетон = await МенеджерПользователей.GenerateEmailConfirmationTokenAsync(пользователь);
+        await МенеджерПользователей.ConfirmEmailAsync(пользователь, жетон);
+    }
+}

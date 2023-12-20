@@ -117,37 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ВыйтиИзАккаунта" xml:space="preserve">
-    <value>Выйти</value>
+  <data name="Действия" xml:space="preserve">
+    <value>Actions</value>
   </data>
-  <data name="Заявки" xml:space="preserve">
-    <value>Заявки</value>
-  </data>
-  <data name="ИмяПриложения" xml:space="preserve">
-    <value>Сертификация Семян</value>
-  </data>
-  <data name="Инспекторы" xml:space="preserve">
-    <value>Инспекторы</value>
+  <data name="Имя" xml:space="preserve">
+    <value>First name</value>
   </data>
   <data name="Лаборатории" xml:space="preserve">
-    <value>Лаборатории</value>
+    <value>Laboratories</value>
   </data>
-  <data name="Логин" xml:space="preserve">
-    <value>Войти</value>
+  <data name="Отчество" xml:space="preserve">
+    <value>Surname</value>
   </data>
-  <data name="МоиЗаявки" xml:space="preserve">
-    <value>Мои заявки</value>
+  <data name="Почта" xml:space="preserve">
+    <value>Email</value>
   </data>
-  <data name="Приветствие" xml:space="preserve">
-    <value>Привет,</value>
+  <data name="ПочтаПодтверждена" xml:space="preserve">
+    <value>Email confirmed</value>
   </data>
-  <data name="Регистрация" xml:space="preserve">
-    <value>Регистрация</value>
+  <data name="УдалитьЛабораторию" xml:space="preserve">
+    <value>Delete laboratory</value>
   </data>
-  <data name="Фермеры" xml:space="preserve">
-    <value>Фермеры</value>
-  </data>
-  <data name="Фермы" xml:space="preserve">
-    <value>Фермы</value>
+  <data name="Фамилия" xml:space="preserve">
+    <value>Second name</value>
   </data>
 </root>
