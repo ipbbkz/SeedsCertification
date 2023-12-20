@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Действия" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Почта" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ПочтаПодтверждена" xml:space="preserve">
+    <value>Email confirmed</value>
+  </data>
   <data name="Фермеры" xml:space="preserve">
     <value>Farmers</value>
+  </data>
+  <data name="Фермы" xml:space="preserve">
+    <value>Farms</value>
   </data>
 </root>

@@ -14,20 +14,21 @@
 <table class="table">
     <thead>
         <tr>
-            @*<td>Id</td>*@
-            <td>Farms</td>
-            <td>Email</td>
-            <td>Email Confirmed</td>
-            <td></td>
+            <td>@Лок["Фермы"]</td>
+            <td>@Лок["Почта"]</td>
+            <td>@Лок["ПочтаПодтверждена"]</td>
+            <AuthorizeView Policy="ТребуетсяБытьСуперАдминистратором">
+                <td>
+                    @Лок["Действия"]
+                </td>
+            </AuthorizeView>
+            
         </tr>
     </thead>
     <tbody>
         @foreach (var ф in фермеры)
         {
             <tr>
-                @*<td>
-                    @ф.Пользователь.Id
-            </td>*@
                 <td>
                     @string.Join(", ", ф.Фермы.Select(ф => ф.НаваниеКомпании))
                 </td>
@@ -37,11 +38,11 @@
                 <td>
                     @ф.Пользователь.EmailConfirmed
                 </td>
-                <td>
-                    <AuthorizeView Policy="ТребуетсяБытьСуперАдминистратором">
-                        <a href="/farmers/delete/@ф.Пользователь.Id" class="btn btn-danger">@Глобальные.Удалить</a>
-                    </AuthorizeView>
-                </td>
+                <AuthorizeView Policy="ТребуетсяБытьСуперАдминистратором">
+                   <td>
+                      <a href="/farmers/delete/@ф.Пользователь.Id" class="btn btn-danger">@Глобальные.Удалить</a>
+                   </td>
+                </AuthorizeView>
             </tr>
         }
     </tbody>
