@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Аккаунт" xml:space="preserve">
+    <value>есептік жазба</value>
+  </data>
+  <data name="ВамСледует" xml:space="preserve">
+    <value>Сізге керек</value>
+  </data>
+  <data name="ВашАккаунтСодержит" xml:space="preserve">
+    <value>Есептік жазбаңыз бізге берген жеке деректеріңізді қамтиды. Бұл бет сол деректерді жүктеп алуға немесе жоюға мүмкіндік береді.</value>
+  </data>
+  <data name="ВВашАутентификатор" xml:space="preserve">
+    <value>екі факторлы аутентификация қолданбасына. Бос орындар мен корпус маңызды емес.</value>
+  </data>
+  <data name="ВведитеКод" xml:space="preserve">
+    <value>Кодты енгізіңіз.</value>
+  </data>
+  <data name="ВведитеНовуюПочту" xml:space="preserve">
+    <value>Жаңа электрондық поштаны енгізіңіз.</value>
+  </data>
+  <data name="ВведитеПароль" xml:space="preserve">
+    <value>Құпия сөзіңізді енгізіңіз.</value>
+  </data>
+  <data name="ВведитеПочту" xml:space="preserve">
+    <value>Электрондық поштаңызды енгізіңіз.</value>
+  </data>
+  <data name="ВключитьГенерацию" xml:space="preserve">
+    <value>QR кодын жасауды қосыңыз</value>
+  </data>
+  <data name="ВнешниеВходы" xml:space="preserve">
+    <value>Сыртқы логиндер</value>
+  </data>
+  <data name="ВойдитеИспользуя" xml:space="preserve">
+    <value>пайдаланып жүйеге кіріңіз</value>
+  </data>
+  <data name="ВойтиСКодами" xml:space="preserve">
+    <value>қалпына келтіру коды арқылы жүйеге кірмес бұрын.</value>
+  </data>
+  <data name="ВыДолжны" xml:space="preserve">
+    <value>Сен міндеттісің</value>
+  </data>
+  <data name="ВыДолжныПринять" xml:space="preserve">
+    <value>Екі факторлы аутентификацияны қосу үшін саясатты қабылдау керек.</value>
+  </data>
+  <data name="ВыМожете" xml:space="preserve">
+    <value>Сен істе аласың</value>
+  </data>
+  <data name="ГенерацияНовыхКодовНеМеняет" xml:space="preserve">
+    <value>Жаңа қалпына келтіру кодтарын жасау аутентификация қолданбаларында пайдаланылатын кілттерді өзгертпейді. Егер сіз кілтті өзгерткіңіз келсе
+аутентификация қолданбасында пайдаланылуы керек</value>
+  </data>
+  <data name="ГенерироватьКоды" xml:space="preserve">
+    <value>Қалпына келтіру кодтарын жасаңыз</value>
+  </data>
+  <data name="ГуглАутентификатор" xml:space="preserve">
+    <value>үшін Google Authenticator</value>
+  </data>
+  <data name="ДвухФакторнаяАутентификация" xml:space="preserve">
+    <value>Екі факторлы аутентификация</value>
+  </data>
+  <data name="ДействиеОтключаетАутентификацию" xml:space="preserve">
+    <value>Бұл әрекет тек 2FA өшіреді.</value>
+  </data>
+  <data name="ДобавитьДругойСервис" xml:space="preserve">
+    <value>Жүйеге кіру үшін басқа қызметті қосыңыз.</value>
+  </data>
+  <data name="ДобавитьПриложение" xml:space="preserve">
+    <value>Аутентификация қолданбасын қосыңыз</value>
+  </data>
+  <data name="ЕслиОбнулитеКлюч" xml:space="preserve">
+    <value>Аутентификация кілтін қалпына келтірсеңіз, аутентификация қолданбасы оны қайта конфигурацияламайынша жұмыс істемейді.</value>
+  </data>
+  <data name="ЕслиПотеряетеКоды" xml:space="preserve">
+    <value>Құрылғыңызды жоғалтып алсаңыз және қалпына келтіру кодтары болмаса, есептік жазбаңызға кіре алмайсыз.</value>
+  </data>
+  <data name="ЗабытьБраузер" xml:space="preserve">
+    <value>Бұл браузерді ұмытыңыз</value>
+  </data>
+  <data name="ЗагрузитеАутентификатор" xml:space="preserve">
+    <value>Microsoft Authenticator сияқты екі факторлы аутентификация қолданбасын жүктеп алыңыз</value>
+  </data>
+  <data name="ЗагрузитеДанные" xml:space="preserve">
+    <value>Деректеріңізді жүктеп алыңыз</value>
+  </data>
+  <data name="Загрузить" xml:space="preserve">
+    <value>Жүктеп алу</value>
+  </data>
+  <data name="Закрыть" xml:space="preserve">
+    <value>Жабық</value>
+  </data>
+  <data name="ЗарегистрированныеВходы" xml:space="preserve">
+    <value>Тіркелген логиндер</value>
+  </data>
+  <data name="И" xml:space="preserve">
+    <value>және</value>
+  </data>
+  <data name="ИзменитьПароль" xml:space="preserve">
+    <value>Құпия сөзді өзгерту</value>
+  </data>
+  <data name="ИзменитьПочту" xml:space="preserve">
+    <value>Электрондық поштаны өзгерту</value>
+  </data>
+  <data name="Или" xml:space="preserve">
+    <value>немесе</value>
+  </data>
+  <data name="КодовОсталось" xml:space="preserve">
+    <value>қалпына келтіру кодтары қалды.</value>
+  </data>
+  <data name="КодПодтверждения" xml:space="preserve">
+    <value>Тексеру коды</value>
+  </data>
+  <data name="КодыВосстановления" xml:space="preserve">
+    <value>Қалпына келтіру кодтары</value>
+  </data>
+  <data name="ЛичныеДанные" xml:space="preserve">
+    <value>Жеке деректер</value>
+  </data>
+  <data name="ЛогинИзАккаунта" xml:space="preserve">
+    <value>тіркелгіңізден кіріңіз</value>
+  </data>
+  <data name="НастроитьАутентификатор" xml:space="preserve">
+    <value>Аутентификация қолданбасын конфигурациялаңыз</value>
+  </data>
+  <data name="Научитесь" xml:space="preserve">
+    <value>Қалай жасау керектігін біліңіз</value>
+  </data>
+  <data name="НеОсталосьКодов" xml:space="preserve">
+    <value>Сізде қалпына келтіру кодтары қалмады.</value>
+  </data>
+  <data name="НетЛокальногоАккаунта" xml:space="preserve">
+    <value>Сізде бұл сайт үшін жергілікті пайдаланушы аты/құпия сөз жоқ. Жергілікті қосыңыз
+тіркелгісі, осылайша сіз сыртқы логинсіз кіре аласыз.</value>
+  </data>
+  <data name="НовыйПароль" xml:space="preserve">
+    <value>Жаңа құпия сөзіңізді енгізіңіз.</value>
+  </data>
+  <data name="ОбновитьПароль" xml:space="preserve">
+    <value>Құпия сөзді жаңарту</value>
+  </data>
+  <data name="ОбнулитеКлючи" xml:space="preserve">
+    <value>аутентификация кілттерін қалпына келтіріңіз.</value>
+  </data>
+  <data name="ОбнулитьКлюч" xml:space="preserve">
+    <value>Аутентификация кілтін қалпына келтіріңіз</value>
+  </data>
+  <data name="ОбнулитьКоды" xml:space="preserve">
+    <value>Қалпына келтіру кодтарын қалпына келтіріңіз</value>
+  </data>
+  <data name="ОбнулитьПриложение" xml:space="preserve">
+    <value>Аутентификация қолданбасын қалпына келтіріңіз</value>
+  </data>
+  <data name="ОдинКод" xml:space="preserve">
+    <value>Сізде 1 қалпына келтіру коды қалды.</value>
+  </data>
+  <data name="ОднаждыОтсканировав" xml:space="preserve">
+    <value>QR кодын сканерлегеннен кейін немесе жоғарыдағы кілтті енгізгеннен кейін екі факторлы аутентификация қолданбасы сізге береді
+бірегей кодпен. Төмендегі растау жолағына кодты енгізіңіз.</value>
+  </data>
+  <data name="ОтключениеНеМеняетКлючи" xml:space="preserve">
+    <value>2FA өшіру аутентификация қолданбаларында пайдаланылатын кілттерді өзгертпейді. Аутентификация қолданбасында пайдаланылатын кілтті өзгерткіңіз келсе, сізге қажет</value>
+  </data>
+  <data name="Отключить2ФА" xml:space="preserve">
+    <value>2FA өшіру</value>
+  </data>
+  <data name="ОтключитьАутентификацию" xml:space="preserve">
+    <value>Екі факторлы аутентификацияны өшіру (2FA)</value>
+  </data>
+  <data name="ОтсканируйтеКР" xml:space="preserve">
+    <value>QR кодын сканерлеңіз немесе осы кілтті енгізіңіз</value>
+  </data>
+  <data name="Пароль" xml:space="preserve">
+    <value>Құпия сөз</value>
+  </data>
+  <data name="ПереустановитьКлючи" xml:space="preserve">
+    <value>аутентификация кілттерін қалпына келтіріңіз.</value>
+  </data>
+  <data name="ПодтвердитеПароль" xml:space="preserve">
+    <value>Жаңа құпия сөзіңізді растаңыз.</value>
+  </data>
+  <data name="Подтвердить" xml:space="preserve">
+    <value>Тексеру</value>
+  </data>
+  <data name="ПолитикаНеПринята" xml:space="preserve">
+    <value>Құпиялылық және cookie саясаты қабылданбады.</value>
+  </data>
+  <data name="ПоменяйтеНастройкиАккаунта" xml:space="preserve">
+    <value>Тіркелгі параметрлерін өзгертіңіз</value>
+  </data>
+  <data name="ПослатьПодтверждение" xml:space="preserve">
+    <value>Растау электрондық поштасын жіберіңіз</value>
+  </data>
+  <data name="Почта" xml:space="preserve">
+    <value>Электрондық пошта</value>
+  </data>
+  <data name="Профиль" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="ПроцессОтключает2ФА" xml:space="preserve">
+    <value>Бұл процесс аутентификация қолданбасын растамайынша 2FA өшіреді.
+Аутентификация қолданбасының конфигурациясын аяқтамасаңыз, тіркелгіңізге кіру мүмкіндігін жоғалтуыңыз мүмкін.</value>
+  </data>
+  <data name="Сгенерировать2ФАКоды" xml:space="preserve">
+    <value>Екі факторлы аутентификация (2FA) қалпына келтіру кодтарын жасаңыз</value>
+  </data>
+  <data name="СгенерируйтеНовыеКоды" xml:space="preserve">
+    <value>қалпына келтіру кодтарының жаңа жинағын жасаңыз</value>
+  </data>
+  <data name="СохранитеКоды" xml:space="preserve">
+    <value>Бұл кодтарды қауіпсіз жерге қойыңыз.</value>
+  </data>
+  <data name="СтарыйПароль" xml:space="preserve">
+    <value>Ескі құпия сөзіңізді енгізіңіз.</value>
+  </data>
+  <data name="УберитеЭтот" xml:space="preserve">
+    <value>Бұны алып тастаңыз</value>
+  </data>
+  <data name="Убрать" xml:space="preserve">
+    <value>Жою</value>
+  </data>
+  <data name="УВасЕсть" xml:space="preserve">
+    <value>сенде бар</value>
+  </data>
+  <data name="УдалениеПриведет" xml:space="preserve">
+    <value>Бұл деректерді жою есептік жазбаңызды біржола жояды және оны қалпына келтіру мүмкін емес.</value>
+  </data>
+  <data name="УдалениеЭтихДанных" xml:space="preserve">
+    <value>Бұл деректерді жою есептік жазбаңызды біржола жояды және оны қалпына келтіру мүмкін емес.</value>
+  </data>
+  <data name="Удалить" xml:space="preserve">
+    <value>Жою</value>
+  </data>
+  <data name="УдалитьИЗакрыть" xml:space="preserve">
+    <value>Деректерді жойып, тіркелгімді жабыңыз</value>
+  </data>
+  <data name="УдалитьЛичныеДанные" xml:space="preserve">
+    <value>Жеке құпия сөзді жою</value>
+  </data>
+  <data name="УправляйтеАккаунтом" xml:space="preserve">
+    <value>Есептік жазбаңызды басқарыңыз</value>
+  </data>
+  <data name="УправлятьВнешнимиЛогинами" xml:space="preserve">
+    <value>Сыртқы логиндерді басқарыңыз</value>
+  </data>
+  <data name="УправлятьПочтой" xml:space="preserve">
+    <value>Электрондық поштаны басқару</value>
+  </data>
+  <data name="УстановитеВашПароль" xml:space="preserve">
+    <value>Құпия сөзіңізді орнатыңыз</value>
+  </data>
+  <data name="УстановитьПароль" xml:space="preserve">
+    <value>Құпия сөзді орнату</value>
+  </data>
+  <data name="УстановитьПриложение" xml:space="preserve">
+    <value>Аутентификация қолданбасын орнатыңыз</value>
+  </data>
+  <data name="ЧтобыИспользоватьАутентификатор" xml:space="preserve">
+    <value>Аутентификация қолданбасын пайдалану үшін келесі қадамдарды орындаңыз:</value>
+  </data>
+</root>

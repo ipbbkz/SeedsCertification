@@ -48,6 +48,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Login.resx</DependentUpon>
     </Compile>
+    <Compile Update="Areas\Identity\Pages\Account\Manage\Manage.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Manage.resx</DependentUpon>
+    </Compile>
     <Compile Update="Areas\Identity\Pages\Account\Register.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -83,6 +88,14 @@
     <EmbeddedResource Update="Areas\Identity\Pages\Account\Login.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Areas\Identity\Pages\Account\Manage\Manage.ru.resx">
+      <LastGenOutput>Manage - Copy.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Areas\Identity\Pages\Account\Manage\Manage.resx">
+      <LastGenOutput>Manage.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Areas\Identity\Pages\Account\Register.resx">
       <Generator>ResXFileCodeGenerator</Generator>
