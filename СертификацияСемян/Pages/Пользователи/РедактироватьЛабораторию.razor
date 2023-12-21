@@ -1,0 +1,72 @@
+﻿@page "/laboratories/edit/{ИдЛаборатории}"
+@attribute [Authorize(Policy = "ТребуетсяБытьАдминистратором")]
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity.UI.Services
+@using Microsoft.AspNetCore.WebUtilities
+@using System.Text
+@using System.Text.Encodings.Web
+@using СертификацияСемян.Данные;
+@inject UserManager<ПользовательПриложения> МенеджерПользователей
+@inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<РедактироватьЛабораторию> Лок
+@inject IStringLocalizer<Глобальные> ГлобЛок
+@inject IUserStore<ПользовательПриложения> хранилищеПользователей
+@inject SignInManager<ПользовательПриложения> signInManager
+@inject IEmailSender emailSender
+
+<PageTitle>@Лок["РедактироватьЛабораторию"]</PageTitle>
+
+    <h3>@Лок["РедактироватьЛабораторию"]</h3>
+
+<EditForm EditContext=@контекстРедактирования OnValidSubmit="@Submit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <ДанныеПользователя Модель=@Модель />
+
+    <button type="submit" class="btn btn-primary">@ГлобЛок["Сохранить"]</button>
+    <a href="/laboratories" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
+</EditForm>
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+    private EditContext? контекстРедактирования;
+
+    [Parameter]
+    public string? ИдЛаборатории { get; set; }
+
+    public МодельПользователя Модель { get; set; } = new МодельПользователя();
+
+    protected override void OnInitialized()
+    {
+        контекстРедактирования = new(Модель);
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var result = await МенеджерПользователей.FindByIdAsync(ИдЛаборатории);
+        if (result != null)
+        {
+            Модель.Фамилия = result.Фамилия;
+            Модель.Имя = result.Имя;
+            Модель.Отчество = result.Отчество;
+            Модель.Почта = result.Email;
+        }
+        await base.OnParametersSetAsync();
+    }
+
+    private async Task Submit()
+    {
+        var result = await МенеджерПользователей.FindByIdAsync(ИдЛаборатории);
+        if (result != null)
+        {
+            result.Фамилия = Модель.Фамилия;
+            result.Имя = Модель.Имя;
+            result.Отчество = Модель.Отчество;
+            result.Email = Модель.Почта;
+            result.UserName = Модель.Почта;
+        }
+    
+        await МенеджерПользователей.UpdateAsync(result);
+        управляющийНавигацией.NavigateTo("/laboratories");
+    }
+}
