@@ -1,0 +1,221 @@
+﻿@page "/requests/{ИдЗаявки:int}/inspections/{ИдИнспекции:int}/protocols/lot"
+@attribute [Authorize(Policy = "Инспекторы")]
+@inject УправляющийЗаявками управляющийЗаявками
+@inject УправляющийИнспекциями управляющийИнспекциями
+@inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<Инспекции> Лок
+
+<h3>@string.Format(Лок["ПротоколИнспекции"], ИдИнспекции)</h3>
+
+<h4>
+    @Лок["ДанныеЗаявки"]
+</h4>
+<fieldset disabled>
+    <БазовыеДанныеЗаявки Модель=@МодельЗаявки Пользователь=@ИдВладельца />
+</fieldset>
+
+<h4>
+    @Лок["ДанныеИнспекции"]
+</h4>
+<fieldset disabled>
+    <ДанныеИнспекции Модель="@Модель" />
+</fieldset>
+<h4>
+    @Лок["ЗаписиПротокола"]
+</h4>
+<div class="row">
+    <div class="col-5">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>@Лок["ВесПартии"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.ВесПартии" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["СухаяГниль"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.СухаяГниль" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["МокраяГниль"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.МокраяГниль" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["Фитофтороз"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.Фитофтороз" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["ПаршаОбыкновенная"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.ПаршаОбыкновенная" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["ПаршаЛуговая"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.ПаршаЛуговая" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["ПаршаСеребристая"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.ПаршаСеребристая" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["ПаршаПорошистая"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.ПаршаПорошистая" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["Продавленность"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.Продавленность" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["НезначительныеПовреждения"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.НезначительныеПовреждения" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["ВнешниеДефекты"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.ВнешниеДефекты" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["ПрилипшаяПочва"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.ПрилипшаяПочва" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["ПревышениеРазмеров"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.ПревышениеРазмеров" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["Проростания"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.Проростания" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["ВнутренниеДефекты"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.ВнутренниеДефекты" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["РаздавленныеКлубни"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.РаздавленныеКлубни" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["ВирусныйНекроз"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.ВирусныйНекроз" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["Переохлаждение"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.Переохлаждение" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Лок["Вредители"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.Вредители" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row my-3">
+    <div class="col">
+        @if (Модель.Статус == 1)
+        {
+            <a class="btn btn-primary" @onclick="СохранитьПротокол">@Глобальные.Сохранить</a>
+        }
+        <a href="/requests/@ИдЗаявки/inspections" class="btn btn-secondary">@Глобальные.Назад</a>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    [Parameter]
+    public int ИдЗаявки { get; set; }
+
+    [Parameter]
+    public int ИдИнспекции { get; set; }
+
+    public string ИдВладельца { get; set; } = "";
+
+    public МодельЗаявки МодельЗаявки { get; set; } = new();
+
+    public МодельИнспекции Модель { get; set; } = new();
+
+    public ЗаписьИнспекцииПартии Запись { get; set; } = new();
+
+    RenderFragment<(ЗаписьИнспекцииПартии запись, int? значение)> ОтображениеЗаписи = (значение) => __builder =>
+    {
+        if (значение.значение is null)
+        {
+            <text></text>
+        }
+        else
+        {
+            <text>
+                @значение.значение <text>(</text>@(((100.0 * (значение.значение ?? 0)) / (значение.запись.ВесПартии)).ToString("F1"))<text>%)</text>
+            </text>
+        }
+    };
+
+
+    protected override void OnParametersSet()
+    {
+        var заявка = управляющийЗаявками.ПолучитьЗаявку(ИдЗаявки);
+        if (заявка is null)
+        {
+            return;
+        }
+
+        ИдВладельца = заявка.УчастокПоля.Поле.ПроизводительСемян.ИдВладельца;
+
+        Проектор.ОтобразитьЗаявку(заявка, МодельЗаявки);
+
+        var инспекция = управляющийИнспекциями.ПолучитьИнспекцию(ИдИнспекции);
+        if (инспекция is null)
+        {
+            return;
+        }
+
+        Проектор.ОтобразитьИнспекцию(инспекция, Модель);
+        Запись = управляющийИнспекциями.ПолучитьПротоколИнспекцииПартии(ИдИнспекции);
+        base.OnParametersSet();
+    }
+
+    public void СохранитьПротокол()
+    {
+        управляющийИнспекциями.СохранитьПротоколИнспекцииПартии(ИдИнспекции, Запись);
+        управляющийИнспекциями.ПровестиИнспекцию(ИдИнспекции);
+        управляющийНавигацией.NavigateTo($"/requests/{ИдЗаявки}/inspections");
+    }
+}
