@@ -178,7 +178,7 @@ else
 
 <h3>@Лок["ПараметрыУчасткаИЗасева"]</h3>
 <div class="row">
-    <div class="col col-md-4">
+    <div class="col col-md-3">
         <label class="form-label">
             @Лок["ФормаУчастка"] <span class="text-danger">*</span>
         </label>
@@ -190,64 +190,66 @@ else
             <option value="4">@Лок["Нестандартная"]</option>
         </InputSelect>
     </div>
-    <div class="col col-md-4">
-        <div class="col col-md-4">
-            @if (Модель!.ФормаУчастка == 1 || Модель!.ФормаУчастка == 2 || Модель!.ФормаУчастка == 3)
+    <div class="col col-md-3">
+        @if (Модель!.ФормаУчастка == 1 || Модель!.ФормаУчастка == 2 || Модель!.ФормаУчастка == 3)
+        {
+            var text = Модель!.ФормаУчастка switch
             {
-                var text = Модель!.ФормаУчастка switch
-                {
-                    1 => "Сторона",
-                    2 => "Длина",
-                    3 => "Радиус",
-                    _ => throw new InvalidOperationException()
-                };
-                <label class="form-label">
-                    @Лок["Длина"] <span class="text-danger">*</span>
-                </label>
-                <InputText @bind-Value="Модель!.Размер1" class="form-control" />
-            }
-        </div>
+                1 => "Сторона",
+                2 => "Длина",
+                3 => "Радиус",
+                _ => throw new InvalidOperationException()
+            };
+            <label class="form-label">
+                @Лок["Длина"] <span class="text-danger">*</span>
+            </label>
+            <InputText @bind-Value="Модель!.Размер1" class="form-control" />
+        }
     </div>
-    <div class="col col-md-4">
-        <div class="col col-md-4">
-            @if (Модель!.ФормаУчастка == 2)
-            {
-                <label class="form-label">
-                    @Лок["Ширина"] <span class="text-danger">*</span>
-                </label>
-                <InputText @bind-Value="Модель!.Размер2" class="form-control" />
-            }
-        </div>
+    <div class="col col-md-3">
+        @if (Модель!.ФормаУчастка == 2)
+        {
+            <label class="form-label">
+                @Лок["Ширина"] <span class="text-danger">*</span>
+            </label>
+            <InputText @bind-Value="Модель!.Размер2" class="form-control" />
+        }
     </div>
 </div>
 <div class="row">
-    <div class="col col-md-4">
+    <div class="col col-md-3">
         <label class="form-label">
             @Лок["ПлощадьПосадки"] <span class="text-danger">*</span>
         </label>
         <InputText @bind-Value="Модель!.ПлощадьПосадки" class="form-control" />
     </div>
-    <div class="col col-md-4">
+    <div class="col col-md-3">
         <label class="form-label">
             @Лок["РасстояниеМеждуРядами"] <span class="text-danger">*</span>
         </label>
         <InputText @bind-Value="Модель!.РасстояниеМеждуРядами" class="form-control" />
     </div>
-    <div class="col col-md-4">
+    <div class="col col-md-3">
         <label class="form-label">
             @Лок["РасстояниеВРяду"] <span class="text-danger">*</span>
         </label>
         <InputText @bind-Value="Модель!.РасстояниеВРяду" class="form-control" />
     </div>
+    <div class="col col-md-3">
+        <label class="form-label">
+            @Лок["РекомендуемоеКоличествоРастений"] <span class="text-danger">*</span>
+        </label>
+        <input type="number" value="@Модель!.РекомендуемоеКоличествоРастений" class="form-control" disabled />
+    </div>
 </div>
 <div class="row">
-    <div class="col col-md-4">
+    <div class="col col-md-3">
         <label class="form-label">
             @Лок["ДатаПосадки"]
         </label>
         <InputDate @bind-Value="Модель!.ДатаПосадки" class="form-control" />
     </div>
-    <div class="col col-md-4">
+    <div class="col col-md-3">
         <label class="form-label">
             @Лок["ПланируемаяДатаУборки"]
         </label>

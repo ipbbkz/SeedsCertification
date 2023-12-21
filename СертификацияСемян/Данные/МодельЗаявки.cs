@@ -54,9 +54,25 @@ public class МодельЗаявки
     [Обязательное]
     public string ПлощадьПосадки { get; set; }
     [Обязательное]
-    public string РасстояниеМеждуРядами { get; set; }
+    public string РасстояниеМеждуРядами { get; set; } = "75";
     [Обязательное]
-    public string РасстояниеВРяду { get; set; }
+    public string РасстояниеВРяду { get; set; } = "20";
+    public int РекомендуемоеКоличествоРастений
+    {
+        get
+        {
+            if (double.TryParse(ПлощадьПосадки, out var площадь)
+                && int.TryParse(РасстояниеМеждуРядами, out var расстояниеМеждуРядами)
+                && int.TryParse(РасстояниеВРяду, out var расстояниеВРяду))
+            {
+                var растенийНаКвМетр = 10_000.0 / (расстояниеМеждуРядами * расстояниеВРяду);
+                var растенийНаГектар = 10_000.0 * растенийНаКвМетр;
+                return Math.Max((int)(площадь * растенийНаГектар), 100_000) / 100;
+            }
+
+            return 0;
+        }
+    }
     public string ПрогнозируемоеКоличествоУрожая { get; set; } = "";
     public DateTime ДатаПосадки { get; set; } = DateTime.UtcNow;
     public DateTime ДатаСбора { get; set; } = DateTime.UtcNow;
