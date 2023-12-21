@@ -1,4 +1,4 @@
-﻿@page "/my/requests/{ИдЗаявки:int}/inspections/{ИдИнспекции:int}/protocols"
+﻿@page "/my/requests/{ИдЗаявки:int}/inspections/{ИдИнспекции:int}/protocols/field"
 @attribute [Authorize(Policy = "Фермеры")]
 @using Pages.Заявки
 @inject УправляющийЗаявками управляющийЗаявками
@@ -95,7 +95,7 @@
 
     public МодельИнспекции Модель { get; set; } = new();
 
-    public List<ЗаписьИнспекции> Записи { get; set; } = new();
+    public List<ЗаписьПолевойИнспекции> Записи { get; set; } = new();
 
     protected override void OnParametersSet()
     {
@@ -116,7 +116,7 @@
         }
 
         Проектор.ОтобразитьИнспекцию(инспекция, Модель);
-        Записи = управляющийИнспекциями.ПолучитьПротокол(ИдИнспекции);
+        Записи = управляющийИнспекциями.ПолучитьПротоколПолевойИнспекции(ИдИнспекции);
         base.OnParametersSet();
     }
 

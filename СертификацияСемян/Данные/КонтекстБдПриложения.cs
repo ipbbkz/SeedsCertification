@@ -17,7 +17,8 @@ public class КонтекстБдПриложения : IdentityDbContext<Пол
     public DbSet<Поле> Поля { get; set; }
     public DbSet<УчастокПоля> УчасткиПолей { get; set; }
     public DbSet<Инспекция> Инспекции { get; set; }
-    public DbSet<ЗаписьИнспекции> ЗаписиИнспекций { get; set; }
+    public DbSet<ЗаписьПолевойИнспекции> ЗаписиПолевыхИнспекций { get; set; }
+    public DbSet<ЗаписьИнспекцииПартии> ЗаписиИнспекцийПартии { get; set; }
     public DbSet<Анализ> Анализы { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
@@ -27,7 +28,8 @@ public class КонтекстБдПриложения : IdentityDbContext<Пол
         builder.Entity<Поле>().HasKey(nameof(Поле.Ид));
         builder.Entity<УчастокПоля>().HasKey(nameof(УчастокПоля.Ид));
         builder.Entity<Инспекция>().HasKey(nameof(Инспекция.Ид));
-        builder.Entity<ЗаписьИнспекции>().HasKey(nameof(ЗаписьИнспекции.Ид));
+        builder.Entity<ЗаписьПолевойИнспекции>().HasKey(nameof(ЗаписьПолевойИнспекции.Ид));
+        builder.Entity<ЗаписьИнспекцииПартии>().HasKey(nameof(ЗаписьИнспекцииПартии.Ид));
         builder.Entity<Анализ>().HasKey(nameof(Анализ.Ид));
         builder.Entity<IdentityRole>()
             .HasData(
@@ -137,7 +139,7 @@ public class Инспекция
     public DateTime? ДатаУдаления { get; set; }
 }
 
-public class ЗаписьИнспекции
+public class ЗаписьПолевойИнспекции
 {
     public int Ид { get; set; }
     public int ИнспекцияИд { get; set; }
@@ -148,6 +150,31 @@ public class ЗаписьИнспекции
     public int? Черноножка { get; set; }
     public int? Безтиповые { get; set; }
     public int? Ризоктония { get; set; }
+}
+
+public class ЗаписьИнспекцииПартии
+{
+    public int Ид { get; set; }
+    public int ИнспекцияИд { get; set; }
+    public int ВесПартии { get; set; }
+    public int? СухаяГниль { get; set; }
+    public int? МокраяГниль { get; set; }
+    public int? Фитофтороз { get; set; }
+    public int? ПаршаОбыкновенная { get; set; }
+    public int? ПаршаЛуговая { get; set; }
+    public int? ПаршаСеребристая { get; set; }
+    public int? ПаршаПорошистая { get; set; }
+    public int? Продавленность { get; set; }
+    public int? НезначительныеПовреждения { get; set; }
+    public int? ВнешниеДефекты { get; set; }
+    public int? ПрилипшаяПочва { get; set; }
+    public int? ПревышениеРазмеров { get; set; }
+    public int? Проростания { get; set; }
+    public int? ВнутренниеДефекты { get; set; }
+    public int? РаздавленныеКлубни { get; set; }
+    public int? ВирусныйНекроз { get; set; }
+    public int? Переохлаждение { get; set; }
+    public int? Вредители { get; set; }
 }
 
 public class Анализ

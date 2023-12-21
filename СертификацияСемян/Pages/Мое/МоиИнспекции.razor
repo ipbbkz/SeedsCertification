@@ -44,7 +44,18 @@
                     <СтатусИнспекции Значение="инспекция.Статус" />
                 </td>
                 <td>
-                    <a href="/my/requests/@Ид/inspections/@инспекция.Ид/protocols">@Лок["Протокол"]</a>
+                    @if (инспекция.ТипИнспекции == 1)
+                    {
+                        <a href="/my/requests/@Ид/inspections/@инспекция.Ид/protocols/field">@Лок["Протокол"]</a>
+                    }
+                    @if (инспекция.ТипИнспекции == 2)
+                    {
+                        <a href="/my/requests/@Ид/inspections/@инспекция.Ид/protocols/lot">@Лок["Протокол"]</a>
+                    }
+                    @if (инспекция.ТипИнспекции == 3)
+                    {
+                        <a href="/my/requests/@Ид/inspections/@инспекция.Ид/protocols/postharvest">@Лок["Протокол"]</a>
+                    }
                 </td>
             </tr>
         }
