@@ -175,6 +175,7 @@ public class ЗаписьИнспекцииПартии
     public int? ВирусныйНекроз { get; set; }
     public int? Переохлаждение { get; set; }
     public int? Вредители { get; set; }
+    public int? Ризоктониоз { get; set; }
 }
 
 public class Анализ

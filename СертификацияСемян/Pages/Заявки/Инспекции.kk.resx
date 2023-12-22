@@ -120,8 +120,23 @@
   <data name="Безтиповые" xml:space="preserve">
     <value>Әртүрлілік</value>
   </data>
+  <data name="ВесПартии" xml:space="preserve">
+    <value>Көп салмақ</value>
+  </data>
   <data name="ВиральныеБолезни" xml:space="preserve">
     <value>Вирустар</value>
+  </data>
+  <data name="ВирусныйНекроз" xml:space="preserve">
+    <value>Вирустық некроз</value>
+  </data>
+  <data name="ВнешниеДефекты" xml:space="preserve">
+    <value>Сыртқы ақаулар</value>
+  </data>
+  <data name="ВнутренниеДефекты" xml:space="preserve">
+    <value>Ішкі ақаулар</value>
+  </data>
+  <data name="Вредители" xml:space="preserve">
+    <value>Зиянкестердің зақымдануы</value>
   </data>
   <data name="ВыберитеТипИнспекции" xml:space="preserve">
     <value>Тексеру түрін таңдаңыз</value>
@@ -162,20 +177,59 @@
   <data name="КоличествоРастенийВСерии" xml:space="preserve">
     <value>Топтама саны</value>
   </data>
+  <data name="МокраяГниль" xml:space="preserve">
+    <value>Ылғалды шірік</value>
+  </data>
+  <data name="НезначительныеПовреждения" xml:space="preserve">
+    <value>Кішігірім зақымдану, сусыздандыру</value>
+  </data>
   <data name="НомерСерии" xml:space="preserve">
     <value>№ топтама</value>
   </data>
   <data name="ОбщееСостояниеПоля" xml:space="preserve">
     <value>Алаңның жалпы жағдайы</value>
   </data>
+  <data name="ПаршаЛуговая" xml:space="preserve">
+    <value>Шалғынды қотыр</value>
+  </data>
+  <data name="ПаршаОбыкновенная" xml:space="preserve">
+    <value>Жалпы қотыр</value>
+  </data>
+  <data name="ПаршаПорошистая" xml:space="preserve">
+    <value>Парша порошистая</value>
+  </data>
+  <data name="ПаршаСеребристая" xml:space="preserve">
+    <value>Күміс қотыр</value>
+  </data>
+  <data name="Переохлаждение" xml:space="preserve">
+    <value>Гипотермияға байланысты зақымдану</value>
+  </data>
   <data name="ПланируемаяДата" xml:space="preserve">
     <value>Жоспарланған күн</value>
+  </data>
+  <data name="ПревышениеРазмеров" xml:space="preserve">
+    <value>Өлшемдерден асып кету</value>
+  </data>
+  <data name="ПрилипшаяПочва" xml:space="preserve">
+    <value>Жабысқақ топырақ</value>
+  </data>
+  <data name="Продавленность" xml:space="preserve">
+    <value>Көгілдірлік, салбырау</value>
+  </data>
+  <data name="Проростания" xml:space="preserve">
+    <value>Өсіру</value>
   </data>
   <data name="Протокол" xml:space="preserve">
     <value>Хаттама</value>
   </data>
   <data name="ПротоколИнспекции" xml:space="preserve">
     <value>Тексеру хаттамасы №{0}</value>
+  </data>
+  <data name="РаздавленныеКлубни" xml:space="preserve">
+    <value>Ұсақталған түйнектер</value>
+  </data>
+  <data name="Ризоктониоз" xml:space="preserve">
+    <value>Ризоктониоз</value>
   </data>
   <data name="Ризоктония" xml:space="preserve">
     <value>Ризоктония</value>
@@ -186,11 +240,17 @@
   <data name="Статус" xml:space="preserve">
     <value>Күй</value>
   </data>
+  <data name="СухаяГниль" xml:space="preserve">
+    <value>Құрғақ шірік</value>
+  </data>
   <data name="ТипИнспекции" xml:space="preserve">
     <value>Тексеру түрі</value>
   </data>
   <data name="ФактическаяДата" xml:space="preserve">
     <value>Нақты күн</value>
+  </data>
+  <data name="Фитофтороз" xml:space="preserve">
+    <value>Фитофтора</value>
   </data>
   <data name="Черноножка" xml:space="preserve">
     <value>Қара аяқ</value>

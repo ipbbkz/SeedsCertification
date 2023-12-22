@@ -120,8 +120,23 @@
   <data name="Безтиповые" xml:space="preserve">
     <value>Пересортица</value>
   </data>
+  <data name="ВесПартии" xml:space="preserve">
+    <value>Вес партии</value>
+  </data>
   <data name="ВиральныеБолезни" xml:space="preserve">
     <value>Вирусные поражения</value>
+  </data>
+  <data name="ВирусныйНекроз" xml:space="preserve">
+    <value>Вирусный некроз</value>
+  </data>
+  <data name="ВнешниеДефекты" xml:space="preserve">
+    <value>Внешние дефекты</value>
+  </data>
+  <data name="ВнутренниеДефекты" xml:space="preserve">
+    <value>Внутренние дефекты</value>
+  </data>
+  <data name="Вредители" xml:space="preserve">
+    <value>Повреждения вредителями</value>
   </data>
   <data name="ВыберитеТипИнспекции" xml:space="preserve">
     <value>Выберите тип инспекции</value>
@@ -162,20 +177,59 @@
   <data name="КоличествоРастенийВСерии" xml:space="preserve">
     <value>Кол-во растений в партии</value>
   </data>
+  <data name="МокраяГниль" xml:space="preserve">
+    <value>Мокрая гниль</value>
+  </data>
+  <data name="НезначительныеПовреждения" xml:space="preserve">
+    <value>Незначительные повреждения, обезвоживание</value>
+  </data>
   <data name="НомерСерии" xml:space="preserve">
     <value>№ партии</value>
   </data>
   <data name="ОбщееСостояниеПоля" xml:space="preserve">
     <value>Общее состояние поля</value>
   </data>
+  <data name="ПаршаЛуговая" xml:space="preserve">
+    <value>Парша луговая</value>
+  </data>
+  <data name="ПаршаОбыкновенная" xml:space="preserve">
+    <value>Парша обыкновенная</value>
+  </data>
+  <data name="ПаршаПорошистая" xml:space="preserve">
+    <value>Парша порошистая</value>
+  </data>
+  <data name="ПаршаСеребристая" xml:space="preserve">
+    <value>Парша серебристая</value>
+  </data>
+  <data name="Переохлаждение" xml:space="preserve">
+    <value>Повреждения вследствие переохлаждения</value>
+  </data>
   <data name="ПланируемаяДата" xml:space="preserve">
     <value>Планируемая дата</value>
+  </data>
+  <data name="ПревышениеРазмеров" xml:space="preserve">
+    <value>Превышение размеров</value>
+  </data>
+  <data name="ПрилипшаяПочва" xml:space="preserve">
+    <value>Прилипшая почва</value>
+  </data>
+  <data name="Продавленность" xml:space="preserve">
+    <value>Посинения, продавленность</value>
+  </data>
+  <data name="Проростания" xml:space="preserve">
+    <value>Проростания</value>
   </data>
   <data name="Протокол" xml:space="preserve">
     <value>Протокол</value>
   </data>
   <data name="ПротоколИнспекции" xml:space="preserve">
     <value>Протокол инспекции №{0}</value>
+  </data>
+  <data name="РаздавленныеКлубни" xml:space="preserve">
+    <value>Раздавленные клубни</value>
+  </data>
+  <data name="Ризоктониоз" xml:space="preserve">
+    <value>Ризоктониоз</value>
   </data>
   <data name="Ризоктония" xml:space="preserve">
     <value>Ризоктониоз</value>
@@ -186,11 +240,17 @@
   <data name="Статус" xml:space="preserve">
     <value>Статус</value>
   </data>
+  <data name="СухаяГниль" xml:space="preserve">
+    <value>Сухая гниль</value>
+  </data>
   <data name="ТипИнспекции" xml:space="preserve">
     <value>Тип инспекции</value>
   </data>
   <data name="ФактическаяДата" xml:space="preserve">
     <value>Фактическая дата</value>
+  </data>
+  <data name="Фитофтороз" xml:space="preserve">
+    <value>Фитофтороз</value>
   </data>
   <data name="Черноножка" xml:space="preserve">
     <value>Черная ножка</value>

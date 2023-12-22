@@ -120,8 +120,23 @@
   <data name="Безтиповые" xml:space="preserve">
     <value>Others</value>
   </data>
+  <data name="ВесПартии" xml:space="preserve">
+    <value>Lot weight</value>
+  </data>
   <data name="ВиральныеБолезни" xml:space="preserve">
     <value>Visuses</value>
+  </data>
+  <data name="ВирусныйНекроз" xml:space="preserve">
+    <value>Virus necrosis</value>
+  </data>
+  <data name="ВнешниеДефекты" xml:space="preserve">
+    <value>External defects</value>
+  </data>
+  <data name="ВнутренниеДефекты" xml:space="preserve">
+    <value>Internal defects</value>
+  </data>
+  <data name="Вредители" xml:space="preserve">
+    <value>Pest damage</value>
   </data>
   <data name="ВыберитеТипИнспекции" xml:space="preserve">
     <value>Select inspection type</value>
@@ -162,20 +177,59 @@
   <data name="КоличествоРастенийВСерии" xml:space="preserve">
     <value>Batch size</value>
   </data>
+  <data name="МокраяГниль" xml:space="preserve">
+    <value>Wet rot</value>
+  </data>
+  <data name="НезначительныеПовреждения" xml:space="preserve">
+    <value>Slight damage/ defleshing</value>
+  </data>
   <data name="НомерСерии" xml:space="preserve">
     <value># batch</value>
   </data>
   <data name="ОбщееСостояниеПоля" xml:space="preserve">
     <value>Field state</value>
   </data>
+  <data name="ПаршаЛуговая" xml:space="preserve">
+    <value>Grassland scab</value>
+  </data>
+  <data name="ПаршаОбыкновенная" xml:space="preserve">
+    <value>Common/shallow scab</value>
+  </data>
+  <data name="ПаршаПорошистая" xml:space="preserve">
+    <value>Powdery scab</value>
+  </data>
+  <data name="ПаршаСеребристая" xml:space="preserve">
+    <value>Silver scurf</value>
+  </data>
+  <data name="Переохлаждение" xml:space="preserve">
+    <value>Damage due to hypothermia</value>
+  </data>
   <data name="ПланируемаяДата" xml:space="preserve">
     <value>Planned date</value>
+  </data>
+  <data name="ПревышениеРазмеров" xml:space="preserve">
+    <value>Oversize</value>
+  </data>
+  <data name="ПрилипшаяПочва" xml:space="preserve">
+    <value>Adhering soil</value>
+  </data>
+  <data name="Продавленность" xml:space="preserve">
+    <value>Pressure spots/blue</value>
+  </data>
+  <data name="Проростания" xml:space="preserve">
+    <value>Sprouts</value>
   </data>
   <data name="Протокол" xml:space="preserve">
     <value>Protocol</value>
   </data>
   <data name="ПротоколИнспекции" xml:space="preserve">
     <value>Inspection protocol #{0}</value>
+  </data>
+  <data name="РаздавленныеКлубни" xml:space="preserve">
+    <value>Shrinkled  tubers</value>
+  </data>
+  <data name="Ризоктониоз" xml:space="preserve">
+    <value>Rhizoctonia</value>
   </data>
   <data name="Ризоктония" xml:space="preserve">
     <value>Rysoctonia</value>
@@ -186,11 +240,17 @@
   <data name="Статус" xml:space="preserve">
     <value>Status</value>
   </data>
+  <data name="СухаяГниль" xml:space="preserve">
+    <value>Dry rot</value>
+  </data>
   <data name="ТипИнспекции" xml:space="preserve">
     <value>Inspection type</value>
   </data>
   <data name="ФактическаяДата" xml:space="preserve">
     <value>Actual date</value>
+  </data>
+  <data name="Фитофтороз" xml:space="preserve">
+    <value>Phytophtora</value>
   </data>
   <data name="Черноножка" xml:space="preserve">
     <value>Black leg</value>

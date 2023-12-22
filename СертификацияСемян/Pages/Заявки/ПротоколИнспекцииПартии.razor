@@ -76,6 +76,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <th>@Лок["Ризоктониоз"]</th>
+                    <td>
+                        <InputNumber @bind-Value="Запись.Ризоктониоз" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                    </td>
+                </tr>
+                <tr>
                     <th>@Лок["Продавленность"]</th>
                     <td>
                         <InputNumber @bind-Value="Запись.Продавленность" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
