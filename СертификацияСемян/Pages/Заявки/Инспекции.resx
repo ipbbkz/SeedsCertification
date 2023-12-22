@@ -121,7 +121,7 @@
     <value>Others</value>
   </data>
   <data name="ВесПартии" xml:space="preserve">
-    <value>Lot weight</value>
+    <value>Lot weight (kg)</value>
   </data>
   <data name="ВиральныеБолезни" xml:space="preserve">
     <value>Visuses</value>

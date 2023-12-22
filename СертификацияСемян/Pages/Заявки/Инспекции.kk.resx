@@ -121,7 +121,7 @@
     <value>Әртүрлілік</value>
   </data>
   <data name="ВесПартии" xml:space="preserve">
-    <value>Көп салмақ</value>
+    <value>Көп салмақ (кг)</value>
   </data>
   <data name="ВиральныеБолезни" xml:space="preserve">
     <value>Вирустар</value>
