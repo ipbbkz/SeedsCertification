@@ -80,12 +80,22 @@
             }
         </InputSelect>
     </div>
+    <div class="col">
+        <label class="form-label">
+            @Лок["КоординатыУчастка"]
+        </label>
+        <InputText @bind-Value="Модель!.КоординатыУчастка" class="form-control" disabled />
+    </div>
 </div>
 
-<label class="form-label">
-    @Лок["КоординатыУчастка"]
-</label>
-<InputText @bind-Value="Модель!.КоординатыУчастка" class="form-control" disabled />
+<div class="row">
+    <div class="col-3">
+        <label class="form-label">
+            @Лок["ПлощадьПосадки"]
+        </label>
+        <InputText @bind-Value="Модель!.ПлощадьПосадки" class="form-control" />
+    </div>
+</div>
 
 @code {
     [Parameter]
