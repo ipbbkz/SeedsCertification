@@ -189,6 +189,9 @@
   <data name="ОбщееСостояниеПоля" xml:space="preserve">
     <value>Алаңның жалпы жағдайы</value>
   </data>
+  <data name="ОбщееСостояниеУрожая" xml:space="preserve">
+    <value>Дақылдың жалпы жағдайы</value>
+  </data>
   <data name="ПаршаЛуговая" xml:space="preserve">
     <value>Шалғынды қотыр</value>
   </data>

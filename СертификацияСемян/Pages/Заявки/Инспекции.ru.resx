@@ -189,6 +189,9 @@
   <data name="ОбщееСостояниеПоля" xml:space="preserve">
     <value>Общее состояние поля</value>
   </data>
+  <data name="ОбщееСостояниеУрожая" xml:space="preserve">
+    <value>Общее состояние урожая</value>
+  </data>
   <data name="ПаршаЛуговая" xml:space="preserve">
     <value>Парша луговая</value>
   </data>

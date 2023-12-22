@@ -189,6 +189,9 @@
   <data name="ОбщееСостояниеПоля" xml:space="preserve">
     <value>Field state</value>
   </data>
+  <data name="ОбщееСостояниеУрожая" xml:space="preserve">
+    <value>Harvest state</value>
+  </data>
   <data name="ПаршаЛуговая" xml:space="preserve">
     <value>Grassland scab</value>
   </data>

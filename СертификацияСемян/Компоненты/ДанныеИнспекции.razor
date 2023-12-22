@@ -33,13 +33,20 @@
 <div class="row">
     <div class="col">
         <label class="form-label">
-            @Лок["ФизиологическаяСтадия"] <span class="text-danger">*</span>
+            @Лок["СредняяФизиологическаяСтадия"] <span class="text-danger">*</span>
         </label>
         <InputText @bind-Value="Модель!.ФизиологическаяСтадия" class="form-control" />
     </div>
     <div class="col">
         <label class="form-label">
-            @Лок["ОбщееСостояниеПоля"] <span class="text-danger">*</span>
+            @{
+                var общееСостояние = Лок["ОбщееСостояниеПоля"];
+                if (Модель!.ТипИнспекции == 2)
+                {
+                    общееСостояние = Лок["ОбщееСостояниеУрожая"];
+                }
+            }
+            @общееСостояние <span class="text-danger">*</span>
         </label>
         <InputText @bind-Value="Модель!.ОбщееСостояниеПоля" class="form-control" />
     </div>
