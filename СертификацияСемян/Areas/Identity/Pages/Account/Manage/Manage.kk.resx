@@ -126,6 +126,9 @@
   <data name="ВашАккаунтСодержит" xml:space="preserve">
     <value>Есептік жазбаңыз бізге берген жеке деректеріңізді қамтиды. Бұл бет сол деректерді жүктеп алуға немесе жоюға мүмкіндік береді.</value>
   </data>
+  <data name="ВашПарольБылУстановлен" xml:space="preserve">
+    <value>Құпия сөзіңіз орнатылды</value>
+  </data>
   <data name="ВВашАутентификатор" xml:space="preserve">
     <value>екі факторлы аутентификация қолданбасына. Бос орындар мен корпус маңызды емес.</value>
   </data>
@@ -152,6 +155,12 @@
   </data>
   <data name="ВойтиСКодами" xml:space="preserve">
     <value>қалпына келтіру коды арқылы жүйеге кірмес бұрын.</value>
+  </data>
+  <data name="ВыберитеНикнейм" xml:space="preserve">
+    <value>Пайдаланушы атыңызды таңдаңыз.</value>
+  </data>
+  <data name="ВыберитеНомер" xml:space="preserve">
+    <value>Телефон нөміріңізді енгізіңіз.</value>
   </data>
   <data name="ВыДолжны" xml:space="preserve">
     <value>Сен міндеттісің</value>
@@ -220,6 +229,12 @@
   <data name="Или" xml:space="preserve">
     <value>немесе</value>
   </data>
+  <data name="ИмяПользователя" xml:space="preserve">
+    <value>Пайдаланушы аты</value>
+  </data>
+  <data name="КодВерификации" xml:space="preserve">
+    <value>Тексеру коды</value>
+  </data>
   <data name="КодовОсталось" xml:space="preserve">
     <value>қалпына келтіру кодтары қалды.</value>
   </data>
@@ -248,8 +263,14 @@
     <value>Сізде бұл сайт үшін жергілікті пайдаланушы аты/құпия сөз жоқ. Жергілікті қосыңыз
 тіркелгісі, осылайша сіз сыртқы логинсіз кіре аласыз.</value>
   </data>
+  <data name="НоваяПочта" xml:space="preserve">
+    <value>Жаңа электрондық пошта</value>
+  </data>
   <data name="НовыйПароль" xml:space="preserve">
     <value>Жаңа құпия сөзіңізді енгізіңіз.</value>
+  </data>
+  <data name="НомерТелефона" xml:space="preserve">
+    <value>Телефон нөмірі</value>
   </data>
   <data name="ОбновитьПароль" xml:space="preserve">
     <value>Құпия сөзді жаңарту</value>
@@ -288,14 +309,14 @@
   <data name="Пароль" xml:space="preserve">
     <value>Құпия сөз</value>
   </data>
-  <data name="ПереустановитьКлючи" xml:space="preserve">
-    <value>аутентификация кілттерін қалпына келтіріңіз.</value>
-  </data>
   <data name="ПодтвердитеПароль" xml:space="preserve">
     <value>Жаңа құпия сөзіңізді растаңыз.</value>
   </data>
   <data name="Подтвердить" xml:space="preserve">
     <value>Тексеру</value>
+  </data>
+  <data name="ПодтвердитьНовыйПароль" xml:space="preserve">
+    <value>Жаңа құпиясөзді растаңыз</value>
   </data>
   <data name="ПолитикаНеПринята" xml:space="preserve">
     <value>Құпиялылық және cookie саясаты қабылданбады.</value>
@@ -308,6 +329,9 @@
   </data>
   <data name="Почта" xml:space="preserve">
     <value>Электрондық пошта</value>
+  </data>
+  <data name="ПриложениеАутентификации" xml:space="preserve">
+    <value>Аутентификация қолданбасы</value>
   </data>
   <data name="Профиль" xml:space="preserve">
     <value>Профиль</value>
@@ -327,6 +351,9 @@
   </data>
   <data name="СтарыйПароль" xml:space="preserve">
     <value>Ескі құпия сөзіңізді енгізіңіз.</value>
+  </data>
+  <data name="ТекущийПароль" xml:space="preserve">
+    <value>Ағымдағы құпия сөз</value>
   </data>
   <data name="УберитеЭтот" xml:space="preserve">
     <value>Бұны алып тастаңыз</value>
@@ -372,5 +399,8 @@
   </data>
   <data name="ЧтобыИспользоватьАутентификатор" xml:space="preserve">
     <value>Аутентификация қолданбасын пайдалану үшін келесі қадамдарды орындаңыз:</value>
+  </data>
+  <data name="ЭлектроннаяПочта" xml:space="preserve">
+    <value>Электрондық пошта</value>
   </data>
 </root>

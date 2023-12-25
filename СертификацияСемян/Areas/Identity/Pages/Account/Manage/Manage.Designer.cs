@@ -22,7 +22,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Manage {
+    public class Manage {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("СертификацияСемян.Areas.Identity.Pages.Account.Manage.Manage", typeof(Manage).Assembly);
@@ -51,7 +51,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to account.
         /// </summary>
-        internal static string Аккаунт {
+        public static string Аккаунт {
             get {
                 return ResourceManager.GetString("Аккаунт", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to You should.
         /// </summary>
-        internal static string ВамСледует {
+        public static string ВамСледует {
             get {
                 return ResourceManager.GetString("ВамСледует", resourceCulture);
             }
@@ -81,16 +81,25 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Your account contains personal data that you have given us. This page allows you to download or delete that data..
         /// </summary>
-        internal static string ВашАккаунтСодержит {
+        public static string ВашАккаунтСодержит {
             get {
                 return ResourceManager.GetString("ВашАккаунтСодержит", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your password has been set..
+        /// </summary>
+        public static string ВашПарольБылУстановлен {
+            get {
+                return ResourceManager.GetString("ВашПарольБылУстановлен", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to into your two factor authenticator app. Spaces and casing do not matter..
         /// </summary>
-        internal static string ВВашАутентификатор {
+        public static string ВВашАутентификатор {
             get {
                 return ResourceManager.GetString("ВВашАутентификатор", resourceCulture);
             }
@@ -99,7 +108,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Please enter the code..
         /// </summary>
-        internal static string ВведитеКод {
+        public static string ВведитеКод {
             get {
                 return ResourceManager.GetString("ВведитеКод", resourceCulture);
             }
@@ -108,7 +117,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Please enter new email..
         /// </summary>
-        internal static string ВведитеНовуюПочту {
+        public static string ВведитеНовуюПочту {
             get {
                 return ResourceManager.GetString("ВведитеНовуюПочту", resourceCulture);
             }
@@ -117,7 +126,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Please enter your password..
         /// </summary>
-        internal static string ВведитеПароль {
+        public static string ВведитеПароль {
             get {
                 return ResourceManager.GetString("ВведитеПароль", resourceCulture);
             }
@@ -126,7 +135,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Please enter your email..
         /// </summary>
-        internal static string ВведитеПочту {
+        public static string ВведитеПочту {
             get {
                 return ResourceManager.GetString("ВведитеПочту", resourceCulture);
             }
@@ -135,7 +144,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to enable QR code generation.
         /// </summary>
-        internal static string ВключитьГенерацию {
+        public static string ВключитьГенерацию {
             get {
                 return ResourceManager.GetString("ВключитьГенерацию", resourceCulture);
             }
@@ -144,7 +153,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to External logins.
         /// </summary>
-        internal static string ВнешниеВходы {
+        public static string ВнешниеВходы {
             get {
                 return ResourceManager.GetString("ВнешниеВходы", resourceCulture);
             }
@@ -153,7 +162,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Log in using your.
         /// </summary>
-        internal static string ВойдитеИспользуя {
+        public static string ВойдитеИспользуя {
             get {
                 return ResourceManager.GetString("ВойдитеИспользуя", resourceCulture);
             }
@@ -162,16 +171,34 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to before you can log in with a recovery code..
         /// </summary>
-        internal static string ВойтиСКодами {
+        public static string ВойтиСКодами {
             get {
                 return ResourceManager.GetString("ВойтиСКодами", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please choose your username..
+        /// </summary>
+        public static string ВыберитеНикнейм {
+            get {
+                return ResourceManager.GetString("ВыберитеНикнейм", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter your phone number..
+        /// </summary>
+        public static string ВыберитеНомер {
+            get {
+                return ResourceManager.GetString("ВыберитеНомер", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You must.
         /// </summary>
-        internal static string ВыДолжны {
+        public static string ВыДолжны {
             get {
                 return ResourceManager.GetString("ВыДолжны", resourceCulture);
             }
@@ -180,7 +207,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to You must accept the policy before you can enable two factor authentication..
         /// </summary>
-        internal static string ВыДолжныПринять {
+        public static string ВыДолжныПринять {
             get {
                 return ResourceManager.GetString("ВыДолжныПринять", resourceCulture);
             }
@@ -189,7 +216,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to You can.
         /// </summary>
-        internal static string ВыМожете {
+        public static string ВыМожете {
             get {
                 return ResourceManager.GetString("ВыМожете", resourceCulture);
             }
@@ -199,7 +226,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         ///   Looks up a localized string similar to Generating new recovery codes does not change the keys used in authenticator apps. If you wish to change the key
         ///used in an authenticator app you should.
         /// </summary>
-        internal static string ГенерацияНовыхКодовНеМеняет {
+        public static string ГенерацияНовыхКодовНеМеняет {
             get {
                 return ResourceManager.GetString("ГенерацияНовыхКодовНеМеняет", resourceCulture);
             }
@@ -208,7 +235,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Generate Recovery Codes.
         /// </summary>
-        internal static string ГенерироватьКоды {
+        public static string ГенерироватьКоды {
             get {
                 return ResourceManager.GetString("ГенерироватьКоды", resourceCulture);
             }
@@ -217,7 +244,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Google Authenticator for.
         /// </summary>
-        internal static string ГуглАутентификатор {
+        public static string ГуглАутентификатор {
             get {
                 return ResourceManager.GetString("ГуглАутентификатор", resourceCulture);
             }
@@ -226,7 +253,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Two-factor authentication.
         /// </summary>
-        internal static string ДвухФакторнаяАутентификация {
+        public static string ДвухФакторнаяАутентификация {
             get {
                 return ResourceManager.GetString("ДвухФакторнаяАутентификация", resourceCulture);
             }
@@ -235,7 +262,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to This action only disables 2FA..
         /// </summary>
-        internal static string ДействиеОтключаетАутентификацию {
+        public static string ДействиеОтключаетАутентификацию {
             get {
                 return ResourceManager.GetString("ДействиеОтключаетАутентификацию", resourceCulture);
             }
@@ -244,7 +271,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Add another service to log in..
         /// </summary>
-        internal static string ДобавитьДругойСервис {
+        public static string ДобавитьДругойСервис {
             get {
                 return ResourceManager.GetString("ДобавитьДругойСервис", resourceCulture);
             }
@@ -253,7 +280,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Add authenticator app.
         /// </summary>
-        internal static string ДобавитьПриложение {
+        public static string ДобавитьПриложение {
             get {
                 return ResourceManager.GetString("ДобавитьПриложение", resourceCulture);
             }
@@ -262,7 +289,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to If you reset your authenticator key your authenticator app will not work until you reconfigure it..
         /// </summary>
-        internal static string ЕслиОбнулитеКлюч {
+        public static string ЕслиОбнулитеКлюч {
             get {
                 return ResourceManager.GetString("ЕслиОбнулитеКлюч", resourceCulture);
             }
@@ -271,7 +298,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to If you lose your device and don&apos;t have the recovery codes you will lose access to your account..
         /// </summary>
-        internal static string ЕслиПотеряетеКоды {
+        public static string ЕслиПотеряетеКоды {
             get {
                 return ResourceManager.GetString("ЕслиПотеряетеКоды", resourceCulture);
             }
@@ -280,7 +307,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Forget this browser.
         /// </summary>
-        internal static string ЗабытьБраузер {
+        public static string ЗабытьБраузер {
             get {
                 return ResourceManager.GetString("ЗабытьБраузер", resourceCulture);
             }
@@ -289,7 +316,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Download a two-factor authenticator app like Microsoft Authenticator for.
         /// </summary>
-        internal static string ЗагрузитеАутентификатор {
+        public static string ЗагрузитеАутентификатор {
             get {
                 return ResourceManager.GetString("ЗагрузитеАутентификатор", resourceCulture);
             }
@@ -298,7 +325,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Download Your Data.
         /// </summary>
-        internal static string ЗагрузитеДанные {
+        public static string ЗагрузитеДанные {
             get {
                 return ResourceManager.GetString("ЗагрузитеДанные", resourceCulture);
             }
@@ -307,7 +334,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Download.
         /// </summary>
-        internal static string Загрузить {
+        public static string Загрузить {
             get {
                 return ResourceManager.GetString("Загрузить", resourceCulture);
             }
@@ -316,7 +343,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
-        internal static string Закрыть {
+        public static string Закрыть {
             get {
                 return ResourceManager.GetString("Закрыть", resourceCulture);
             }
@@ -325,7 +352,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Registered Logins.
         /// </summary>
-        internal static string ЗарегистрированныеВходы {
+        public static string ЗарегистрированныеВходы {
             get {
                 return ResourceManager.GetString("ЗарегистрированныеВходы", resourceCulture);
             }
@@ -334,7 +361,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to and.
         /// </summary>
-        internal static string И {
+        public static string И {
             get {
                 return ResourceManager.GetString("И", resourceCulture);
             }
@@ -343,7 +370,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Change password.
         /// </summary>
-        internal static string ИзменитьПароль {
+        public static string ИзменитьПароль {
             get {
                 return ResourceManager.GetString("ИзменитьПароль", resourceCulture);
             }
@@ -352,7 +379,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Change email.
         /// </summary>
-        internal static string ИзменитьПочту {
+        public static string ИзменитьПочту {
             get {
                 return ResourceManager.GetString("ИзменитьПочту", resourceCulture);
             }
@@ -361,16 +388,34 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to or.
         /// </summary>
-        internal static string Или {
+        public static string Или {
             get {
                 return ResourceManager.GetString("Или", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string ИмяПользователя {
+            get {
+                return ResourceManager.GetString("ИмяПользователя", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verification code.
+        /// </summary>
+        public static string КодВерификации {
+            get {
+                return ResourceManager.GetString("КодВерификации", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to recovery codes left..
         /// </summary>
-        internal static string КодовОсталось {
+        public static string КодовОсталось {
             get {
                 return ResourceManager.GetString("КодовОсталось", resourceCulture);
             }
@@ -379,7 +424,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Verification Code.
         /// </summary>
-        internal static string КодПодтверждения {
+        public static string КодПодтверждения {
             get {
                 return ResourceManager.GetString("КодПодтверждения", resourceCulture);
             }
@@ -388,7 +433,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Recovery codes.
         /// </summary>
-        internal static string КодыВосстановления {
+        public static string КодыВосстановления {
             get {
                 return ResourceManager.GetString("КодыВосстановления", resourceCulture);
             }
@@ -397,7 +442,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Personal data.
         /// </summary>
-        internal static string ЛичныеДанные {
+        public static string ЛичныеДанные {
             get {
                 return ResourceManager.GetString("ЛичныеДанные", resourceCulture);
             }
@@ -406,7 +451,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to login from your account.
         /// </summary>
-        internal static string ЛогинИзАккаунта {
+        public static string ЛогинИзАккаунта {
             get {
                 return ResourceManager.GetString("ЛогинИзАккаунта", resourceCulture);
             }
@@ -415,7 +460,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Configure authenticator app.
         /// </summary>
-        internal static string НастроитьАутентификатор {
+        public static string НастроитьАутентификатор {
             get {
                 return ResourceManager.GetString("НастроитьАутентификатор", resourceCulture);
             }
@@ -424,7 +469,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Learn how to.
         /// </summary>
-        internal static string Научитесь {
+        public static string Научитесь {
             get {
                 return ResourceManager.GetString("Научитесь", resourceCulture);
             }
@@ -433,7 +478,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to You have no recovery codes left..
         /// </summary>
-        internal static string НеОсталосьКодов {
+        public static string НеОсталосьКодов {
             get {
                 return ResourceManager.GetString("НеОсталосьКодов", resourceCulture);
             }
@@ -443,25 +488,43 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         ///   Looks up a localized string similar to You do not have a local username/password for this site. Add a local
         ///account so you can log in without an external login..
         /// </summary>
-        internal static string НетЛокальногоАккаунта {
+        public static string НетЛокальногоАккаунта {
             get {
                 return ResourceManager.GetString("НетЛокальногоАккаунта", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New email.
+        /// </summary>
+        public static string НоваяПочта {
+            get {
+                return ResourceManager.GetString("НоваяПочта", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter your new password..
         /// </summary>
-        internal static string НовыйПароль {
+        public static string НовыйПароль {
             get {
                 return ResourceManager.GetString("НовыйПароль", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Phone number.
+        /// </summary>
+        public static string НомерТелефона {
+            get {
+                return ResourceManager.GetString("НомерТелефона", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Update password.
         /// </summary>
-        internal static string ОбновитьПароль {
+        public static string ОбновитьПароль {
             get {
                 return ResourceManager.GetString("ОбновитьПароль", resourceCulture);
             }
@@ -470,7 +533,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to reset your authenticator keys..
         /// </summary>
-        internal static string ОбнулитеКлючи {
+        public static string ОбнулитеКлючи {
             get {
                 return ResourceManager.GetString("ОбнулитеКлючи", resourceCulture);
             }
@@ -479,7 +542,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Reset authenticator key.
         /// </summary>
-        internal static string ОбнулитьКлюч {
+        public static string ОбнулитьКлюч {
             get {
                 return ResourceManager.GetString("ОбнулитьКлюч", resourceCulture);
             }
@@ -488,7 +551,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Reset recovery codes.
         /// </summary>
-        internal static string ОбнулитьКоды {
+        public static string ОбнулитьКоды {
             get {
                 return ResourceManager.GetString("ОбнулитьКоды", resourceCulture);
             }
@@ -497,7 +560,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Reset authenticator app.
         /// </summary>
-        internal static string ОбнулитьПриложение {
+        public static string ОбнулитьПриложение {
             get {
                 return ResourceManager.GetString("ОбнулитьПриложение", resourceCulture);
             }
@@ -506,7 +569,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to You have 1 recovery code left..
         /// </summary>
-        internal static string ОдинКод {
+        public static string ОдинКод {
             get {
                 return ResourceManager.GetString("ОдинКод", resourceCulture);
             }
@@ -516,7 +579,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         ///   Looks up a localized string similar to Once you have scanned the QR code or input the key above, your two factor authentication app will provide you
         ///with a unique code. Enter the code in the confirmation box below..
         /// </summary>
-        internal static string ОднаждыОтсканировав {
+        public static string ОднаждыОтсканировав {
             get {
                 return ResourceManager.GetString("ОднаждыОтсканировав", resourceCulture);
             }
@@ -525,7 +588,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should.
         /// </summary>
-        internal static string ОтключениеНеМеняетКлючи {
+        public static string ОтключениеНеМеняетКлючи {
             get {
                 return ResourceManager.GetString("ОтключениеНеМеняетКлючи", resourceCulture);
             }
@@ -534,7 +597,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Disable 2FA.
         /// </summary>
-        internal static string Отключить2ФА {
+        public static string Отключить2ФА {
             get {
                 return ResourceManager.GetString("Отключить2ФА", resourceCulture);
             }
@@ -543,7 +606,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Disable two-factor authentication (2FA).
         /// </summary>
-        internal static string ОтключитьАутентификацию {
+        public static string ОтключитьАутентификацию {
             get {
                 return ResourceManager.GetString("ОтключитьАутентификацию", resourceCulture);
             }
@@ -552,7 +615,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Scan the QR Code or enter this key.
         /// </summary>
-        internal static string ОтсканируйтеКР {
+        public static string ОтсканируйтеКР {
             get {
                 return ResourceManager.GetString("ОтсканируйтеКР", resourceCulture);
             }
@@ -561,25 +624,16 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
-        internal static string Пароль {
+        public static string Пароль {
             get {
                 return ResourceManager.GetString("Пароль", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to reset your authenticator keys..
-        /// </summary>
-        internal static string ПереустановитьКлючи {
-            get {
-                return ResourceManager.GetString("ПереустановитьКлючи", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Please confirm your new password..
         /// </summary>
-        internal static string ПодтвердитеПароль {
+        public static string ПодтвердитеПароль {
             get {
                 return ResourceManager.GetString("ПодтвердитеПароль", resourceCulture);
             }
@@ -588,16 +642,25 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Verify.
         /// </summary>
-        internal static string Подтвердить {
+        public static string Подтвердить {
             get {
                 return ResourceManager.GetString("Подтвердить", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm new password.
+        /// </summary>
+        public static string ПодтвердитьНовыйПароль {
+            get {
+                return ResourceManager.GetString("ПодтвердитьНовыйПароль", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Privacy and cookie policy have not been accepted..
         /// </summary>
-        internal static string ПолитикаНеПринята {
+        public static string ПолитикаНеПринята {
             get {
                 return ResourceManager.GetString("ПолитикаНеПринята", resourceCulture);
             }
@@ -606,7 +669,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Change your account settings.
         /// </summary>
-        internal static string ПоменяйтеНастройкиАккаунта {
+        public static string ПоменяйтеНастройкиАккаунта {
             get {
                 return ResourceManager.GetString("ПоменяйтеНастройкиАккаунта", resourceCulture);
             }
@@ -615,7 +678,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Send verification email.
         /// </summary>
-        internal static string ПослатьПодтверждение {
+        public static string ПослатьПодтверждение {
             get {
                 return ResourceManager.GetString("ПослатьПодтверждение", resourceCulture);
             }
@@ -624,16 +687,25 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
-        internal static string Почта {
+        public static string Почта {
             get {
                 return ResourceManager.GetString("Почта", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Authenticator app.
+        /// </summary>
+        public static string ПриложениеАутентификации {
+            get {
+                return ResourceManager.GetString("ПриложениеАутентификации", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Profile.
         /// </summary>
-        internal static string Профиль {
+        public static string Профиль {
             get {
                 return ResourceManager.GetString("Профиль", resourceCulture);
             }
@@ -643,7 +715,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         ///   Looks up a localized string similar to This process disables 2FA until you verify your authenticator app.
         ///If you do not complete your authenticator app configuration you may lose access to your account..
         /// </summary>
-        internal static string ПроцессОтключает2ФА {
+        public static string ПроцессОтключает2ФА {
             get {
                 return ResourceManager.GetString("ПроцессОтключает2ФА", resourceCulture);
             }
@@ -652,7 +724,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Generate two-factor authentication (2FA) recovery codes.
         /// </summary>
-        internal static string Сгенерировать2ФАКоды {
+        public static string Сгенерировать2ФАКоды {
             get {
                 return ResourceManager.GetString("Сгенерировать2ФАКоды", resourceCulture);
             }
@@ -661,7 +733,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to generate a new set of recovery codes.
         /// </summary>
-        internal static string СгенерируйтеНовыеКоды {
+        public static string СгенерируйтеНовыеКоды {
             get {
                 return ResourceManager.GetString("СгенерируйтеНовыеКоды", resourceCulture);
             }
@@ -670,7 +742,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Put these codes in a safe place..
         /// </summary>
-        internal static string СохранитеКоды {
+        public static string СохранитеКоды {
             get {
                 return ResourceManager.GetString("СохранитеКоды", resourceCulture);
             }
@@ -679,16 +751,25 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Please enter your old password..
         /// </summary>
-        internal static string СтарыйПароль {
+        public static string СтарыйПароль {
             get {
                 return ResourceManager.GetString("СтарыйПароль", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Current password.
+        /// </summary>
+        public static string ТекущийПароль {
+            get {
+                return ResourceManager.GetString("ТекущийПароль", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove this.
         /// </summary>
-        internal static string УберитеЭтот {
+        public static string УберитеЭтот {
             get {
                 return ResourceManager.GetString("УберитеЭтот", resourceCulture);
             }
@@ -697,7 +778,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
-        internal static string Убрать {
+        public static string Убрать {
             get {
                 return ResourceManager.GetString("Убрать", resourceCulture);
             }
@@ -706,7 +787,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to You have.
         /// </summary>
-        internal static string УВасЕсть {
+        public static string УВасЕсть {
             get {
                 return ResourceManager.GetString("УВасЕсть", resourceCulture);
             }
@@ -715,7 +796,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Deleting this data will permanently remove your account, and this cannot be recovered..
         /// </summary>
-        internal static string УдалениеПриведет {
+        public static string УдалениеПриведет {
             get {
                 return ResourceManager.GetString("УдалениеПриведет", resourceCulture);
             }
@@ -724,7 +805,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Deleting this data will permanently remove your account, and this cannot be recovered..
         /// </summary>
-        internal static string УдалениеЭтихДанных {
+        public static string УдалениеЭтихДанных {
             get {
                 return ResourceManager.GetString("УдалениеЭтихДанных", resourceCulture);
             }
@@ -733,7 +814,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
-        internal static string Удалить {
+        public static string Удалить {
             get {
                 return ResourceManager.GetString("Удалить", resourceCulture);
             }
@@ -742,7 +823,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Delete data and close my account.
         /// </summary>
-        internal static string УдалитьИЗакрыть {
+        public static string УдалитьИЗакрыть {
             get {
                 return ResourceManager.GetString("УдалитьИЗакрыть", resourceCulture);
             }
@@ -751,7 +832,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Delete personal password.
         /// </summary>
-        internal static string УдалитьЛичныеДанные {
+        public static string УдалитьЛичныеДанные {
             get {
                 return ResourceManager.GetString("УдалитьЛичныеДанные", resourceCulture);
             }
@@ -760,7 +841,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Manage your account.
         /// </summary>
-        internal static string УправляйтеАккаунтом {
+        public static string УправляйтеАккаунтом {
             get {
                 return ResourceManager.GetString("УправляйтеАккаунтом", resourceCulture);
             }
@@ -769,7 +850,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Manage your external logins.
         /// </summary>
-        internal static string УправлятьВнешнимиЛогинами {
+        public static string УправлятьВнешнимиЛогинами {
             get {
                 return ResourceManager.GetString("УправлятьВнешнимиЛогинами", resourceCulture);
             }
@@ -778,7 +859,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Manage Email.
         /// </summary>
-        internal static string УправлятьПочтой {
+        public static string УправлятьПочтой {
             get {
                 return ResourceManager.GetString("УправлятьПочтой", resourceCulture);
             }
@@ -787,7 +868,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Set your password.
         /// </summary>
-        internal static string УстановитеВашПароль {
+        public static string УстановитеВашПароль {
             get {
                 return ResourceManager.GetString("УстановитеВашПароль", resourceCulture);
             }
@@ -796,7 +877,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Set password.
         /// </summary>
-        internal static string УстановитьПароль {
+        public static string УстановитьПароль {
             get {
                 return ResourceManager.GetString("УстановитьПароль", resourceCulture);
             }
@@ -805,7 +886,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to Set up authenticator app.
         /// </summary>
-        internal static string УстановитьПриложение {
+        public static string УстановитьПриложение {
             get {
                 return ResourceManager.GetString("УстановитьПриложение", resourceCulture);
             }
@@ -814,9 +895,18 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account.Manage
         /// <summary>
         ///   Looks up a localized string similar to To use an authenticator app go through the following steps:.
         /// </summary>
-        internal static string ЧтобыИспользоватьАутентификатор {
+        public static string ЧтобыИспользоватьАутентификатор {
             get {
                 return ResourceManager.GetString("ЧтобыИспользоватьАутентификатор", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string ЭлектроннаяПочта {
+            get {
+                return ResourceManager.GetString("ЭлектроннаяПочта", resourceCulture);
             }
         }
     }

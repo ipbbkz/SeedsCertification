@@ -126,6 +126,9 @@
   <data name="ВашАккаунтСодержит" xml:space="preserve">
     <value>Ваша учетная запись содержит персональные данные, которые вы нам предоставили. Эта страница позволяет вам загрузить или удалить эти данные.</value>
   </data>
+  <data name="ВашПарольБылУстановлен" xml:space="preserve">
+    <value>Ваш пароль был установлен</value>
+  </data>
   <data name="ВВашАутентификатор" xml:space="preserve">
     <value>в приложение двухфакторной аутентификации. Пробелы и регистр не имеют значения.</value>
   </data>
@@ -152,6 +155,12 @@
   </data>
   <data name="ВойтиСКодами" xml:space="preserve">
     <value>прежде чем вы сможете войти в систему с кодом восстановления.</value>
+  </data>
+  <data name="ВыберитеНикнейм" xml:space="preserve">
+    <value>Пожалуйста, введите ваш логин.</value>
+  </data>
+  <data name="ВыберитеНомер" xml:space="preserve">
+    <value>Пожалуйста введите ваш номер телефона.</value>
   </data>
   <data name="ВыДолжны" xml:space="preserve">
     <value>Вы должны</value>
@@ -220,6 +229,12 @@
   <data name="Или" xml:space="preserve">
     <value>или</value>
   </data>
+  <data name="ИмяПользователя" xml:space="preserve">
+    <value>Имя пользователя</value>
+  </data>
+  <data name="КодВерификации" xml:space="preserve">
+    <value>Код верификации</value>
+  </data>
   <data name="КодовОсталось" xml:space="preserve">
     <value>кодов восстановления осталось.</value>
   </data>
@@ -248,8 +263,14 @@
     <value>У вас нет локального имени пользователя и пароля для этого сайта. Добавить локального
 учетную запись, чтобы вы могли войти в систему без внешнего входа.</value>
   </data>
+  <data name="НоваяПочта" xml:space="preserve">
+    <value>Новая почта</value>
+  </data>
   <data name="НовыйПароль" xml:space="preserve">
     <value>Пожалуйста, введите новый пароль.</value>
+  </data>
+  <data name="НомерТелефона" xml:space="preserve">
+    <value>Номер телефона</value>
   </data>
   <data name="ОбновитьПароль" xml:space="preserve">
     <value>Обновить пароль</value>
@@ -289,14 +310,14 @@
   <data name="Пароль" xml:space="preserve">
     <value>Пароль</value>
   </data>
-  <data name="ПереустановитьКлючи" xml:space="preserve">
-    <value>сбросьте ключи аутентификации.</value>
-  </data>
   <data name="ПодтвердитеПароль" xml:space="preserve">
     <value>Пожалуйста, подтвердите свой новый пароль.</value>
   </data>
   <data name="Подтвердить" xml:space="preserve">
     <value>Подтвердить</value>
+  </data>
+  <data name="ПодтвердитьНовыйПароль" xml:space="preserve">
+    <value>Подтвердить новый пароль</value>
   </data>
   <data name="ПолитикаНеПринята" xml:space="preserve">
     <value>Политика конфиденциальности и использования файлов cookie не были приняты.</value>
@@ -309,6 +330,9 @@
   </data>
   <data name="Почта" xml:space="preserve">
     <value>Электронная почта</value>
+  </data>
+  <data name="ПриложениеАутентификации" xml:space="preserve">
+    <value>Приложение для аутентификации</value>
   </data>
   <data name="Профиль" xml:space="preserve">
     <value>Профиль</value>
@@ -328,6 +352,9 @@
   </data>
   <data name="СтарыйПароль" xml:space="preserve">
     <value>Пожалуйста, введите свой старый пароль.</value>
+  </data>
+  <data name="ТекущийПароль" xml:space="preserve">
+    <value>Текущий пароль</value>
   </data>
   <data name="УберитеЭтот" xml:space="preserve">
     <value>Уберите этот</value>
@@ -373,5 +400,8 @@
   </data>
   <data name="ЧтобыИспользоватьАутентификатор" xml:space="preserve">
     <value>Чтобы использовать приложение для аутентификации, выполните следующие действия:</value>
+  </data>
+  <data name="ЭлектроннаяПочта" xml:space="preserve">
+    <value>Электронная почта</value>
   </data>
 </root>

@@ -126,6 +126,9 @@
   <data name="ВашАккаунтСодержит" xml:space="preserve">
     <value>Your account contains personal data that you have given us. This page allows you to download or delete that data.</value>
   </data>
+  <data name="ВашПарольБылУстановлен" xml:space="preserve">
+    <value>Your password has been set.</value>
+  </data>
   <data name="ВВашАутентификатор" xml:space="preserve">
     <value>into your two factor authenticator app. Spaces and casing do not matter.</value>
   </data>
@@ -152,6 +155,12 @@
   </data>
   <data name="ВойтиСКодами" xml:space="preserve">
     <value>before you can log in with a recovery code.</value>
+  </data>
+  <data name="ВыберитеНикнейм" xml:space="preserve">
+    <value>Please choose your username.</value>
+  </data>
+  <data name="ВыберитеНомер" xml:space="preserve">
+    <value>Please enter your phone number.</value>
   </data>
   <data name="ВыДолжны" xml:space="preserve">
     <value>You must</value>
@@ -220,6 +229,12 @@ used in an authenticator app you should</value>
   <data name="Или" xml:space="preserve">
     <value>or</value>
   </data>
+  <data name="ИмяПользователя" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="КодВерификации" xml:space="preserve">
+    <value>Verification code</value>
+  </data>
   <data name="КодовОсталось" xml:space="preserve">
     <value>recovery codes left.</value>
   </data>
@@ -248,8 +263,14 @@ used in an authenticator app you should</value>
     <value>You do not have a local username/password for this site. Add a local
 account so you can log in without an external login.</value>
   </data>
+  <data name="НоваяПочта" xml:space="preserve">
+    <value>New email</value>
+  </data>
   <data name="НовыйПароль" xml:space="preserve">
     <value>Please enter your new password.</value>
+  </data>
+  <data name="НомерТелефона" xml:space="preserve">
+    <value>Phone number</value>
   </data>
   <data name="ОбновитьПароль" xml:space="preserve">
     <value>Update password</value>
@@ -288,14 +309,14 @@ with a unique code. Enter the code in the confirmation box below.</value>
   <data name="Пароль" xml:space="preserve">
     <value>Password</value>
   </data>
-  <data name="ПереустановитьКлючи" xml:space="preserve">
-    <value>reset your authenticator keys.</value>
-  </data>
   <data name="ПодтвердитеПароль" xml:space="preserve">
     <value>Please confirm your new password.</value>
   </data>
   <data name="Подтвердить" xml:space="preserve">
     <value>Verify</value>
+  </data>
+  <data name="ПодтвердитьНовыйПароль" xml:space="preserve">
+    <value>Confirm new password</value>
   </data>
   <data name="ПолитикаНеПринята" xml:space="preserve">
     <value>Privacy and cookie policy have not been accepted.</value>
@@ -308,6 +329,9 @@ with a unique code. Enter the code in the confirmation box below.</value>
   </data>
   <data name="Почта" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="ПриложениеАутентификации" xml:space="preserve">
+    <value>Authenticator app</value>
   </data>
   <data name="Профиль" xml:space="preserve">
     <value>Profile</value>
@@ -327,6 +351,9 @@ If you do not complete your authenticator app configuration you may lose access 
   </data>
   <data name="СтарыйПароль" xml:space="preserve">
     <value>Please enter your old password.</value>
+  </data>
+  <data name="ТекущийПароль" xml:space="preserve">
+    <value>Current password</value>
   </data>
   <data name="УберитеЭтот" xml:space="preserve">
     <value>Remove this</value>
@@ -372,5 +399,8 @@ If you do not complete your authenticator app configuration you may lose access 
   </data>
   <data name="ЧтобыИспользоватьАутентификатор" xml:space="preserve">
     <value>To use an authenticator app go through the following steps:</value>
+  </data>
+  <data name="ЭлектроннаяПочта" xml:space="preserve">
+    <value>Email</value>
   </data>
 </root>

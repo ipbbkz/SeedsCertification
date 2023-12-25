@@ -89,7 +89,7 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Areas\Identity\Pages\Account\Manage\Manage.resx">
       <LastGenOutput>Manage.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Areas\Identity\Pages\Account\Register.resx">
       <Generator>ResXFileCodeGenerator</Generator>
