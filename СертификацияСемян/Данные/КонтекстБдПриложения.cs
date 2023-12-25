@@ -137,6 +137,9 @@ public class Инспекция
     public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
     public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
     public DateTime? ДатаУдаления { get; set; }
+
+    [ForeignKey(nameof(ЗаявкаИд))]
+    public Заявка Заявка { get; set; }
 }
 
 public class ЗаписьПолевойИнспекции
@@ -190,6 +193,9 @@ public class Анализ
     public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
     public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
     public DateTime? ДатаУдаления { get; set; }
+
+    [ForeignKey(nameof(ИнспекцияИд))]
+    public Инспекция Инспекция { get; set; }
 }
 
 public class ПроизводительСемян

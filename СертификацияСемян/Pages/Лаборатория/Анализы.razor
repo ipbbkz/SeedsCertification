@@ -1,7 +1,56 @@
 ﻿@page "/analysis"
 @attribute [Authorize(Policy = "Лаборатории")]
+@inject УправляющийИнспекциями управляющийИнспекциями
 @inject IStringLocalizer<Анализы> Лок
 
 <PageTitle>@Лок["Анализы"]</PageTitle>
 
 <h3>@Лок["Анализы"]</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Лок["НомерОбразца"]</th>
+            <th>@Лок["НазваниеСорта"]</th>
+            <th>@Лок["КоличествоКлубней"]</th>
+            <th>@Лок["ДатаВзятияОбразца"]</th>
+            <th>@Лок["ДатаПередачиВЛабораторию"]</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var анализ in СписокАнализов)
+        {
+            <tr>
+                <td>@анализ.Ид</td>
+                <td>
+                    @анализ.Инспекция.Заявка.НаваниеСортаСемян
+                </td>
+                <td>
+                    @анализ.КоличествоОбразцов
+                </td>
+                <td>
+                    @анализ.ДатаВзятияОбразца
+                </td>
+                <td>
+                    @анализ.ДатаПередачиВЛабораторию
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public int Ид { get; set; }
+
+    public IList<Анализ> СписокАнализов { get; set; } = Array.Empty<Анализ>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        СписокАнализов = управляющийИнспекциями.ПолучитьОжидающиеАнализы();
+        await base.OnParametersSetAsync();
+    }
+}
