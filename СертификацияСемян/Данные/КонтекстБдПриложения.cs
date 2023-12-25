@@ -187,6 +187,7 @@ public class Анализ
     public int ИнспекцияИд { get; set; }
     public int ТипАнализа { get; set; }
     public int Статус { get; set; }
+    public byte[]? ФайлСАнализами { get; set; }
     public int КоличествоОбразцов { get; set; }
     public DateTime ДатаВзятияОбразца { get; set; }
     public DateTime ДатаПередачиВЛабораторию { get; set; }

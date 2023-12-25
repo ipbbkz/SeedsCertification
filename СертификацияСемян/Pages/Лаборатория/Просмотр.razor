@@ -1,0 +1,132 @@
+﻿@page "/analysis/{ИдАнализа:int}/info"
+@using System.Security.Claims;
+@attribute [Authorize(Policy = "Лаборатории")]
+@inject УправляющийИнспекциями управляющийИнспекциями
+@inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<Глобальные> ГлобЛок
+@inject IStringLocalizer<Анализы> Лок
+@inject IWebHostEnvironment окружение
+@inject IJSRuntime JSRuntime
+@inject ILogger<ДанныеЗаявки> протоколировщик
+
+<PageTitle>@Лок["Анализ"] @string.Format("УБ{0:D6}", ИдАнализа)</PageTitle>
+
+<h3>@Лок["Анализ"] @string.Format("УБ{0:D6}", ИдАнализа)</h3>
+
+<EditForm Model="@Модель" OnValidSubmit="@Отправить">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="row">
+        <div class="col">
+            <label class="form-label">
+                @Лок["КоличествоОбразцов"] <span class="text-danger">*</span>
+            </label>
+            <InputNumber @bind-Value="Модель!.КоличествоОбразцов" class="form-control" disabled />
+        </div>
+        <div class="col">
+            <label class="form-label">
+                @Лок["ДатаВзятияОбразца"] <span class="text-danger">*</span>
+            </label>
+            <InputDate @bind-Value="Модель!.ДатаВзятияОбразца" class="form-control" Type="InputDateType.Date"  disabled />
+        </div>
+        <div class="col">
+            <label class="form-label">
+                @Лок["ДатаПередачиВЛабораторию"] <span class="text-danger">*</span>
+            </label>
+            <InputDate @bind-Value="Модель!.ДатаПередачиВЛабораторию" class="form-control" Type="InputDateType.Date" disabled />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label class="form-label">
+                @Лок["Анализы"] <span class="text-danger">*</span>
+            </label>
+            <InputFile OnChange="@ЗагрузитьАнализы" class="form-control" />
+            @if (загружаетсяАнализы)
+            {
+                <p>@Лок["Загружаем"]...</p>
+            }
+            else
+            {
+                if (загруженныеФайлыАнализов.Count > 0)
+                {
+                    <p>@Лок["ДокументЗагружен"]</p>
+                }
+            }
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">@ГлобЛок["Сохранить"]</button>
+    <a href="/analysis/" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
+</EditForm>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    public МодельРезультатаАнализа Модель { get; set; } = new();
+    public string ИдЛичности { get; set; } = "";
+
+    [Parameter]
+    public int ИдАнализа { get; set; }
+    private long максРазмерФайла = 1024 * 1024 * 15;
+    private int максКоличествоФайлов = 1;
+    private List<IBrowserFile> загруженныеФайлыАнализов = new();
+    private bool загружаетсяАнализы;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        ИдЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности() ?? "";
+        var анализ = управляющийИнспекциями.ПолучитьАнализ(ИдАнализа);
+        Проектор.ОтобразитьАнализ(анализ, Модель);
+        await base.OnParametersSetAsync();
+    }
+
+    private async Task ЗагрузитьАнализы(InputFileChangeEventArgs e)
+    {
+        Directory.CreateDirectory(Path.Combine(окружение.ContentRootPath, "uploads", "intermediate"));
+        загружаетсяАнализы = true;
+        загруженныеФайлыАнализов.Clear();
+
+        foreach (var файл in e.GetMultipleFiles(максКоличествоФайлов))
+        {
+            try
+            {
+                загруженныеФайлыАнализов.Add(файл);
+
+                var trustedFileNameForFileStorage = Path.GetRandomFileName();
+                var path = Path.Combine(окружение.ContentRootPath, "uploads", "intermediate", trustedFileNameForFileStorage);
+
+                await using (FileStream fs = new(path, FileMode.Create))
+                {
+                    await файл.OpenReadStream(максРазмерФайла).CopyToAsync(fs);
+                }
+
+                Модель.ФайлСАнализами = File.ReadAllBytes(path);
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                протоколировщик.LogError("Файл: {Filename} Ошибка: {Error}", файл.Name, ex.Message);
+            }
+        }
+
+        загружаетсяАнализы = false;
+    }
+
+    private async Task Отправить()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is null)
+        {
+            return;
+        }
+
+        управляющийИнспекциями.ОтправитьАнализы(
+            ИдАнализа,
+            Модель.ФайлСАнализами);
+        управляющийНавигацией.NavigateTo("/analysis");
+    }
+
+}
