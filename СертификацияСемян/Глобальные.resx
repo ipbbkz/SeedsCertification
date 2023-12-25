@@ -144,6 +144,9 @@
   <data name="Сохранить" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="СтатусИнспекции_АнализыВЛаборатории" xml:space="preserve">
+    <value>Analysis in Lab</value>
+  </data>
   <data name="СтатусИнспекции_Запланирована" xml:space="preserve">
     <value>Planned</value>
   </data>

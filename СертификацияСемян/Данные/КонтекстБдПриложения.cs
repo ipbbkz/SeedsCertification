@@ -184,6 +184,9 @@ public class Анализ
     public int ИнспекцияИд { get; set; }
     public int ТипАнализа { get; set; }
     public int Статус { get; set; }
+    public int КоличествоОбразцов { get; set; }
+    public DateTime ДатаВзятияОбразца { get; set; }
+    public DateTime ДатаПередачиВЛабораторию { get; set; }
     public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
     public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
     public DateTime? ДатаУдаления { get; set; }

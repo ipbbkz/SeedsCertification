@@ -141,6 +141,9 @@
   <data name="Сохранить" xml:space="preserve">
     <value>Сақтау</value>
   </data>
+  <data name="СтатусИнспекции_АнализыВЛаборатории" xml:space="preserve">
+    <value>Зертханалық сынақтар</value>
+  </data>
   <data name="СтатусИнспекции_Запланирована" xml:space="preserve">
     <value>Запланирована</value>
   </data>

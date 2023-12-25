@@ -142,6 +142,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Analysis in Lab.
+        /// </summary>
+        public static string СтатусИнспекции_АнализыВЛаборатории {
+            get {
+                return ResourceManager.GetString("СтатусИнспекции_АнализыВЛаборатории", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Planned.
         /// </summary>
         public static string СтатусИнспекции_Запланирована {
