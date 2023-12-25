@@ -192,6 +192,9 @@
   <data name="ОбщееСостояниеУрожая" xml:space="preserve">
     <value>Общее состояние урожая</value>
   </data>
+  <data name="ОбщиеУсловияХранения" xml:space="preserve">
+    <value>Жалпы сақтау шарттары</value>
+  </data>
   <data name="ПаршаЛуговая" xml:space="preserve">
     <value>Парша луговая</value>
   </data>

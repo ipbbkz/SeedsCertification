@@ -192,6 +192,9 @@
   <data name="ОбщееСостояниеУрожая" xml:space="preserve">
     <value>Harvest state</value>
   </data>
+  <data name="ОбщиеУсловияХранения" xml:space="preserve">
+    <value>Storage conditions</value>
+  </data>
   <data name="ПаршаЛуговая" xml:space="preserve">
     <value>Grassland scab</value>
   </data>
