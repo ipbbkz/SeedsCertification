@@ -1,0 +1,7 @@
+﻿@page "/analysis"
+@attribute [Authorize(Policy = "Лаборатории")]
+@inject IStringLocalizer<Анализы> Лок
+
+<PageTitle>@Лок["Анализы"]</PageTitle>
+
+<h3>@Лок["Анализы"]</h3>

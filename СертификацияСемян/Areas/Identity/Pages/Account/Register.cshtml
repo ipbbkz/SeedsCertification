@@ -11,7 +11,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" asp-route-Inspector="@Model.Inspector" method="post">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" asp-route-Inspector="@Model.Inspector" asp-route-Laboratory="@Model.Laboratory" method="post">
             <h2>@Лок["НовыйАккаунт"]</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
