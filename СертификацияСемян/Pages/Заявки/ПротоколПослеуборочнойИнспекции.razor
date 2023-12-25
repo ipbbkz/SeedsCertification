@@ -1,0 +1,86 @@
+﻿@page "/requests/{ИдЗаявки:int}/inspections/{ИдИнспекции:int}/protocols/postharvest"
+@attribute [Authorize(Policy = "Инспекторы")]
+@inject УправляющийЗаявками управляющийЗаявками
+@inject УправляющийИнспекциями управляющийИнспекциями
+@inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<Инспекции> Лок
+
+<h3>@string.Format(Лок["ПротоколИнспекции"], ИдИнспекции)</h3>
+
+<h4>
+    @Лок["ДанныеЗаявки"]
+</h4>
+<fieldset disabled>
+    <БазовыеДанныеЗаявки Модель=@МодельЗаявки Пользователь=@ИдВладельца />
+</fieldset>
+
+<h4>
+    @Лок["ДанныеИнспекции"]
+</h4>
+<fieldset disabled>
+    <ДанныеИнспекции Модель="@Модель" />
+</fieldset>
+
+<div class="row my-3">
+    <div class="col">
+        @if (Модель.Статус == 1)
+        {
+            <a class="btn btn-secondary" @onclick="(() => ПоказыватьОкноОтправкиЗаявки = true)">Отправить</a>
+        }
+        <a href="/requests/@ИдЗаявки/inspections" class="btn btn-secondary">@Глобальные.Назад</a>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    [Parameter]
+    public int ИдЗаявки { get; set; }
+
+    [Parameter]
+    public int ИдИнспекции { get; set; }
+
+    public string ИдВладельца { get; set; } = "";
+
+    public МодельЗаявки МодельЗаявки { get; set; } = new();
+
+    public МодельИнспекции Модель { get; set; } = new();
+
+    public List<ЗаписьПолевойИнспекции> Записи { get; set; } = new();
+
+    public bool ПоказыватьОкноОтправкиЗаявки = false;
+
+    public DateTime ФактическаяДата { get; set; }
+
+
+    protected override void OnParametersSet()
+    {
+        var заявка = управляющийЗаявками.ПолучитьЗаявку(ИдЗаявки);
+        if (заявка is null)
+        {
+            return;
+        }
+
+        ИдВладельца = заявка.УчастокПоля.Поле.ПроизводительСемян.ИдВладельца;
+
+        Проектор.ОтобразитьЗаявку(заявка, МодельЗаявки);
+
+        var инспекция = управляющийИнспекциями.ПолучитьИнспекцию(ИдИнспекции);
+        if (инспекция is null)
+        {
+            return;
+        }
+
+        Проектор.ОтобразитьИнспекцию(инспекция, Модель);
+        ФактическаяДата = инспекция.ФактическаяДата ?? инспекция.ПланируемаяДата;
+        Записи = управляющийИнспекциями.ПолучитьПротоколПолевойИнспекции(ИдИнспекции);
+        base.OnParametersSet();
+    }
+
+    void ОтправитьНаОдобрение()
+    {
+        управляющийИнспекциями.ПровестиИнспекцию(ИдИнспекции, ФактическаяДата);
+        управляющийНавигацией.NavigateTo($"/requests/{ИдЗаявки}/inspections");
+    }
+}
