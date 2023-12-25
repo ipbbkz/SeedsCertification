@@ -113,10 +113,39 @@
         @if (Модель.Статус == 1)
         {
             <a class="btn btn-primary" @onclick="СохранитьПротокол">@Глобальные.Сохранить</a>
+            <a class="btn btn-secondary" @onclick="(() => ПоказыватьОкноОтправкиЗаявки = true)">Отправить</a>
         }
         <a href="/requests/@ИдЗаявки/inspections" class="btn btn-secondary">@Глобальные.Назад</a>
     </div>
 </div>
+
+@if (ПоказыватьОкноОтправкиЗаявки)
+{
+    <div class="modal show" tabindex="-1" style="display: block">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Завершение протокола</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @onclick="@(() => ПоказыватьОкноОтправкиЗаявки = false)"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+                            <label class="form-label">
+                                @Лок["ФактическаяДата"]
+                            </label>
+                            <InputDate @bind-Value="ФактическаяДата" class="form-control" Type="InputDateType.Date" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @onclick="@(() => ПоказыватьОкноОтправкиЗаявки = false)">Закрыть</button>
+                    <button type="button" class="btn btn-primary" @onclick="ОтправитьНаОдобрение">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
 
 @code {
     [CascadingParameter]
@@ -135,6 +164,10 @@
     public МодельИнспекции Модель { get; set; } = new();
 
     public List<ЗаписьПолевойИнспекции> Записи { get; set; } = new();
+
+    public bool ПоказыватьОкноОтправкиЗаявки = false;
+
+    public DateTime ФактическаяДата { get; set; }
 
     public ЗаписьПолевойИнспекции ОбщаяЗаписьИнспекция
     { 
@@ -194,6 +227,7 @@
         }
 
         Проектор.ОтобразитьИнспекцию(инспекция, Модель);
+        ФактическаяДата = инспекция.ФактическаяДата ?? инспекция.ПланируемаяДата;
         Записи = управляющийИнспекциями.ПолучитьПротоколПолевойИнспекции(ИдИнспекции);
         base.OnParametersSet();
     }
@@ -211,7 +245,11 @@
     public void СохранитьПротокол()
     {
         управляющийИнспекциями.СохранитьПротоколПолевойИнспекции(ИдИнспекции, Записи);
-        управляющийИнспекциями.ПровестиИнспекцию(ИдИнспекции);
+    }
+
+    void ОтправитьНаОдобрение()
+    {
+        управляющийИнспекциями.ПровестиИнспекцию(ИдИнспекции, ФактическаяДата);
         управляющийНавигацией.NavigateTo($"/requests/{ИдЗаявки}/inspections");
     }
 }

@@ -118,11 +118,14 @@ public class УправляющийИнспекциями
         контекст.SaveChanges();
     }
 
-    public void ПровестиИнспекцию(int идИнспекции)
+    public void ПровестиИнспекцию(int идИнспекции, DateTime фактическаяДата)
     {
         контекст.Инспекции
             .Where(и => и.Ид == идИнспекции)
-            .ExecuteUpdate(_ => _.SetProperty(и => и.Статус, 2));
+            .ExecuteUpdate(_ => _
+                .SetProperty(и => и.Статус, 2)
+                .SetProperty(и => и.ФактическаяДата, фактическаяДата)
+                .SetProperty(и => и.ДатаОбновления, DateTime.UtcNow));
     }
 
     public void ОдобритьИнспекцию(int идИнспекции)
