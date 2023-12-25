@@ -71,12 +71,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Компоненты\ДанныеУчастка.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Update="Areas\Identity\Pages\Account\ForgotPassword.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ForgotPassword.Designer.cs</LastGenOutput>
