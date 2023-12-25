@@ -1,0 +1,120 @@
+﻿@page "/my/requests/{ИдЗаявки:int}/inspections/{ИдИнспекции:int}/protocols/postharvest"
+@attribute [Authorize(Policy = "Фермеры")]
+@using Pages.Заявки
+@inject УправляющийЗаявками управляющийЗаявками
+@inject УправляющийИнспекциями управляющийИнспекциями
+@inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<Инспекции> Лок
+
+<h3>@string.Format(Лок["ПротоколИнспекции"], ИдИнспекции)</h3>
+
+<h4>
+    @Лок["ДанныеЗаявки"]
+</h4>
+<fieldset disabled>
+    <БазовыеДанныеЗаявки Модель=@МодельЗаявки Пользователь=@ИдВладельца />
+</fieldset>
+
+<h4>
+    @Лок["ДанныеИнспекции"]
+</h4>
+<fieldset disabled>
+    <ДанныеИнспекции Модель="@Модель" />
+</fieldset>
+<h4>
+    @Лок["ЗаписиПротокола"]
+</h4>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Лок["НомерОбразца"]</th>
+            <th>@Лок["НазваниеСорта"]</th>
+            <th>@Лок["КоличествоКлубней"]</th>
+            <th>@Лок["ДатаВзятияОбразца"]</th>
+            <th>@Лок["ДатаПередачиВЛабораторию"]</th>
+            <th>@Лок["РезультатыАнализов"]</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var анализ in Записи)
+        {
+            <tr>
+                <td>@анализ.Ид</td>
+                <td>
+                    @МодельЗаявки.НазваниеСортаСемян
+                </td>
+                <td>
+                    @анализ.КоличествоОбразцов
+                </td>
+                <td>
+                    <InputDate @bind-Value="анализ.ДатаВзятияОбразца" class="form-control" Type="InputDateType.Date" disabled />
+                </td>
+                <td>
+                    <InputDate @bind-Value="анализ.ДатаПередачиВЛабораторию" class="form-control" Type="InputDateType.Date" disabled />
+                </td>
+                <td>
+                    @if (анализ.Статус == 2)
+                    {
+                        <a href="/analysis/@(анализ.Ид)/file" target="_blank">@Лок["Скачать"]</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="row my-3">
+    <div class="col">
+        <a href="/my/requests/@ИдЗаявки/inspections" class="btn btn-secondary">@Глобальные.Назад</a>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    [Parameter]
+    public int ИдЗаявки { get; set; }
+
+    [Parameter]
+    public int ИдИнспекции { get; set; }
+
+    public string ИдВладельца { get; set; } = "";
+
+    public МодельЗаявки МодельЗаявки { get; set; } = new();
+
+    public МодельИнспекции Модель { get; set; } = new();
+
+    public List<Анализ> Записи { get; set; } = new();
+
+    public bool ПоказыватьОкноОтправкиЗаявки = false;
+
+    public DateTime ФактическаяДата { get; set; }
+
+
+    protected override void OnParametersSet()
+    {
+        var заявка = управляющийЗаявками.ПолучитьЗаявку(ИдЗаявки);
+        if (заявка is null)
+        {
+            return;
+        }
+
+        ИдВладельца = заявка.УчастокПоля.Поле.ПроизводительСемян.ИдВладельца;
+
+        Проектор.ОтобразитьЗаявку(заявка, МодельЗаявки);
+
+        var инспекция = управляющийИнспекциями.ПолучитьИнспекцию(ИдИнспекции);
+        if (инспекция is null)
+        {
+            return;
+        }
+
+        Проектор.ОтобразитьИнспекцию(инспекция, Модель);
+        ФактическаяДата = инспекция.ФактическаяДата ?? инспекция.ПланируемаяДата;
+        Записи = управляющийИнспекциями.ПолучитьАнализы(ИдИнспекции);
+        base.OnParametersSet();
+    }
+}
