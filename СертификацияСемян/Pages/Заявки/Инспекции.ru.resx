@@ -147,6 +147,12 @@
   <data name="ДанныеИнспекции" xml:space="preserve">
     <value>Данные инспекции</value>
   </data>
+  <data name="ДатаВзятияОбразца" xml:space="preserve">
+    <value>Дата взятия образца</value>
+  </data>
+  <data name="ДатаПередачиВЛабораторию" xml:space="preserve">
+    <value>Дата передачи в лабораторию</value>
+  </data>
   <data name="ДефектыКонтроля" xml:space="preserve">
     <value>Выявленные дефекты</value>
   </data>
@@ -174,14 +180,23 @@
   <data name="Карантин" xml:space="preserve">
     <value>Карантинные объекты</value>
   </data>
+  <data name="КоличествоКлубней" xml:space="preserve">
+    <value>Количество клубней</value>
+  </data>
   <data name="КоличествоРастенийВСерии" xml:space="preserve">
     <value>Кол-во растений в партии</value>
   </data>
   <data name="МокраяГниль" xml:space="preserve">
     <value>Мокрая гниль</value>
   </data>
+  <data name="НазваниеСорта" xml:space="preserve">
+    <value>Название сорта</value>
+  </data>
   <data name="НезначительныеПовреждения" xml:space="preserve">
     <value>Незначительные повреждения, обезвоживание</value>
+  </data>
+  <data name="НомерОбразца" xml:space="preserve">
+    <value>№№ Образца</value>
   </data>
   <data name="НомерСерии" xml:space="preserve">
     <value>№ партии</value>
@@ -193,7 +208,10 @@
     <value>Общее состояние урожая</value>
   </data>
   <data name="ОбщиеУсловияХранения" xml:space="preserve">
-    <value>Жалпы сақтау шарттары</value>
+    <value>Общие условия хранения</value>
+  </data>
+  <data name="ОтправитьНаСертификацию" xml:space="preserve">
+    <value>Отправить на сертификацию</value>
   </data>
   <data name="ПаршаЛуговая" xml:space="preserve">
     <value>Парша луговая</value>
@@ -233,6 +251,9 @@
   </data>
   <data name="РаздавленныеКлубни" xml:space="preserve">
     <value>Раздавленные клубни</value>
+  </data>
+  <data name="РезультатыАнализов" xml:space="preserve">
+    <value>Результаты анализов</value>
   </data>
   <data name="Ризоктониоз" xml:space="preserve">
     <value>Ризоктониоз</value>

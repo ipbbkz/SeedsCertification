@@ -11,7 +11,7 @@ public class МодельИнспекции
     public DateTime? ПланируемаяДата { get; set; }
 
     public DateTime? ФактическаяДата { get; set; }
-    [Обязательное]
+    [ОбязательноЕслиЛюбой(nameof(ТипИнспекции), new[] { 1, 2 })]
     public string ФизиологическаяСтадия { get; set; }
     public string? ОбщееСостояниеПоля { get; set; }
     [Обязательное]

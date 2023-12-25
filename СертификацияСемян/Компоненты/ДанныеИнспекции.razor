@@ -33,11 +33,11 @@
 <div class="row">
     @if (Модель!.ТипИнспекции != 3)
     {
-    <div class="col">
-        <label class="form-label">
-            @Лок["СредняяФизиологическаяСтадия"] <span class="text-danger">*</span>
-        </label>
-        <InputText @bind-Value="Модель!.ФизиологическаяСтадия" class="form-control" />
+        <div class="col">
+            <label class="form-label">
+                @Лок["СредняяФизиологическаяСтадия"] <span class="text-danger">*</span>
+            </label>
+            <InputText @bind-Value="Модель!.ФизиологическаяСтадия" class="form-control" />
         </div>
     }
     <div class="col">

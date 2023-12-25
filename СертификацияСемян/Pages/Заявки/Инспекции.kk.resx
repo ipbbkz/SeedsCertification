@@ -147,6 +147,12 @@
   <data name="ДанныеИнспекции" xml:space="preserve">
     <value>Тексеру деректері</value>
   </data>
+  <data name="ДатаВзятияОбразца" xml:space="preserve">
+    <value>Үлгіні жинау күні</value>
+  </data>
+  <data name="ДатаПередачиВЛабораторию" xml:space="preserve">
+    <value>Зертханаға тапсыру күні</value>
+  </data>
   <data name="ДефектыКонтроля" xml:space="preserve">
     <value>Бақылау ақаулары</value>
   </data>
@@ -174,14 +180,23 @@
   <data name="Карантин" xml:space="preserve">
     <value>Карантиндік аурулар</value>
   </data>
+  <data name="КоличествоКлубней" xml:space="preserve">
+    <value>Түйнек саны</value>
+  </data>
   <data name="КоличествоРастенийВСерии" xml:space="preserve">
     <value>Топтама саны</value>
   </data>
   <data name="МокраяГниль" xml:space="preserve">
     <value>Ылғалды шірік</value>
   </data>
+  <data name="НазваниеСорта" xml:space="preserve">
+    <value>Сорт атауы</value>
+  </data>
   <data name="НезначительныеПовреждения" xml:space="preserve">
     <value>Кішігірім зақымдану, сусыздандыру</value>
+  </data>
+  <data name="НомерОбразца" xml:space="preserve">
+    <value>Үлгі №</value>
   </data>
   <data name="НомерСерии" xml:space="preserve">
     <value>№ топтама</value>
@@ -193,7 +208,10 @@
     <value>Дақылдың жалпы жағдайы</value>
   </data>
   <data name="ОбщиеУсловияХранения" xml:space="preserve">
-    <value />
+    <value>Жалпы сақтау шарттары</value>
+  </data>
+  <data name="ОтправитьНаСертификацию" xml:space="preserve">
+    <value>Сертификаттауға жіберіңіз</value>
   </data>
   <data name="ПаршаЛуговая" xml:space="preserve">
     <value>Шалғынды қотыр</value>
@@ -233,6 +251,9 @@
   </data>
   <data name="РаздавленныеКлубни" xml:space="preserve">
     <value>Ұсақталған түйнектер</value>
+  </data>
+  <data name="РезультатыАнализов" xml:space="preserve">
+    <value>Тест нәтижелері</value>
   </data>
   <data name="Ризоктониоз" xml:space="preserve">
     <value>Ризоктониоз</value>

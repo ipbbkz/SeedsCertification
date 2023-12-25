@@ -147,6 +147,12 @@
   <data name="ДанныеИнспекции" xml:space="preserve">
     <value>Inspection info</value>
   </data>
+  <data name="ДатаВзятияОбразца" xml:space="preserve">
+    <value>Sample date</value>
+  </data>
+  <data name="ДатаПередачиВЛабораторию" xml:space="preserve">
+    <value>Lab sent date</value>
+  </data>
   <data name="ДефектыКонтроля" xml:space="preserve">
     <value>Controlled defects</value>
   </data>
@@ -174,14 +180,23 @@
   <data name="Карантин" xml:space="preserve">
     <value>Quaranteen diseases</value>
   </data>
+  <data name="КоличествоКлубней" xml:space="preserve">
+    <value>Number of tubers</value>
+  </data>
   <data name="КоличествоРастенийВСерии" xml:space="preserve">
     <value>Batch size</value>
   </data>
   <data name="МокраяГниль" xml:space="preserve">
     <value>Wet rot</value>
   </data>
+  <data name="НазваниеСорта" xml:space="preserve">
+    <value>Varieties name</value>
+  </data>
   <data name="НезначительныеПовреждения" xml:space="preserve">
     <value>Slight damage/ defleshing</value>
+  </data>
+  <data name="НомерОбразца" xml:space="preserve">
+    <value>Sample #</value>
   </data>
   <data name="НомерСерии" xml:space="preserve">
     <value># batch</value>
@@ -194,6 +209,9 @@
   </data>
   <data name="ОбщиеУсловияХранения" xml:space="preserve">
     <value>Storage conditions</value>
+  </data>
+  <data name="ОтправитьНаСертификацию" xml:space="preserve">
+    <value>Send to certification</value>
   </data>
   <data name="ПаршаЛуговая" xml:space="preserve">
     <value>Grassland scab</value>
@@ -233,6 +251,9 @@
   </data>
   <data name="РаздавленныеКлубни" xml:space="preserve">
     <value>Shrinkled  tubers</value>
+  </data>
+  <data name="РезультатыАнализов" xml:space="preserve">
+    <value>Lab results</value>
   </data>
   <data name="Ризоктониоз" xml:space="preserve">
     <value>Rhizoctonia</value>
