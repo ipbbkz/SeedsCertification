@@ -57,6 +57,7 @@ public class МодельЗаявки
     public string РасстояниеМеждуРядами { get; set; } = "75";
     [Обязательное]
     public string РасстояниеВРяду { get; set; } = "20";
+    public int Статус { get; set; }
     public int РекомендуемоеКоличествоРастений
     {
         get

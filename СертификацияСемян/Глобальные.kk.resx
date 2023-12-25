@@ -141,6 +141,15 @@
   <data name="Сохранить" xml:space="preserve">
     <value>Сақтау</value>
   </data>
+  <data name="СтатусЗаявки_ВРаботе" xml:space="preserve">
+    <value>Жұмыста</value>
+  </data>
+  <data name="СтатусЗаявки_Рассматривается" xml:space="preserve">
+    <value>Қарастырылуда</value>
+  </data>
+  <data name="СтатусЗаявки_Создана" xml:space="preserve">
+    <value>Құрылды</value>
+  </data>
   <data name="СтатусИнспекции_АнализыВЛаборатории" xml:space="preserve">
     <value>Зертханалық сынақтар</value>
   </data>

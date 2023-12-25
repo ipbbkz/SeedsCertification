@@ -142,6 +142,33 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Processing.
+        /// </summary>
+        public static string СтатусЗаявки_ВРаботе {
+            get {
+                return ResourceManager.GetString("СтатусЗаявки_ВРаботе", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Review.
+        /// </summary>
+        public static string СтатусЗаявки_Рассматривается {
+            get {
+                return ResourceManager.GetString("СтатусЗаявки_Рассматривается", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created.
+        /// </summary>
+        public static string СтатусЗаявки_Создана {
+            get {
+                return ResourceManager.GetString("СтатусЗаявки_Создана", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Analysis in Lab.
         /// </summary>
         public static string СтатусИнспекции_АнализыВЛаборатории {
