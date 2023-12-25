@@ -1,4 +1,4 @@
-﻿@page "/analysis"
+﻿@page "/analysis/history"
 @attribute [Authorize(Policy = "Лаборатории")]
 @inject УправляющийИнспекциями управляющийИнспекциями
 @inject IStringLocalizer<Анализы> Лок
@@ -44,14 +44,11 @@
 </table>
 
 @code {
-    [SupplyParameterFromQuery(Name = "status")]
-    public int Статус { get; set; } = 1;
-
     public IList<Анализ> СписокАнализов { get; set; } = Array.Empty<Анализ>();
 
     protected override async Task OnParametersSetAsync()
     {
-        СписокАнализов = управляющийИнспекциями.ПолучитьАнализыПоСтатусу(Статус);
+        СписокАнализов = управляющийИнспекциями.ПолучитьАнализыПоСтатусу(2);
         await base.OnParametersSetAsync();
     }
 }

@@ -37,27 +37,41 @@
             <InputDate @bind-Value="Модель!.ДатаПередачиВЛабораторию" class="form-control" Type="InputDateType.Date" disabled />
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <label class="form-label">
-                @Лок["Анализы"] <span class="text-danger">*</span>
-            </label>
-            <InputFile OnChange="@ЗагрузитьАнализы" class="form-control" />
-            @if (загружаетсяАнализы)
-            {
-                <p>@Лок["Загружаем"]...</p>
-            }
-            else
-            {
-                if (загруженныеФайлыАнализов.Count > 0)
+    @if (Модель.Статус == 1)
+    {
+        <div class="row">
+            <div class="col">
+                <label class="form-label">
+                    @Лок["Анализы"] <span class="text-danger">*</span>
+                </label>
+                <InputFile OnChange="@ЗагрузитьАнализы" class="form-control" />
+                @if (загружаетсяАнализы)
                 {
-                    <p>@Лок["ДокументЗагружен"]</p>
+                    <p>@Лок["Загружаем"]...</p>
                 }
-            }
+                else
+                {
+                    if (загруженныеФайлыАнализов.Count > 0)
+                    {
+                        <p>@Лок["ДокументЗагружен"]</p>
+                    }
+                }
+            </div>
         </div>
-    </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col">
+                <a href="/analysis/@(ИдАнализа)/file" target="_blank">@Лок["РезультатыАнализа"]</a>
+            </div>
+        </div>
+    }
 
-    <button type="submit" class="btn btn-primary">@ГлобЛок["Сохранить"]</button>
+    @if (Модель.Статус == 1)
+    {
+        <button type="submit" class="btn btn-primary">@ГлобЛок["Сохранить"]</button>
+    }
     <a href="/analysis/" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
 </EditForm>
 
