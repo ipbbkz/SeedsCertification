@@ -98,14 +98,20 @@
         </tr>
     </tfoot>
 </table>
+
+<div class="row my-3">
+    <div class="col">
+        <label>Рекомендованный класс семян:</label> <КлассСемян Значение=@((int)ПравилаСертификации.РекомендованныйКлассСемян(Записи)) />
+    </div>
+</div>
+
 @if (Модель.Статус == 1)
 {
     <div class="row my-3">
         <div class="col">
             <a class="btn btn-primary" @onclick="ДобавитьЗапись">Добавить</a>
         </div>
-    </div>
-    
+    </div>    
 }
 
 <div class="row my-3">
