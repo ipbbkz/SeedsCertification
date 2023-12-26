@@ -1,7 +1,7 @@
 ﻿@using System.Globalization
 @inject УправляющийХозяйствами управляющийХозяйствами
 @inject IJSRuntime JSRuntime
-@inject ILogger<ДанныеЗаявки> протоколировщик
+@inject ILogger<ДанныеПользователя> протоколировщик
 @inject IWebHostEnvironment окружение
 @inject IStringLocalizer<ДанныеПользователя> Лок
 
@@ -21,9 +21,20 @@
     @Лок["Отчество"]
 </label>
 <InputText @bind-Value="Модель!.Отчество" class="form-control" />
+@if (Инспектор)
+{
+    <div class="form-check">
+        <InputCheckbox @bind-Value="Модель!.МожетДелатьСертификаты" class="form-check-input" id="can-issue-certificates" />
+        <label class="form-check-label" for="can-issue-certificates">
+            @Лок["МожетДелатьСертификаты"]
+        </label>
+    </div>
+}
 @code {
 
     [Parameter]
     public МодельПользователя Модель { get; set; }
+    [Parameter]
+    public bool Инспектор { get; set; }
 
 }

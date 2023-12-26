@@ -15,4 +15,6 @@ public class МодельПользователя
     public string Имя { get; set; } = "";
 
     public string? Отчество { get; set; }
+
+    public bool МожетДелатьСертификаты { get; set; }
 }

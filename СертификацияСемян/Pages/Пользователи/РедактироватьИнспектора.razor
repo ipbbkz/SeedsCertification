@@ -21,7 +21,7 @@
 <EditForm EditContext=@контекстРедактирования OnValidSubmit="@Submit">
     <DataAnnotationsValidator />
     <ValidationSummary />
-    <ДанныеПользователя Модель=@Модель />
+    <ДанныеПользователя Модель=@Модель Инспектор=true />
 
     <button type="submit" class="btn btn-primary">@ГлобЛок["Сохранить"]</button>
     <a href="/inspectors" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
@@ -50,6 +50,7 @@
             Модель.Имя = result.Имя;
             Модель.Отчество = result.Отчество;
             Модель.Почта = result.Email;
+            Модель.МожетДелатьСертификаты = await МенеджерПользователей.IsInRoleAsync(result, Константы.РольСтаршийИнспектор);
         }
         await base.OnParametersSetAsync();
     }
@@ -64,9 +65,21 @@
             result.Отчество = Модель.Отчество;
             result.Email = Модель.Почта;
             result.UserName = Модель.Почта;
+            await МенеджерПользователей.UpdateAsync(result);
+            var может = await МенеджерПользователей.IsInRoleAsync(result, Константы.РольСтаршийИнспектор);
+            if (Модель.МожетДелатьСертификаты != может)
+            {
+                if (Модель.МожетДелатьСертификаты)
+                {
+                    await МенеджерПользователей.AddToRoleAsync(result, Константы.РольСтаршийИнспектор);
+                }
+                else
+                {
+                    await МенеджерПользователей.RemoveFromRoleAsync(result, Константы.РольСтаршийИнспектор);
+                }
+            }
         }
     
-        await МенеджерПользователей.UpdateAsync(result);
         управляющийНавигацией.NavigateTo("/inspectors");
     }
 }
