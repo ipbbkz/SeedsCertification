@@ -1,0 +1,68 @@
+﻿@page "/requests/for-certification"
+
+@using СертификацияСемян.Данные;
+@attribute [Authorize(Policy = "Инспекторы")]
+@inject УправляющийЗаявками управляющийЗаявками
+@inject IStringLocalizer<Заявки> Лок
+
+<h3>@Лок["ЗаявкиНаСертификацию"]</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>@Лок["ТипЗаявки"]</td>
+            <td>@Лок["Сорт"]</td>
+            <td>@Лок["Фермер"]</td>
+            <td>@Лок["Посадка"]</td>
+            <td>@Лок["Сбор"]</td>
+            <td>@Лок["ДатаСоздания"]</td>
+            <td>@Лок["Действия"]</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var з in заявки)
+        {
+            <tr>
+                <td>
+                    @з.Код
+                </td>
+                <td>
+                    <ТипЗаявки Значение=@з.ТипЗаявки />
+                </td>
+                <td>
+                    @з.НаваниеСортаСемян
+                </td>
+                <td>
+                    @{
+                        var фермер = з.УчастокПоля.Поле.ПроизводительСемян;
+                    }
+                    <text>@фермер.НаваниеКомпании    БИН/ИИН:</text>@фермер.БинИлиИин
+                </td>
+                <td>
+                    @(з.ДатаПосадки == DateTime.MinValue ? "" : з.ДатаПосадки.ToShortDateString())
+                </td>
+                <td>
+                    @(з.ДатаСбора == DateTime.MinValue ? "" : з.ДатаСбора.ToShortDateString())
+                </td>
+                <td>
+                    @з.ДатаСоздания
+                </td>
+                <td>
+                    <a href="/requests/@з.Ид/info">Детали</a>
+                    <a href="/requests/@з.Ид/inspections">Инспекции</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+
+    private IList<Заявка> заявки = Array.Empty<Заявка>();
+
+    protected override void OnParametersSet()
+    {
+        заявки = управляющийЗаявками.ПолучитьЗаявкиНаСертификацию();
+    }
+}

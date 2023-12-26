@@ -147,6 +147,9 @@
   <data name="Регистрация" xml:space="preserve">
     <value>Registration</value>
   </data>
+  <data name="Сертификация" xml:space="preserve">
+    <value>Certification</value>
+  </data>
   <data name="Фермеры" xml:space="preserve">
     <value>Farmers</value>
   </data>

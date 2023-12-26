@@ -8,15 +8,19 @@
         </button>
         <div class="@NavMenuCssClass navbar-collapse flex-sm-row-reverse" id="navbarScroll">
             <ul class="navbar-nav navbar-nav-scroll">
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="/info/about">@Глобальные.Страница_ОНас</NavLink>
-                </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="/info/contacts">@Глобальные.Страница_Контакты</NavLink>
-                </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="/info/documents">@Глобальные.Страница_Документы</NavLink>
-                </li>
+                <AuthorizeView>
+                    <NotAuthorized>
+                        <li class="nav-item">
+                            <NavLink class="nav-link" href="/info/about">@Глобальные.Страница_ОНас</NavLink>
+                        </li>
+                        <li class="nav-item">
+                            <NavLink class="nav-link" href="/info/contacts">@Глобальные.Страница_Контакты</NavLink>
+                        </li>
+                        <li class="nav-item">
+                            <NavLink class="nav-link" href="/info/documents">@Глобальные.Страница_Документы</NavLink>
+                        </li>
+                    </NotAuthorized>
+                </AuthorizeView>
                 <AuthorizeView>
                     <Authorized>
                         @if (context.User.IsInRole(Данные.Константы.РольФермер))
@@ -44,6 +48,12 @@
                         {
                             <li class="nav-item">
                                 <NavLink class="nav-link" href="/requests/1">@Лок["Заявки"]</NavLink>
+                            </li>
+                        }
+                        @if (context.User.IsInRole(Данные.Константы.РольСтаршийИнспектор))
+                        {
+                            <li class="nav-item">
+                                <NavLink class="nav-link" href="/requests/for-certification">@Лок["Сертификация"]</NavLink>
                             </li>
                         }
                         @if (context.User.IsInRole(Данные.Константы.РольЛаборатория))

@@ -21,6 +21,16 @@ public class УправляющийЗаявками
             .OrderByDescending(з => з.ДатаСоздания).Skip(20 * counter).Take(20).ToList();
     }
 
+    public IList<Заявка> ПолучитьЗаявкиНаСертификацию()
+    {
+        return контекст.Заявки
+            .Include(_ => _.УчастокПоля)
+            .ThenInclude(_ => _.Поле)
+            .ThenInclude(_ => _.ПроизводительСемян)
+            .Where(_ => _.Статус == 2)
+            .OrderByDescending(з => з.ДатаСоздания).ToList();
+    }
+
     public IList<Заявка> ПолучитьЗаявкиПользователя(string идПользователя)
     {
         return контекст.Заявки

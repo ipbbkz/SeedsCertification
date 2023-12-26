@@ -147,6 +147,9 @@
   <data name="Регистрация" xml:space="preserve">
     <value>Тіркеу</value>
   </data>
+  <data name="Сертификация" xml:space="preserve">
+    <value>Сертификаттау</value>
+  </data>
   <data name="Фермеры" xml:space="preserve">
     <value>Фермерлер</value>
   </data>
