@@ -141,6 +141,9 @@
   <data name="МоиЗаявки" xml:space="preserve">
     <value>Менің өтініштерім</value>
   </data>
+  <data name="МоиСертификаты" xml:space="preserve">
+    <value>Менің сертификаттарым</value>
+  </data>
   <data name="Приветствие" xml:space="preserve">
     <value>Сәлеметсіз бе,</value>
   </data>
