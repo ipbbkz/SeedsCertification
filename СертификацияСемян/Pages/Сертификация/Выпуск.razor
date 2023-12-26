@@ -39,7 +39,7 @@
         <InputNumber @bind-Value="ВаловыйУрожай" class="form-control" disabled />
     </div>
     <div class="col-3 pt-5">
-        <button class="btn btn-secondary" @onclick=ВыпуститьСертификат>@Лок["ВыпуститьСертификат"]</button>
+        <button class="btn btn-secondary" @onclick=ВыпуститьСертификат disabled="@(!МожноВыпуститьСертификат)">@Лок["ВыпуститьСертификат"]</button>
     </div>
 </div>
 
@@ -97,8 +97,6 @@
     </tbody>
 </table>
 
-
-
 <a href="/requests/for-certification" class="btn btn-secondary">@Глобальные.Назад</a>
 
 @code {
@@ -110,6 +108,8 @@
     public int ВаловыйУрожай { get; set; }
     public int? КлассСемянИд { get; set; }
     public IList<Инспекция> ИнспекцииЗаявки { get; set; } = Array.Empty<Инспекция>();
+
+    public bool МожноВыпуститьСертификат => ВаловыйУрожай > 0 && КлассСемянИд != null;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -131,7 +131,7 @@
 
     void ВыпуститьСертификат()
     {
-        //управляющийЗаявками.ОтправитьНаСертификацию(Ид);
+        управляющийЗаявками.ВыпуститьСертификат(Ид, КлассСемянИд!.Value, ВаловыйУрожай);
         управляющийНавигацией.NavigateTo($"/requests/for-certification");
     }
 

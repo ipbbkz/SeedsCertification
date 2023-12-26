@@ -20,6 +20,7 @@ public class КонтекстБдПриложения : IdentityDbContext<Пол
     public DbSet<ЗаписьПолевойИнспекции> ЗаписиПолевыхИнспекций { get; set; }
     public DbSet<ЗаписьИнспекцииПартии> ЗаписиИнспекцийПартии { get; set; }
     public DbSet<Анализ> Анализы { get; set; }
+    public DbSet<Сертификат> Сертификаты { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -31,6 +32,7 @@ public class КонтекстБдПриложения : IdentityDbContext<Пол
         builder.Entity<ЗаписьПолевойИнспекции>().HasKey(nameof(ЗаписьПолевойИнспекции.Ид));
         builder.Entity<ЗаписьИнспекцииПартии>().HasKey(nameof(ЗаписьИнспекцииПартии.Ид));
         builder.Entity<Анализ>().HasKey(nameof(Анализ.Ид));
+        builder.Entity<Сертификат>().HasKey(nameof(Сертификат.Ид));
         builder.Entity<IdentityRole>()
             .HasData(
                 new IdentityRole() { Id = Константы.РольАдминистратора, Name = Константы.РольАдминистратора, NormalizedName = Константы.РольАдминистратора.ToUpperInvariant() },
@@ -217,4 +219,16 @@ public class ПроизводительСемян
 
     [NotMapped]
     public string Код => $"Ш{Ид:0000}";
+}
+
+public class Сертификат
+{
+    public int Ид { get; set; }
+    public int ЗаявкаИд { get; set; }
+    public DateTime ДатаВыпуска { get; set; }
+    public int КлассСемянИд { get; set; }
+    public int ВаловыйПродукт { get; set; }
+
+    [ForeignKey(nameof(ЗаявкаИд))]
+    public Заявка Заявка { get; set; }
 }
