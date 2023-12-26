@@ -1,0 +1,130 @@
+﻿@page "/requests/{Ид:int}/issue-certificate"
+@attribute [Authorize(Policy = "Сертификатор")]
+@using СертификацияСемян.Pages.Заявки
+@inject УправляющийЗаявками управляющийЗаявками
+@inject УправляющийИнспекциями управляющийИнспекциями
+@inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<Инспекции> Лок
+
+<PageTitle>@string.Format(Лок["ИнспекцииЗаявки"], Модель.Код)</PageTitle>
+
+<h3>@string.Format(Лок["ИнспекцииЗаявки"], Модель.Код)</h3>
+<h4>
+    @Лок["ДанныеЗаявки"]
+</h4>
+<fieldset disabled>
+    <БазовыеДанныеЗаявки Модель=@Модель Пользователь=@ИдВладельца />
+</fieldset>
+
+<div class="row">
+    <div class="col-3">
+        <label class="form-label">
+            @Лок["КлассСемян"] <span class="text-danger">*</span>
+        </label>
+        <InputSelect @bind-Value="КлассСемянИд" class="form-control">
+            <option value="">@Лок["ВыберитеКлассСемян"] ...</option>
+            <option value="1">Предбазисный PBTC</option>
+            <option value="2">Предбазисный PB</option>
+            <option value="3">Базисный S</option>
+            <option value="4">Базисный SE</option>
+            <option value="5">Базисный Е</option>
+            <option value="6">Сертифицированный А</option>
+            <option value="7">Сертифицированный В</option>
+        </InputSelect>
+    </div>
+    <div class="col-3">
+        <label class="form-label">
+            @Лок["ВаловыйУрожай"] <span class="text-danger">*</span>
+        </label>
+        <InputNumber @bind-Value="ВаловыйУрожай" class="form-control" disabled />
+    </div>
+    <div class="col-3 pt-5">
+        <button class="btn btn-secondary" @onclick=ВыпуститьСертификат>@Лок["ВыпуститьСертификат"]</button>
+    </div>
+</div>
+
+<h4>
+    @Лок["Инспекции"]
+</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Лок["ТипИнспекции"]</th>
+            <th>@Лок["ФактическаяДата"]</th>
+            <th>@Лок["РекомендованныйКласс"]</th>
+            <th>@Лок["ИмяВедущегоИнспектора"]</th>
+            <th>@Лок["Статус"]</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var инспекция in ИнспекцииЗаявки)
+        {
+            <tr>
+                <td><ТипИнспекции Значение="инспекция.ТипИнспекции" /></td>
+                <td>@инспекция.ФактическаяДата?.ToShortDateString()</td>
+                <td>
+
+                </td>
+                <td>@инспекция.ИмяВедущегоИнспектора</td>
+                <td>
+                    <СтатусИнспекции Значение="инспекция.Статус" />
+                </td>
+                <td>
+                    @if (инспекция.ТипИнспекции == 1)
+                    {
+                        <a href="/requests/@Ид/inspections/@инспекция.Ид/protocols/field">@Лок["Протокол"]</a>
+                    }
+                    @if (инспекция.ТипИнспекции == 2)
+                    {
+                        <a href="/requests/@Ид/inspections/@инспекция.Ид/protocols/lot">@Лок["Протокол"]</a>
+                    }
+                    @if (инспекция.ТипИнспекции == 3)
+                    {
+                        <a href="/requests/@Ид/inspections/@инспекция.Ид/protocols/postharvest">@Лок["Протокол"]</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<a href="/requests/for-certification" class="btn btn-secondary">@Глобальные.Назад</a>
+
+@code {
+    [Parameter]
+    public int Ид { get; set; }
+
+    public МодельЗаявки Модель { get; set; } = new();
+    public string ИдВладельца { get; set; } = "";
+    public int ВаловыйУрожай { get; set; }
+    public int? КлассСемянИд { get; set; }
+    public IList<Инспекция> ИнспекцииЗаявки { get; set; } = Array.Empty<Инспекция>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var з = управляющийЗаявками.ПолучитьЗаявку(Ид);
+        ИдВладельца = з.УчастокПоля.Поле.ПроизводительСемян.ИдВладельца;
+
+        Проектор.ОтобразитьЗаявку(з, Модель);
+
+        ИнспекцииЗаявки = управляющийИнспекциями.ПолучитьИнспекцииЗаявки(Ид);
+        КлассСемянИд = Модель.КлассСемянИд;
+        var инспекцияПартии = ИнспекцииЗаявки.FirstOrDefault(_ => _.ТипИнспекции == 2 && _.Статус == 3);
+        if (инспекцияПартии is not null)
+        {
+            ВаловыйУрожай = управляющийИнспекциями.ПолучитьПротоколИнспекцииПартии(инспекцияПартии.Ид).ВесПартии;
+        }
+
+        await base.OnParametersSetAsync();
+    }
+
+    void ВыпуститьСертификат()
+    {
+        //управляющийЗаявками.ОтправитьНаСертификацию(Ид);
+        управляющийНавигацией.NavigateTo($"/requests/for-certification");
+    }
+}
