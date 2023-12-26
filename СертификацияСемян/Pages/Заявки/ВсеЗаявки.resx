@@ -117,79 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Детали" xml:space="preserve">
-    <value>Егжей</value>
+  <data name="ВсеЗаявки" xml:space="preserve">
+    <value>All applications</value>
   </data>
-  <data name="Назад" xml:space="preserve">
-    <value>Артқа</value>
+  <data name="ДатаСоздания" xml:space="preserve">
+    <value>Creation date</value>
   </data>
-  <data name="НазваниеПриложения" xml:space="preserve">
-    <value />
+  <data name="Действия" xml:space="preserve">
+    <value>Actions</value>
   </data>
-  <data name="ОбязательноеПоле" xml:space="preserve">
-    <value>{0} өрісі қажет</value>
+  <data name="Инспекции" xml:space="preserve">
+    <value>Inspections</value>
   </data>
-  <data name="Одобрить" xml:space="preserve">
-    <value>Мақұлдау</value>
+  <data name="КодЗаявки" xml:space="preserve">
+    <value>Appl. code</value>
   </data>
-  <data name="Отклонить" xml:space="preserve">
-    <value>Қабылдамау</value>
+  <data name="Посадка" xml:space="preserve">
+    <value>Planted</value>
   </data>
-  <data name="Поиск" xml:space="preserve">
-    <value>Іздеу</value>
+  <data name="Сорт" xml:space="preserve">
+    <value>Varieties</value>
   </data>
-  <data name="ПредупреждениеПроУдаление" xml:space="preserve">
-    <value>Жазбаны толығымен жойғыңыз келетініне сенімдісіз бе?</value>
+  <data name="СортСемян" xml:space="preserve">
+    <value>Seeds varieties</value>
   </data>
-  <data name="Сохранить" xml:space="preserve">
-    <value>Сақтау</value>
+  <data name="ТипЗаявки" xml:space="preserve">
+    <value>Request type</value>
   </data>
-  <data name="СтатусЗаявки_ВРаботе" xml:space="preserve">
-    <value>Жұмыста</value>
-  </data>
-  <data name="СтатусЗаявки_Рассматривается" xml:space="preserve">
-    <value>Қарастырылуда</value>
-  </data>
-  <data name="СтатусЗаявки_Создана" xml:space="preserve">
-    <value>Құрылды</value>
-  </data>
-  <data name="СтатусИнспекции_АнализыВЛаборатории" xml:space="preserve">
-    <value>Зертханалық сынақтар</value>
-  </data>
-  <data name="СтатусИнспекции_Запланирована" xml:space="preserve">
-    <value>Запланирована</value>
-  </data>
-  <data name="СтатусИнспекции_Одобрена" xml:space="preserve">
-    <value>Бекітілген</value>
-  </data>
-  <data name="СтатусИнспекции_Отклонена" xml:space="preserve">
-    <value>Қабылданбады</value>
-  </data>
-  <data name="СтатусИнспекции_Проведена" xml:space="preserve">
-    <value>Өткізілген</value>
-  </data>
-  <data name="Страница_Документы" xml:space="preserve">
-    <value>Құжаттама</value>
-  </data>
-  <data name="Страница_Контакты" xml:space="preserve">
-    <value>Контактілер</value>
-  </data>
-  <data name="Страница_ОНас" xml:space="preserve">
-    <value>Біз туралы</value>
-  </data>
-  <data name="ТипИнспекции_Партии" xml:space="preserve">
-    <value>Лот</value>
-  </data>
-  <data name="ТипИнспекции_Поcлеуборочная" xml:space="preserve">
-    <value>Егін жинаудан кейінгі</value>
-  </data>
-  <data name="ТипИнспекции_Полевая" xml:space="preserve">
-    <value>Өріс</value>
-  </data>
-  <data name="ТипСертификата_Картофель" xml:space="preserve">
-    <value>Ақтүйнек</value>
-  </data>
-  <data name="Удалить" xml:space="preserve">
-    <value>Жою</value>
+  <data name="Фермер" xml:space="preserve">
+    <value>Farmer</value>
   </data>
 </root>

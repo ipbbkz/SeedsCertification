@@ -3,15 +3,16 @@
 @using СертификацияСемян.Данные;
 @attribute [Authorize(Policy = "Инспекторы")]
 @inject УправляющийЗаявками управляющийЗаявками
+@inject IStringLocalizer<ВсеЗаявки> Лок
 
-<h3>Все заявки</h3>
+<h3>@Лок["ВсеЗаявки"]</h3>
 
 <div class="row g-1 mb-3">
     <div class="col-sm-2">
-        <InputText @bind-Value="Код" class="form-control" placeholder="Код заявки" aria-label="Код заявки" />
+        <InputText @bind-Value="Код" class="form-control" placeholder="@Лок["КодЗаявки"]" aria-label="Код заявки" />
     </div>
     <div class="col-sm">
-        <InputText @bind-Value="Сорт" class="form-control" placeholder="Сорт семян" aria-label="Сорт семян" />
+        <InputText @bind-Value="Сорт" class="form-control" placeholder="@Лок["СортСемян"]" aria-label="Сорт семян" />
     </div>
     <div class="col-sm">
         <button type="button" class="btn btn-primary" @onclick=Поиск>@Глобальные.Поиск</button>
@@ -22,13 +23,13 @@
     <thead>
         <tr>
             <td>#</td>
-            <td>Тип Заявки</td>
-            <td>Сорт</td>
-            <td>Фермер</td>
-            <td>Посадка</td>
-            <td>Сбор</td>
-            <td>Дата создания</td>
-            <td>Действия</td>
+            <td>@Лок["ТипЗаявки"]</td>
+            <td>@Лок["Сорт"]</td>
+            <td>@Лок["Фермер"]</td>
+            <td>@Лок["Посадка"]</td>
+            <td>@Лок["Сбор"]</td>
+            <td>@Лок["ДатаСоздания"]</td>
+            <td>@Лок["Действия"]</td>
         </tr>
     </thead>
     <tbody>
@@ -60,8 +61,8 @@
                     @з.ДатаСоздания
                 </td>
                 <td>
-                    <a href="/requests/@з.Ид/info">Детали</a>
-                    <a href="/requests/@з.Ид/inspections">Инспекции</a>
+                    <a href="/requests/@з.Ид/info">@Глобальные.Детали</a>
+                    <a href="/requests/@з.Ид/inspections">@Лок["Инспекции"]</a>
                 </td>
             </tr>
         }
