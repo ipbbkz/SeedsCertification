@@ -1,0 +1,148 @@
+﻿@page "/certificates/{Ид:int}"
+
+@using СертификацияСемян.Данные;
+@attribute [Authorize(Policy = "Инспекторы")]
+@inject УправляющийЗаявками управляющийЗаявками
+@inject IStringLocalizer<Сертификаты> Лок
+@inject IJSRuntime JSRuntime
+
+<p class="text-center">
+    Қазақстан Республикасының тұқым сертификаттау жөніндегі уәкілетті органдары<br />
+    Seed certification agencies of the Republic of Kazakhstan<br />
+Уполномоченные органы сертификации семян Республики Казахстан</p>
+
+<p class="text-center">
+    СЕРТИФИКАТ<br />
+халықаралық саудаға арналған картоп тұқымын сертификаттаудың ұлттық стандартына сәйкес шығарылады
+</p>
+
+<p class="text-center">
+    CERTIFICATE<br />
+issued under the national Scheme for the Certification of Seed Potatoes destined for International Trade
+</p>
+
+<p class="text-center">
+    СЕРТИФИКАТ<br />
+выпущен по национальному стандарту Сертификации Семенного Картофеля предназначенного для международной торговли
+</p>
+
+<div class="row border p-3">
+    <div class="col-10">Куәлік нөмірі / Number of Certificate / Номер Сертификата:</div>
+    <div class="col-2">@Ид</div>
+</div>
+
+<div class="row">
+    <div class="col border">
+        Жауапты орган:<br />
+        Issuing authority:<br />
+        Ответственный орган:
+    </div>
+    <div class="col border">
+        Астана
+    </div>
+</div>
+<div class="row">
+    <div class="col border">
+        Anerkennungsnummer:<br />
+        lot number:<br />
+        Numéro de lot:
+    </div>
+    <div class="col border">
+        DEI 32-235300812311
+    </div>
+</div>
+<div class="row">
+    <div class="col-2 border">
+        Түрлер:<br />
+        Species:<br />
+        Вид:
+    </div>
+    <div class="col-2 border">
+        Ақтүйнек<br />
+        Potato<br />
+        Картофель
+    </div>
+    <div class="col-2 border">
+        Сұрыптау:<br />
+        Variety:<br />
+        Сорт:
+    </div>
+    <div class="col border">
+        @сертификат.Заявка.НаваниеСортаСемян
+    </div>
+</div>
+<div class="row">
+    <div class="col border">
+        Пакеттер саны, лоттың жарияланған салмағы және мөлшері:
+
+        Number of packages, declared weight of lot and size rage:
+
+        Количество пакетов, декларированный вес лота и размер ряда
+    </div>
+    <div class="col border">
+        @сертификат.ВаловыйПродукт kg/кг
+    </div>
+</div>
+
+<p>
+    Осы тұқым партиясының нөмірі бар тұқым партиясы Стандартқа сәйкес шығарылған және келесідей бекітілген:<br />
+    The seed lot bearing this seed lot number has been produced in accordance With the Standard and is approved as:<br />
+    Партия семян с данным номером партии семян была произведена в соответствии со стандартом и сертифицирована как:
+</p>
+
+<p class="text-center">
+     <КлассСемян Значение="сертификат.КлассСемянИд" />
+</p>
+
+<div class="row">
+    <div class="col">
+        Орын және ел<br />
+        Place and country<br />
+        Место и страна
+    </div>
+    <div class="col">
+        Күн<br />
+        Date<br />
+        Дата
+    </div>
+    <div class="col">
+        Қолы / Мөр<br />
+        Signature / Seal<br />
+        Подпись / Печать
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        Astana<br />
+
+        Қазақстан Республикасы<br />
+        Republic of Kazakhstan<br />
+        Республика Казахстан
+    </div>
+    <div class="col">
+        @сертификат.ДатаВыпуска.ToShortDateString()
+    </div>
+    <div class="col">
+        
+    </div>
+</div>
+
+@code {
+    private Сертификат сертификат = new();
+
+    [Parameter]
+    public int Ид { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        сертификат = управляющийЗаявками.ПолучитьСертификат(Ид);
+    }
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JSRuntime.InvokeVoidAsync("print");
+        await base.OnAfterRenderAsync(firstRender);
+    }
+}

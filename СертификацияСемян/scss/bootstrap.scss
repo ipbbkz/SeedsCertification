@@ -66,3 +66,9 @@ $spacer: .7rem !default;
     background-color: var(--bs-secondary-bg);
     opacity: 1;
 }
+
+@media print {
+    .container {
+        max-width: 100% !important;
+    }
+}
