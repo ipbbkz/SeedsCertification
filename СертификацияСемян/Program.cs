@@ -20,8 +20,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<ПользовательПриложения>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<КонтекстБдПриложения>();
-builder.Services.AddRazorPages();
-//builder.Services.AddRazorPages(настройки => настройки.RootDirectory = "/Страницы");
+builder.Services.AddRazorPages(настройки => настройки.RootDirectory = "/Страницы");
 builder.Services.AddControllers();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<ПользовательПриложения>>();

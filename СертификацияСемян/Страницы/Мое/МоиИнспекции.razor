@@ -1,6 +1,6 @@
 ﻿@page "/my/requests/{Ид:int}/inspections"
 @attribute [Authorize(Policy = "Фермеры")]
-@using Pages.Заявки
+@using Страницы.Заявки
 @inject УправляющийЗаявками управляющийЗаявками
 @inject УправляющийИнспекциями управляющийИнспекциями
 @inject IStringLocalizer<Инспекции> Лок

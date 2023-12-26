@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace СертификацияСемян.Pages {
+namespace СертификацияСемян.Страницы {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace СертификацияСемян.Pages {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("СертификацияСемян.Pages._Host", typeof(_Host).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("СертификацияСемян.Страницы._Host", typeof(_Host).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

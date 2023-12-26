@@ -68,6 +68,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Глобальные.resx</DependentUpon>
     </Compile>
+    <Compile Update="Страницы\_Host.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>_Host.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -108,6 +113,10 @@
     <EmbeddedResource Update="Глобальные.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Глобальные.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Страницы\_Host.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_Host.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
