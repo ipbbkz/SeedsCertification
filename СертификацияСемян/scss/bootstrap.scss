@@ -61,3 +61,8 @@ $spacer: .7rem !default;
 
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+.form-control[disabled] {
+    background-color: var(--bs-secondary-bg);
+    opacity: 1;
+}
