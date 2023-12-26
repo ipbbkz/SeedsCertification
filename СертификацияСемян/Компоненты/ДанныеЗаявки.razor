@@ -346,11 +346,7 @@ else
 
     protected override void OnInitialized()
     {
-        var center = new LatLngLiteral()
-            {
-                Lng = 43.2433,
-                Lat = 76.8646,
-            };
+        var center = GetCoordinates(Модель.КоординатыУчастка);
         mapOptions = new MapOptions()
             {
                 Zoom = 15,
@@ -363,13 +359,21 @@ else
     {
         if (firstRender)
         {
-            var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
-            var center = new LatLngLiteral()
-                {
-                    Lng = location[0],
-                    Lat = location[1],
-                };
-            Модель!.КоординатыУчастка = $"{location[0].ToString(CultureInfo.InvariantCulture)},{location[1].ToString(CultureInfo.InvariantCulture)}";
+            LatLngLiteral center;
+            if (string.IsNullOrWhiteSpace(Модель!.КоординатыУчастка))
+            {
+                var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
+                center = new LatLngLiteral()
+                    {
+                        Lng = location[0],
+                        Lat = location[1],
+                    };
+                Модель!.КоординатыУчастка = $"{location[0].ToString(CultureInfo.InvariantCulture)},{location[1].ToString(CultureInfo.InvariantCulture)}";
+            }
+            else
+            {
+                center = GetCoordinates(Модель.КоординатыУчастка);
+            }
 
             mapOptions = new MapOptions()
                 {
@@ -408,9 +412,15 @@ else
         }
     }
 
-    private void ПриИзменениеУчастка(int? новоеЗначение)
+    private async Task ПриИзменениеУчастка(int? новоеЗначение)
     {
         Модель.ИдУчастка = новоеЗначение;
+        var поле = УчасткиПоля.FirstOrDefault(п => п.Ид == новоеЗначение);
+        if (поле is not null)
+        {
+            var к = GetCoordinates(поле.КоординатыУчастка);
+            await УстановитьКоординатыПоля(к.Lat, к.Lat);
+        }
     }
 
     private async Task УстановитьКоординатыПоля(double широта, double долгота)
@@ -434,14 +444,22 @@ else
     private InfoWindow? инфоОкно;
     private async Task OnAfterInitAsync()
     {
-        var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
-        var center = new LatLngLiteral()
-            {
-                Lat = location[0],
-                Lng = location[1],
-            };
+        LatLngLiteral center;
+        if (string.IsNullOrWhiteSpace(Модель!.КоординатыУчастка))
+        {
+            var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
+            center = new LatLngLiteral()
+                {
+                    Lat = location[0],
+                    Lng = location[1],
+                };
 
-        Модель!.КоординатыУчастка = $"{location[0].ToString(CultureInfo.InvariantCulture)},{location[1].ToString(CultureInfo.InvariantCulture)}";
+            Модель!.КоординатыУчастка = $"{location[0].ToString(CultureInfo.InvariantCulture)},{location[1].ToString(CultureInfo.InvariantCulture)}";
+        }
+        else
+        {
+            center = GetCoordinates(Модель.КоординатыУчастка);
+        }
 
         инфоОкно = await InfoWindow.CreateAsync(
             this.JSRuntime,
@@ -457,5 +475,27 @@ else
             await УстановитьКоординатыПоля(e.LatLng.Lat, e.LatLng.Lng);
             StateHasChanged();
         });
+    }
+
+    static LatLngLiteral GetCoordinates(string coordinates)
+    {
+        if (string.IsNullOrWhiteSpace(coordinates))
+        {
+            return new LatLngLiteral()
+            {
+                Lng = 43.2433,
+                Lat = 76.8646,
+            };
+        }
+
+        var parts = coordinates.Split(',');
+        if (double.TryParse(parts[0], CultureInfo.InvariantCulture, out var lng) && double.TryParse(parts[1], CultureInfo.InvariantCulture, out var lat))
+            return new LatLngLiteral(lng, lat);
+
+        return new LatLngLiteral()
+            {
+                Lng = 43.2433,
+                Lat = 76.8646,
+            };
     }
 }

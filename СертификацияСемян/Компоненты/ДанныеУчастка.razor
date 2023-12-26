@@ -29,11 +29,7 @@
 
     protected override void OnInitialized()
     {
-        var center = new LatLngLiteral()
-            {
-                Lng = 43.2433,
-                Lat = 76.8646,
-            };
+        var center = GetCoordinates(Модель.КоординатыУчастка);
 
         mapOptions = new MapOptions()
             {
@@ -47,13 +43,21 @@
     {
         if (firstRender)
         {
-            var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
-            var center = new LatLngLiteral()
-                {
-                    Lng = location[0],
-                    Lat = location[1],
-                };
-            Модель!.КоординатыУчастка = $"{location[0].ToString(CultureInfo.InvariantCulture)},{location[1].ToString(CultureInfo.InvariantCulture)}";
+            LatLngLiteral center;
+            if (string.IsNullOrWhiteSpace(Модель!.КоординатыУчастка))
+            {
+                var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
+                center = new LatLngLiteral()
+                    {
+                        Lng = location[0],
+                        Lat = location[1],
+                    };
+                Модель!.КоординатыУчастка = $"{location[0].ToString(CultureInfo.InvariantCulture)},{location[1].ToString(CultureInfo.InvariantCulture)}";
+            }
+            else
+            {
+                center = GetCoordinates(Модель.КоординатыУчастка);
+            }
 
             mapOptions = new MapOptions()
                 {
@@ -63,39 +67,70 @@
                 };
         }
     }
-        private async Task OnAfterInitAsync()
+
+    private async Task OnAfterInitAsync()
+    {
+        LatLngLiteral center;
+        if (string.IsNullOrWhiteSpace(Модель!.КоординатыУчастка))
         {
             var location = await JSRuntime.InvokeAsync<double[]>("getLocation");
-            var center = new LatLngLiteral()
+            center = new LatLngLiteral()
                 {
                     Lat = location[0],
                     Lng = location[1],
                 };
 
             Модель!.КоординатыУчастка = $"{location[0].ToString(CultureInfo.InvariantCulture)},{location[1].ToString(CultureInfo.InvariantCulture)}";
+        }
+        else
+        {
+            center = GetCoordinates(Модель.КоординатыУчастка);
+        }
 
-            var инфоОкно = await InfoWindow.CreateAsync(
-                this.JSRuntime,
+        var инфоОкно = await InfoWindow.CreateAsync(
+            this.JSRuntime,
+            new InfoWindowOptions()
+                {
+                    Content = "Выберите где расположен участок, на котором будут производиться семена",
+                    Position = center,
+                });
+
+        await инфоОкно.Open(map1.InteropObject);
+        await map1.InteropObject.AddListener<MouseEvent>("click", async (e) =>
+        {
+            await инфоОкно.Close();
+            инфоОкно = await InfoWindow.CreateAsync(this.JSRuntime,
                 new InfoWindowOptions()
                     {
                         Content = "Выберите где расположен участок, на котором будут производиться семена",
-                        Position = center,
+                        Position = e.LatLng,
                     });
-
             await инфоОкно.Open(map1.InteropObject);
-            await map1.InteropObject.AddListener<MouseEvent>("click", async (e) =>
-            {
-                await инфоОкно.Close();
-                инфоОкно = await InfoWindow.CreateAsync(this.JSRuntime,
-                    new InfoWindowOptions()
-                        {
-                            Content = "Выберите где расположен участок, на котором будут производиться семена",
-                            Position = e.LatLng,
-                        });
-                await инфоОкно.Open(map1.InteropObject);
 
-                Модель!.КоординатыУчастка = $"{e.LatLng.Lat.ToString(CultureInfo.InvariantCulture)},{e.LatLng.Lng.ToString(CultureInfo.InvariantCulture)}";
-                StateHasChanged();
-            });
-        }
+            Модель!.КоординатыУчастка = $"{e.LatLng.Lat.ToString(CultureInfo.InvariantCulture)},{e.LatLng.Lng.ToString(CultureInfo.InvariantCulture)}";
+            StateHasChanged();
+        });
     }
+
+    static LatLngLiteral GetCoordinates(string coordinates)
+    {
+        if (string.IsNullOrWhiteSpace(coordinates))
+        {
+            return new LatLngLiteral()
+            {
+                Lng = 43.2433,
+                Lat = 76.8646,
+            };
+        }
+
+        var parts = coordinates.Split(',');
+        if (double.TryParse(parts[0], CultureInfo.InvariantCulture, out var lng) && double.TryParse(parts[1], CultureInfo.InvariantCulture, out var lat))
+            return new LatLngLiteral(lng, lat);
+
+        return new LatLngLiteral()
+            {
+                Lng = 43.2433,
+                Lat = 76.8646,
+            };
+    }
+}
