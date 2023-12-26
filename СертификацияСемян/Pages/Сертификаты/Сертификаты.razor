@@ -1,0 +1,53 @@
+﻿@page "/certificates"
+
+@using СертификацияСемян.Данные;
+@attribute [Authorize(Policy = "Инспекторы")]
+@inject УправляющийЗаявками управляющийЗаявками
+@inject IStringLocalizer<Сертификаты> Лок
+
+<h3>@Лок["Сертификаты"]</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>@Лок["Сорт"]</td>
+            <td>@Лок["КлассСемян"]</td>
+            <td>@Лок["ДатаВыпуска"]</td>
+            <td>@Лок["ВаловыйПродукт"]</td>
+            @* <td>@Лок["Действия"]</td> *@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var з in сертификаты)
+        {
+            <tr>
+                <td>
+                    @з.Ид
+                </td>
+                <td>
+                    @з.Заявка.НаваниеСортаСемян
+                </td>
+                <td>
+                    <КлассСемян Значение="з.КлассСемянИд" />
+                </td>
+                <td>
+                    @з.ДатаВыпуска.ToShortDateString()
+                </td>
+                <td>
+                    @з.ВаловыйПродукт
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+
+    private IList<Сертификат> сертификаты = Array.Empty<Сертификат>();
+
+    protected override void OnParametersSet()
+    {
+        сертификаты = управляющийЗаявками.ПолучитьСертификаты();
+    }
+}

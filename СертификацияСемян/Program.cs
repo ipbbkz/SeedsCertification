@@ -21,6 +21,7 @@ builder.Services.AddDefaultIdentity<ПользовательПриложения
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<КонтекстБдПриложения>();
 builder.Services.AddRazorPages();
+//builder.Services.AddRazorPages(настройки => настройки.RootDirectory = "/Страницы");
 builder.Services.AddControllers();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<ПользовательПриложения>>();
