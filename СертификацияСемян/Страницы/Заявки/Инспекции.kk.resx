@@ -121,7 +121,7 @@
     <value>Әртүрлілік</value>
   </data>
   <data name="ВесПартии" xml:space="preserve">
-    <value>Көп салмақ (кг)</value>
+    <value>Жалпы партия салмағы (кг)</value>
   </data>
   <data name="ВиральныеБолезни" xml:space="preserve">
     <value>Вирустар</value>
@@ -170,6 +170,9 @@
   </data>
   <data name="ИмяВторогоИнспектора" xml:space="preserve">
     <value>Екінші инспектордың аты-жөні</value>
+  </data>
+  <data name="ИнспектируемыйВес" xml:space="preserve">
+    <value>Тексерілетін партияның салмағы (кг)</value>
   </data>
   <data name="Инспекции" xml:space="preserve">
     <value>Тексерулер</value>
@@ -262,7 +265,7 @@
     <value>Ризоктония</value>
   </data>
   <data name="СредняяФизиологическаяСтадия" xml:space="preserve">
-    <value>Орташа физиологиялық кезең</value>
+    <value>Физиологиялық кезең</value>
   </data>
   <data name="Статус" xml:space="preserve">
     <value>Күй</value>

@@ -181,6 +181,22 @@ public class ЗаписьИнспекцииПартии
     public int? Переохлаждение { get; set; }
     public int? Вредители { get; set; }
     public int? Ризоктониоз { get; set; }
+    [NotMapped]
+    public int ИнспектируемыйВес
+    {
+        get
+        {
+            return ВесПартии switch
+            {
+                <= 50_000 => 100,
+                > 50_000 and <= 150_000 => 150,
+                > 150_000 and <= 300_000 => 200,
+                > 300_000 and <= 500_000 => 300,
+                > 500_000 and <= 800_000 => 400,
+                _ => 400
+            };
+        }
+    }
 }
 
 public class Анализ

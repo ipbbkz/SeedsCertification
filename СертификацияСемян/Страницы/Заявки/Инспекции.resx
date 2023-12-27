@@ -121,7 +121,7 @@
     <value>Others</value>
   </data>
   <data name="ВесПартии" xml:space="preserve">
-    <value>Lot weight (kg)</value>
+    <value>Gross batch weight (kg)</value>
   </data>
   <data name="ВиральныеБолезни" xml:space="preserve">
     <value>Visuses</value>
@@ -170,6 +170,9 @@
   </data>
   <data name="ИмяВторогоИнспектора" xml:space="preserve">
     <value>Second inspector name</value>
+  </data>
+  <data name="ИнспектируемыйВес" xml:space="preserve">
+    <value>Weight of inspected lot (kg)</value>
   </data>
   <data name="Инспекции" xml:space="preserve">
     <value>Inspections</value>
@@ -262,7 +265,7 @@
     <value>Rysoctonia</value>
   </data>
   <data name="СредняяФизиологическаяСтадия" xml:space="preserve">
-    <value>Average physiological stage</value>
+    <value>Physiological stage</value>
   </data>
   <data name="Статус" xml:space="preserve">
     <value>Status</value>

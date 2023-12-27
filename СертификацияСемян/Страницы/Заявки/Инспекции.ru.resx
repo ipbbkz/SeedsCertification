@@ -121,7 +121,7 @@
     <value>Пересортица</value>
   </data>
   <data name="ВесПартии" xml:space="preserve">
-    <value>Вес партии (кг)</value>
+    <value>Валовый вес партии (кг)</value>
   </data>
   <data name="ВиральныеБолезни" xml:space="preserve">
     <value>Вирусные поражения</value>
@@ -170,6 +170,9 @@
   </data>
   <data name="ИмяВторогоИнспектора" xml:space="preserve">
     <value>Имя второго инспектора</value>
+  </data>
+  <data name="ИнспектируемыйВес" xml:space="preserve">
+    <value>Вес инспектируемой партии (кг)</value>
   </data>
   <data name="Инспекции" xml:space="preserve">
     <value>Инспекции</value>
@@ -262,7 +265,7 @@
     <value>Ризоктониоз</value>
   </data>
   <data name="СредняяФизиологическаяСтадия" xml:space="preserve">
-    <value>Среднее физиологическое состояние</value>
+    <value>Физиологическое состояние</value>
   </data>
   <data name="Статус" xml:space="preserve">
     <value>Статус</value>
