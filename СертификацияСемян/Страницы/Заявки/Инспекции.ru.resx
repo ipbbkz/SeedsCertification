@@ -213,6 +213,9 @@
   <data name="ОбщиеУсловияХранения" xml:space="preserve">
     <value>Общие условия хранения</value>
   </data>
+  <data name="Отправить" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
   <data name="ОтправитьНаСертификацию" xml:space="preserve">
     <value>Отправить на сертификацию</value>
   </data>

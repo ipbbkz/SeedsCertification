@@ -68,7 +68,7 @@
     <div class="col">
         @if (Модель.Статус == 1)
         {
-            <a class="btn btn-secondary" @onclick="ОтправитьАнализы">Отправить</a>
+            <a class="btn btn-secondary" @onclick="ОтправитьАнализы">@Лок["Отправить"]</a>
         }
         <a href="/requests/@ИдЗаявки/inspections" class="btn btn-secondary">@Глобальные.Назад</a>
     </div>

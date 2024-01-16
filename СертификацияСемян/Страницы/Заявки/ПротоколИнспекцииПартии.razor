@@ -232,8 +232,9 @@
         @if (Модель.Статус == 1)
         {
             <a class="btn btn-primary" @onclick="СохранитьПротокол">@Глобальные.Сохранить</a>
-            <a class="btn btn-secondary" @onclick="(() => ПоказыватьОкноОтправкиЗаявки = true)">Отправить</a>
+            <a class="btn btn-secondary" @onclick="(() => ПоказыватьОкноОтправкиЗаявки = true)">@Лок["Отправить"]</a>
         }
+        <!-- -->
         <a href="/requests/@ИдЗаявки/inspections" class="btn btn-secondary">@Глобальные.Назад</a>
     </div>
 </div>
@@ -259,7 +260,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @onclick="@(() => ПоказыватьОкноОтправкиЗаявки = false)">Закрыть</button>
-                    <button type="button" class="btn btn-primary" @onclick="ОтправитьНаОдобрение">Отправить</button>
+                    <button type="button" class="btn btn-primary" @onclick="ОтправитьНаОдобрение">@Лок["Отправить"]</button>
                 </div>
             </div>
         </div>

@@ -120,4 +120,9 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <Target Name="ПобудуватиМодіфікованийБутстрап" AfterTargets="Build"
+          Inputs="scss/bootstrap.scss" Outputs="wwwroot/css/bootstrap/bootstrap.css">
+    <Exec Command="npm run css" />
+  </Target>
+
 </Project>

@@ -213,6 +213,9 @@
   <data name="ОбщиеУсловияХранения" xml:space="preserve">
     <value>Storage conditions</value>
   </data>
+  <data name="Отправить" xml:space="preserve">
+    <value>Submit</value>
+  </data>
   <data name="ОтправитьНаСертификацию" xml:space="preserve">
     <value>Send to certification</value>
   </data>

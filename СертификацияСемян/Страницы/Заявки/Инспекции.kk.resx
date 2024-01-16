@@ -213,6 +213,9 @@
   <data name="ОбщиеУсловияХранения" xml:space="preserve">
     <value>Жалпы сақтау шарттары</value>
   </data>
+  <data name="Отправить" xml:space="preserve">
+    <value>Жіберу</value>
+  </data>
   <data name="ОтправитьНаСертификацию" xml:space="preserve">
     <value>Сертификаттауға жіберіңіз</value>
   </data>
