@@ -6,94 +6,145 @@
 @inject IStringLocalizer<Сертификаты> Лок
 @inject IJSRuntime JSRuntime
 
-<p class="text-center">
-    Қазақстан Республикасының тұқым сертификаттау жөніндегі уәкілетті органдары<br />
-    Seed certification agencies of the Republic of Kazakhstan<br />
-Уполномоченные органы сертификации семян Республики Казахстан</p>
+<button type="button" class="btn btn-primary d-print-none" @onclick=ПечатьАсинх>Печать</button>
 
-<p class="text-center">
-    СЕРТИФИКАТ<br />
-халықаралық саудаға арналған картоп тұқымын сертификаттаудың ұлттық стандартына сәйкес шығарылады
+<p class="text-center fs-7">
+    Қазақстан Республикасының тұқымдарды сертификаттаудың уәкілетті орган<br />
+    Authorised Seed Certification Body of the Republic of Kazakhstan<br />
+    Уполномоченный орган сертификации семян Республики Казахстан
 </p>
 
 <p class="text-center">
-    CERTIFICATE<br />
-issued under the national Scheme for the Certification of Seed Potatoes destined for International Trade
+    САПА СЕРТИФИКАТЫ<br />
+    сауда үшін СТ РГП 72199 - 02 - 2023 «ТЕКСЕРУ, КАРТОП ТҰҚЫМЫ» стандартына сәйкес шығарылған
 </p>
 
 <p class="text-center">
-    СЕРТИФИКАТ<br />
-выпущен по национальному стандарту Сертификации Семенного Картофеля предназначенного для международной торговли
+    QUALITY CERTIFICATE<br />
+    issued in accordance with ST RGP 72199 - 02 - 2023 "INSPECTION, SEED POTATOES" standard for trade
+</p>
+
+<p class="text-center">
+    СЕРТИФИКАТ КАЧЕСТВА<br />
+    выпущен в соответствии стандарта "ИНСПЕКЦИЯ, КАРТОФЕЛЬ СЕМЕННОЙ" СТ РГП 72199 - 02 - 2023  для торговли
 </p>
 
 <div class="row border p-3">
-    <div class="col-10">Куәлік нөмірі / Number of Certificate / Номер Сертификата:</div>
-    <div class="col-2">@Ид</div>
+    <div class="col-10">Куәлік нөмірі / Certificate number / Номер Сертификата</div>
+    <div class="col-2">№ @Ид</div>
 </div>
 
 <div class="row">
     <div class="col border">
-        Жауапты орган:<br />
-        Issuing authority:<br />
+        Жауапты орган:<br /><br />
+        Issuing authority:<br /><br />
         Ответственный орган:
     </div>
-    <div class="col border">
-        Астана
+    <div class="col border fs-7">
+        Қазақстан Республикасы Ауыл шаруашылығы министрлігі, Астана қаласы, Қазақстан Республикасы<br />
+        Ministry of Agriculture of the Republic of Kazakhstan, Astana, Republic of Kazakhstan<br />
+        Министерство Сельского Хозяйства Республики Казахстан, г. Астана
     </div>
 </div>
 <div class="row">
     <div class="col border">
-        Anerkennungsnummer:<br />
+        Өндірушінің атауы, мекенжайы және нөмірі: <br />
+        Name, address and number of producer: <br />
+        Название, адрес и номер производителя:
+    </div>
+    <div class="col border">
+        @ПроизводительСемян.БинИлиИин @ПроизводительСемян.НаваниеКомпании <br />
+        @ПроизводительСемян.ЮридическийАдрес
+    </div>
+</div>
+<div class="row">
+    <div class="col border">
+        Партия нөмірі:  <br />
         lot number:<br />
         Numéro de lot:
     </div>
-    <div class="col border">
-        DEI 32-235300812311
+    <div class="col border d-flex align-items-center justify-content-center fw-bold">
+        @сертификат.Заявка.Код
     </div>
 </div>
 <div class="row">
-    <div class="col-2 border">
-        Түрлер:<br />
-        Species:<br />
-        Вид:
+    <div class="col border">
+        Дақылы:<br />
+        Crop:<br />
+        Культура:
     </div>
-    <div class="col-2 border">
-        Ақтүйнек<br />
+    <div class="col border">
+        Картоп<br />
         Potato<br />
-        Картофель
+        Картофель<br />
+        Solanum tuberosum
     </div>
-    <div class="col-2 border">
-        Сұрыптау:<br />
+    <div class="col border">
+        Сорты:<br />
         Variety:<br />
         Сорт:
     </div>
-    <div class="col border">
-        @сертификат.Заявка.НаваниеСортаСемян
+    <div class="col border d-flex align-items-center justify-content-center fw-bold">
+        <span>
+            @сертификат.Заявка.НаваниеСортаСемян
+        </span>
     </div>
 </div>
 <div class="row">
     <div class="col border">
-        Пакеттер саны, лоттың жарияланған салмағы және мөлшері:
-
-        Number of packages, declared weight of lot and size rage:
-
-        Количество пакетов, декларированный вес лота и размер ряда
+        Жарияланған партия салмағы:<br />
+        Declared lot weight: <br />
+        Задекларированный вес лота:
+    </div>
+    <div class="col border d-flex align-items-center justify-content-center fw-bold">
+        @сертификат.ВаловыйПродукт kg/кг
     </div>
     <div class="col border">
-        @сертификат.ВаловыйПродукт kg/кг
+        Түйнек мөлшері:<br />
+        Tuber size: <br />
+        Размер клубня:
+    </div>
+    <div class="col border d-flex align-items-center justify-content-center fw-bold">
+        @сертификат.ВаловыйПродукт
     </div>
 </div>
 
-<p>
-    Осы тұқым партиясының нөмірі бар тұқым партиясы Стандартқа сәйкес шығарылған және келесідей бекітілген:<br />
-    The seed lot bearing this seed lot number has been produced in accordance With the Standard and is approved as:<br />
-    Партия семян с данным номером партии семян была произведена в соответствии со стандартом и сертифицирована как:
+<p class="fs-7">
+    Бұл партияның тұқымдық материалы ST RGP 72199 - 02 - 2023 стандартына сәйкес өндірілген және сертификатталған:<br />
+    The seed material of the present lot produced in accordance with the standard ST RGP 72199 - 02 - 2023 and certified as:<br />
+    Семенной материал данной партии, был произведен в соответствии со стандартом СТ РГП 72199 - 02 - 2023 и  сертифицирован как:
 </p>
 
-<p class="text-center">
+<p class="text-center border p-3 mx-auto w-25 fw-bold">
      <КлассСемян Значение="сертификат.КлассСемянИд" />
 </p>
 
+<div class="row">
+    <div class="col-3">
+    </div>
+    <div class="col">
+        Күн/Date / Дата
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        @сертификат.ДатаВыпуска.ToShortDateString()
+    </div>
+    <div class="col">
+        
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        
+    </div>
+    <div class="col">
+        Қолы / Мөр Signature / Seal
+    </div>
+</div>
+@* 
 <div class="row">
     <div class="col">
         Орын және ел<br />
@@ -126,10 +177,12 @@ issued under the national Scheme for the Certification of Seed Potatoes destined
     <div class="col">
         
     </div>
-</div>
+</div> *@
 
 @code {
     private Сертификат сертификат = new();
+
+    private ПроизводительСемян ПроизводительСемян => сертификат.Заявка?.УчастокПоля?.Поле?.ПроизводительСемян ?? new();
 
     [Parameter]
     public int Ид { get; set; }
@@ -139,10 +192,8 @@ issued under the national Scheme for the Certification of Seed Potatoes destined
         сертификат = управляющийЗаявками.ПолучитьСертификат(Ид);
     }
 
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected async Task ПечатьАсинх()
     {
         await JSRuntime.InvokeVoidAsync("print");
-        await base.OnAfterRenderAsync(firstRender);
     }
 }

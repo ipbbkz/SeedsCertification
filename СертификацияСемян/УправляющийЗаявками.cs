@@ -154,6 +154,9 @@ public class УправляющийЗаявками
         => контекст.Сертификаты
             .AsNoTracking()
             .Include(_ => _.Заявка)
+            .ThenInclude(_ => _.УчастокПоля)
+            .ThenInclude(_ => _.Поле)
+            .ThenInclude(_ => _.ПроизводительСемян)
             .FirstOrDefault(_ => _.Ид == идСертификата);
 
     public List<Сертификат> ПолучитьСертификатыПользователя(string идЛичности)
