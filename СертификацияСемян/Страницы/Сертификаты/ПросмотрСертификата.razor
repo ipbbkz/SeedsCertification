@@ -1,12 +1,14 @@
 ﻿@page "/certificates/{Ид:int}"
 
 @using СертификацияСемян.Данные;
-@attribute [Authorize(Policy = "Инспекторы")]
 @inject УправляющийЗаявками управляющийЗаявками
 @inject IStringLocalizer<Сертификаты> Лок
 @inject IJSRuntime JSRuntime
 
-<button type="button" class="btn btn-primary d-print-none" @onclick=ПечатьАсинх>Печать</button>
+@if (МожетПечатать)
+{
+    <button type="button" class="btn btn-primary d-print-none" @onclick=ПечатьАсинх>Печать</button>
+}
 
 <p class="text-center fs-7">
     Қазақстан Республикасының тұқымдарды сертификаттаудың уәкілетті орган<br />
@@ -183,13 +185,18 @@
     private Сертификат сертификат = new();
 
     private ПроизводительСемян ПроизводительСемян => сертификат.Заявка?.УчастокПоля?.Поле?.ПроизводительСемян ?? new();
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
 
     [Parameter]
     public int Ид { get; set; }
 
-    protected override void OnParametersSet()
+    private bool МожетПечатать = false;
+
+    protected override async Task OnParametersSetAsync()
     {
-        сертификат = управляющийЗаявками.ПолучитьСертификат(Ид);
+        сертификат = управляющийЗаявками.ПолучитьСертификат(Ид) ?? new();
+        МожетПечатать = (await состояниеАвторизации).User.Identity.IsAuthenticated;
     }
 
     protected async Task ПечатьАсинх()
