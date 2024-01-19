@@ -76,3 +76,42 @@ $spacer: .7rem !default;
 .fs-7 {
     font-size: .8rem !important;
 }
+
+.anchor {
+    //anchor-name: --tooltip;
+    color: #444;
+    font-weight: 500;
+    padding: .5rem 1rem;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.anchor:hover ~ .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transition: ease-in .2s all;
+}
+
+.tooltip {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    //anchor-default: --tooltip;
+    /* Align the tooltip’s bottom to the top of the anchor,
+     but automatically swap if this overflows the window
+     to the tooltip’s top aligns to the anchor’s bottom
+     instead. */
+    bottom: anchor(auto);
+    width: 400px;
+    background: rgba(255, 255, 255, 1);
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    color: #333;
+    transition: ease-in .2s all;
+}
+
+.input-group-text ~ .tooltip {
+    position: absolute;
+    left: 250px;
+}

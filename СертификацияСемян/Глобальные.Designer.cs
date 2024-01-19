@@ -160,6 +160,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Issued Certificate.
+        /// </summary>
+        public static string СтатусЗаявки_ВыпущенСертификат {
+            get {
+                return ResourceManager.GetString("СтатусЗаявки_ВыпущенСертификат", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Review.
         /// </summary>
         public static string СтатусЗаявки_Рассматривается {

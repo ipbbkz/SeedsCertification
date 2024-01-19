@@ -48,7 +48,22 @@
                 <tr>
                     <th>@Лок["СухаяГниль"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.СухаяГниль" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.СухаяГниль" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-dry-rot")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-dry-rot right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 0.0%</li>
+                                    <li>Предбазисный PB     &lt;= 0.2%</li>
+                                    <li>Базисный S          &lt;= 1.0%</li>
+                                    <li>Базисный SE         &lt;= 1.0%</li>
+                                    <li>Базисный E          &lt;= 1.0%</li>
+                                    <li>Сертифицированный А &lt;= 1.0%</li>
+                                    <li>Сертифицированный В &lt;= 1.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.СухаяГниль))
@@ -57,7 +72,22 @@
                 <tr>
                     <th>@Лок["МокраяГниль"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.МокраяГниль" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.МокраяГниль" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-wet-rot")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-wet-rot right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 0.0%</li>
+                                    <li>Предбазисный PB     &lt;= 0.2%</li>
+                                    <li>Базисный S          &lt;= 1.0%</li>
+                                    <li>Базисный SE         &lt;= 1.0%</li>
+                                    <li>Базисный E          &lt;= 1.0%</li>
+                                    <li>Сертифицированный А &lt;= 1.0%</li>
+                                    <li>Сертифицированный В &lt;= 1.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.МокраяГниль))
@@ -66,7 +96,22 @@
                 <tr>
                     <th>@Лок["Фитофтороз"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.Фитофтороз" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.Фитофтороз" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-phytophtora")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-phytophtora right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 0.0%</li>
+                                    <li>Предбазисный PB     &lt;= 0.2%</li>
+                                    <li>Базисный S          &lt;= 1.0%</li>
+                                    <li>Базисный SE         &lt;= 1.0%</li>
+                                    <li>Базисный E          &lt;= 1.0%</li>
+                                    <li>Сертифицированный А &lt;= 1.0%</li>
+                                    <li>Сертифицированный В &lt;= 1.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.Фитофтороз))
@@ -75,7 +120,22 @@
                 <tr>
                     <th>@Лок["ПаршаОбыкновенная"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.ПаршаОбыкновенная" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.ПаршаОбыкновенная" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-shallow-scab")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-shallow-scab right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 0.0%</li>
+                                    <li>Предбазисный PB     &lt;= 5.0%</li>
+                                    <li>Базисный S          &lt;= 5.0%</li>
+                                    <li>Базисный SE         &lt;= 5.0%</li>
+                                    <li>Базисный E          &lt;= 5.0%</li>
+                                    <li>Сертифицированный А &lt;= 5.0%</li>
+                                    <li>Сертифицированный В &lt;= 5.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.ПаршаОбыкновенная))
@@ -84,7 +144,22 @@
                 <tr>
                     <th>@Лок["ПаршаЛуговая"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.ПаршаЛуговая" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.ПаршаЛуговая" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-viral right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 0.0%</li>
+                                    <li>Предбазисный PB     &lt;= 5.0%</li>
+                                    <li>Базисный S          &lt;= 5.0%</li>
+                                    <li>Базисный SE         &lt;= 5.0%</li>
+                                    <li>Базисный E          &lt;= 5.0%</li>
+                                    <li>Сертифицированный А &lt;= 5.0%</li>
+                                    <li>Сертифицированный В &lt;= 5.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.ПаршаЛуговая))
@@ -93,7 +168,22 @@
                 <tr>
                     <th>@Лок["ПаршаСеребристая"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.ПаршаСеребристая" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.ПаршаСеребристая" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-viral right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 0.0%</li>
+                                    <li>Предбазисный PB     &lt;= 0.5%</li>
+                                    <li>Базисный S          &lt;= 1.0%</li>
+                                    <li>Базисный SE         &lt;= 1.0%</li>
+                                    <li>Базисный E          &lt;= 1.0%</li>
+                                    <li>Сертифицированный А &lt;= 1.0%</li>
+                                    <li>Сертифицированный В &lt;= 1.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.ПаршаСеребристая))
@@ -102,7 +192,22 @@
                 <tr>
                     <th>@Лок["ПаршаПорошистая"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.ПаршаПорошистая" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.ПаршаПорошистая" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-viral right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 0.0%</li>
+                                    <li>Предбазисный PB     &lt;= 1.0%</li>
+                                    <li>Базисный S          &lt;= 3.0%</li>
+                                    <li>Базисный SE         &lt;= 3.0%</li>
+                                    <li>Базисный E          &lt;= 3.0%</li>
+                                    <li>Сертифицированный А &lt;= 3.0%</li>
+                                    <li>Сертифицированный В &lt;= 3.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.ПаршаПорошистая))
@@ -111,7 +216,22 @@
                 <tr>
                     <th>@Лок["Ризоктониоз"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.Ризоктониоз" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.Ризоктониоз" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-viral right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 0.0%</li>
+                                    <li>Предбазисный PB     &lt;= 1.0%</li>
+                                    <li>Базисный S          &lt;= 5.0%</li>
+                                    <li>Базисный SE         &lt;= 5.0%</li>
+                                    <li>Базисный E          &lt;= 5.0%</li>
+                                    <li>Сертифицированный А &lt;= 5.0%</li>
+                                    <li>Сертифицированный В &lt;= 5.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.Ризоктониоз))
@@ -120,7 +240,22 @@
                 <tr>
                     <th>@Лок["Продавленность"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.Продавленность" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.Продавленность" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-viral right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 3.0%</li>
+                                    <li>Предбазисный PB     &lt;= 3.0%</li>
+                                    <li>Базисный S          &lt;= 3.0%</li>
+                                    <li>Базисный SE         &lt;= 3.0%</li>
+                                    <li>Базисный E          &lt;= 3.0%</li>
+                                    <li>Сертифицированный А &lt;= 3.0%</li>
+                                    <li>Сертифицированный В &lt;= 3.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.Продавленность))
@@ -138,7 +273,22 @@
                 <tr>
                     <th>@Лок["ВнешниеДефекты"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.ВнешниеДефекты" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.ВнешниеДефекты" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-viral right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 3.0%</li>
+                                    <li>Предбазисный PB     &lt;= 3.0%</li>
+                                    <li>Базисный S          &lt;= 3.0%</li>
+                                    <li>Базисный SE         &lt;= 3.0%</li>
+                                    <li>Базисный E          &lt;= 3.0%</li>
+                                    <li>Сертифицированный А &lt;= 3.0%</li>
+                                    <li>Сертифицированный В &lt;= 3.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.ВнешниеДефекты))
@@ -147,7 +297,22 @@
                 <tr>
                     <th>@Лок["ПрилипшаяПочва"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.ПрилипшаяПочва" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.ПрилипшаяПочва" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-viral right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 1.0%</li>
+                                    <li>Предбазисный PB     &lt;= 1.0%</li>
+                                    <li>Базисный S          &lt;= 2.0%</li>
+                                    <li>Базисный SE         &lt;= 2.0%</li>
+                                    <li>Базисный E          &lt;= 2.0%</li>
+                                    <li>Сертифицированный А &lt;= 2.0%</li>
+                                    <li>Сертифицированный В &lt;= 2.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.ПрилипшаяПочва))
@@ -156,7 +321,22 @@
                 <tr>
                     <th>@Лок["ПревышениеРазмеров"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.ПревышениеРазмеров" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.ПревышениеРазмеров" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-viral right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 3.0%</li>
+                                    <li>Предбазисный PB     &lt;= 3.0%</li>
+                                    <li>Базисный S          &lt;= 3.0%</li>
+                                    <li>Базисный SE         &lt;= 3.0%</li>
+                                    <li>Базисный E          &lt;= 3.0%</li>
+                                    <li>Сертифицированный А &lt;= 3.0%</li>
+                                    <li>Сертифицированный В &lt;= 3.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.ПревышениеРазмеров))
@@ -183,7 +363,22 @@
                 <tr>
                     <th>@Лок["РаздавленныеКлубни"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.РаздавленныеКлубни" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.РаздавленныеКлубни" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-viral right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 0.0%</li>
+                                    <li>Предбазисный PB     &lt;= 0.5%</li>
+                                    <li>Базисный S          &lt;= 1.0%</li>
+                                    <li>Базисный SE         &lt;= 1.0%</li>
+                                    <li>Базисный E          &lt;= 1.0%</li>
+                                    <li>Сертифицированный А &lt;= 1.0%</li>
+                                    <li>Сертифицированный В &lt;= 1.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.РаздавленныеКлубни))
@@ -201,7 +396,22 @@
                 <tr>
                     <th>@Лок["Переохлаждение"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.Переохлаждение" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.Переохлаждение" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-viral right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 0.0%</li>
+                                    <li>Предбазисный PB     &lt;= 2.0%</li>
+                                    <li>Базисный S          &lt;= 2.0%</li>
+                                    <li>Базисный SE         &lt;= 2.0%</li>
+                                    <li>Базисный E          &lt;= 2.0%</li>
+                                    <li>Сертифицированный А &lt;= 2.0%</li>
+                                    <li>Сертифицированный В &lt;= 2.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.Переохлаждение))
@@ -210,7 +420,22 @@
                 <tr>
                     <th>@Лок["Вредители"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.Вредители" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <div class="input-group">
+                            <InputNumber @bind-Value="Запись.Вредители" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
+                            <div class="tooltip" style="@($"anchor: --ref-viral right")">
+                                <h3>Правила</h3>
+                                <ul>
+                                    <li>Предбазисный PBTC   &lt;= 0.0%</li>
+                                    <li>Предбазисный PB     &lt;= 4.0%</li>
+                                    <li>Базисный S          &lt;= 4.0%</li>
+                                    <li>Базисный SE         &lt;= 4.0%</li>
+                                    <li>Базисный E          &lt;= 4.0%</li>
+                                    <li>Сертифицированный А &lt;= 4.0%</li>
+                                    <li>Сертифицированный В &lt;= 4.0%</li>
+                                </ul>
+                            </div>
+                        </div>
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.Вредители))

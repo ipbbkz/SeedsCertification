@@ -54,13 +54,58 @@
                     <InputNumber @bind-Value:get="записьИнспекция.Карантин" @bind-Value:set=@((value) => записьИнспекция.Карантин = value) class="form-control" disabled="@(Модель.Статус != 1)" />
                 </td>
                 <td>
-                    <InputNumber @bind-Value="записьИнспекция.ВиральныеБолезни" class="form-control" disabled="@(Модель.Статус != 1)" />
+                    <div class="input-group">
+                        <InputNumber @bind-Value="записьИнспекция.ВиральныеБолезни" class="form-control" disabled="@(Модель.Статус != 1)" />
+                        <span anchor="@($"ref-{записьИнспекция.НомерСерии}-viral")" class="input-group-text anchor">?</span>
+                        <div class="tooltip" style="@($"anchor: --ref-{записьИнспекция.НомерСерии}-viral right")">
+                            <h3>Правила</h3>
+                            <ul>
+                                <li>Предбазисный PBTC &lt;= 0.0%</li>
+                                <li>Предбазисный PB &lt;= 0.1%</li>
+                                <li>Базисный S &lt;= 0.2%</li>
+                                <li>Базисный SE &lt;= 0.5%</li>
+                                <li>Базисный E &lt;= 0.8%</li>
+                                <li>Сертифицированный А &lt;= 2.0%</li>
+                                <li>Сертифицированный В &lt;= 6.0%</li>
+                            </ul>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <InputNumber @bind-Value="записьИнспекция.Черноножка" class="form-control" disabled="@(Модель.Статус != 1)" />
+                    <div class="input-group">
+                        <InputNumber @bind-Value="записьИнспекция.Черноножка" class="form-control" disabled="@(Модель.Статус != 1)" />
+                        <span class="input-group-text anchor">?</span>
+                        <div class="tooltip">
+                            <h3>Правила</h3>
+                            <ul>
+                                <li>Предбазисный PBTC &lt;= 0.0%</li>
+                                <li>Предбазисный PB &lt;= 0.0%</li>
+                                <li>Базисный S &lt;= 0.5%</li>
+                                <li>Базисный SE &lt;= 0.75%</li>
+                                <li>Базисный E &lt;= 1.0%</li>
+                                <li>Сертифицированный А &lt;= 1.5%</li>
+                                <li>Сертифицированный В &lt;= 2.0%</li>
+                            </ul>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <InputNumber @bind-Value="записьИнспекция.Безтиповые" class="form-control" disabled="@(Модель.Статус != 1)" />
+                    <div class="input-group">
+                        <InputNumber @bind-Value="записьИнспекция.Безтиповые" class="form-control" disabled="@(Модель.Статус != 1)" />
+                        <span class="input-group-text anchor">?</span>
+                        <div class="tooltip">
+                            <h3>Правила</h3>
+                            <ul>
+                                <li>Предбазисный PBTC &lt;= 0.0%</li>
+                                <li>Предбазисный PB &lt;= 0.01%</li>
+                                <li>Базисный S &lt;= 0.25%</li>
+                                <li>Базисный SE &lt;= 0.25%</li>
+                                <li>Базисный E &lt;= 0.25%</li>
+                                <li>Сертифицированный А &lt;= 0.5%</li>
+                                <li>Сертифицированный В &lt;= 0.5%</li>
+                            </ul>
+                        </div>
+                    </div>
                 </td>
                 <td>
                     <InputNumber @bind-Value="записьИнспекция.Ризоктония" class="form-control" disabled="@(Модель.Статус != 1)" />

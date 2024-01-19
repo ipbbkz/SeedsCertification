@@ -150,6 +150,9 @@
   <data name="СтатусЗаявки_ВРаботе" xml:space="preserve">
     <value>Processing</value>
   </data>
+  <data name="СтатусЗаявки_ВыпущенСертификат" xml:space="preserve">
+    <value>Issued Certificate</value>
+  </data>
   <data name="СтатусЗаявки_Рассматривается" xml:space="preserve">
     <value>Review</value>
   </data>

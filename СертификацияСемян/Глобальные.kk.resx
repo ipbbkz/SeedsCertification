@@ -147,6 +147,9 @@
   <data name="СтатусЗаявки_ВРаботе" xml:space="preserve">
     <value>Жұмыста</value>
   </data>
+  <data name="СтатусЗаявки_ВыпущенСертификат" xml:space="preserve">
+    <value>Сертификат берілді</value>
+  </data>
   <data name="СтатусЗаявки_Рассматривается" xml:space="preserve">
     <value>Қарастырылуда</value>
   </data>
