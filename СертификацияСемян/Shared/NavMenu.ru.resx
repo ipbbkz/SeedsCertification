@@ -150,6 +150,9 @@
   <data name="Регистрация" xml:space="preserve">
     <value>Регистрация</value>
   </data>
+  <data name="Сертификаты" xml:space="preserve">
+    <value>Сертификаты</value>
+  </data>
   <data name="Сертификация" xml:space="preserve">
     <value>Сертификация</value>
   </data>
