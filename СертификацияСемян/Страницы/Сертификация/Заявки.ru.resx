@@ -120,9 +120,6 @@
   <data name="ДатаСоздания" xml:space="preserve">
     <value>Дата создания</value>
   </data>
-  <data name="Действия" xml:space="preserve">
-    <value>Действия</value>
-  </data>
   <data name="ЗаявкиНаСертификацию" xml:space="preserve">
     <value>Заявки на сертификацию</value>
   </data>

@@ -61,6 +61,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Actions.
+        /// </summary>
+        public static string Действия {
+            get {
+                return ResourceManager.GetString("Действия", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string Детали {
