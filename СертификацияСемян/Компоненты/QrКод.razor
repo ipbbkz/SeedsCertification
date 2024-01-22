@@ -1,0 +1,23 @@
+﻿@inject IJSRuntime JsRuntime
+<div id="@ИдЭлемента"></div>
+@code {
+
+    [Parameter]
+    public string ИдЭлемента { get; set; } = "qrcode";
+
+    [Parameter]
+    public string Ширина { get; set; } = "150";
+
+    [Parameter]
+    public string Высота { get; set; } = "150";
+
+    [Parameter]
+    public string Текст { get; set; } = "";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+
+        await JsRuntime.InvokeVoidAsync("initializeQrCode", ИдЭлемента, Текст, Ширина, Высота);;
+    }
+}

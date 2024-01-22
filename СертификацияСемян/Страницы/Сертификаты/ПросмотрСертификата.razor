@@ -4,6 +4,7 @@
 @inject УправляющийЗаявками управляющийЗаявками
 @inject IStringLocalizer<Сертификаты> Лок
 @inject IJSRuntime JSRuntime
+@inject NavigationManager менеджерНавигации
 
 @if (МожетПечатать)
 {
@@ -146,6 +147,8 @@
         Қолы / Мөр Signature / Seal
     </div>
 </div>
+
+<QrКод ИдЭлемента="certificate-qr" Ширина="150" Высота="150" Текст="@менеджерНавигации.Uri" />
 @* 
 <div class="row">
     <div class="col">

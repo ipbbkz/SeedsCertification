@@ -43,6 +43,9 @@
 
     <script src="_framework/blazor.server.js"></script>
     <script src="_content/BlazorGoogleMaps/js/objectManager.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+            integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         window.getLocation = async () => {
             try {
@@ -56,6 +59,16 @@
                 return [43.2433, 76.8646];
             }
         };
+        function initializeQrCode(elementId, text, width, height) {
+            const element = document.getElementById(elementId);
+            const parameters = {
+                text,
+                width,
+                height
+            };
+            new QRCode(element, parameters);
+        }
+        window.initializeQrCode = initializeQrCode;
     </script>
 </body>
 </html>
