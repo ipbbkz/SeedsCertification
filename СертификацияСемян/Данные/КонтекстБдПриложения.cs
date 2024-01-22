@@ -162,25 +162,25 @@ public class ЗаписьИнспекцииПартии
     public int Ид { get; set; }
     public int ИнспекцияИд { get; set; }
     public int ВесПартии { get; set; }
-    public int? СухаяГниль { get; set; }
-    public int? МокраяГниль { get; set; }
-    public int? Фитофтороз { get; set; }
-    public int? ПаршаОбыкновенная { get; set; }
-    public int? ПаршаЛуговая { get; set; }
-    public int? ПаршаСеребристая { get; set; }
-    public int? ПаршаПорошистая { get; set; }
-    public int? Продавленность { get; set; }
-    public int? НезначительныеПовреждения { get; set; }
-    public int? ВнешниеДефекты { get; set; }
-    public int? ПрилипшаяПочва { get; set; }
-    public int? ПревышениеРазмеров { get; set; }
-    public int? Проростания { get; set; }
-    public int? ВнутренниеДефекты { get; set; }
-    public int? РаздавленныеКлубни { get; set; }
-    public int? ВирусныйНекроз { get; set; }
-    public int? Переохлаждение { get; set; }
-    public int? Вредители { get; set; }
-    public int? Ризоктониоз { get; set; }
+    public double? СухаяГниль { get; set; }
+    public double? МокраяГниль { get; set; }
+    public double? Фитофтороз { get; set; }
+    public double? ПаршаОбыкновенная { get; set; }
+    public double? ПаршаЛуговая { get; set; }
+    public double? ПаршаСеребристая { get; set; }
+    public double? ПаршаПорошистая { get; set; }
+    public double? Продавленность { get; set; }
+    public double? НезначительныеПовреждения { get; set; }
+    public double? ВнешниеДефекты { get; set; }
+    public double? ПрилипшаяПочва { get; set; }
+    public double? ПревышениеРазмеров { get; set; }
+    public double? Проростания { get; set; }
+    public double? ВнутренниеДефекты { get; set; }
+    public double? РаздавленныеКлубни { get; set; }
+    public double? ВирусныйНекроз { get; set; }
+    public double? Переохлаждение { get; set; }
+    public double? Вредители { get; set; }
+    public double? Ризоктониоз { get; set; }
     [NotMapped]
     public int ИнспектируемыйВес
     {

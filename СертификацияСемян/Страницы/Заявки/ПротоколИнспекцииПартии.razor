@@ -30,7 +30,7 @@
                 <tr>
                     <th>@Лок["ВесПартии"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.ВесПартии" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <InputNumber @bind-Value="Запись.ВесПартии" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                     </td>
                     <td>
                     </td>
@@ -49,7 +49,7 @@
                     <th>@Лок["СухаяГниль"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.СухаяГниль" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.СухаяГниль" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-dry-rot")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-dry-rot right")">
                                 <h3>Правила</h3>
@@ -65,7 +65,7 @@
                     <th>@Лок["МокраяГниль"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.МокраяГниль" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.МокраяГниль" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-wet-rot")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-wet-rot right")">
                                 <h3>Правила</h3>
@@ -81,7 +81,7 @@
                     <th>@Лок["Фитофтороз"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.Фитофтороз" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.Фитофтороз" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-phytophtora")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-phytophtora right")">
                                 <h3>Правила</h3>
@@ -97,7 +97,7 @@
                     <th>@Лок["ПаршаОбыкновенная"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.ПаршаОбыкновенная" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.ПаршаОбыкновенная" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-shallow-scab")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-shallow-scab right")">
                                 <h3>Правила</h3>
@@ -113,7 +113,7 @@
                     <th>@Лок["ПаршаЛуговая"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.ПаршаЛуговая" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.ПаршаЛуговая" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-viral right")">
                                 <h3>Правила</h3>
@@ -129,7 +129,7 @@
                     <th>@Лок["ПаршаСеребристая"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.ПаршаСеребристая" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.ПаршаСеребристая" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-viral right")">
                                 <h3>Правила</h3>
@@ -145,7 +145,7 @@
                     <th>@Лок["ПаршаПорошистая"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.ПаршаПорошистая" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.ПаршаПорошистая" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-viral right")">
                                 <h3>Правила</h3>
@@ -161,7 +161,7 @@
                     <th>@Лок["Ризоктониоз"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.Ризоктониоз" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.Ризоктониоз" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-viral right")">
                                 <h3>Правила</h3>
@@ -177,7 +177,7 @@
                     <th>@Лок["Продавленность"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.Продавленность" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.Продавленность" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-viral right")">
                                 <h3>Правила</h3>
@@ -192,7 +192,7 @@
                 <tr>
                     <th>@Лок["НезначительныеПовреждения"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.НезначительныеПовреждения" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <InputNumber @bind-Value="Запись.НезначительныеПовреждения" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.НезначительныеПовреждения))
@@ -202,7 +202,7 @@
                     <th>@Лок["ВнешниеДефекты"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.ВнешниеДефекты" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.ВнешниеДефекты" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-viral right")">
                                 <h3>Правила</h3>
@@ -218,7 +218,7 @@
                     <th>@Лок["ПрилипшаяПочва"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.ПрилипшаяПочва" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.ПрилипшаяПочва" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-viral right")">
                                 <h3>Правила</h3>
@@ -234,7 +234,7 @@
                     <th>@Лок["ПревышениеРазмеров"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.ПревышениеРазмеров" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.ПревышениеРазмеров" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-viral right")">
                                 <h3>Правила</h3>
@@ -249,7 +249,7 @@
                 <tr>
                     <th>@Лок["Проростания"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.Проростания" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <InputNumber @bind-Value="Запись.Проростания" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.Проростания))
@@ -258,7 +258,7 @@
                 <tr>
                     <th>@Лок["ВнутренниеДефекты"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.ВнутренниеДефекты" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <InputNumber @bind-Value="Запись.ВнутренниеДефекты" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.ВнутренниеДефекты))
@@ -268,7 +268,7 @@
                     <th>@Лок["РаздавленныеКлубни"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.РаздавленныеКлубни" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.РаздавленныеКлубни" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-viral right")">
                                 <h3>Правила</h3>
@@ -283,7 +283,7 @@
                 <tr>
                     <th>@Лок["ВирусныйНекроз"]</th>
                     <td>
-                        <InputNumber @bind-Value="Запись.ВирусныйНекроз" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                        <InputNumber @bind-Value="Запись.ВирусныйНекроз" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                     </td>
                     <td>
                         @ОтображениеЗаписи((Запись, Запись.ВирусныйНекроз))
@@ -293,7 +293,7 @@
                     <th>@Лок["Переохлаждение"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.Переохлаждение" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.Переохлаждение" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-viral right")">
                                 <h3>Правила</h3>
@@ -309,7 +309,7 @@
                     <th>@Лок["Вредители"]</th>
                     <td>
                         <div class="input-group">
-                            <InputNumber @bind-Value="Запись.Вредители" class="form-control" disabled="@(Модель.Статус != 1)" min=1 />
+                            <InputNumber @bind-Value="Запись.Вредители" class="form-control" disabled="@(Модель.Статус != 1)" min="0.0" step="0.1" />
                             <span anchor="@($"ref-viral")" class="input-group-text anchor">?</span>
                             <div class="tooltip" style="@($"anchor: --ref-viral right")">
                                 <h3>Правила</h3>
@@ -394,7 +394,7 @@
 
     public ЗаписьИнспекцииПартии Запись { get; set; } = new();
 
-    RenderFragment<(ЗаписьИнспекцииПартии запись, int? значение)> ОтображениеЗаписи = (значение) => __builder =>
+    RenderFragment<(ЗаписьИнспекцииПартии запись, double? значение)> ОтображениеЗаписи = (значение) => __builder =>
     {
         //var класс = ПравилаСертификации.ПорогИнспекцииПартии(значение.значение, значение.запись.ВесПартии, значение.уровни);
         if (значение.значение is null)
@@ -404,12 +404,12 @@
         else
         {
             <text>
-                @значение.значение <text>(</text>@(((100.0 * (значение.значение ?? 0)) / (значение.запись.ИнспектируемыйВес)).ToString("F1"))<text>%)</text>
+                @значение.значение <text>(</text>@(((100.0 * (значение.значение ?? 0.0)) / (значение.запись.ИнспектируемыйВес)).ToString("F1"))<text>%)</text>
             </text>
         }
     };
 
-    RenderFragment<(int? значение, int вес, double[] уровни)> ПороговыеЗначения = (значение) => __builder =>
+    RenderFragment<(double? значение, int вес, double[] уровни)> ПороговыеЗначения = (значение) => __builder =>
     {
         var класс = ПравилаСертификации.ПорогИнспекцииПартии(значение.значение, значение.вес, значение.уровни);
         <ul>
