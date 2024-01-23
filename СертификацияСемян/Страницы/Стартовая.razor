@@ -1,0 +1,62 @@
+﻿@page "/start"
+@attribute [Authorize]
+@inject IStringLocalizer<Стартовая> Лок
+<PageTitle>@Лок["ГлавнаяСтраница"]</PageTitle>
+
+<AuthorizeView>
+    <Authorized>
+        <h1>@Лок["ГлавнаяСтраница"]</h1>
+        @if (context.User.IsInRole(Данные.Константы.РольФермер))
+        {                            
+            <div class="row">
+                <div class="col col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@Лок["ЗарегистрироватьХозяйство"]</h5>
+                            <p class="card-text">@Лок["КакПодатьЗаявку"].</p>
+                            <a href="/farms/add" class="btn btn-primary">@Лок["Перейти"]</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 ">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@Лок["ПодатьЗаявку"]</h5>
+                            <p class="card-text">
+                                @Лок["КакСертифицировать"].
+                            </p>
+                            <a href="/my/requests/file" class="btn btn-primary">@Лок["Перейти"]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (context.User.IsInRole(Данные.Константы.РольИнспектора))
+        {
+            <div class="row">
+                <div class="col col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@Лок["Просмотреть Заявки"]</h5>
+                            <p class="card-text">@Лок["Обработка заявок от фермеров"].</p>
+                            <a href="/requests" class="btn btn-primary">@Лок["Перейти"]</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 ">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@Лок["Правила Сертификации"]</h5>
+                            <p class="card-text">
+                                @Лок["Просмотр инструкции по сертификации"]
+                            </p>
+                            <a href="/info/inspection" class="btn btn-primary">@Лок["Перейти"]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </Authorized>
+    <NotAuthorized>
+    </NotAuthorized>
+</AuthorizeView>

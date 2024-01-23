@@ -118,6 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ГлавнаяСтраница" xml:space="preserve">
-    <value>Главная страница</value>
+    <value>Main page</value>
+  </data>
+  <data name="ЗарегистрироватьХозяйство" xml:space="preserve">
+    <value>Register a farm</value>
+  </data>
+  <data name="КакПодатьЗаявку" xml:space="preserve">
+    <value>To submit an application, you must register the farm or farm where certification will take place</value>
+  </data>
+  <data name="КакСертифицировать" xml:space="preserve">
+    <value>In order to have your seeds certified, you must first submit an application. After passing the inspections, you will be issued an electronic certificate</value>
+  </data>
+  <data name="Перейти" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="Подать" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="ПодатьЗаявку" xml:space="preserve">
+    <value>Apply now</value>
   </data>
 </root>

@@ -23,6 +23,9 @@
                 </AuthorizeView>
                 <AuthorizeView>
                     <Authorized>
+                        <li class="nav-item">
+                            <NavLink class="nav-link" href="/start">@Лок["Стартовая"]</NavLink>
+                        </li>
                         @if (context.User.IsInRole(Данные.Константы.РольФермер))
                         {
                             <li class="nav-item">

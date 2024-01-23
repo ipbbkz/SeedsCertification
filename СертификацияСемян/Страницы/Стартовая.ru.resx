@@ -120,4 +120,22 @@
   <data name="ГлавнаяСтраница" xml:space="preserve">
     <value>Главная страница</value>
   </data>
+  <data name="ЗарегистрироватьХозяйство" xml:space="preserve">
+    <value>Зарегистрировать хозяйство</value>
+  </data>
+  <data name="КакПодатьЗаявку" xml:space="preserve">
+    <value>Чтобы подать заявку, надо зарегистрировать ферму или хозяйство, на котором будет проходить сертификация</value>
+  </data>
+  <data name="КакСертифицировать" xml:space="preserve">
+    <value>Для того чтобы сертифицировать семена, вам сперва необходимо подать заявку. После прохождения инспекций, вам будет выдан электронный сертификат</value>
+  </data>
+  <data name="Перейти" xml:space="preserve">
+    <value>Перейти</value>
+  </data>
+  <data name="Подать" xml:space="preserve">
+    <value>Подать</value>
+  </data>
+  <data name="ПодатьЗаявку" xml:space="preserve">
+    <value>Подать заявку</value>
+  </data>
 </root>

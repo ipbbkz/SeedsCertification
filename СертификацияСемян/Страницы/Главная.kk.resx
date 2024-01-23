@@ -120,22 +120,4 @@
   <data name="ГлавнаяСтраница" xml:space="preserve">
     <value>Басты бет</value>
   </data>
-  <data name="ЗарегистрироватьХозяйство" xml:space="preserve">
-    <value>Ферманы тіркеу</value>
-  </data>
-  <data name="КакПодатьЗаявку" xml:space="preserve">
-    <value>Өтініш беру үшін аттестация өтетін шаруа қожалығын немесе шаруашылықтарды тіркеу керек</value>
-  </data>
-  <data name="КакСертифицировать" xml:space="preserve">
-    <value>Тұқымдарды сертификаттау үшін алдымен өтініш беру керек. Тексерулерден өткен соң сізге электронды анықтама беріледі</value>
-  </data>
-  <data name="Перейти" xml:space="preserve">
-    <value>Бар</value>
-  </data>
-  <data name="Подать" xml:space="preserve">
-    <value>Жіберу</value>
-  </data>
-  <data name="ПодатьЗаявку" xml:space="preserve">
-    <value>Тапсырыс беру</value>
-  </data>
 </root>
