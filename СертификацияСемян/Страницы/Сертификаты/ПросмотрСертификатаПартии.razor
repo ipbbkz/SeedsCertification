@@ -1,0 +1,214 @@
+﻿@page "/certificates/{Ид:int}/sales/{ИдПартии:int}/certificate"
+
+@using СертификацияСемян.Данные;
+@inject УправляющийЗаявками управляющийЗаявками
+@inject IStringLocalizer<Сертификаты> Лок
+@inject IJSRuntime JSRuntime
+@inject NavigationManager менеджерНавигации
+
+@if (МожетПечатать)
+{
+    <button type="button" class="btn btn-primary d-print-none" @onclick=ПечатьАсинх>Печать</button>
+}
+
+<p class="text-center fs-7">
+    Қазақстан Республикасының тұқымдарды сертификаттаудың уәкілетті орган<br />
+    Authorised Seed Certification Body of the Republic of Kazakhstan<br />
+    Уполномоченный орган сертификации семян Республики Казахстан
+</p>
+
+<p class="text-center">
+    САПА СЕРТИФИКАТЫ<br />
+    сауда үшін СТ РГП 72199 - 02 - 2023 «ТЕКСЕРУ, КАРТОП ТҰҚЫМЫ» стандартына сәйкес шығарылған
+</p>
+
+<p class="text-center">
+    QUALITY CERTIFICATE<br />
+    issued in accordance with ST RGP 72199 - 02 - 2023 "INSPECTION, SEED POTATOES" standard for trade
+</p>
+
+<p class="text-center">
+    СЕРТИФИКАТ КАЧЕСТВА<br />
+    выпущен в соответствии стандарта "ИНСПЕКЦИЯ, КАРТОФЕЛЬ СЕМЕННОЙ" СТ РГП 72199 - 02 - 2023  для торговли
+</p>
+
+<div class="row border p-3">
+    <div class="col-10">Куәлік нөмірі / Certificate number / Номер Сертификата</div>
+    <div class="col-2">№ @Ид</div>
+</div>
+
+<div class="row">
+    <div class="col border">
+        Жауапты орган:<br /><br />
+        Issuing authority:<br /><br />
+        Ответственный орган:
+    </div>
+    <div class="col border fs-7">
+        Қазақстан Республикасы Ауыл шаруашылығы министрлігі, Астана қаласы, Қазақстан Республикасы<br />
+        Ministry of Agriculture of the Republic of Kazakhstan, Astana, Republic of Kazakhstan<br />
+        Министерство Сельского Хозяйства Республики Казахстан, г. Астана
+    </div>
+</div>
+<div class="row">
+    <div class="col border">
+        Өндірушінің атауы, мекенжайы және нөмірі: <br />
+        Name, address and number of producer: <br />
+        Название, адрес и номер производителя:
+    </div>
+    <div class="col border">
+        @ПроизводительСемян.БинИлиИин @ПроизводительСемян.НаваниеКомпании <br />
+        @ПроизводительСемян.ЮридическийАдрес
+    </div>
+</div>
+<div class="row">
+    <div class="col border">
+        Партия нөмірі:  <br />
+        Lot number:<br />
+        Номер лота:
+    </div>
+    <div class="col border d-flex align-items-center justify-content-center fw-bold">
+        @(сертификат.Заявка.Код)/@(партия.Ид)
+    </div>
+</div>
+<div class="row">
+    <div class="col border">
+        Дақылы:<br />
+        Crop:<br />
+        Культура:
+    </div>
+    <div class="col border">
+        Картоп<br />
+        Potato<br />
+        Картофель<br />
+        Solanum tuberosum
+    </div>
+    <div class="col border">
+        Сорты:<br />
+        Variety:<br />
+        Сорт:
+    </div>
+    <div class="col border d-flex align-items-center justify-content-center fw-bold">
+        <span>
+            @сертификат.Заявка.НаваниеСортаСемян
+        </span>
+    </div>
+</div>
+<div class="row">
+    <div class="col border">
+        Жарияланған партия салмағы:<br />
+        Declared lot weight: <br />
+        Задекларированный вес партии:
+    </div>
+    <div class="col border d-flex align-items-center justify-content-center fw-bold">
+        @партия.ВесПартии kg/кг
+    </div>
+    <div class="col border">
+        Түйнек мөлшері:<br />
+        Tuber size: <br />
+        Размер клубня:
+    </div>
+    <div class="col border d-flex align-items-center justify-content-center fw-bold">
+        @сертификат.Заявка.РазмерКлубня
+    </div>
+</div>
+
+<p class="fs-7">
+    Бұл партияның тұқымдық материалы ST RGP 72199 - 02 - 2023 стандартына сәйкес өндірілген және сертификатталған:<br />
+    The seed material of the present lot produced in accordance with the standard ST RGP 72199 - 02 - 2023 and certified as:<br />
+    Семенной материал данной партии, был произведен в соответствии со стандартом СТ РГП 72199 - 02 - 2023 и  сертифицирован как:
+</p>
+
+<p class="text-center border p-3 mx-auto w-25 fw-bold">
+     <КлассСемян Значение="сертификат.КлассСемянИд" />
+</p>
+
+<div class="row">
+    <div class="col-3">
+    </div>
+    <div class="col">
+        Күн/Date / Дата
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        @сертификат.ДатаВыпуска.ToShortDateString()
+    </div>
+    <div class="col">
+        
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        
+    </div>
+    <div class="col">
+        Қолы / Мөр Signature / Seal
+    </div>
+</div>
+
+<QrКод ИдЭлемента="certificate-qr" Ширина="150" Высота="150" Текст="@менеджерНавигации.Uri" />
+@* 
+<div class="row">
+    <div class="col">
+        Орын және ел<br />
+        Place and country<br />
+        Место и страна
+    </div>
+    <div class="col">
+        Күн<br />
+        Date<br />
+        Дата
+    </div>
+    <div class="col">
+        Қолы / Мөр<br />
+        Signature / Seal<br />
+        Подпись / Печать
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        Astana<br />
+
+        Қазақстан Республикасы<br />
+        Republic of Kazakhstan<br />
+        Республика Казахстан
+    </div>
+    <div class="col">
+        @сертификат.ДатаВыпуска.ToShortDateString()
+    </div>
+    <div class="col">
+        
+    </div>
+</div> *@
+
+@code {
+    private Сертификат сертификат = new();
+    private СертифицированнаяПартия партия = new();
+
+    private ПроизводительСемян ПроизводительСемян => сертификат.Заявка?.УчастокПоля?.Поле?.ПроизводительСемян ?? new();
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    [Parameter]
+    public int Ид { get; set; }
+
+    [Parameter]
+    public int ИдПартии { get; set; }
+
+    private bool МожетПечатать = false;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        партия = управляющийЗаявками.ПолучитьПартию(Ид) ?? new();
+        сертификат = партия.Сертификат ?? new();
+        МожетПечатать = (await состояниеАвторизации).User.Identity.IsAuthenticated;
+    }
+
+    protected async Task ПечатьАсинх()
+    {
+        await JSRuntime.InvokeVoidAsync("print");
+    }
+}

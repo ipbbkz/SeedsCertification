@@ -1,0 +1,58 @@
+﻿@page "/my/certificates/sales/{ИдСертификата:int}/new"
+@using System.Security.Claims
+@attribute [Authorize(Policy = "Фермеры")]
+@inject УправляющийЗаявками управляющийЗаявками
+@inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<ВыпуститьСертификатПартии> Лок
+
+<PageTitle>@Лок["ВыпуститьСертификат"]</PageTitle>
+
+<h3>@Лок["ВыпуститьСертификат"]</h3>
+
+<EditForm Model="@Модель" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <ДанныеПартии Модель=@Модель Пользователь=@ИдЛичности />
+
+    <button type="submit" class="btn btn-primary">@Глобальные.Сохранить</button>
+    <a href="/my/certificates/@ИдСертификата/sales" class="btn btn-secondary">@Глобальные.Назад</a>
+</EditForm>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    [Parameter]
+    public int ИдСертификата { get; set; }
+    private Сертификат сертификат = new();
+
+    public МодельПартии Модель { get; set; } = new ();
+    public string ИдЛичности { get; set; } = "";
+
+    protected override async Task OnParametersSetAsync()
+    {
+        ИдЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности() ?? "";
+        сертификат = управляющийЗаявками.ПолучитьСертификат(ИдСертификата) ?? new();
+        Модель.КлассСемянИд = сертификат.КлассСемянИд;
+        Модель.НазваниеСортаСемян = сертификат.Заявка.НаваниеСортаСемян;
+        Модель.ДатаВыпуска = DateTime.Now;
+        Модель.КодСертификат = сертификат.Заявка.Код;
+        await base.OnParametersSetAsync();
+    }
+
+    private async Task Submit()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is null)
+        {
+            return;
+        }
+
+        управляющийЗаявками.ДобавитьПартию(
+            ИдСертификата,
+            Модель.ВесПартии,
+            Модель.ДатаВыпуска);
+        управляющийНавигацией.NavigateTo($"/my/certificates/{ИдСертификата}/sales");
+    }
+
+}

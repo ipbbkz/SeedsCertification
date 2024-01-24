@@ -1,0 +1,32 @@
+﻿@inject IStringLocalizer<ДанныеПартии> Лок
+<label class="form-label">
+    @Лок["НазваниеСорта"] <span class="text-danger">*</span>
+</label>
+<InputText @bind-Value="Модель!.НазваниеСортаСемян" class="form-control" disabled />
+
+<label class="form-label">
+    @Лок["НазваниеСорта"] <span class="text-danger">*</span>
+</label>
+<div class="form-control" disabled>
+    <КлассСемян Значение="Модель.КлассСемянИд" />
+</div>
+
+<label class="form-label">
+    @Лок["ВесПартии"] <span class="text-danger">*</span>
+</label>
+<InputNumber @bind-Value="Модель!.ВесПартии" class="form-control" />
+
+<label class="form-label">
+    @Лок["ДатаВыпуска"] <span class="text-danger">*</span>
+</label>
+<InputDate @bind-Value="Модель!.ДатаВыпуска" class="form-control" disabled />
+
+@code {
+
+    [Parameter]
+    public МодельПартии Модель { get; set; }
+
+    [Parameter]
+    public string Пользователь { get; set; }
+
+}

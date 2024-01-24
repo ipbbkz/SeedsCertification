@@ -5,7 +5,14 @@
 @inject УправляющийЗаявками управляющийЗаявками
 @inject IStringLocalizer<Сертификаты> Лок
 
-<h3>@Лок["Проданные Партии"]</h3>
+<div class="align-items-center d-flex justify-content-between mb-2">
+    <div>
+        <h4 class="text-start text-primary">@Лок["Проданные Партии"]</h4>
+    </div>
+    <div class="text-end">
+        <a href="/my/certificates/sales/@ИдСертификата/new" class="btn btn-primary">+</a>
+    </div>
+</div>
 
 <table class="table">
     <thead>
@@ -39,7 +46,10 @@
                     @з.ВесПартии
                 </td>
                 <td>
-                    <a href="/certificates/@з.Ид/sales/certificate">@Глобальные.Детали</a>
+                    @(з.Сертификат.Заявка.Код)/@(з.Ид)
+                </td>
+                <td>
+                    <a href="/certificates/@з.Ид/sales/@з.Ид/certificate">@Глобальные.Детали</a>
                 </td>
             </tr>
         }
