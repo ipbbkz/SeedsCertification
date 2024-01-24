@@ -95,7 +95,7 @@
     public string? Код { get; set; }
     public string? Сорт { get; set; }
 
-    protected override async Task OnParametersSetAsync()
+    protected override void OnParametersSet()
     {
         ПоказатьДанные(Код, Сорт, НомерСтраницы - 1);
     }
