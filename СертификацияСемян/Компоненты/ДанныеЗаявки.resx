@@ -210,6 +210,9 @@
   <data name="РасстояниеМеждуРядами" xml:space="preserve">
     <value>Row spacing (cm)</value>
   </data>
+  <data name="РекомендуемоеКоличествоРастений" xml:space="preserve">
+    <value>Recommended plants count</value>
+  </data>
   <data name="СвидетельствоПроисхождения" xml:space="preserve">
     <value>Certificate of origin</value>
   </data>

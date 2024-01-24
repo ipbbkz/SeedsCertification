@@ -210,6 +210,9 @@
   <data name="РасстояниеМеждуРядами" xml:space="preserve">
     <value>Қатарлар арасындағы қашықтық (мм)</value>
   </data>
+  <data name="РекомендуемоеКоличествоРастений" xml:space="preserve">
+    <value>Өсімдіктердің ұсынылатын саны</value>
+  </data>
   <data name="СвидетельствоПроисхождения" xml:space="preserve">
     <value>Тауардың шығу тегі туралы сертификат</value>
   </data>

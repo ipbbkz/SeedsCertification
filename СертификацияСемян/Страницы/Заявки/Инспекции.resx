@@ -261,6 +261,9 @@
   <data name="РезультатыАнализов" xml:space="preserve">
     <value>Lab results</value>
   </data>
+  <data name="РекомендуемоеКоличествоРастений" xml:space="preserve">
+    <value>Recommended plants count</value>
+  </data>
   <data name="Ризоктониоз" xml:space="preserve">
     <value>Rhizoctonia</value>
   </data>

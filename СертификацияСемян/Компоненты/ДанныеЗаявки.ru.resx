@@ -210,6 +210,9 @@
   <data name="РасстояниеМеждуРядами" xml:space="preserve">
     <value>Расстояние между рядами (см)</value>
   </data>
+  <data name="РекомендуемоеКоличествоРастений" xml:space="preserve">
+    <value>Рекомендуемое кол-во растений</value>
+  </data>
   <data name="СвидетельствоПроисхождения" xml:space="preserve">
     <value>Свидетельство происхождения</value>
   </data>

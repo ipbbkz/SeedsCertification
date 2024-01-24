@@ -261,6 +261,9 @@
   <data name="РезультатыАнализов" xml:space="preserve">
     <value>Результаты анализов</value>
   </data>
+  <data name="РекомендуемоеКоличествоРастений" xml:space="preserve">
+    <value>Рекомендуемое кол-во растений</value>
+  </data>
   <data name="Ризоктониоз" xml:space="preserve">
     <value>Ризоктониоз</value>
   </data>
