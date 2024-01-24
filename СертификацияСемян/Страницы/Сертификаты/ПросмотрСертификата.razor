@@ -32,24 +32,24 @@
     выпущен в соответствии стандарта "ИНСПЕКЦИЯ, КАРТОФЕЛЬ СЕМЕННОЙ" СТ РГП 72199 - 02 - 2023  для торговли
 </p>
 
-<div class="row border p-3">
+<div class="row border p-3 fs-7">
     <div class="col-10">Куәлік нөмірі / Certificate number / Номер Сертификата</div>
     <div class="col-2">№ @Ид</div>
 </div>
 
-<div class="row">
+<div class="row fs-7">
     <div class="col border">
         Жауапты орган:<br /><br />
         Issuing authority:<br /><br />
         Ответственный орган:
     </div>
-    <div class="col border fs-7">
+    <div class="col border">
         Қазақстан Республикасы Ауыл шаруашылығы министрлігі, Астана қаласы, Қазақстан Республикасы<br />
         Ministry of Agriculture of the Republic of Kazakhstan, Astana, Republic of Kazakhstan<br />
         Министерство Сельского Хозяйства Республики Казахстан, г. Астана
     </div>
 </div>
-<div class="row">
+<div class="row fs-7">
     <div class="col border">
         Өндірушінің атауы, мекенжайы және нөмірі: <br />
         Name, address and number of producer: <br />
@@ -60,7 +60,7 @@
         @ПроизводительСемян.ЮридическийАдрес
     </div>
 </div>
-<div class="row">
+<div class="row fs-7">
     <div class="col border">
         Партия нөмірі:  <br />
         Lot number:<br />
@@ -70,7 +70,17 @@
         @сертификат.Заявка.Код
     </div>
 </div>
-<div class="row">
+<div class="row fs-7">
+    <div class="col border">
+        Тұқымдық материалдың шығу тегі:<br />
+        Seed material origin:<br />
+        Происхождение семенного материала:
+    </div>
+    <div class="col border d-flex align-items-center justify-content-center fw-bold">
+        @* @сертификат.Заявка.Код *@
+    </div>
+</div>
+<div class="row fs-7">
     <div class="col border">
         Дақылы:<br />
         Crop:<br />
@@ -93,14 +103,14 @@
         </span>
     </div>
 </div>
-<div class="row">
+<div class="row fs-7">
     <div class="col border">
         Жарияланған партия салмағы:<br />
         Declared lot weight: <br />
         Задекларированный вес лота:
     </div>
     <div class="col border d-flex align-items-center justify-content-center fw-bold">
-        @сертификат.ВаловыйПродукт kg/кг
+        @сертификат.ВаловыйПродукт кг/kg
     </div>
     <div class="col border">
         Түйнек мөлшері:<br />
@@ -109,6 +119,16 @@
     </div>
     <div class="col border d-flex align-items-center justify-content-center fw-bold">
         @сертификат.Заявка.РазмерКлубня
+    </div>
+</div>
+<div class="row fs-7">
+    <div class="col border">
+        Сақтау жағдайлары:  <br />
+        Storage conditions:<br />
+        Условия хранения:
+    </div>
+    <div class="col border d-flex align-items-center justify-content-center fw-bold">
+        @* @сертификат.Заявка.Код *@
     </div>
 </div>
 
@@ -148,7 +168,7 @@
     </div>
 </div>
 
-<QrКод ИдЭлемента="certificate-qr" Ширина="150" Высота="150" Текст="@менеджерНавигации.Uri" />
+<QrКод ИдЭлемента="certificate-qr" Ширина="150" Высота="150" Текст="@менеджерНавигации.Uri" class="d-none d-print-block" />
 @* 
 <div class="row">
     <div class="col">

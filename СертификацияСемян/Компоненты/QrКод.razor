@@ -1,5 +1,5 @@
 ﻿@inject IJSRuntime JsRuntime
-<div id="@ИдЭлемента"></div>
+<div id="@ИдЭлемента" @attributes="@InputAttributes"></div>
 @code {
 
     [Parameter]
@@ -13,6 +13,9 @@
 
     [Parameter]
     public string Текст { get; set; } = "";
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object>? InputAttributes { get; set; }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
