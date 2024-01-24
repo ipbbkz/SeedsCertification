@@ -21,6 +21,7 @@ public class КонтекстБдПриложения : IdentityDbContext<Пол
     public DbSet<ЗаписьИнспекцииПартии> ЗаписиИнспекцийПартии { get; set; }
     public DbSet<Анализ> Анализы { get; set; }
     public DbSet<Сертификат> Сертификаты { get; set; }
+    public DbSet<СертифицированнаяПартия> СертифицированныеПартии { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -33,6 +34,8 @@ public class КонтекстБдПриложения : IdentityDbContext<Пол
         builder.Entity<ЗаписьИнспекцииПартии>().HasKey(nameof(ЗаписьИнспекцииПартии.Ид));
         builder.Entity<Анализ>().HasKey(nameof(Анализ.Ид));
         builder.Entity<Сертификат>().HasKey(nameof(Сертификат.Ид));
+        builder.Entity<СертифицированнаяПартия>().HasKey(nameof(СертифицированнаяПартия.Ид));
+
         builder.Entity<IdentityRole>()
             .HasData(
                 new IdentityRole() { Id = Константы.РольАдминистратора, Name = Константы.РольАдминистратора, NormalizedName = Константы.РольАдминистратора.ToUpperInvariant() },
@@ -247,4 +250,15 @@ public class Сертификат
 
     [ForeignKey(nameof(ЗаявкаИд))]
     public Заявка Заявка { get; set; }
+}
+
+public class СертифицированнаяПартия
+{
+    public int Ид { get; set; }
+    public int ВесПартии { get; set; }
+    public DateTime ДатаВыпуска { get; set; }
+    public int СертификатИд { get; set; }
+
+    [ForeignKey(nameof(СертификатИд))]
+    public Сертификат Сертификат { get; set; }
 }

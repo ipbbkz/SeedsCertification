@@ -1,18 +1,11 @@
-﻿@page "/my/certificates"
+﻿@page "/my/certificates/{ИдСертификата:int}/sales"
 
 @using СертификацияСемян.Данные;
 @attribute [Authorize(Policy = "Фермеры")]
 @inject УправляющийЗаявками управляющийЗаявками
 @inject IStringLocalizer<Сертификаты> Лок
 
-<div class="align-items-center d-flex justify-content-between mb-2">
-    <div>
-        <h4 class="text-start text-primary">@Лок["Сертификаты"]</h4>
-    </div>
-    <div class="text-end">
-        <a href="/my/certificates/sales/new" class="btn btn-primary">+</a>
-    </div>
-</div>
+<h3>@Лок["Проданные Партии"]</h3>
 
 <table class="table">
     <thead>
@@ -21,32 +14,32 @@
             <td>@Лок["Сорт"]</td>
             <td>@Лок["КлассСемян"]</td>
             <td>@Лок["ДатаВыпуска"]</td>
-            <td>@Лок["ВаловыйПродукт"]</td>
+            <td>@Лок["ВесПартии"]</td>
+            <td>@Лок["Сертификат"]</td>
             <td>@Глобальные.Действия</td>
         </tr>
     </thead>
     <tbody>
-        @foreach (var з in сертификаты)
+        @foreach (var з in партии)
         {
             <tr>
                 <td>
                     @з.Ид
                 </td>
                 <td>
-                    @з.Заявка.НаваниеСортаСемян
+                    @з.Сертификат.Заявка.НаваниеСортаСемян
                 </td>
                 <td>
-                    <КлассСемян Значение="з.КлассСемянИд" />
+                    <КлассСемян Значение="з.Сертификат.КлассСемянИд" />
                 </td>
                 <td>
                     @з.ДатаВыпуска.ToShortDateString()
                 </td>
                 <td>
-                    @з.ВаловыйПродукт
+                    @з.ВесПартии
                 </td>
                 <td>
-                    <a href="/certificates/@з.Ид">@Глобальные.Детали</a>
-                    <a href="/my/certificates/@з.Ид/sales">@Лок["Партии"]</a>
+                    <a href="/certificates/@з.Ид/sales/certificate">@Глобальные.Детали</a>
                 </td>
             </tr>
         }
@@ -57,14 +50,17 @@
     [CascadingParameter]
     private Task<AuthenticationState>? состояниеАвторизации { get; set; }
 
-    private IList<Сертификат> сертификаты = Array.Empty<Сертификат>();
+    [Parameter]
+    public int ИдСертификата { get; set; }
+
+    private IList<СертифицированнаяПартия> партии = Array.Empty<СертифицированнаяПартия>();
 
     protected override async Task OnParametersSetAsync()
     {
         var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
         if (идЛичности is not null)
         {
-            сертификаты = управляющийЗаявками.ПолучитьСертификатыПользователя(идЛичности);
+            партии = управляющийЗаявками.ПолучитьПроданныеПартииПользователя(идЛичности);
         }
     }
 }
