@@ -118,6 +118,16 @@
 <InputTextArea @bind-Value="Модель!.ИзоляцияПолей" class="form-control" />
 
 <label class="form-label">
+    @Лок["СтранаПроизводитель"]
+</label>
+<InputText @bind-Value="Модель!.СтранаПроизводитель" class="form-control" />
+
+<label class="form-label">
+    @Лок["КодСертификатаПроисхождения"]
+</label>
+<InputText @bind-Value="Модель!.КодСертификатаПроисхождения" class="form-control" />
+
+<label class="form-label">
     @Лок["СвидетельствоПроисхождения"] <span class="text-danger">*</span>
 </label>
 <InputFile OnChange="@ЗагрузитьСвидетельствоПроисхожденияСемян" class="form-control" />

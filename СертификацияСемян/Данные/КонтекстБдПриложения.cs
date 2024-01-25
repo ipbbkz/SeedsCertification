@@ -65,7 +65,10 @@ public class Заявка
     public string Севооборот2ГодаНазад { get; set; }
     public string Севооборот3ГодаНазад { get; set; }
     public string ИзоляцияПолей { get; set; }
+    public string СтранаПроизводитель { get; set; }
     public byte[] СвидетельствоПроисхожденияСемян { get; set; }
+    public string КодСертификатаПроисхождения { get; set; }
+    public int? ИдСертификатаПроисхождения { get; set; }
     public byte[] ЗаключениеОНематодах { get; set; }
     public string? Протравители { get; set; }
     public string? Инсектициды    { get; set; }

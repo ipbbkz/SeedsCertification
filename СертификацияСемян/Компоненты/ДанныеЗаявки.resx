@@ -165,6 +165,9 @@
   <data name="КлассСемян" xml:space="preserve">
     <value>Class of seeds</value>
   </data>
+  <data name="КодСертификатаПроисхождения" xml:space="preserve">
+    <value>Certificate code</value>
+  </data>
   <data name="КоординатыУчастка" xml:space="preserve">
     <value>Coordinates of a patch</value>
   </data>
@@ -218,6 +221,9 @@
   </data>
   <data name="Севооборот" xml:space="preserve">
     <value>Crop rotation</value>
+  </data>
+  <data name="СтранаПроизводитель" xml:space="preserve">
+    <value>Country of origin</value>
   </data>
   <data name="ТипСертификации" xml:space="preserve">
     <value>Type of certification</value>

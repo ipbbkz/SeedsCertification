@@ -37,9 +37,14 @@ public class МодельЗаявки
     public string Севооборот3ГодаНазад { get; set; }
     [Обязательное]
     public string ИзоляцияПолей { get; set; }
+    [Обязательное]
+    public string СтранаПроизводитель { get; set; }
     //[Display(Name = "СвидетельствоПроисхождения", ResourceType = typeof(ДанныеЗаявки))]
     [Обязательное]
     public byte[] СвидетельствоПроисхожденияСемян { get; set; }
+    [Обязательное]
+    public string КодСертификатаПроисхождения { get; set; }
+    public int? ИдСертификатаПроисхождения { get; set; }
     [Обязательное]
     public byte[] ЗаключениеОНематодах { get; set; }
     public string? Протравители { get; set; }
