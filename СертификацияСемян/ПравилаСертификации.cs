@@ -25,7 +25,7 @@ public class ПравилаСертификации
     public static class ПравилаПолевойИнспекции
     {
         public static double[] ВиральныеБолезни = new[] { 0.0, 0.1,  0.2,  0.5,  0.8,  2.0, 6.0 };
-        public static double[] Черноножка       = new[] { 0.0, 0.0,  0.5,  0.75, 1.0,  1.5, 2.0 };
+        public static double[] Черноножка       = new[] { 0.0, 0.5,  0.5,  0.75, 1.0,  1.5, 2.0 };
         public static double[] Безтиповые       = new[] { 0.0, 0.01, 0.25, 0.25, 0.25, 0.5, 0.5 };
     }
 
