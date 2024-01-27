@@ -123,6 +123,9 @@
   <data name="ВыйтиИзАккаунта" xml:space="preserve">
     <value>Log out</value>
   </data>
+  <data name="Главная" xml:space="preserve">
+    <value>Home page</value>
+  </data>
   <data name="Заявки" xml:space="preserve">
     <value>Requests</value>
   </data>

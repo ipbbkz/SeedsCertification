@@ -123,6 +123,9 @@
   <data name="ВыйтиИзАккаунта" xml:space="preserve">
     <value>Выйти</value>
   </data>
+  <data name="Главная" xml:space="preserve">
+    <value>Главная</value>
+  </data>
   <data name="Заявки" xml:space="preserve">
     <value>Заявки</value>
   </data>

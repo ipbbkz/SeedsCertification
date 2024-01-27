@@ -123,6 +123,9 @@
   <data name="ВыйтиИзАккаунта" xml:space="preserve">
     <value>Шығу</value>
   </data>
+  <data name="Главная" xml:space="preserve">
+    <value>Ұй</value>
+  </data>
   <data name="Заявки" xml:space="preserve">
     <value>Қолданбалар</value>
   </data>
