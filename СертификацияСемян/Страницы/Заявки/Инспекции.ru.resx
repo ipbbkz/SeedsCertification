@@ -138,6 +138,9 @@
   <data name="Вредители" xml:space="preserve">
     <value>Повреждения вредителями</value>
   </data>
+  <data name="ВсегоДефектов" xml:space="preserve">
+    <value>Всего дефектов</value>
+  </data>
   <data name="ВыберитеТипИнспекции" xml:space="preserve">
     <value>Выберите тип инспекции</value>
   </data>

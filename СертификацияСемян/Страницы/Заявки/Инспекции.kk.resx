@@ -138,6 +138,9 @@
   <data name="Вредители" xml:space="preserve">
     <value>Зиянкестердің зақымдануы</value>
   </data>
+  <data name="ВсегоДефектов" xml:space="preserve">
+    <value>Жалпы ақаулар</value>
+  </data>
   <data name="ВыберитеТипИнспекции" xml:space="preserve">
     <value>Тексеру түрін таңдаңыз</value>
   </data>

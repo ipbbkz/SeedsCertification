@@ -176,14 +176,14 @@ public class ЗаписьИнспекцииПартии
     public double? ПаршаСеребристая { get; set; }
     public double? ПаршаПорошистая { get; set; }
     public double? Продавленность { get; set; }
-    public double? НезначительныеПовреждения { get; set; }
+    public double? НезначительныеПовреждения { get; set; } // ignore
     public double? ВнешниеДефекты { get; set; }
     public double? ПрилипшаяПочва { get; set; }
     public double? ПревышениеРазмеров { get; set; }
-    public double? Проростания { get; set; }
-    public double? ВнутренниеДефекты { get; set; }
+    public double? Проростания { get; set; } // ignore
+    public double? ВнутренниеДефекты { get; set; } // ignore
     public double? РаздавленныеКлубни { get; set; }
-    public double? ВирусныйНекроз { get; set; }
+    public double? ВирусныйНекроз { get; set; } // ignore
     public double? Переохлаждение { get; set; }
     public double? Вредители { get; set; }
     public double? Ризоктониоз { get; set; }
@@ -201,6 +201,23 @@ public class ЗаписьИнспекцииПартии
                 > 500_000 and <= 800_000 => 400,
                 _ => 400
             };
+        }
+    }
+    [NotMapped]
+    public double? ВесДефектов
+    {
+        get
+        {
+            return СухаяГниль + МокраяГниль + Фитофтороз + ПаршаОбыкновенная + ПаршаЛуговая + ПаршаСеребристая
+                + ПаршаПорошистая
+                + Продавленность
+                + ПрилипшаяПочва
+                + ПревышениеРазмеров
+                + ВнешниеДефекты
+                + РаздавленныеКлубни
+                + Переохлаждение
+                + Вредители
+                + Ризоктониоз;
         }
     }
 }
