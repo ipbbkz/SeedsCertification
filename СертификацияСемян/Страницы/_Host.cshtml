@@ -69,6 +69,12 @@
             new QRCode(element, parameters);
         }
         window.initializeQrCode = initializeQrCode;
+        function openDialog(dialogRef) {
+            dialogRef.showModal();
+        }
+        function closeDialog(dialogRef) {
+            dialogRef.close();
+        }
     </script>
 </body>
 </html>

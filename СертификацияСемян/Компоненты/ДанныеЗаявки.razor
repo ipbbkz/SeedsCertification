@@ -117,15 +117,68 @@
 </label>
 <InputTextArea @bind-Value="Модель!.ИзоляцияПолей" class="form-control" />
 
-<label class="form-label">
-    @Лок["СтранаПроизводитель"]
-</label>
-<InputText @bind-Value="Модель!.СтранаПроизводитель" class="form-control" />
 
-<label class="form-label">
-    @Лок["КодСертификатаПроисхождения"]
-</label>
-<InputText @bind-Value="Модель!.КодСертификатаПроисхождения" class="form-control" />
+<div class="row">
+    <div class="col">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="происхождениеКазахстан" checked="@(Модель.СтранаПроизводитель == "Қазақстан")"
+           @onchange="@(() => Модель.СтранаПроизводитель = "Қазақстан")">
+          <label class="form-check-label" for="происхождениеКазахстан">
+            @Лок["Казахстан"]
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="происхождениеДругиеСтраны" checked="@(Модель.СтранаПроизводитель != "Қазақстан")"
+           @onchange="@(() => Модель.СтранаПроизводитель = "")">
+          <label class="form-check-label" for="происхождениеДругиеСтраны">
+            @Лок["ДругаяСтрана"]
+          </label>
+        </div>
+    </div>
+    <div class="col">
+        <label class="form-label">
+            @Лок["СтранаПроизводитель"] <span class="text-danger">*</span>
+        </label>
+        <InputText @bind-Value="Модель!.СтранаПроизводитель" class="form-control" disabled="@(Модель.СтранаПроизводитель != "Қазақстан")"/>
+    </div>
+    <div class="col">
+        <label class="form-label">
+            @Лок["КодСертификатаПроисхождения"] <span class="text-danger">*</span>
+        </label>
+        <div class="input-group mb-3">
+            <InputText @bind-Value="Модель!.КодСертификатаПроисхождения" class="form-control" />
+            @if (Модель.СтранаПроизводитель == "Қазақстан")
+            {
+                <button class="btn btn-outline-secondary" type="button" @onclick=ОткрытьОкноПоиска>Поиск</button>
+            }
+        </div>
+    </div>
+</div>
+
+<dialog @ref="окноПоиска">
+    <label class="form-label">
+        @Лок["КодСертификатаПроисхождения"] <span class="text-danger">*</span>
+    </label>
+    <InputText @bind-Value="ТекстПоиска" class="form-control" />
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">@Лок["Код"]</th>
+          <th scope="col">@Лок["Компания"]</th>
+          <th scope="col">@Глобальные.Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+        @* <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+        </tr> *@
+      </tbody>
+    </table>
+
+</dialog>
 
 <label class="form-label">
     @Лок["СвидетельствоПроисхождения"] <span class="text-danger">*</span>
@@ -282,6 +335,9 @@ else
     public List<Поле> Поля { get; set; } = new();
 
     public List<УчастокПоля> УчасткиПоля { get; set; } = new();
+    private bool окноПоискаОткрыто;
+    private string ТекстПоиска;
+    private ElementReference окноПоиска;
 
     private long максРазмерФайла = 1024 * 1024 * 15;
     private int максКоличествоФайлов = 1;
@@ -507,5 +563,17 @@ else
                 Lng = 43.2433,
                 Lat = 76.8646,
             };
+    }
+
+    private async Task ОткрытьОкноПоиска()
+    {
+        окноПоискаОткрыто = true;
+        await JSRuntime.InvokeVoidAsync("openDialog", окноПоиска);
+    }
+
+    private async Task ЗакрытьОкноПоиска()
+    {
+        окноПоискаОткрыто = false;
+        await JSRuntime.InvokeVoidAsync("closeDialog", окноПоиска);
     }
 }
