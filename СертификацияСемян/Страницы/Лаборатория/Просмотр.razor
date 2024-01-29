@@ -3,11 +3,10 @@
 @attribute [Authorize(Policy = "Лаборатории")]
 @inject УправляющийИнспекциями управляющийИнспекциями
 @inject NavigationManager управляющийНавигацией
-@inject IStringLocalizer<Глобальные> ГлобЛок
 @inject IStringLocalizer<Анализы> Лок
 @inject IWebHostEnvironment окружение
 @inject IJSRuntime JSRuntime
-@inject ILogger<ДанныеЗаявки> протоколировщик
+@inject ILogger<Просмотр> протоколировщик
 
 <PageTitle>@Лок["Анализ"] @string.Format("УБ{0:D6}", ИдАнализа)</PageTitle>
 
@@ -177,13 +176,13 @@
                 <InputFile OnChange="@ЗагрузитьАнализы" class="form-control" />
                 @if (загружаетсяАнализы)
                 {
-                    <p>@Лок["Загружаем"]...</p>
+                    <p>@Глобальные.Загружаем</p>
                 }
                 else
                 {
                     if (загруженныеФайлыАнализов.Count > 0)
                     {
-                        <p>@Лок["ДокументЗагружен"]</p>
+                        <p>@Глобальные.ДокументЗагружен</p>
                     }
                 }
             </div>
@@ -200,7 +199,7 @@
 
     @if (Модель.Статус == 1)
     {
-        <button type="button" class="btn btn-primary" @onclick=Отправить>@Лок["Отправить"]</button>
+        <button type="button" class="btn btn-primary" @onclick=Отправить>@Глобальные.Отправить</button>
         <button type="submit" class="btn btn-primary" @onclick=Сохранить>@Глобальные.Сохранить</button>
     }
     <a href="/analysis/" class="btn btn-secondary">@Глобальные.Назад</a>

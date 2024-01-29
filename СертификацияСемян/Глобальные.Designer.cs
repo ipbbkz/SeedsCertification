@@ -79,6 +79,24 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Document loaded.
+        /// </summary>
+        public static string ДокументЗагружен {
+            get {
+                return ResourceManager.GetString("ДокументЗагружен", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading....
+        /// </summary>
+        public static string Загружаем {
+            get {
+                return ResourceManager.GetString("Загружаем", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string Назад {
@@ -120,6 +138,15 @@ namespace СертификацияСемян {
         public static string Отклонить {
             get {
                 return ResourceManager.GetString("Отклонить", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submit.
+        /// </summary>
+        public static string Отправить {
+            get {
+                return ResourceManager.GetString("Отправить", resourceCulture);
             }
         }
         

@@ -123,11 +123,17 @@
   <data name="Детали" xml:space="preserve">
     <value>Егжей</value>
   </data>
+  <data name="ДокументЗагружен" xml:space="preserve">
+    <value>Құжат жүктелді</value>
+  </data>
+  <data name="Загружаем" xml:space="preserve">
+    <value>Жүктелуде...</value>
+  </data>
   <data name="Назад" xml:space="preserve">
     <value>Артқа</value>
   </data>
   <data name="НазваниеПриложения" xml:space="preserve">
-    <value />
+    <value>Тұқымдарды сертификаттау</value>
   </data>
   <data name="ОбязательноеПоле" xml:space="preserve">
     <value>{0} өрісі қажет</value>
@@ -137,6 +143,9 @@
   </data>
   <data name="Отклонить" xml:space="preserve">
     <value>Қабылдамау</value>
+  </data>
+  <data name="Отправить" xml:space="preserve">
+    <value>Жіберу</value>
   </data>
   <data name="Поиск" xml:space="preserve">
     <value>Іздеу</value>

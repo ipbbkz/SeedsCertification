@@ -118,54 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Анализы" xml:space="preserve">
-    <value>Analysis</value>
+    <value>Анализы</value>
   </data>
-  <data name="ВыйтиИзАккаунта" xml:space="preserve">
-    <value>Log out</value>
+  <data name="ДатаВзятияОбразца" xml:space="preserve">
+    <value>Дата взятия образца</value>
   </data>
-  <data name="Главная" xml:space="preserve">
-    <value>Home page</value>
+  <data name="ДатаПередачиВЛабораторию" xml:space="preserve">
+    <value>Дата передачи в лабораторию</value>
   </data>
-  <data name="Заявки" xml:space="preserve">
-    <value>Requests</value>
+  <data name="КоличествоКлубней" xml:space="preserve">
+    <value>Кол-во клубней</value>
   </data>
-  <data name="ИмяПриложения" xml:space="preserve">
-    <value>Seeds Certification</value>
+  <data name="КоличествоОбразцов" xml:space="preserve">
+    <value>Кол-во образцов</value>
   </data>
-  <data name="Инспекторы" xml:space="preserve">
-    <value>Inspectors</value>
+  <data name="НазваниеСорта" xml:space="preserve">
+    <value>Название сорта</value>
   </data>
-  <data name="ИсторияАнализов" xml:space="preserve">
-    <value>Analysis history</value>
+  <data name="НомерОбразца" xml:space="preserve">
+    <value># </value>
   </data>
-  <data name="Лаборатории" xml:space="preserve">
-    <value>Laboratories</value>
-  </data>
-  <data name="Логин" xml:space="preserve">
-    <value>Log in</value>
-  </data>
-  <data name="МоиЗаявки" xml:space="preserve">
-    <value>My requests</value>
-  </data>
-  <data name="МоиСертификаты" xml:space="preserve">
-    <value>My Certificates</value>
-  </data>
-  <data name="Приветствие" xml:space="preserve">
-    <value>Hello,</value>
-  </data>
-  <data name="Регистрация" xml:space="preserve">
-    <value>Registration</value>
-  </data>
-  <data name="Сертификаты" xml:space="preserve">
-    <value>Certificates</value>
-  </data>
-  <data name="Сертификация" xml:space="preserve">
-    <value>Certification</value>
-  </data>
-  <data name="Фермеры" xml:space="preserve">
-    <value>Farmers</value>
-  </data>
-  <data name="Фермы" xml:space="preserve">
-    <value>Farms</value>
+  <data name="РезультатыАнализа" xml:space="preserve">
+    <value>Результаты анализа</value>
   </data>
 </root>

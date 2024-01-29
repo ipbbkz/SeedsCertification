@@ -135,6 +135,9 @@
   <data name="Инспекторы" xml:space="preserve">
     <value>Инспекторлар</value>
   </data>
+  <data name="ИсторияАнализов" xml:space="preserve">
+    <value>Талдау тарихы</value>
+  </data>
   <data name="Лаборатории" xml:space="preserve">
     <value>Зертханалар</value>
   </data>
