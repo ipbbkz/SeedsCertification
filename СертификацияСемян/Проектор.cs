@@ -71,8 +71,8 @@ public static class Проектор
         модельАнализа.PVX = GetFlags(анализ.PVX, 4);
         модельАнализа.PVY = GetFlags(анализ.PVY, 4);
         модельАнализа.PVS = GetFlags(анализ.PVS, 4);
-        модельАнализа.Clavibacter = GetFlags(анализ.Clavibacter, 4);
-        модельАнализа.Ralstonia = GetFlags(анализ.Ralstonia, 4);
+        модельАнализа.Clavibacter = GetFlags(анализ.Clavibacter, 2);
+        модельАнализа.Ralstonia = GetFlags(анализ.Ralstonia, 2);
     }
 
     static bool[] GetFlags(int? value, int count)
