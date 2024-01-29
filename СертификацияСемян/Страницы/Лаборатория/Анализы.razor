@@ -45,13 +45,13 @@
 
 @code {
     [SupplyParameterFromQuery(Name = "status")]
-    public int Статус { get; set; } = 1;
+    public int? Статус { get; set; }
 
     public IList<Анализ> СписокАнализов { get; set; } = Array.Empty<Анализ>();
 
     protected override async Task OnParametersSetAsync()
     {
-        СписокАнализов = управляющийИнспекциями.ПолучитьАнализыПоСтатусу(Статус);
+        СписокАнализов = управляющийИнспекциями.ПолучитьАнализыПоСтатусу(Статус ?? 1);
         await base.OnParametersSetAsync();
     }
 }

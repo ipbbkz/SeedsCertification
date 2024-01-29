@@ -235,6 +235,14 @@ public class Анализ
     public DateTime ДатаСоздания { get; set; } = DateTime.UtcNow;
     public DateTime ДатаОбновления { get; set; } = DateTime.UtcNow;
     public DateTime? ДатаУдаления { get; set; }
+    public int? PLRV { get; set; }
+    public int? PVA { get; set; }
+    public int? PVM { get; set; }
+    public int? PVX { get; set; }
+    public int? PVY { get; set; }
+    public int? PVS { get; set; }
+    public int? Clavibacter { get; set; }
+    public int? Ralstonia { get; set; }
 
     [ForeignKey(nameof(ИнспекцияИд))]
     public Инспекция Инспекция { get; set; }

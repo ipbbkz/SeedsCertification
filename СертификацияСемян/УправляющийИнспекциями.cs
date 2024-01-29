@@ -193,19 +193,62 @@ public class УправляющийИнспекциями
             .ExecuteUpdate(_ => _.SetProperty(и => и.Статус, 5));
     }
 
-    public void ОтправитьАнализы(int идАнализа, byte[] файлСАнализами)
+    public void СохранитьАнализы(int идАнализа, byte[] файлСАнализами, 
+        bool[] PLRV,
+        bool[] PVA,
+        bool[] PVM,
+        bool[] PVX,
+        bool[] PVY,
+        bool[] PVS,
+        bool[] Clavibacter,
+        bool[] Ralstonia)
+    {
+        var plrv = GetInt(PLRV);
+        var pva = GetInt(PVA);
+        var pvm = GetInt(PVM);
+        var pvx = GetInt(PVX);
+        var pvy = GetInt(PVY);
+        var pvs = GetInt(PVS);
+        var clavibacter = GetInt(Clavibacter);
+        var ralstonia = GetInt(Ralstonia);
+        контекст.Анализы
+            .AsNoTracking()
+            .Where(а => а.Ид == идАнализа)
+            .ExecuteUpdate(_ => _
+                .SetProperty(а => а.ФайлСАнализами, файлСАнализами)
+                .SetProperty(а => а.PLRV, plrv)
+                .SetProperty(а => а.PVA, pva)
+                .SetProperty(а => а.PVM, pvm)
+                .SetProperty(а => а.PVX, pvx)
+                .SetProperty(а => а.PVY, pvy)
+                .SetProperty(а => а.PVS, pvs)
+                .SetProperty(а => а.Clavibacter, clavibacter)
+                .SetProperty(а => а.Ralstonia, ralstonia));
+        int GetInt(bool[] values)
+        {
+            int result = 0;
+            for (int i = 0; i < values.Length; i++)
+            {
+                result = (result << 1) + (values[i] ? 1 : 0);
+            }
+
+            return result;
+        }
+    }
+
+    public void ОтправитьАнализы(int идАнализа)
     {
         контекст.Анализы
             .AsNoTracking()
             .Where(а => а.Ид == идАнализа)
             .ExecuteUpdate(_ => _
-                .SetProperty(а => а.Статус, 2)
-                .SetProperty(а => а.ФайлСАнализами, файлСАнализами));
+                .SetProperty(а => а.Статус, 2));
     }
 
     public Анализ? ПолучитьАнализ(int идАнализа)
     {
         return контекст.Анализы
+            .AsNoTracking()
             .FirstOrDefault(а => а.Ид == идАнализа);
     }
 

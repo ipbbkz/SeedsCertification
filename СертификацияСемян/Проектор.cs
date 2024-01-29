@@ -65,5 +65,25 @@ public static class Проектор
         модельАнализа.ДатаПередачиВЛабораторию = анализ.ДатаПередачиВЛабораторию;
         модельАнализа.ФайлСАнализами = анализ.ФайлСАнализами ?? Array.Empty<byte>();
         модельАнализа.Статус = анализ.Статус;
+        модельАнализа.PLRV = GetFlags(анализ.PLRV, 4);
+        модельАнализа.PVA = GetFlags(анализ.PVA, 4);
+        модельАнализа.PVM = GetFlags(анализ.PVM, 4);
+        модельАнализа.PVX = GetFlags(анализ.PVX, 4);
+        модельАнализа.PVY = GetFlags(анализ.PVY, 4);
+        модельАнализа.PVS = GetFlags(анализ.PVS, 4);
+        модельАнализа.Clavibacter = GetFlags(анализ.Clavibacter, 4);
+        модельАнализа.Ralstonia = GetFlags(анализ.Ralstonia, 4);
+    }
+
+    static bool[] GetFlags(int? value, int count)
+    {
+        var data = value ?? 0;
+        List<bool> result = new(count);
+        for (int i = 0; i < count; i++)
+        {
+            result.Add((data >> i) % 2 == 1);
+        }
+
+        return result.ToArray();
     }
 }

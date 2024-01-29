@@ -13,7 +13,7 @@
 
 <h3>@Лок["Анализ"] @string.Format("УБ{0:D6}", ИдАнализа)</h3>
 
-<EditForm Model="@Модель" OnValidSubmit="@Отправить">
+<EditForm Model="@Модель" OnValidSubmit="@Сохранить">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -35,6 +35,136 @@
                 @Лок["ДатаПередачиВЛабораторию"] <span class="text-danger">*</span>
             </label>
             <InputDate @bind-Value="Модель!.ДатаПередачиВЛабораторию" class="form-control" Type="InputDateType.Date" disabled />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label class="form-label">
+                @Лок["PLRV"] <span class="text-danger">*</span>
+            </label>
+            @for(var i = 0; i < Модель.PLRV.Length; i++)
+            {
+                var t = i;
+                <div class="form-check">
+                  <input type="checkbox" checked="@Модель.PLRV[t]" @onchange="@((ChangeEventArgs e) => Модель.PLRV[t] = (bool)(e.Value ?? false))"
+                    class="input-form-check" id="@("PLRV" + "_" + i)" disabled="@(Модель.Статус != 1)" />
+                  <label class="form-check-label" for="@("PLRV" + "_" + i)">
+                    @(i + 1)
+                  </label>
+                </div>                 
+            }
+        </div>
+        <div class="col">
+            <label class="form-label">
+                @Лок["PVA"] <span class="text-danger">*</span>
+            </label>
+            @for(var i = 0; i < Модель.PVA.Length; i++)
+            {
+                var t = i;
+                <div class="form-check">
+                  <input type="checkbox" checked="@Модель.PVA[t]" @onchange="@((ChangeEventArgs e) => Модель.PVA[t] = (bool)(e.Value ?? false))"
+                    class="input-form-check" id="@("PVA" + "_" + i)" disabled="@(Модель.Статус != 1)"/>
+                  <label class="form-check-label" for="@("PVA" + "_" + i)">
+                    @(i + 1)
+                  </label>
+                </div>                 
+            }
+        </div>
+        <div class="col">
+            <label class="form-label">
+                @Лок["PVM"] <span class="text-danger">*</span>
+            </label>
+            @for(var i = 0; i < Модель.PVM.Length; i++)
+            {
+                var t = i;
+                <div class="form-check">
+                  <input type="checkbox" checked="@Модель.PVM[t]" @onchange="@((ChangeEventArgs e) => Модель.PVM[t] = (bool)(e.Value ?? false))"
+                    class="input-form-check" id="@("PVM" + "_" + i)" disabled="@(Модель.Статус != 1)"/>
+                  <label class="form-check-label" for="@("PVM" + "_" + i)">
+                    @(i + 1)
+                  </label>
+                </div>                 
+            }
+        </div>
+        <div class="col">
+            <label class="form-label">
+                @Лок["PVX"] <span class="text-danger">*</span>
+            </label>
+            @for(var i = 0; i < Модель.PVX.Length; i++)
+            {
+                var t = i;
+                <div class="form-check">
+                  <input type="checkbox" checked="@Модель.PVX[t]" @onchange="@((ChangeEventArgs e) => Модель.PVX[t] = (bool)(e.Value ?? false))"
+                    class="input-form-check" id="@("PVX" + "_" + i)" disabled="@(Модель.Статус != 1)"/>
+                  <label class="form-check-label" for="@("PVX" + "_" + i)">
+                    @(i + 1)
+                  </label>
+                </div>                 
+            }
+        </div>
+        <div class="col">
+            <label class="form-label">
+                @Лок["PVY"] <span class="text-danger">*</span>
+            </label>
+            @for(var i = 0; i < Модель.PVY.Length; i++)
+            {
+                var t = i;
+                <div class="form-check">
+                  <input type="checkbox" checked="@Модель.PVY[t]" @onchange="@((ChangeEventArgs e) => Модель.PVY[t] = (bool)(e.Value ?? false))"
+                    class="input-form-check" id="@("PVY" + "_" + i)" disabled="@(Модель.Статус != 1)"/>
+                  <label class="form-check-label" for="@("PVY" + "_" + i)">
+                    @(i + 1)
+                  </label>
+                </div>                 
+            }
+        </div>
+        <div class="col">
+            <label class="form-label">
+                @Лок["PVS"] <span class="text-danger">*</span>
+            </label>
+            @for(var i = 0; i < Модель.PVS.Length; i++)
+            {
+                var t = i;
+                <div class="form-check">
+                  <input type="checkbox" checked="@Модель.PVS[t]" @onchange="@((ChangeEventArgs e) => Модель.PVS[t] = (bool)(e.Value ?? false))"
+                    class="input-form-check" id="@("PVS" + "_" + i)" disabled="@(Модель.Статус != 1)"/>
+                  <label class="form-check-label" for="@("PVS" + "_" + i)">
+                    @(i + 1)
+                  </label>
+                </div>                 
+            }
+        </div>
+        <div class="col-2">
+            <label class="form-label">
+                @Лок["Clavibacter"] <span class="text-danger">*</span>
+            </label>
+            @for(var i = 0; i < Модель.Clavibacter.Length; i++)
+            {
+                var t = i;
+                <div class="form-check">
+                  <input type="checkbox" checked="@Модель.Clavibacter[t]" @onchange="@((ChangeEventArgs e) => Модель.Clavibacter[t] = (bool)(e.Value ?? false))"
+                    class="input-form-check" id="@("Clavibacter" + "_" + i)" disabled="@(Модель.Статус != 1)"/>
+                  <label class="form-check-label" for="@("Clavibacter" + "_" + i)">
+                    @(i + 1)
+                  </label>
+                </div>                 
+            }
+        </div>
+        <div class="col-2">
+            <label class="form-label">
+                @Лок["Ralstonia"] <span class="text-danger">*</span>
+            </label>
+            @for(var i = 0; i < Модель.Ralstonia.Length; i++)
+            {
+                var t = i;
+                <div class="form-check">
+                  <input type="checkbox" checked="@Модель.Ralstonia[t]" @onchange="@((ChangeEventArgs e) => Модель.Ralstonia[t] = (bool)(e.Value ?? false))"
+                    class="input-form-check" id="@("Ralstonia" + "_" + i)" disabled="@(Модель.Статус != 1)"/>
+                  <label class="form-check-label" for="@("Ralstonia" + "_" + i)">
+                    @(i + 1)
+                  </label>
+                </div>                 
+            }
         </div>
     </div>
     @if (Модель.Статус == 1)
@@ -70,9 +200,10 @@
 
     @if (Модель.Статус == 1)
     {
-        <button type="submit" class="btn btn-primary">@ГлобЛок["Сохранить"]</button>
+        <button type="button" class="btn btn-primary" @onclick=Отправить>@Лок["Отправить"]</button>
+        <button type="submit" class="btn btn-primary" @onclick=Сохранить>@Глобальные.Сохранить</button>
     }
-    <a href="/analysis/" class="btn btn-secondary">@ГлобЛок["Назад"]</a>
+    <a href="/analysis/" class="btn btn-secondary">@Глобальные.Назад</a>
 </EditForm>
 
 @code {
@@ -88,6 +219,27 @@
     private int максКоличествоФайлов = 1;
     private List<IBrowserFile> загруженныеФайлыАнализов = new();
     private bool загружаетсяАнализы;
+
+    // RenderFragment<(string Название, bool[] Значения)> Стр = (значение) => __builder =>
+    // {
+    //     <div class="col-2">
+    //         <label class="form-label">
+    //             @значение.Название <span class="text-danger">*</span>
+    //         </label>
+    //         @for(var i = 0; i < значение.Значения.Length; i++)
+    //         {
+    //             var t = i;
+    //             <div class="form-check">
+    //               <input type="checkbox" checked="@(значение.Значения[t])" @onchange="@((ChangeEventArgs e) => значение.Значения[t] = (bool)(e.Value ?? false))"
+    //                 class="input-form-check" id="@(значение.Название + "_" + i)"/>
+    //               <label class="form-check-label" for="@(значение.Название + "_" + i)">
+    //                 @(i + 1)
+    //               </label>
+    //             </div>
+                 
+    //         }
+    //     </div>
+    // }
 
     protected override async Task OnParametersSetAsync()
     {
@@ -138,8 +290,29 @@
         }
 
         управляющийИнспекциями.ОтправитьАнализы(
+            ИдАнализа);
+        управляющийНавигацией.NavigateTo("/analysis");
+    }
+
+    private async Task Сохранить()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is null)
+        {
+            return;
+        }
+
+        управляющийИнспекциями.СохранитьАнализы(
             ИдАнализа,
-            Модель.ФайлСАнализами);
+            Модель.ФайлСАнализами,
+            Модель.PLRV,
+            Модель.PVA,
+            Модель.PVM,
+            Модель.PVX,
+            Модель.PVY,
+            Модель.PVS,
+            Модель.Clavibacter,
+            Модель.Ralstonia);
         управляющийНавигацией.NavigateTo("/analysis");
     }
 
