@@ -140,7 +140,7 @@
         <label class="form-label">
             @Лок["СтранаПроизводитель"] <span class="text-danger">*</span>
         </label>
-        <InputText @bind-Value="Модель!.СтранаПроизводитель" class="form-control" disabled="@(Модель.СтранаПроизводитель != "Қазақстан")"/>
+        <InputText @bind-Value="Модель!.СтранаПроизводитель" class="form-control" disabled="@(Модель.СтранаПроизводитель == "Қазақстан")"/>
     </div>
     <div class="col">
         <label class="form-label">
