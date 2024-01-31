@@ -2,6 +2,7 @@
 @using GoogleMapsComponents.Maps
 @using System.Globalization
 @inject УправляющийХозяйствами управляющийХозяйствами
+@inject УправляющийЗаявками управляющийЗаявками
 @inject IJSRuntime JSRuntime
 @inject ILogger<ДанныеЗаявки> протоколировщик
 @inject IWebHostEnvironment окружение
@@ -159,7 +160,7 @@
     <label class="form-label">
         @Лок["КодСертификатаПроисхождения"] <span class="text-danger">*</span>
     </label>
-    <InputText @bind-Value="ТекстПоиска" class="form-control" />
+    <input type="text" value="@ТекстПоиска" class="form-control" @onchange=Поиск />
 
     <table class="table">
       <thead>
@@ -169,12 +170,17 @@
           <th scope="col">@Глобальные.Действия</th>
         </tr>
       </thead>
-      <tbody>
-        @* <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-        </tr> *@
+        <tbody>
+            @foreach (var сертификат in найденные)
+            {
+                <tr>
+                    <th scope="row">@сертификат.Код</th>
+                    <td>@сертификат.БинИин @сертификат.НазваниеКомпании</td>
+                    <td>
+                        <button class="btn btn-outline-secondary" type="button" @onclick=@(() => ВыбратьСертификат(сертификат.Ид, сертификат.Код))>Выбрать</button>
+                    </td>
+                </tr>
+            }
       </tbody>
     </table>
 
@@ -567,6 +573,9 @@ else
 
     private async Task ОткрытьОкноПоиска()
     {
+        ТекстПоиска = "";
+        найденные = [];
+        StateHasChanged();
         окноПоискаОткрыто = true;
         await JSRuntime.InvokeVoidAsync("openDialog", окноПоиска);
     }
@@ -575,5 +584,18 @@ else
     {
         окноПоискаОткрыто = false;
         await JSRuntime.InvokeVoidAsync("closeDialog", окноПоиска);
+    }
+
+    IList<МодельСертификата> найденные = [];
+    private void Поиск()
+    {
+        найденные = управляющийЗаявками.НайтиСертификаты(ТекстПоиска);
+    }
+
+    private async Task ВыбратьСертификат(int ид, string код)
+    {
+        Модель.ИдСертификатаПроисхождения = ид;
+        Модель.КодСертификатаПроисхождения = код;
+        await ЗакрытьОкноПоиска();
     }
 }

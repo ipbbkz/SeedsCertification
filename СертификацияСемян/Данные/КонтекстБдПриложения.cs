@@ -278,6 +278,9 @@ public class Сертификат
 
     [ForeignKey(nameof(ЗаявкаИд))]
     public Заявка Заявка { get; set; }
+
+    [NotMapped]
+    public string Код => Заявка.Код;
 }
 
 public class СертифицированнаяПартия
@@ -289,4 +292,7 @@ public class СертифицированнаяПартия
 
     [ForeignKey(nameof(СертификатИд))]
     public Сертификат Сертификат { get; set; }
+
+    [NotMapped]
+    public string Код => Сертификат.Код + "/" + Ид;
 }
