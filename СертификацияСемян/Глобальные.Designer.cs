@@ -232,6 +232,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Analysis processed.
+        /// </summary>
+        public static string СтатусИнспекции_АнализыОбработаны {
+            get {
+                return ResourceManager.GetString("СтатусИнспекции_АнализыОбработаны", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Planned.
         /// </summary>
         public static string СтатусИнспекции_Запланирована {
