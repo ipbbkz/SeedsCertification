@@ -16,5 +16,5 @@ public class МодельРезультатаАнализа
     public bool[] Ralstonia { get; set; }
 
     [Обязательное]
-    public byte[] ФайлСАнализами { get; set; }
+    public byte[]? ФайлСАнализами { get; set; }
 }

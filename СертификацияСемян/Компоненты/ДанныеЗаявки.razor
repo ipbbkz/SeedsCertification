@@ -201,6 +201,14 @@ else
         <p>@Лок["ДокументЗагружен"]</p>
     }
 }
+@if (Модель.СвидетельствоПроисхожденияСемян is not null && Модель.СвидетельствоПроисхожденияСемян.Length > 0)
+{
+    <div class="row">
+        <div class="col">
+            <a href="/requests/@(Модель.Ид)/certificateorigin" target="_blank">@Лок["Документ"]</a>
+        </div>
+    </div>
+}
 
 <label class="form-label">
     @Лок["ЗаключениеОНематодах"] <span class="text-danger">*</span>
@@ -216,6 +224,14 @@ else
     {
         <p>@Лок["ДокументЗагружен"]</p>
     }
+}
+@if (Модель.ЗаключениеОНематодах is not null && Модель.ЗаключениеОНематодах.Length > 0)
+{
+    <div class="row">
+        <div class="col">
+            <a href="/requests/@(Модель.Ид)/nematods" target="_blank">@Лок["Документ"]</a>
+        </div>
+    </div>
 }
 
 <h3>@Лок["ОбработкаУчастка"]</h3>

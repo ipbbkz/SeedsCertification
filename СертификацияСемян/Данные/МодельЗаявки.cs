@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using СертификацияСемян.Компоненты;
 
 namespace СертификацияСемян.Данные;
 
 public class МодельЗаявки
 {
+    public int Ид { get; set; }
+
     [Обязательное]
     public int? ТипЗаявки { get; set; }
 
