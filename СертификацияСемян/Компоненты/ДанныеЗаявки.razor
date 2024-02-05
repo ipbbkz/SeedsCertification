@@ -144,6 +144,18 @@
     </div>
     <div class="col">
         <label class="form-label">
+            @Лок["ГодПроизводстваСемян"] <span class="text-danger">*</span>
+        </label>
+        <InputNumber @bind-Value="Модель!.ГодПроизводстваСемян" class="form-control" disabled="@(Модель.СтранаПроизводитель == "Қазақстан")" />
+    </div>
+    <div class="col">
+        <label class="form-label">
+            @Лок["НаваниеКомпанииПроизводителя"] <span class="text-danger">*</span>
+        </label>
+        <InputText @bind-Value="Модель!.НаваниеКомпанииПроизводителя" class="form-control" disabled="@(Модель.СтранаПроизводитель == "Қазақстан")" />
+    </div>
+    <div class="col">
+        <label class="form-label">
             @Лок["КодСертификатаПроисхождения"] <span class="text-danger">*</span>
         </label>
         <div class="input-group mb-3">
@@ -177,7 +189,7 @@
                     <th scope="row">@сертификат.Код</th>
                     <td>@сертификат.БинИин @сертификат.НазваниеКомпании</td>
                     <td>
-                        <button class="btn btn-outline-secondary" type="button" @onclick=@(() => ВыбратьСертификат(сертификат.Ид, сертификат.Код))>Выбрать</button>
+                        <button class="btn btn-outline-secondary" type="button" @onclick=@(() => ВыбратьСертификат(сертификат.Ид, сертификат.Код, $"{сертификат.НазваниеКомпании} {сертификат.БинИин}", сертификат.ДатаВыпуска.Year))>Выбрать</button>
                     </td>
                 </tr>
             }
@@ -608,10 +620,12 @@ else
         найденные = управляющийЗаявками.НайтиСертификаты(ТекстПоиска);
     }
 
-    private async Task ВыбратьСертификат(int ид, string код)
+    private async Task ВыбратьСертификат(int ид, string код, string производитель, int год)
     {
         Модель.ИдСертификатаПроисхождения = ид;
         Модель.КодСертификатаПроисхождения = код;
+        Модель.НаваниеКомпанииПроизводителя = производитель;
+        Модель.ГодПроизводстваСемян = год;
         await ЗакрытьОкноПоиска();
     }
 }

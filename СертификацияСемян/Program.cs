@@ -43,6 +43,8 @@ builder.Services.AddAuthorization(options =>
          policy => policy.RequireRole(Константы.РольФермер));
     options.AddPolicy("Инспекторы",
          policy => policy.RequireRole(Константы.РольИнспектора));
+    options.AddPolicy("ИнспекторыИлиФермеры",
+         policy => policy.RequireRole(Константы.РольИнспектора, Константы.РольФермер));
     options.AddPolicy("Лаборатории",
          policy => policy.RequireRole(Константы.РольЛаборатория));
     options.AddPolicy("Сертификатор",

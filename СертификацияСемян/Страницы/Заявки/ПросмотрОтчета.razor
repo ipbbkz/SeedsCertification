@@ -1,0 +1,94 @@
+﻿@page "/requests/{Ид:int}/summary"
+@attribute [Authorize(Policy = "ИнспекторыИлиФермеры")]
+
+@using СертификацияСемян.Данные;
+@inject УправляющийЗаявками управляющийЗаявками
+@inject IStringLocalizer<Инспекции> Лок
+@inject IJSRuntime JSRuntime
+@inject NavigationManager менеджерНавигации
+
+@if (МожетПечатать)
+{
+    <button type="button" class="btn btn-primary d-print-none" @onclick=ПечатьАсинх>Печать</button>
+}
+
+<h4>@Лок["Партия"]</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Лок["Год"]</th>
+            <th>@Лок["Производитель и номер партии"]</th>
+            <th>@Лок["Площадь"]</th>
+            <th>@Лок["Класс"]</th>
+            <th>@Лок["Сорт"]</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@заявка.ДатаПосадки.Year</td>
+            <td>@ПроизводительСемян.НаваниеКомпании (ИИН/БИН: @(ПроизводительСемян.БинИлиИин)) @заявка.Код</td>
+            <td>@заявка.ПлощадьПосадки</td>
+            <td><КлассСемян Значение="заявка.КлассСемянИд" /></td>
+            <td>@заявка.НаваниеСортаСемян</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>@Лок["Координаты месторасположения"]</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Лок["NE"]</th>
+            <th>@Лок["Название производителя"]</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@заявка.КоординатыУчастка</td>
+            <td>@ПроизводительСемян.НаваниеКомпании (ИИН/БИН: @(ПроизводительСемян.БинИлиИин)) @заявка.Код</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>@Лок["Происхождение семенного материала"]</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Лок["Год"]</th>
+            <th>@Лок["Производитель и номер партии"]</th>
+            <th>@Лок["Страна происхождения"]</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@заявка.ГодПроизводстваСемян</td>
+            <td>@заявка.НаваниеКомпанииПроизводителя @заявка.КодСертификатаПроисхождения</td>
+            <td>@заявка.СтранаПроизводитель</td>
+        </tr>
+    </tbody>
+</table>
+
+@code {
+    private Заявка заявка = new();
+
+    private ПроизводительСемян ПроизводительСемян => заявка?.УчастокПоля?.Поле?.ПроизводительСемян ?? new();
+
+    [CascadingParameter]
+    private Task<AuthenticationState> состояниеАвторизации { get; set; } = null!;
+
+    [Parameter]
+    public int Ид { get; set; }
+
+    private bool МожетПечатать = false;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        заявка = управляющийЗаявками.ПолучитьЗаявку(Ид) ?? new();
+        МожетПечатать = (await состояниеАвторизации).User.Identity?.IsAuthenticated ?? false;
+    }
+
+    protected async Task ПечатьАсинх()
+    {
+        await JSRuntime.InvokeVoidAsync("print");
+    }
+}

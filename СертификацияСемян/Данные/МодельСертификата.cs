@@ -7,4 +7,5 @@ public class МодельСертификата
     public required int ТипСертификата { get; set; }
     public required string БинИин { get; set; }
     public required string НазваниеКомпании { get; set; }
+    public required DateTime ДатаВыпуска { get; set; }
 }

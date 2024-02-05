@@ -138,6 +138,9 @@
   <data name="Гербициды" xml:space="preserve">
     <value>Herbicides</value>
   </data>
+  <data name="ГодПроизводстваСемян" xml:space="preserve">
+    <value>Production year</value>
+  </data>
   <data name="ДатаПосадки" xml:space="preserve">
     <value>Planting date</value>
   </data>
@@ -173,6 +176,9 @@
   </data>
   <data name="Круглая" xml:space="preserve">
     <value>Circle</value>
+  </data>
+  <data name="НазваниеКомпанииПроизводителя" xml:space="preserve">
+    <value>Producer company</value>
   </data>
   <data name="НазваниеСорта" xml:space="preserve">
     <value>Name of variety of seeds</value>

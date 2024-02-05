@@ -39,6 +39,10 @@ public class МодельЗаявки
     public string ИзоляцияПолей { get; set; }
     [Обязательное]
     public string СтранаПроизводитель { get; set; }
+    [Обязательное]
+    public string НаваниеКомпанииПроизводителя { get; set; }
+    [Обязательное]
+    public int ГодПроизводстваСемян { get; set; }
     //[Display(Name = "СвидетельствоПроисхождения", ResourceType = typeof(ДанныеЗаявки))]
     [Обязательное]
     public byte[] СвидетельствоПроисхожденияСемян { get; set; }

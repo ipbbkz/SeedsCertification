@@ -65,6 +65,7 @@
     </tbody>
 </table>
 
+<a href=@($"/requests/{Ид}/summary") class="btn btn-secondary">@Лок["Отчет"]</a>
 @if (МожноОтправитьНаСертификацию)
 {
     <button class="btn btn-secondary" @onclick=ОтправитьНаСертификацию>@Лок["ОтправитьНаСертификацию"]</button>
