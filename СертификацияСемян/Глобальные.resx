@@ -129,6 +129,12 @@
   <data name="Загружаем" xml:space="preserve">
     <value>Loading...</value>
   </data>
+  <data name="МетодИнспекцииИнспекции_Визуальная" xml:space="preserve">
+    <value>Visual</value>
+  </data>
+  <data name="МетодИнспекцииИнспекции_ПЦР" xml:space="preserve">
+    <value>PCR</value>
+  </data>
   <data name="Назад" xml:space="preserve">
     <value>Back</value>
   </data>

@@ -97,6 +97,24 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Visual.
+        /// </summary>
+        public static string МетодИнспекцииИнспекции_Визуальная {
+            get {
+                return ResourceManager.GetString("МетодИнспекцииИнспекции_Визуальная", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PCR.
+        /// </summary>
+        public static string МетодИнспекцииИнспекции_ПЦР {
+            get {
+                return ResourceManager.GetString("МетодИнспекцииИнспекции_ПЦР", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string Назад {

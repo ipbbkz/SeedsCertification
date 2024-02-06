@@ -129,6 +129,12 @@
   <data name="Загружаем" xml:space="preserve">
     <value>Жүктелуде...</value>
   </data>
+  <data name="МетодИнспекцииИнспекции_Визуальная" xml:space="preserve">
+    <value>Көрнекі</value>
+  </data>
+  <data name="МетодИнспекцииИнспекции_ПЦР" xml:space="preserve">
+    <value>ПЦР</value>
+  </data>
   <data name="Назад" xml:space="preserve">
     <value>Артқа</value>
   </data>
