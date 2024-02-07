@@ -2,6 +2,7 @@
 
 @using СертификацияСемян.Данные;
 @inject УправляющийЗаявками управляющийЗаявками
+@inject УправляющийИнспекциями управляющийИнспекциями
 @inject IStringLocalizer<Сертификаты> Лок
 @inject IJSRuntime JSRuntime
 @inject NavigationManager менеджерНавигации
@@ -128,7 +129,7 @@
         Условия хранения:
     </div>
     <div class="col border d-flex align-items-center justify-content-center fw-bold">
-        @* @сертификат.Заявка.Код *@
+        @условияХранения
     </div>
 </div>
 
@@ -208,6 +209,7 @@
     private Сертификат сертификат = new();
 
     private ПроизводительСемян ПроизводительСемян => сертификат.Заявка?.УчастокПоля?.Поле?.ПроизводительСемян ?? new();
+    private string условияХранения;
     [CascadingParameter]
     private Task<AuthenticationState>? состояниеАвторизации { get; set; }
 
@@ -219,6 +221,8 @@
     protected override async Task OnParametersSetAsync()
     {
         сертификат = управляющийЗаявками.ПолучитьСертификат(Ид) ?? new();
+        var инспекции = управляющийИнспекциями.ПолучитьИнспекцииЗаявки(сертификат.ЗаявкаИд);
+        условияХранения = инспекции.First(и => и.ТипИнспекции == 3).ОбщиеУсловияПоля;
         МожетПечатать = (await состояниеАвторизации).User.Identity.IsAuthenticated;
     }
 
