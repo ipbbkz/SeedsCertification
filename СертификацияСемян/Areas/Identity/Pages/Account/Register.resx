@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ВладелецРегистрация" xml:space="preserve">
-    <value>If you are an agricultural owner who wants to certify your products, register here</value>
+    <value>If you are a farm owner, sign up here.</value>
   </data>
   <data name="ЗаголовокПисьмаПодтверждения" xml:space="preserve">
     <value>Confirm your email</value>
@@ -127,7 +127,7 @@
     <value>Inspector</value>
   </data>
   <data name="ИнспекторРегистрация" xml:space="preserve">
-    <value>Inspectors who will conduct field inspections must register here. The account will be active after approval by the administration</value>
+    <value>If you are an inspector, sign up here. The account will be active after administration approval.</value>
   </data>
   <data name="ИнструкцииПоПодтвержденииРегистрации" xml:space="preserve">
     <value>Please check your email to confirm your account.</value>
@@ -136,7 +136,7 @@
     <value>Laboratory</value>
   </data>
   <data name="ЛабораторияРегистрация" xml:space="preserve">
-    <value>Laboratory who perform laboratory validation of the seeds must register here. The account will be active after approval by the administration</value>
+    <value>Accredited laboratory for seed pathogen detection, sign up here. The account will be active after approval by the administration.</value>
   </data>
   <data name="НовыйАккаунт" xml:space="preserve">
     <value>New account.</value>
@@ -154,13 +154,13 @@
     <value>Register</value>
   </data>
   <data name="РегистрацияИнспектора" xml:space="preserve">
-    <value>Register as an inspector</value>
+    <value>Sign up as an inspector.</value>
   </data>
   <data name="РегистрацияЛаборатории" xml:space="preserve">
-    <value>Register as a lab</value>
+    <value>Sign up as a lab</value>
   </data>
   <data name="РегистрацияФермера" xml:space="preserve">
-    <value>Register as a farmer</value>
+    <value>Sign up as a farmer</value>
   </data>
   <data name="ТелоПисьмаПодтвержденияИнспектору" xml:space="preserve">
     <value>Please wait while your account would be confirmed by administrator. You will receive confirmation over email.</value>
@@ -172,7 +172,7 @@
     <value>Choose type of registration</value>
   </data>
   <data name="Фермер" xml:space="preserve">
-    <value>Farmer</value>
+    <value>Farming</value>
   </data>
   <data name="ЭлектроннаяПочта" xml:space="preserve">
     <value>Email</value>

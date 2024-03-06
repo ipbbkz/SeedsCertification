@@ -120,4 +120,34 @@
   <data name="ГлавнаяСтраница" xml:space="preserve">
     <value>Main page</value>
   </data>
+  <data name="Заголовок1" xml:space="preserve">
+    <value>Seed Inspection Service of the Republic of Kazakhstan</value>
+  </data>
+  <data name="Заголовок2" xml:space="preserve">
+    <value>Key functions of the Seed Inspection Service:</value>
+  </data>
+  <data name="Параграф1Линия1" xml:space="preserve">
+    <value>Seed Inspection Service of the Republic of Kazakhstan is a certification service of trade quality of seed potatoes. </value>
+  </data>
+  <data name="Параграф1Линия2" xml:space="preserve">
+    <value>This service plays an important role in ensuring the quality of agricultural material, controls the process of seed production, processing, packaging, and labeling, determines the compliance of quality with the requirements and Standards established by the legislation of the Republic of Kazakhstan and international norms.</value>
+  </data>
+  <data name="Параграф1Линия3" xml:space="preserve">
+    <value>Specialized inspectors conduct surveys of seed potato plantings during the field season of seed potato growing, inspect seed potato lots in storage, and conduct post-harvest sampling for pathogen detection.</value>
+  </data>
+  <data name="Список1Линия1" xml:space="preserve">
+    <value>Seed Certification - issuing a certificate of trade quality for every seed lot, in accordance with the declared grade and Standard.</value>
+  </data>
+  <data name="Список1Линия2" xml:space="preserve">
+    <value>Quality Control - conducting field inspections and seed testing to determine quality and purity.</value>
+  </data>
+  <data name="Список1Линия3" xml:space="preserve">
+    <value>Seed Market Monitoring - market traceability of seed turnover and control of illegal trade or use of fraud seeds.</value>
+  </data>
+  <data name="Параграф2Линия1" xml:space="preserve">
+    <value>The work of the Seed Inspection Service is key to ensure the sustainability of agricultural production and to protect the interests of farmers and customers in the Republic of Kazakhstan.</value>
+  </data>
+  <data name="Параграф2Линия2" xml:space="preserve">
+    <value>The Service conducts inspections on behalf of and under the supervision of the Ministry of Agriculture of the Republic of Kazakhstan and deals with quality control and certification of seed potatoes.</value>
+  </data>
 </root>

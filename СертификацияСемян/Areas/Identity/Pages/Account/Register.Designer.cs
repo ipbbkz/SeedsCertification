@@ -61,7 +61,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If you are an agricultural owner who wants to certify your products, register here.
+        ///   Looks up a localized string similar to If you are a farm owner, sign up here..
         /// </summary>
         internal static string ВладелецРегистрация {
             get {
@@ -88,7 +88,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inspectors who will conduct field inspections must register here. The account will be active after approval by the administration.
+        ///   Looks up a localized string similar to If you are an inspector, sign up here. The account will be active after administration approval..
         /// </summary>
         internal static string ИнспекторРегистрация {
             get {
@@ -115,7 +115,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Laboratory who perform laboratory validation of the seeds must register here. The account will be active after approval by the administration.
+        ///   Looks up a localized string similar to Accredited laboratory for seed pathogen detection, sign up here. The account will be active after approval by the administration..
         /// </summary>
         internal static string ЛабораторияРегистрация {
             get {
@@ -169,7 +169,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Register as an inspector.
+        ///   Looks up a localized string similar to Sign up as an inspector..
         /// </summary>
         internal static string РегистрацияИнспектора {
             get {
@@ -178,7 +178,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Register as a lab.
+        ///   Looks up a localized string similar to Sign up as a lab.
         /// </summary>
         internal static string РегистрацияЛаборатории {
             get {
@@ -187,7 +187,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Register as a farmer.
+        ///   Looks up a localized string similar to Sign up as a farmer.
         /// </summary>
         internal static string РегистрацияФермера {
             get {
@@ -223,7 +223,7 @@ namespace СертификацияСемян.Areas.Identity.Pages.Account {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Farmer.
+        ///   Looks up a localized string similar to Farming.
         /// </summary>
         internal static string Фермер {
             get {
