@@ -2,20 +2,38 @@
 
 <h3>@Глобальные.Страница_Контакты</h3>
 
-<h4>Время работы</h4>
+@if (System.Globalization.CultureInfo.CurrentCulture.Name.StartsWith("ru"))
+{
+    <h4>
+        Режим работы
+    </h4>
 
-Пн. - Пт.
-<pre>
-10:00 - 17:00
-</pre>
+    <text>Пн. - Пт.</text>
+    <pre>10:00 - 17:00</pre>
 
-<h4>Адрес</h4>
-г. Астана. ул. ХХХХХ, офис 111
+    <h4> Адрес </h4>
+    <text>г.Астана.ул.ХХХХХ, 111</text>
+}
+else if (System.Globalization.CultureInfo.CurrentCulture.Name.StartsWith("en"))
+{
+    <h4>Open time</h4>
 
+    <text>Mon. - Fri.</text>
 
-@code {
-	string info = @"
-6	Контакты и график работы в этом разделе приводится адрес, телефоны, 
-	график работы структур профессиональной организации и служб инспекции
-";
+    <pre>10:00 - 17:00</pre>
+
+    <h4> Address </h4>
+    <text>Astana, ХХХХХ st, 111</text>
+}
+else
+{
+    <h4>Жұмыс уақыты</h4>
+
+    <text>Дүйс. - Жұма.</text>
+
+    <pre>10:00 - 17:00</pre>
+
+    <h4> Мекен жайы </h4>
+
+    <text>Астана қ.,..ХХХХХ көшесі, 111</text>
 }
