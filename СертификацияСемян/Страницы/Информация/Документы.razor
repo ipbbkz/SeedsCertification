@@ -2,20 +2,64 @@
 
 <h3>@Глобальные.Страница_Документы</h3>
 
-<ul>
-    <li>
-        <a href="/docs/Стандарт S-1_SeedPotatoes.pdf">Стандарт ЕЭК ООН S1 - Сбыт и контроль качества Семенной Картофель</a>
-    </li>
-    <li>
-        <a href="/docs/Lot_Inspection_R_ЕЭК ООН_руководство.pdf">Cтандарт ЕЭК ООН Инспекция партии семенного картофеля</a>
-    </li>
-    <li>
-        <a href="/docs/Certification_Service_R_процедура.pdf">Руководство ЕЭК ООН Служба сертификации семенного картофеля</a>
-    </li>
-    <li>
-        <a href="/docs/СТ РГП 72199-01-2023.pdf">Стандарт организации  "КАРТОФЕЛЬ СЕМЕННОЙ. Сбыт и контроль качества." СТ РГП 72199-01-2023</a>
-    </li>
-    <li>
-        <a href="/docs/СТ РГП 72199-02-2023.pdf">Стандарт организации "ИНСПЕКЦИЯ КАРТОФЕЛЬ СЕМЕННОЙ" СТ РГП 72199-02-2023</a>
-    </li>
-</ul>
+@if (System.Globalization.CultureInfo.CurrentCulture.Name.StartsWith("ru"))
+{
+    <ul>
+        <li>
+            <a href="/docs/Стандарт S-1_SeedPotatoes.pdf">Стандарт ЕЭК ООН S1 - Сбыт и контроль качества Семенной Картофель</a>
+        </li>
+        <li>
+            <a href="/docs/Lot_Inspection_R_ЕЭК ООН_руководство.pdf">Cтандарт ЕЭК ООН Инспекция партии семенного картофеля</a>
+        </li>
+        <li>
+            <a href="/docs/Certification_Service_R_процедура.pdf">Руководство ЕЭК ООН Служба сертификации семенного картофеля</a>
+        </li>
+        <li>
+            <a href="/docs/СТ РГП 72199-01-2023.pdf">Стандарт организации  "КАРТОФЕЛЬ СЕМЕННОЙ. Сбыт и контроль качества." СТ РГП 72199-01-2023</a>
+        </li>
+        <li>
+            <a href="/docs/СТ РГП 72199-02-2023.pdf">Стандарт организации "ИНСПЕКЦИЯ КАРТОФЕЛЬ СЕМЕННОЙ" СТ РГП 72199-02-2023</a>
+        </li>
+    </ul>
+}
+else if (System.Globalization.CultureInfo.CurrentCulture.Name.StartsWith("en"))
+{
+    <ul>
+        <li>
+            <a href="/docs/UNECE S-1 SeedPotatoes.pdf">UNECE S-1 SeedPotatoes</a>
+        </li>
+        <li>
+            <a href="/docs/UNECE Lot inspection seed potatoes.pdf">UNECE Lot inspection seed potatoes</a>
+        </li>
+        <li>
+            <a href="/docs/UNECE Certification Service.pdf">UNECE Certification Service</a>
+        </li>
+        <li>
+            <a href="/docs/СТ РГП 72199-01-2023.pdf">Стандарт организации  "КАРТОФЕЛЬ СЕМЕННОЙ. Сбыт и контроль качества." СТ РГП 72199-01-2023</a>
+        </li>
+        <li>
+            <a href="/docs/СТ РГП 72199-02-2023.pdf">Стандарт организации "ИНСПЕКЦИЯ КАРТОФЕЛЬ СЕМЕННОЙ" СТ РГП 72199-02-2023</a>
+        </li>
+    </ul>
+}
+else
+{
+    <ul>
+        <li>
+            <a href="/docs/Стандарт S-1_SeedPotatoes.pdf">Стандарт ЕЭК ООН S1 - Сбыт и контроль качества Семенной Картофель</a>
+        </li>
+        <li>
+            <a href="/docs/Lot_Inspection_R_ЕЭК ООН_руководство.pdf">Cтандарт ЕЭК ООН Инспекция партии семенного картофеля</a>
+        </li>
+        <li>
+            <a href="/docs/Certification_Service_R_процедура.pdf">Руководство ЕЭК ООН Служба сертификации семенного картофеля</a>
+        </li>
+        <li>
+            <a href="/docs/СТ РГП 72199-01-2023.pdf">Стандарт организации  "КАРТОФЕЛЬ СЕМЕННОЙ. Сбыт и контроль качества." СТ РГП 72199-01-2023</a>
+        </li>
+        <li>
+            <a href="/docs/СТ РГП 72199-02-2023.pdf">Стандарт организации "ИНСПЕКЦИЯ КАРТОФЕЛЬ СЕМЕННОЙ" СТ РГП 72199-02-2023</a>
+        </li>
+    </ul>
+}
+
