@@ -126,4 +126,7 @@
   <data name="НазваниеИнститута" xml:space="preserve">
     <value>Institute of Biology and Plant Biotechnology</value>
   </data>
+  <data name="ПозвонитеНам" xml:space="preserve">
+    <value>For more information about the Seed Inspection Service, please call:</value>
+  </data>
 </root>

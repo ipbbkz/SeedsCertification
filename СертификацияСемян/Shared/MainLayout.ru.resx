@@ -126,4 +126,7 @@
   <data name="НазваниеИнститута" xml:space="preserve">
     <value>Институт биологии и биотехнологии растений</value>
   </data>
+  <data name="ПозвонитеНам" xml:space="preserve">
+    <value>Узнать подробнее о работе Службы инспекции семян можно по телефону:</value>
+  </data>
 </root>
