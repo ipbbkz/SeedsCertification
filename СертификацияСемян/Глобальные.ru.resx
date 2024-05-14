@@ -219,4 +219,7 @@
   <data name="Удалить" xml:space="preserve">
     <value>Удалить</value>
   </data>
+  <data name="Страница_Инспекции" xml:space="preserve">
+    <value>Инспекции</value>
+  </data>
 </root>

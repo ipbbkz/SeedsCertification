@@ -216,4 +216,7 @@
   <data name="Удалить" xml:space="preserve">
     <value>Жою</value>
   </data>
+  <data name="Страница_Инспекции" xml:space="preserve">
+    <value>Тексерулер</value>
+  </data>
 </root>

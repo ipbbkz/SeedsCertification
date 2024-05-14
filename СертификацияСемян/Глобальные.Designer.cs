@@ -304,6 +304,15 @@ namespace СертификацияСемян {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inspections.
+        /// </summary>
+        public static string Страница_Инспекции {
+            get {
+                return ResourceManager.GetString("Страница_Инспекции", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contacts.
         /// </summary>
         public static string Страница_Контакты {
