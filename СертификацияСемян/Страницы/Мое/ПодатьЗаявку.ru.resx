@@ -120,4 +120,7 @@
   <data name="ПодатьЗаявку" xml:space="preserve">
     <value>Подать заявку</value>
   </data>
+  <data name="НаваниеКомпанииПроизводителя" xml:space="preserve">
+    <value>Производитель</value>
+  </data>
 </root>

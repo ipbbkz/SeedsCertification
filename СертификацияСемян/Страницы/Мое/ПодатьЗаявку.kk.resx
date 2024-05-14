@@ -120,4 +120,7 @@
   <data name="ПодатьЗаявку" xml:space="preserve">
     <value>Тапсырыс беру</value>
   </data>
+  <data name="НаваниеКомпанииПроизводителя" xml:space="preserve">
+    <value>Өндіруші</value>
+  </data>
 </root>
