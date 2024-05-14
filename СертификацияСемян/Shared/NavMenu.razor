@@ -20,7 +20,7 @@
                             <NavLink class="nav-link" href="/info/documents">@Глобальные.Страница_Документы</NavLink>
                         </li>
                         <li class="nav-item">
-                            <NavLink class="nav-link" href="/info/inspection">@Глобальные.Страница_Документы</NavLink>
+                            <NavLink class="nav-link" href="/info/inspection">@Глобальные.Страница_Инспекции</NavLink>
                         </li>
                     </NotAuthorized>
                 </AuthorizeView>
@@ -28,6 +28,9 @@
                     <Authorized>
                         <li class="nav-item">
                             <NavLink class="nav-link" href="/start">@Лок["Главная"]</NavLink>
+                        </li>
+                        <li class="nav-item">
+                            <NavLink class="nav-link" href="/info/inspection">@Глобальные.Страница_Инспекции</NavLink>
                         </li>
                         @if (context.User.IsInRole(Данные.Константы.РольФермер))
                         {
