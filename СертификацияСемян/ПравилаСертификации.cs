@@ -6,22 +6,22 @@ public class ПравилаСертификации
 {
     public static class ПравилаИнспекцииПартии
     {
-        public static double[] СухаяГниль           = new[] { 0.0, 0.2, 1.0, 1.0, };
-        public static double[] МокраяГниль          = new[] { 0.0, 0.2, 1.0, 1.0, };
-        public static double[] Фитофтороз           = new[] { 0.0, 0.2, 1.0, 1.0, };
-        public static double[] ПаршаОбыкновенная    = new[] { 0.0, 5.0, 5.0, 5.0, };
-        public static double[] ПаршаЛуговая         = new[] { 0.0, 5.0, 5.0, 5.0, };
-        public static double[] ПаршаСеребристая     = new[] { 0.0, 0.5, 1.0, 1.0, };
-        public static double[] ПаршаПорошистая      = new[] { 0.0, 1.0, 3.0, 3.0, };
-        public static double[] Ризоктониоз          = new[] { 0.0, 1.0, 5.0, 5.0, };
-        public static double[] Продавленность       = new[] { 3.0, 3.0, 3.0, 3.0, };
-        public static double[] ВнешниеДефекты       = new[] { 3.0, 3.0, 3.0, 3.0, };
-        public static double[] ПрилипшаяПочва       = new[] { 1.0, 1.0, 2.0, 2.0, };
-        public static double[] ПревышениеРазмеров   = new[] { 3.0, 3.0, 3.0, 3.0, };
-        public static double[] РаздавленныеКлубни   = new[] { 0.0, 0.5, 1.0, 1.0, };
-        public static double[] Переохлаждение       = new[] { 0.0, 2.0, 2.0, 2.0, };
-        public static double[] Вредители            = new[] { 0.0, 4.0, 4.0, 4.0, };
-        public static double[] ВесДефектов          = new[] { 3.0, 5.0, 6.0, 6.0, };
+        public static double[] СухаяГниль           = new[] { 0.0, 0.2, 1.0, 1.0, 1.0, 1.0, 1.0, };
+        public static double[] МокраяГниль          = new[] { 0.0, 0.2, 1.0, 1.0, 1.0, 1.0, 1.0, };
+        public static double[] Фитофтороз           = new[] { 0.0, 0.2, 1.0, 1.0, 1.0, 1.0, 1.0, };
+        public static double[] ПаршаОбыкновенная    = new[] { 0.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, };
+        public static double[] ПаршаЛуговая         = new[] { 0.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, };
+        public static double[] ПаршаСеребристая     = new[] { 0.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, };
+        public static double[] ПаршаПорошистая      = new[] { 0.0, 1.0, 3.0, 3.0, 3.0, 3.0, 3.0, };
+        public static double[] Ризоктониоз          = new[] { 0.0, 1.0, 5.0, 5.0, 5.0, 5.0, 5.0, };
+        public static double[] Продавленность       = new[] { 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, };
+        public static double[] ВнешниеДефекты       = new[] { 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, };
+        public static double[] ПрилипшаяПочва       = new[] { 1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 2.0, };
+        public static double[] ПревышениеРазмеров   = new[] { 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, };
+        public static double[] РаздавленныеКлубни   = new[] { 0.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, };
+        public static double[] Переохлаждение       = new[] { 0.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, };
+        public static double[] Вредители            = new[] { 0.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, };
+        public static double[] ВесДефектов          = new[] { 3.0, 5.0, 6.0, 6.0, 6.0, 6.5, 7.0, };
     }
     public static class ПравилаПолевойИнспекции
     {
@@ -88,7 +88,22 @@ public class ПравилаСертификации
 
         if (процент <= уровни[3])
         {
+            return КлассСемян.БазисныйSE;
+        }
+
+        if (процент <= уровни[4])
+        {
+            return КлассСемян.БазисныйE;
+        }
+
+        if (процент <= уровни[5])
+        {
             return КлассСемян.СертифицированныйА;
+        }
+
+        if (процент <= уровни[6])
+        {
+            return КлассСемян.СертифицированныйВ;
         }
 
         return КлассСемян.Неизвестный;
