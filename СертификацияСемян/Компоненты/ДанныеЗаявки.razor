@@ -538,7 +538,7 @@ else
                 });
         await инфоОкно.Open(map1.InteropObject);
 
-        Модель!.КоординатыУчастка = $"{широта},{долгота}";
+        Модель!.КоординатыУчастка = $"{широта.ToString(CultureInfo.InvariantCulture)},{долгота.ToString(CultureInfo.InvariantCulture)}";
     }
 
     private InfoWindow? инфоОкно;
