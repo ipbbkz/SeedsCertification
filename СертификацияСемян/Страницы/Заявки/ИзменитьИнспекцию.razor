@@ -1,0 +1,70 @@
+﻿@page "/requests/{Ид:int}/inspections/{ИдИнспекции:int}"
+@attribute [Authorize(Policy = "Инспекторы")]
+@inject УправляющийЗаявками управляющийЗаявками
+@inject УправляющийИнспекциями управляющийИнспекциями
+@inject NavigationManager управляющийНавигацией
+@inject IStringLocalizer<Инспекции> Лок
+
+<h3>@string.Format(Лок["РедактироватьИнспекцию"], ИдИнспекции)</h3>
+
+<EditForm Model="@Модель" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <ДанныеИнспекции Модель="@Модель" />
+
+    <button type="submit" class="btn btn-primary">@Глобальные.Сохранить</button>
+    <a href="/requests/@Ид/inspections/" class="btn btn-secondary">@Глобальные.Назад</a>
+</EditForm>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? состояниеАвторизации { get; set; }
+
+    [Parameter]
+    public int Ид { get; set; }
+
+    [Parameter]
+    public int ИдИнспекции { get; set; }
+
+    public МодельИнспекции Модель { get; set; } = new();
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is null)
+        {
+            return;
+        }
+
+        var инспекция = управляющийИнспекциями.ПолучитьИнспекцию(ИдИнспекции);
+        if (инспекция is null)
+        {
+            return;
+        }
+
+        Проектор.ОтобразитьИнспекцию(инспекция, Модель);
+        base.OnParametersSet();
+    }
+
+    private async Task Submit()
+    {
+        var идЛичности = await состояниеАвторизации.ПолучитьИдентификаторБезопасности();
+        if (идЛичности is null)
+        {
+            return;
+        }
+
+        управляющийИнспекциями.ЗапланироватьИнспекцию(
+            Ид,
+            Модель!.ТипИнспекции!.Value,
+            Модель!.ПланируемаяДата!.Value,
+            Модель.ФактическаяДата,
+            Модель!.ТипИнспекции!.Value == 3 ? "-" : Модель.ФизиологическаяСтадия,
+            Модель.ОбщееСостояниеПоля   ,
+            Модель.ИмяВедущегоИнспектора,
+            Модель.ИмяВторогоИнспектора);
+        управляющийНавигацией.NavigateTo($"/requests/{Ид}/inspections/");
+    }
+}

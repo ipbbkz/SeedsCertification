@@ -261,6 +261,9 @@
   <data name="РаздавленныеКлубни" xml:space="preserve">
     <value>Раздавленные клубни</value>
   </data>
+  <data name="РедактироватьИнспекцию" xml:space="preserve">
+    <value>Редактировать инспекцию №{0}</value>
+  </data>
   <data name="РезультатыАнализов" xml:space="preserve">
     <value>Результаты анализов</value>
   </data>

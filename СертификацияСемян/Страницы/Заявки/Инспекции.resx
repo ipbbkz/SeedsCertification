@@ -261,6 +261,9 @@
   <data name="РаздавленныеКлубни" xml:space="preserve">
     <value>Shrinkled  tubers</value>
   </data>
+  <data name="РедактироватьИнспекцию" xml:space="preserve">
+    <value>Edit inspection #{0}</value>
+  </data>
   <data name="РезультатыАнализов" xml:space="preserve">
     <value>Lab results</value>
   </data>

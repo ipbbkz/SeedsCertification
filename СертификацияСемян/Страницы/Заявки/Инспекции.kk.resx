@@ -261,6 +261,9 @@
   <data name="РаздавленныеКлубни" xml:space="preserve">
     <value>Ұсақталған түйнектер</value>
   </data>
+  <data name="РедактироватьИнспекцию" xml:space="preserve">
+    <value>Тексеру өңдеу №{0}</value>
+  </data>
   <data name="РезультатыАнализов" xml:space="preserve">
     <value>Тест нәтижелері</value>
   </data>
